@@ -1,0 +1,769 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>量化计算器-戴森球计划-量化计算</title>
+    <meta name="keywords" content="戴森球计划,戴森球计划计算,戴森球计划量化计算,戴森球量化,戴森球量化计算,量化计算,calculator, dsp, 戴森球计划量化计算器">
+    <meta name="description" content="量化计算器是量化计算网站，内容包括戴森球计划、幸福工厂等游戏的量化计算，还提供游戏添加、配方添加、设备添加等功能，满足用户自己修改数据的需要。">
+    <meta name="author" content="Wind">
+
+    <!--通用文件-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--计算通用文件-->
+    <script src="./js/analysis/analysisManager.js"></script>
+    <script src="./js/commonJs/commonData.js"></script>
+    <script src="./js/commonJs/commonFun.js"></script>
+    <script src="./js/officialGameJs/dsp/dspCalculateFun.js"></script>
+    <script src="./js/commonJs/commonButton.js"></script>
+
+    <!--显示结果文件-->
+    <script src="./js/manager/sileMenuManager.js"></script>
+    <script src="./js/manager/head.js"></script>
+
+    <!--结果显示通用文件-->
+    <script src="./js/officialGameJs/dsp/buff.js"></script>
+    <script src="./js/officialGameJs/dsp/dspTreeList.js"></script>
+    <script src="./js/officialGameJs/dsp/dspTableList.js"></script>
+
+    <!--dsp专有-->
+    <script src="./js/officialGameJs/dsp/dsp.js"></script>
+
+    <!--  百度访问量统计  -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a7c70c1e2aca3b7763486cb08f15c1db";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu">
+                <li class="active">
+                    <a href="index.html"><span class="nav-label">戴森球计划-黑雾崛起</span></a>
+                </li>
+                <li>
+                    <a href="satisfactory.html"><span class="nav-label">幸福工厂</span></a>
+                </li>
+            </ul>
+            <ul class="nav metismenu" id="side-menu"></ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div id="head">
+        </div>
+
+        <div class="wrapper wrapper-content">
+            <!-- 删除确认弹窗 -->
+            <div id="deleteConfirmationModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">删除确认</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>确认删除游戏？</p>
+                            <p>删除后，该游戏对应的数据将消失。</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-danger" onclick="deleteGame()">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--功能标签页-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tabs-container">
+
+                        <!--tab页面切换导航栏-->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li><a class="nav-link active" data-toggle="tab" href="#tab-calculate" onclick="changeManagerShowTab('cal')">计算</a></li>
+                            <li><a class="nav-link" data-toggle="tab" href="#tab-recipe" onclick="changeManagerShowTab('recipe')">配方管理</a></li>
+                            <li><a class="nav-link" data-toggle="tab" href="#tab-equipment" onclick="changeManagerShowTab('equipment')">设备管理</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <!--计算tab页面-->
+                            <div role="tabpanel" id="tab-calculate" class="tab-pane active">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <!-- 生产目标 -->
+                                            <div class="ibox" id="productInput">
+                                                <div class="ibox-title">
+                                                    <h5>生产目标 </h5>
+                                                </div>
+                                                <div class="ibox-content" id="productInputContent">
+                                                    <div class="form-group">
+                                                        <label class="font-normal">物品</label>
+                                                        <datalist id="item_list"></datalist>
+                                                        <div>
+                                                            <label for="needs_item">输入框: </label>
+                                                            <input style="width: 30%; margin-left: 4px;"
+                                                                   list="item_list" size="5" id="needs_item" value="电磁矩阵"/>
+                                                            <button type="button" class="btn btn-default"
+                                                                    data-toggle="modal" onclick="initSelectDialog()"
+                                                                    data-target="#inputSelectDialog">弹窗选择
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <!--弹窗选择的模态弹窗-->
+                                                    <div class="modal inmodal fade" id="inputSelectDialog" tabindex="-1"
+                                                         role="dialog" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <div class="modal-content">
+
+                                                                <div class="modal-body">
+                                                                    <button type="button" class="close"
+                                                                            id="selectDialogClickClose"
+                                                                            data-dismiss="modal">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                    <!--内容填充-->
+                                                                    <div class="tabs-container">
+                                                                        <ul class="nav nav-tabs" role="tablist">
+                                                                            <li><a class="nav-link active" data-toggle="tab" href="#select-material">材料</a></li>
+                                                                            <li><a class="nav-link" data-toggle="tab" href="#select-build">建筑</a></li>
+                                                                            <li><a class="nav-link" data-toggle="tab" href="#select-custom">其它</a></li>
+                                                                        </ul>
+                                                                        <div class="tab-content">
+                                                                            <div role="tabpanel" id="select-material" class="tab-pane active">
+                                                                                <div class="panel-body" id="selectGridTableMaterial" style="background-color: #0a568c"></div>
+                                                                            </div>
+                                                                            <div role="tabpanel" id="select-build" class="tab-pane">
+                                                                                <div class="panel-body" id="selectGridTableBuild" style="background-color: #0a568c"></div>
+                                                                            </div>
+                                                                            <div role="tabpanel" id="select-custom" class="tab-pane">
+                                                                                <div class="panel-body" id="selectGridTableCustom" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px;"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="font-normal" for="needs_amount">数量:</label>
+                                                        <div style="display: inline-block; margin-left: 4px;">
+                                                            <input type="text" size="6" id="needs_amount" value="60"
+                                                                   name="demo1"/>个/min
+                                                        </div>
+                                                        <button class="ladda-button btn btn-info"
+                                                                style="margin-left:10px" onclick="clickCalculateBtn()"
+                                                                data-style="slide-right">单独计算
+                                                        </button>
+                                                        <button class="ladda-button btn btn-info"
+                                                                style="margin-left:10px" onclick="addCalculateBtn()"
+                                                                data-style="slide-right">累加计算
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="font-normal"
+                                                               for="need_equipment_count">设备数量:</label>
+                                                        <div style="display: inline-block; margin-left: 4px;">
+                                                            <input type="number" size="6" id="need_equipment_count"
+                                                                   value="1"/>个
+                                                        </div>
+                                                        <button class="ladda-button btn btn-info"
+                                                                style="margin-left:10px" onclick="clickEquCalBtn()"
+                                                                data-style="slide-right">单独计算
+                                                        </button>
+                                                        <button class="ladda-button btn btn-info"
+                                                                style="margin-left:10px" onclick="clickEquAddCalBtn()"
+                                                                data-style="slide-right">累加计算
+                                                        </button>
+                                                    </div>
+                                                    <div class="row m-t-md">
+                                                        <div class="col-sm-12">
+                                                            <button class="ladda-button btn btn-danger" id="resetNeeds"
+                                                                    onclick="resetNeeds('all')" data-style="slide-left">
+                                                                重置
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-8">
+                                            <!--计算参数设置-->
+                                            <div class="ibox" id="calValueSetting">
+                                                <div class="ibox-title">
+                                                    <h5>计算参数设置</h5>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div style="display: flex;">
+                                                        <div>
+                                                            <!--  熔炉设置  -->
+                                                            <div class="calConfigSetting">
+                                                                <div style="width:70px; display: inline-block;">熔炉：</div>
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/电弧熔炉.png" id="冶炼设备-1"
+                                                                     onclick="calConfigChange(this.id)" alt="电弧熔炉">
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/位面熔炉.png" id="冶炼设备-2"
+                                                                     onclick="calConfigChange(this.id)" alt="位面熔炉">
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/负熵熔炉.png" id="冶炼设备-3"
+                                                                     onclick="calConfigChange(this.id)" alt="负熵熔炉">
+                                                            </div>
+                                                            <!--  制造台设置  -->
+                                                            <div class="calConfigSetting" style="margin-top: 10px;">
+                                                                <div style="width:70px; display: inline-block;">制造台：</div>
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/制造台MK.Ⅰ.png" id="制造台-1"
+                                                                     onclick="calConfigChange(this.id)" alt="制造台MK.Ⅰ">
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/制造台MK.Ⅱ.png" id="制造台-2"
+                                                                     onclick="calConfigChange(this.id)" alt="制造台MK.Ⅱ">
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/制造台MK.Ⅲ.png" id="制造台-3"
+                                                                     onclick="calConfigChange(this.id)" alt="制造台MK.Ⅲ">
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/重组式制造台.png" id="制造台-4"
+                                                                     onclick="calConfigChange(this.id)" alt="重组式制造台">
+                                                            </div>
+                                                            <!--  化工厂设置  -->
+                                                            <div class="calConfigSetting" style="margin-top: 10px;">
+                                                                <div style="width:70px; display: inline-block;">化工厂：</div>
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/化工厂.png" id="化工设备-1"
+                                                                     onclick="calConfigChange(this.id)" alt="化工厂">
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/量子化工厂.png" id="化工设备-2"
+                                                                     onclick="calConfigChange(this.id)" alt="量子化工厂">
+                                                            </div>
+                                                            <!--  研究站设置  -->
+                                                            <div class="calConfigSetting" style="margin-top: 10px;">
+                                                                <div style="width:70px; display: inline-block;">研究站：</div>
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/研究站.png" id="科研设备-1"
+                                                                     onclick="calConfigChange(this.id)" alt="研究站">
+                                                                <img class="image" style="height: 40px; width: 40px"
+                                                                     src="./img/game/dsp/自演化研究站.png" id="科研设备-2"
+                                                                     onclick="calConfigChange(this.id)" alt="自演化研究站">
+                                                            </div>
+                                                        </div>
+                                                        <div style="margin-left: 20px;">
+                                                            <!--增产剂-->
+                                                            <div class="calConfigSetting_buff" style="margin-top: 10px;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <th rowspan="3" class="merged-cell" style="width:70px;">增产剂</th>
+                                                                        <td>
+                                                                            <img class="image" style="height: 40px; width: 40px;"
+                                                                                 src="./img/game/dsp/增产剂MK.Ⅰ.png" alt="增产剂MK.Ⅰ">
+                                                                        </td>
+                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                            onclick="handleClickDspBuff('加速-1.25')">加速:25%
+                                                                        </td>
+                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                            onclick="handleClickDspBuff('增产-1.125')">增产:12.5%
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <img class="image" style="height: 40px; width: 40px;"
+                                                                                 src="./img/game/dsp/增产剂MK.Ⅱ.png" alt="增产剂MK.Ⅱ">
+                                                                        </td>
+                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                            onclick="handleClickDspBuff('加速-1.5')">加速:50%
+                                                                        </td>
+                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                            onclick="handleClickDspBuff('增产-1.2')">增产:20%
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td><img class="image" style="height: 40px; width: 40px;"
+                                                                                 src="./img/game/dsp/增产剂MK.Ⅲ.png" alt="增产剂MK.Ⅲ"></td>
+                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                            onclick="handleClickDspBuff('加速-2')">加速:100%
+                                                                        </td>
+                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                            onclick="handleClickDspBuff('增产-1.25')">增产:25%
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <!--计算结果显示-->
+                                            <div class="ibox" id="calResult">
+                                                <div class="ibox-title">
+                                                    <h5>计算结果</h5>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div class="row m-t-sm">
+                                                        <div class="col-lg-12">
+                                                            <div class="panel blank-panel">
+                                                                <div class="panel-heading" id="calResultHead">
+                                                                    <div class="panel-options">
+                                                                        <ul class="nav nav-tabs">
+                                                                            <li>
+                                                                                <a class="nav-link active" href="#tabTreeList" onclick="changeResultShowTab('tree')" data-toggle="tab">
+                                                                                    树形列表
+                                                                                    <span style="font-size:10px;">(适用于单独计算)</span>
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="nav-link" href="#tabLevelTable" onclick="changeResultShowTab('depthTable')" data-toggle="tab">
+                                                                                    层次表格
+                                                                                    <span style="font-size:10px;">(适用于累加计算)</span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="panel-body">
+                                                                    <div class="tab-content">
+                                                                        <div class="tab-pane active" id="tabTreeList">
+                                                                            <div class="feed-activity-list">
+                                                                                <ul class="tree" id="ul-">
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tab-pane" id="tabLevelTable">
+                                                                            <table class="table table-striped">
+                                                                                <thead>
+                                                                                <tr>
+                                                                                    <th>层级</th>
+                                                                                    <th>物品</th>
+                                                                                    <th>物品数量</th>
+                                                                                    <th>所需设备</th>
+                                                                                    <th>设备数量</th>
+                                                                                    <th>配方</th>
+                                                                                    <!-- <th> todo 原料数量</th> -->
+                                                                                </tr>
+                                                                                </thead>
+                                                                                <tbody id="material_table">
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--配方管理tab页面-->
+                            <div role="tabpanel" id="tab-recipe" class="tab-pane">
+                                <div class="panel-body col-lg-12">
+                                    <script src="./js/manager/recipe_manager.js"></script>
+
+                                    <label for="recipeSearchInput">搜索框：</label>
+                                    <input type="text" id="recipeSearchInput" oninput="updateRecipeTable(this.value)">
+
+                                    <button type="button" class="btn btn-primary" style="margin-left: 10px;"
+                                            data-toggle="modal" data-target="#addRecipeModal"
+                                            onclick="addRecipeEquSelect()">
+                                        添加配方
+                                    </button>
+
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>目标产物</th>
+                                            <th>多余产物</th>
+                                            <th>原料</th>
+                                            <th>用时(单位：秒)</th>
+                                            <th>设备类型</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="recipeTableBody"></tbody>
+                                    </table>
+
+                                    <!-- 添加表单弹窗 -->
+                                    <div class="modal fade" id="addRecipeModal" tabindex="-1" role="dialog"
+                                         aria-labelledby="addRecipeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="addRecipeModalLabel">添加数据</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form id="addForm">
+                                                        <div class="form-group">
+                                                            <label for="timeInput">用时</label>
+                                                            <input type="number" class="form-control" id="timeInput"
+                                                                   step="0.1" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="addRecipeEquSelect">设备类型: </label>
+                                                            <select id="addRecipeEquSelect">
+                                                                <!-- 动态生成设备类型选项 -->
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>产物</label>
+                                                            <div id="productList">
+                                                                <!-- 产物列表将动态添加 -->
+                                                            </div>
+                                                            <button type="button" class="btn btn-primary"
+                                                                    id="addProductBtn"
+                                                                    onclick="addProductRow('productList')">新增产物
+                                                            </button>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>原材料</label>
+                                                            <div id="materialList">
+                                                                <!-- 原材料列表将动态添加 -->
+                                                            </div>
+                                                            <button type="button" class="btn btn-primary"
+                                                                    id="addMaterialBtn"
+                                                                    onclick="addProductRow('materialList')">新增原材料
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">取消
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                                            onclick="saveAddRecipeData()">保存
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 编辑弹窗 -->
+                                    <div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+                                         aria-labelledby="editModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editModalLabel">编辑配方</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div style="display: none" id="editDataMaterial"></div>
+                                                    <div style="display: none" id="editDataId"></div>
+                                                    <form id="editForm">
+                                                        <div class="form-group">
+                                                            <label for="editTimeInput">用时</label>
+                                                            <input type="number" class="form-control" id="editTimeInput"
+                                                                   step="0.1" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="editRecipeEquSelect">设备类型</label>
+                                                            <select id="editRecipeEquSelect">
+                                                                <!-- 动态生成设备类型选项 -->
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>产物</label>
+                                                            <div id="editProductList">
+                                                                <!-- 编辑产物列表将动态添加 -->
+                                                            </div>
+                                                            <button type="button" class="btn btn-primary"
+                                                                    id="editAddProductBtn"
+                                                                    onclick="addProductRow('editProductList')">新增产物
+                                                            </button>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>原材料</label>
+                                                            <div id="editMaterialList">
+                                                                <!-- 编辑原材料列表将动态添加 -->
+                                                            </div>
+                                                            <button type="button" class="btn btn-primary"
+                                                                    id="editAddMaterialBtn"
+                                                                    onclick="addProductRow('editMaterialList')">新增原材料
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">取消
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary" data-dismiss="modal"
+                                                            onclick="saveEditData()">保存
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--设备管理配方页面-->
+                            <div role="tabpanel" id="tab-equipment" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="col-lg-12">
+                                        <script src="./js/manager/equipmentManager.js"></script>
+                                        <!-- 添加设备类型 -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#addEquTypeModal" onclick="equipmentBtnClick('show-add', 'device-type')">
+                                            添加设备类型
+                                        </button>
+
+                                        <!-- 添加设备 -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                style="margin-left: 10px;"
+                                                data-target="#addEquModal" onclick="updateDeviceTypeSelect();equipmentBtnClick('show-add', 'device');">添加设备
+                                        </button>
+
+                                        <!-- 管理设备类型 -->
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                style="margin-left: 10px;"
+                                                data-target="#editEquTypeModal" onclick="updateEquTypeManagerTable()">
+                                            管理设备类型
+                                        </button>
+
+                                        <!-- 设备表格 -->
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th>设备类型</th>
+                                                <th>设备名字</th>
+                                                <th>设备倍率</th>
+                                                <th>设备耗能</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="deviceTableBody">
+                                            <!-- 表格内容动态生成 -->
+                                            </tbody>
+                                        </table>
+
+                                        <!-- 添加设备类型弹窗 -->
+                                        <div class="modal fade" id="addEquTypeModal" tabindex="-1" role="dialog"
+                                             aria-labelledby="addEquTypeLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="addEquTypeLabel">添加设备类型</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form id="addEquTypeForm">
+                                                            <div class="form-group">
+                                                                <label for="deviceTypeNameInput">设备类型名字：</label>
+                                                                <input type="text" class="form-control"
+                                                                       id="deviceTypeNameInput"
+                                                                       required>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">取消
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary"
+                                                                data-dismiss="modal" onclick="addDeviceType()">保存
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 添加设备弹窗 -->
+                                        <div class="modal fade" id="addEquModal" tabindex="-1" role="dialog"
+                                             aria-labelledby="addEquLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="addEquLabel">添加设备</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form id="addEquForm">
+                                                            <div class="form-group">
+                                                                <label for="equTypeSelect">设备类型：</label>
+                                                                <select id="equTypeSelect">
+                                                                    <!-- 动态生成设备类型选项 -->
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="equNameInput">设备名字：</label>
+                                                                <input type="text" id="equNameInput"
+                                                                       placeholder="设备名字" value="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="equPowerInput">设备倍率：</label>
+                                                                <input type="number" id="equPowerInput"
+                                                                       class="form-control" step="0.1" value="1">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="equEnergyInput">设备耗能：</label>
+                                                                <input type="text" id="equEnergyInput"
+                                                                       class="form-control" step="0.1"
+                                                                       placeholder="设备耗能" value="">
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">取消
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary"
+                                                                data-dismiss="modal" onclick="addDevice()">保存
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 管理设备类型弹窗 -->
+                                        <div class="modal fade" id="editEquTypeModal" tabindex="-1" role="dialog"
+                                             aria-labelledby="editEquTypeLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="editEquTypeLabel">管理设备类型</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>设备类型</th>
+                                                                <th>保存</th>
+                                                                <th>删除</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <!--动态生成：设备类型输入框、有修改才显示的保存按钮、删除按钮 -->
+                                                            <tbody id="editEquBody">
+                                                            <!-- 表格内容动态生成 -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">关闭
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 编辑设备弹窗 -->
+                                        <div class="modal fade" id="editEquModal" tabindex="-1" role="dialog"
+                                             aria-labelledby="editEquTypeLabel" aria-hidden="true">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--统计侧拉栏-->
+<div class="theme-config" style="position: fixed;z-index: 9999;">
+    <div class="theme-config-box">
+        <div class="spin-icon">
+            总计
+        </div>
+        <div class="skin-settings" style="background-color: #2f4050;">
+            <div style="margin-top: 10px; margin-left: 10px; color: #a7b1c2;">
+                <div>
+                    原材料总计：
+                    <ul id="sourceList">
+                    </ul>
+                </div>
+                <!-- 产物 -->
+                <div style="margin-top: 20px;">
+                    产物：
+                    <ul id="surplusList">
+                    </ul>
+                </div>
+                <div>
+                    设备总计：
+                    <ul id="totalList">
+                    </ul>
+                </div>
+                <div>
+                    电量总计：
+                    <ul id="energyList">
+                    </ul>
+                </div>
+                <div>
+                    增产剂总计：
+                    <ul id="buffList">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!--幸福工厂游戏数据-->
+<script src="./data/data_dsp.js"></script>
+<script src="js/officialGameJs/dsp/initGameDsp.js"></script>
+
+<!--总计侧拉栏-->
+<script>
+    $('.spin-icon').click(function () {
+        $(".theme-config-box").toggleClass("show");
+    });
+</script>
+</body>
+
+</html>
