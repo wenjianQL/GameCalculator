@@ -6,7 +6,7 @@
  * @param number 数量
  */
 function materialCalculate(type, name, number) {
-    _hmt.push(['_trackEvent', 'calculate', type, name, number]);
+    // _hmt.push(['_trackEvent', 'calculate', type, name, number]);
 }
 
 /**
@@ -16,18 +16,18 @@ function materialCalculate(type, name, number) {
  * @param name 名字
  */
 function calValueChange(type, name) {
-    _hmt.push(['_trackEvent', 'calValueChange', type, name]);
+    // _hmt.push(['_trackEvent', 'calValueChange', type, name]);
 }
 
 /**
  * 树形列表-增产剂修改
  */
 function treeListBuffChange(type, value) {
-    _hmt.push(['_trackEvent', 'treeListBuffChange', type, value]);
+    // _hmt.push(['_trackEvent', 'treeListBuffChange', type, value]);
 }
 
 function treeListRecipeChange(type, value) {
-    _hmt.push(['_trackEvent', 'treeListRecipeChange', type, "" + value]);
+    // _hmt.push(['_trackEvent', 'treeListRecipeChange', type, "" + value]);
 }
 
 /**
@@ -35,7 +35,7 @@ function treeListRecipeChange(type, value) {
  * @param type tree、depthTable
  */
 function changeResultShowTab(type) {
-    _hmt.push(['_trackEvent', 'changeResultShowTab', type]);
+    // _hmt.push(['_trackEvent', 'changeResultShowTab', type]);
 }
 
 /**
@@ -43,7 +43,7 @@ function changeResultShowTab(type) {
  * @param type cal、recipe、equipment
  */
 function changeManagerShowTab(type) {
-    _hmt.push(['_trackEvent', 'changeManagerShowTab', type]);
+    // _hmt.push(['_trackEvent', 'changeManagerShowTab', type]);
 }
 
 /**
@@ -51,7 +51,7 @@ function changeManagerShowTab(type) {
  * @param type add、edit、delete
  */
 function recipeBtnClick(type) {
-    _hmt.push(['_trackEvent', 'recipeBtnClick', type]);
+    // _hmt.push(['_trackEvent', 'recipeBtnClick', type]);
 }
 
 /**
@@ -60,5 +60,5 @@ function recipeBtnClick(type) {
  * @param operation 具体的类型 device-type
  */
 function equipmentBtnClick(type, operation = "") {
-    _hmt.push(['_trackEvent', 'equipmentBtnClick', type, operation]);
+    // _hmt.push(['_trackEvent', 'equipmentBtnClick', type, operation]);
 }
