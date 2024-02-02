@@ -9,6 +9,8 @@ function showTreeList() {
     for (let path in newResultData) {
         generateTreeHtml(newResultData, path);
     }
+
+    refreshTreeListData();
 }
 
 function generateTreeHtml(data, path) {
@@ -86,13 +88,16 @@ function generateTreeHtml(data, path) {
 
     let details = document.createElement("details");
     details.id = "details-" + path;
+    details.open = item["isShow"] === true
     if (item["是否计算"] === true) {
         summary.style.textDecoration = "none";
-        details.open = true;
     } else {
         summary.style.textDecoration = "line-through";
-        details.open = false;
     }
+
+    details.addEventListener('toggle', function() {
+        newResultData[path]["isShow"] = details.open;
+    });
 
     details.appendChild(summary);
     details.appendChild(ul);
@@ -216,11 +221,14 @@ function show_source_material_list() {
         let path = sourceMaterialList[i];
         let item = newResultData[path];
         // 从item中获取 物品 和 数量， 并以物品：数量的形式存到source_data中。要注意source_data中是否以存在物品了，如果存在，则数量累加。
-        if (source_data.hasOwnProperty(item['material'])) {
-            source_data[item['material']] += item['number'];
-        } else {
-            source_data[item['material']] = item['number'];
+        if (item["number"]>0) {
+            if (source_data.hasOwnProperty(item['material'])) {
+                source_data[item['material']] += item['number'];
+            } else {
+                source_data[item['material']] = item['number'];
+            }
         }
+
     }
     // 将原材料总计结果显示到页面上
     show_source_material_list_to_pager();
@@ -303,4 +311,83 @@ function show_equipment_in_tree_list_mode() {
     energy_str += "<li title=\"实际机器数量 * 机器耗电量。\">标准耗电量：" + standard_energy_count.toFixed(2) + "</li>";
     let energyListNode = document.getElementById("energyList");
     energyListNode.innerHTML = energy_str;
+}
+
+function refreshTreeListData()
+{
+    const treeData = convertToJsTreeFormat(newResultData);
+    // 修改deptTree的数据为demoData
+    $('#deptTree').jstree(true).settings.core.data = treeData.children;
+    // // 重新加载数据
+    $('#deptTree').jstree(true).refresh();
+
+    function convertToJsTreeFormat(data) {
+        let treeData = {};
+
+        // 循环计算结果
+        for (const key in data) {
+
+            // 不计算
+            if (data[key]["是否计算"] === false) {
+                continue;
+            }
+
+            const path = key.split('_');
+            let currentNode = treeData;
+            for (let i = 0; i < path.length; i++) {
+                let sourcePath = path.slice(0, i + 1).join('_');
+                // 物品数量
+                let num = data[sourcePath]["number"];
+                // 设备数量
+                let equNumber = data[sourcePath]["equNumber"];
+                // 设备名字
+                let equName = data[sourcePath]["equName"];
+                // 材料名字
+                const pathName = path[i].replace("~", "");
+                const matName = pathName.split('`')[0];
+                let nodeName = num + "*" + matName + ", " + equNumber.toFixed(2) + "*" + equName;
+                if (equName === undefined || equName === "") {
+                    nodeName = num + "*" + matName;
+                }
+                if (!currentNode.children) {
+                    currentNode.children = [];
+                }
+                const existingNode = currentNode.children.find(function (node) {
+                    return node.path === sourcePath;
+                });
+                if (existingNode) {
+                    currentNode = existingNode;
+                } else {
+                    const newNode = {
+                        "path": sourcePath,
+                        "icon": `./img/game/dsp/px_16/${matName}.png`,
+                        "text": nodeName,
+                        "checked": false,
+                        "attributes": null,
+                        "state": {
+                            "opened": true
+                        },
+                        "children": []
+                    };
+                    currentNode.children.push(newNode);
+                    currentNode = newNode;
+                }
+            }
+        }
+        return treeData;
+    }
+}
+
+let scale = 1; // 初始缩放比例
+
+function zoomIn() {
+    const deptTree = document.getElementById("deptTree");
+    scale += 0.1;
+    deptTree.style.transform = "scale(" + scale + ")";
+}
+
+function zoomOut() {
+    const deptTree = document.getElementById("deptTree");
+    scale -= 0.1;
+    deptTree.style.transform = "scale(" + scale + ")";
 }

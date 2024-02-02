@@ -48,6 +48,7 @@ function calItem(path, material, num) {
             "equType": "",
             "equIndex": 0,
             "equNumber": 0,
+            "isShow": true
         };
     }
 

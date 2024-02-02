@@ -86,13 +86,16 @@ function generateTreeHtml(data, path) {
 
     let details = document.createElement("details");
     details.id = "details-" + path;
+    details.open = item["isShow"] === true
     if (item["是否计算"] === true) {
         summary.style.textDecoration = "none";
-        details.open = true;
     } else {
         summary.style.textDecoration = "line-through";
-        details.open = false;
     }
+
+    details.addEventListener('toggle', function() {
+        newResultData[path]["isShow"] = details.open;
+    });
 
     details.appendChild(summary);
     details.appendChild(ul);

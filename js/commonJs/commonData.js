@@ -25,6 +25,8 @@ let disablePathList = []
 // 用于在进行计算时，从计算参数中取选中的设备。
 let calValueMap = {}
 
+// 传送带运力
+let beltSize = 360;
 
 
 

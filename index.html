@@ -36,6 +36,11 @@
 
     <!--dsp专有-->
     <script src="./js/officialGameJs/dsp/dsp.js"></script>
+
+    <!--树形列表-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <link href="css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <script src="js/plugins/jsTree/jstree.min.js"></script>
 </head>
 
 <body>
@@ -95,7 +100,7 @@
                             <div role="tabpanel" id="tab-calculate" class="tab-pane active">
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-5">
                                             <!-- 生产目标 -->
                                             <div class="ibox" id="productInput">
                                                 <div class="ibox-title">
@@ -183,6 +188,16 @@
                                                                 data-style="slide-right">累加计算
                                                         </button>
                                                     </div>
+
+                                                    <div class="toggle-switch">
+                                                        <input type="checkbox" id="switch-circle-cal" />
+                                                        <label for="switch-circle-cal"></label>
+                                                        <div class="text">开启循环计算<span style="margin-left: 10px;">需要先手动投入部分抵消原料</span></div>
+                                                        <span>如： 1*精炼油 + 2*氢 -> 1*高能石墨 + 3氢  => 1*精炼油 -> 1*高能石墨 + 1氢</span>
+                                                        <br>
+
+                                                    </div>
+
                                                     <div class="row m-t-md">
                                                         <div class="col-sm-12">
                                                             <button class="ladda-button btn btn-danger" id="resetNeeds"
@@ -195,105 +210,138 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-lg-8">
+                                        <div class="col-lg-4">
                                             <!--计算参数设置-->
                                             <div class="ibox" id="calValueSetting">
                                                 <div class="ibox-title">
-                                                    <h5>计算参数设置</h5>
+                                                    <h5>设备设置</h5>
+                                                </div>
+                                                <div class="ibox-content">
+                                                    <div>
+                                                        <!--  熔炉设置  -->
+                                                        <div class="calConfigSetting">
+                                                            <div style="width:70px; display: inline-block;">熔炉：</div>
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/电弧熔炉.png" id="冶炼设备-1"
+                                                                 onclick="calConfigChange(this.id)" alt="电弧熔炉">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/位面熔炉.png" id="冶炼设备-2"
+                                                                 onclick="calConfigChange(this.id)" alt="位面熔炉">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/负熵熔炉.png" id="冶炼设备-3"
+                                                                 onclick="calConfigChange(this.id)" alt="负熵熔炉">
+                                                        </div>
+                                                        <!--  制造台设置  -->
+                                                        <div class="calConfigSetting" style="margin-top: 10px;">
+                                                            <div style="width:70px; display: inline-block;">制造台：</div>
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/制造台MK.Ⅰ.png" id="制造台-1"
+                                                                 onclick="calConfigChange(this.id)" alt="制造台MK.Ⅰ">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/制造台MK.Ⅱ.png" id="制造台-2"
+                                                                 onclick="calConfigChange(this.id)" alt="制造台MK.Ⅱ">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/制造台MK.Ⅲ.png" id="制造台-3"
+                                                                 onclick="calConfigChange(this.id)" alt="制造台MK.Ⅲ">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/重组式制造台.png" id="制造台-4"
+                                                                 onclick="calConfigChange(this.id)" alt="重组式制造台">
+                                                        </div>
+                                                        <!--  化工厂设置  -->
+                                                        <div class="calConfigSetting" style="margin-top: 10px;">
+                                                            <div style="width:70px; display: inline-block;">化工厂：</div>
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/化工厂.png" id="化工设备-1"
+                                                                 onclick="calConfigChange(this.id)" alt="化工厂">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/量子化工厂.png" id="化工设备-2"
+                                                                 onclick="calConfigChange(this.id)" alt="量子化工厂">
+                                                        </div>
+                                                        <!--  研究站设置  -->
+                                                        <div class="calConfigSetting" style="margin-top: 10px;">
+                                                            <div style="width:70px; display: inline-block;">研究站：</div>
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/研究站.png" id="科研设备-1"
+                                                                 onclick="calConfigChange(this.id)" alt="研究站">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/自演化研究站.png" id="科研设备-2"
+                                                                 onclick="calConfigChange(this.id)" alt="自演化研究站">
+                                                        </div>
+                                                        <!--  传送带设置  -->
+                                                        <div class="calConfigSetting" style="margin-top: 10px;">
+                                                            <div style="width:70px; display: inline-block;">
+                                                                传送带：
+                                                                <h6>需重新点击计算</h6>
+                                                            </div>
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/传送带.png" id="传送带-1"
+                                                                 onclick="changeBelt(this.id)" alt="传送带">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/高速传送带.png" id="传送带-2"
+                                                                 onclick="changeBelt(this.id)" alt="高速传送带">
+                                                            <img class="image" style="height: 40px; width: 40px"
+                                                                 src="./img/game/dsp/极速传送带.png" id="传送带-3"
+                                                                 onclick="changeBelt(this.id)" alt="高速传送带">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-3">
+                                            <div class="ibox">
+                                                <div class="ibox-title">
+                                                    <h5>增产剂设置</h5>
                                                 </div>
                                                 <div class="ibox-content">
                                                     <div style="display: flex;">
-                                                        <div>
-                                                            <!--  熔炉设置  -->
-                                                            <div class="calConfigSetting">
-                                                                <div style="width:70px; display: inline-block;">熔炉：</div>
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/电弧熔炉.png" id="冶炼设备-1"
-                                                                     onclick="calConfigChange(this.id)" alt="电弧熔炉">
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/位面熔炉.png" id="冶炼设备-2"
-                                                                     onclick="calConfigChange(this.id)" alt="位面熔炉">
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/负熵熔炉.png" id="冶炼设备-3"
-                                                                     onclick="calConfigChange(this.id)" alt="负熵熔炉">
-                                                            </div>
-                                                            <!--  制造台设置  -->
-                                                            <div class="calConfigSetting" style="margin-top: 10px;">
-                                                                <div style="width:70px; display: inline-block;">制造台：</div>
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/制造台MK.Ⅰ.png" id="制造台-1"
-                                                                     onclick="calConfigChange(this.id)" alt="制造台MK.Ⅰ">
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/制造台MK.Ⅱ.png" id="制造台-2"
-                                                                     onclick="calConfigChange(this.id)" alt="制造台MK.Ⅱ">
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/制造台MK.Ⅲ.png" id="制造台-3"
-                                                                     onclick="calConfigChange(this.id)" alt="制造台MK.Ⅲ">
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/重组式制造台.png" id="制造台-4"
-                                                                     onclick="calConfigChange(this.id)" alt="重组式制造台">
-                                                            </div>
-                                                            <!--  化工厂设置  -->
-                                                            <div class="calConfigSetting" style="margin-top: 10px;">
-                                                                <div style="width:70px; display: inline-block;">化工厂：</div>
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/化工厂.png" id="化工设备-1"
-                                                                     onclick="calConfigChange(this.id)" alt="化工厂">
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/量子化工厂.png" id="化工设备-2"
-                                                                     onclick="calConfigChange(this.id)" alt="量子化工厂">
-                                                            </div>
-                                                            <!--  研究站设置  -->
-                                                            <div class="calConfigSetting" style="margin-top: 10px;">
-                                                                <div style="width:70px; display: inline-block;">研究站：</div>
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/研究站.png" id="科研设备-1"
-                                                                     onclick="calConfigChange(this.id)" alt="研究站">
-                                                                <img class="image" style="height: 40px; width: 40px"
-                                                                     src="./img/game/dsp/自演化研究站.png" id="科研设备-2"
-                                                                     onclick="calConfigChange(this.id)" alt="自演化研究站">
-                                                            </div>
-                                                        </div>
-                                                        <div style="margin-left: 20px;">
-                                                            <!--增产剂-->
+                                                        <!--增产剂-->
+                                                        <div class="calConfigSetting_buff" style="margin-top: 10px;">
+                                                            <table>
+                                                                <tr>
+                                                                    <th rowspan="3" class="merged-cell" style="width:70px;">增产剂</th>
+                                                                    <td>
+                                                                        <img class="image" style="height: 40px; width: 40px;"
+                                                                             src="./img/game/dsp/增产剂MK.Ⅰ.png" alt="增产剂MK.Ⅰ">
+                                                                    </td>
+                                                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                        onclick="handleClickDspBuff('加速-1.25')">加速:25%
+                                                                    </td>
+                                                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                        onclick="handleClickDspBuff('增产-1.125')">增产:12.5%
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <img class="image" style="height: 40px; width: 40px;"
+                                                                             src="./img/game/dsp/增产剂MK.Ⅱ.png" alt="增产剂MK.Ⅱ">
+                                                                    </td>
+                                                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                        onclick="handleClickDspBuff('加速-1.5')">加速:50%
+                                                                    </td>
+                                                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                        onclick="handleClickDspBuff('增产-1.2')">增产:20%
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><img class="image" style="height: 40px; width: 40px;"
+                                                                             src="./img/game/dsp/增产剂MK.Ⅲ.png" alt="增产剂MK.Ⅲ"></td>
+                                                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                        onclick="handleClickDspBuff('加速-2')">加速:100%
+                                                                    </td>
+                                                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                                                        onclick="handleClickDspBuff('增产-1.25')">增产:25%
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!--add text, it id is showBuffText-->
                                                             <div class="calConfigSetting_buff" style="margin-top: 10px;">
-                                                                <table>
-                                                                    <tr>
-                                                                        <th rowspan="3" class="merged-cell" style="width:70px;">增产剂</th>
-                                                                        <td>
-                                                                            <img class="image" style="height: 40px; width: 40px;"
-                                                                                 src="./img/game/dsp/增产剂MK.Ⅰ.png" alt="增产剂MK.Ⅰ">
-                                                                        </td>
-                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
-                                                                            onclick="handleClickDspBuff('加速-1.25')">加速:25%
-                                                                        </td>
-                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
-                                                                            onclick="handleClickDspBuff('增产-1.125')">增产:12.5%
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <img class="image" style="height: 40px; width: 40px;"
-                                                                                 src="./img/game/dsp/增产剂MK.Ⅱ.png" alt="增产剂MK.Ⅱ">
-                                                                        </td>
-                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
-                                                                            onclick="handleClickDspBuff('加速-1.5')">加速:50%
-                                                                        </td>
-                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
-                                                                            onclick="handleClickDspBuff('增产-1.2')">增产:20%
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><img class="image" style="height: 40px; width: 40px;"
-                                                                                 src="./img/game/dsp/增产剂MK.Ⅲ.png" alt="增产剂MK.Ⅲ"></td>
-                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
-                                                                            onclick="handleClickDspBuff('加速-2')">加速:100%
-                                                                        </td>
-                                                                        <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
-                                                                            onclick="handleClickDspBuff('增产-1.25')">增产:25%
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
+                                                                全局增产剂效果：
+                                                                <span id="showBuffText" style="font-size: 12px; color: red;">无</span>
+                                                            </div>
+                                                            <!--add button, it click function is clearAllBuff-->
+                                                            <div class="calConfigSetting_buff" style="margin-top: 10px;">
+                                                                <button class="btn btn-danger" onclick="clearAllBuff()">清除所有增产剂</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -307,6 +355,8 @@
                                             <div class="ibox" id="calResult">
                                                 <div class="ibox-title">
                                                     <h5>计算结果</h5>
+                                                    <a style="margin-left: 20px;" href="https://txc.qq.com/products/605145" target="_blank">bug/建议反馈</a>
+                                                    <a style="margin-left: 20px;" href="https://space.bilibili.com/471353500" target="_blank">作者联系方式</a>
                                                 </div>
                                                 <div class="ibox-content">
                                                     <div class="row m-t-sm">
@@ -333,9 +383,24 @@
                                                                 <div class="panel-body">
                                                                     <div class="tab-content">
                                                                         <div class="tab-pane active" id="tabTreeList">
-                                                                            <div class="feed-activity-list">
-                                                                                <ul class="tree" id="ul-">
-                                                                                </ul>
+                                                                            <div class="row">
+                                                                                <div class="col-lg-6">
+                                                                                    <div class="feed-activity-list">
+                                                                                        <ul class="tree" id="ul-">
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-lg-6">
+                                                                                    <h6>这里没弄懂怎么调大小，所以先这样放两个按钮有需要的自己调。</h6>
+                                                                                    <button onclick="zoomIn()">放大</button>
+                                                                                    <button onclick="zoomOut()">缩小</button>
+
+                                                                                    <div  style="overflow: auto;">
+                                                                                        <div id="deptTree" style="transform-origin: top left; margin-top: 20px;">
+                                                                                            <!-- deptTree 内容 -->
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="tab-pane" id="tabLevelTable">
@@ -348,6 +413,8 @@
                                                                                     <th>所需设备</th>
                                                                                     <th>设备数量</th>
                                                                                     <th>配方</th>
+                                                                                    <th>增产剂</th>
+                                                                                    <th>是否计算</th>
                                                                                     <!-- <th> todo 原料数量</th> -->
                                                                                 </tr>
                                                                                 </thead>
@@ -733,7 +800,6 @@
 </div>
 
 <!-- Mainly scripts -->
-<script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
@@ -751,6 +817,19 @@
 <script>
     $('.spin-icon').click(function () {
         $(".theme-config-box").toggleClass("show");
+    });
+
+    $(document).ready(function () {
+        $('#deptTree').jstree({
+            'core': {
+                'data': []
+            },
+            // "plugins" : [ "checkbox" ],
+            "checkbox" : {
+                "keep_selected_style" : false,
+                "three_state": true
+            }
+        });
     });
 </script>
 </body>

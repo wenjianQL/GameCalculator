@@ -253,6 +253,24 @@ try {
                     ]
                 }
             },
+            "belt": {
+                "useIndex": 0,
+                "data": [
+                    {
+                        "name": "传送带",
+                        "size": "360"
+                    },
+                    {
+                        "name": "高速传送带",
+                        "size": "720"
+                    },
+                    {
+                        "name": "极速传送带",
+                        "size": "1800"
+                    }
+
+                ]
+            },
             "recipe_data": {
                 "木材": {
                     "useIndex": 0,
@@ -546,7 +564,7 @@ try {
                             "recipe_name": "氢",
                             "material": "氢",
                             "equIndex": 0,
-                            "equType": "射线接收站",
+                            "equType": "粒子对撞机",
                             "增产剂": 0,
                             "增产剂效果": "无",
                             "productList": {
@@ -1241,7 +1259,6 @@ try {
                             "equType": "精炼设备",
                             "增产剂": 0,
                             "增产剂效果": "无",
-                            "onlySpeed": true,
                             "productList": {
                                 "精炼油": 2,
                                 "氢": 1
@@ -3366,7 +3383,7 @@ try {
                     "useIndex": 0,
                     "data": [
                         {
-                            "time": 0.5,
+                            "time": 2,
                             "recipe_name": "制造台MK.Ⅰ",
                             "material": "制造台MK.Ⅰ",
                             "equIndex": 0,
@@ -4471,4 +4488,16 @@ if (!buffLimit) {
 
     saveDataToLocalStorage();
     localStorage.setItem(SP_BUFF_LIMIT, "true");
+}
+
+// 数据修改
+try {
+    const tempItem = game_data["recipe_data"]["氢"]["data"][4];
+    if (tempItem && tempItem["time"] === 2 && tempItem["recipe_name"] === "氢") {
+        if (tempItem["sourceList"].hasOwnProperty("临界光子")) {
+            game_data["recipe_data"]["氢"]["data"][4]["equType"] = "粒子对撞机";
+        }
+    }
+} catch (e) {
+    console.log(e);
 }

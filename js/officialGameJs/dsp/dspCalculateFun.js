@@ -14,6 +14,19 @@ function cal_data() {
     for (const item in needs_list) {
         calItem("", item, needs_list[item]);
     }
+
+    // console.log(newResultData);
+}
+
+function splitCalItem(path, material, num) {
+    let remainingNum = num;
+    let index = 0;
+    while (remainingNum > 0) {
+        const currentNum = Math.min(remainingNum, beltSize);
+        calItem(path, material, currentNum, index); // 调用 calItem 方法处理当前数量的数据
+        remainingNum -= currentNum;
+        index++;
+    }
 }
 
 /**
@@ -21,19 +34,31 @@ function cal_data() {
  * @param path 上一级路径
  * @param material 要计算的材料
  * @param num 材料数量
+ * @param curI
  */
-function calItem(path, material, num) {
-    // console.log("path = " + path + ", " + material + ", " + num);
+function calItem(path, material, num, curI = -1) {
+
+    // 传送带运力
+    // 大于传送带运力，要拆分
+    if (Math.abs(num) > beltSize) {
+        splitCalItem(path, material, num);
+        return;
+    }
+
     let curPath;
     if (num < 0) {
         curPath = path === "" ? material : path + "_~" + material;
     } else {
         curPath = path === "" ? material : path + "_" + material;
     }
+    if (curI >= 0) {
+        curPath = curPath + "`" + curI;
+    }
     // 防止死循环崩溃
     if (curPath.split("_").length > 15) {
         return;
     }
+
     // 检查是否存在同路径的材料了
     if (newResultData.hasOwnProperty(curPath) && (Number(newResultData[curPath]["number"]) * num > 0)) {
         newResultData[curPath]["number"] = num;
@@ -51,6 +76,7 @@ function calItem(path, material, num) {
             "equType": "",
             "equIndex": 0,
             "equNumber": 0,
+            "isShow": true
         };
     }
 
@@ -91,12 +117,20 @@ function calItem(path, material, num) {
         item["电力消耗倍率"] = 1;
     }
 
-    // 从配方中获取产物列表
     let pList = Object.assign({}, recipe.productList);
-    // 从配方中获取原料列表
     let sList = Object.assign({}, recipe.sourceList);
+    let productList, sourceList;
 
-    const { proList: productList, sourceList: sourceList } = compareAndModifyLists(pList, sList);
+    // 如果开启循环计算
+    const circleCalSwitchNode = document.getElementById("switch-circle-cal")
+    if (circleCalSwitchNode.checked) {
+        const result = compareAndModifyLists(pList, sList);
+        productList = result.proList;
+        sourceList = result.sourceList;
+    } else {
+        productList = pList;
+        sourceList = sList;
+    }
 
     // 计算该配方中产出该物品的数量
     let amount = productList[material];

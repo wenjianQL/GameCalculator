@@ -199,7 +199,32 @@ function handleClickDspBuff(data) {
         item["增产剂效果"] = "无";
     }
 
+    // if newResultData not empty
+    if (Object.keys(newResultData).length !== 0) {
+        let buffText = "" + type + ":" + (((value - 1) * 100).toFixed(2) + "%");
+        // result = (value - 1) * 100,
+        let spanNode = document.getElementById("showBuffText");
+        if (spanNode) {
+            spanNode.textContent = buffText;
+        }
+    }
+
     // 刷新计算结果
+    refreshCalResultInValueChange();
+}
+
+function clearAllBuff() {
+    // find span, it id is showBuffText, set text is 无
+    let spanNode = document.getElementById("showBuffText");
+    if (spanNode) {
+        spanNode.textContent = "无";
+    }
+
+    for (let key in newResultData) {
+        let item = newResultData[key];
+        item["增产剂效果"] = "无";
+        item["增产剂"] = 0;
+    }
     refreshCalResultInValueChange();
 }
 
@@ -215,4 +240,41 @@ function resetCalValueSetting() {
             img.style.backgroundColor = "";
         });
     }
+}
+
+/**
+ * 修改传送带
+ * @param data
+ */
+function changeBelt(data) {
+    // 对data进行-分割，前面的是类型type、后面的是value
+    let splits = data.split("-");
+    let type = splits[0];
+    let value = splits[1];
+
+    // 找到计算参数配置的div
+    let divNode = document.getElementsByClassName("calConfigSetting");
+    // 从divNode中查找id为type对应内容开头的img标签。
+    for (let i = 0; i < divNode.length; i++) {
+        const imgTags = divNode[i].querySelectorAll(`img[id^="${type}"]`);
+        imgTags.forEach(img => {
+            // 设置背景颜色
+            if (img.id === data) {
+                img.style.backgroundColor = "red";
+            } else {
+                img.style.backgroundColor = "";
+            }
+        });
+    }
+
+    if (value === "1") {
+        beltSize = 360;
+    } else if (value === "2") {
+        beltSize = 720;
+    } else {
+        beltSize = 1800;
+    }
+
+    // 更新计算结果
+    // refreshCalResultInValueChange();
 }
