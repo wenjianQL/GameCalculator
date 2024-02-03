@@ -10,6 +10,9 @@ function cal_data() {
         return
     }
 
+    const beltSwitchNode = document.getElementById("beltSwitch")
+    beltSwitch = beltSwitchNode.checked;
+
     // 计算要生产的物品
     for (const item in needs_list) {
         calItem("", item, needs_list[item]);
@@ -40,7 +43,7 @@ function calItem(path, material, num, curI = -1) {
 
     // 传送带运力
     // 大于传送带运力，要拆分
-    if (Math.abs(num) > beltSize) {
+    if (beltSwitch && Math.abs(num) > beltSize) {
         splitCalItem(path, material, num);
         return;
     }

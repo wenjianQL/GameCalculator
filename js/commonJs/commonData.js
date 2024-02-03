@@ -27,6 +27,7 @@ let calValueMap = {}
 
 // 传送带运力
 let beltSize = 360;
+let beltSwitch = false;
 
 
 

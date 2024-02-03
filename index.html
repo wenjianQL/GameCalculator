@@ -192,13 +192,21 @@
                                                         </button>
                                                     </div>
 
-                                                    <div class="toggle-switch">
-                                                        <input type="checkbox" id="switch-circle-cal" />
-                                                        <label for="switch-circle-cal"></label>
-                                                        <div class="text">开启循环计算<span style="margin-left: 10px;">需要先手动投入部分抵消原料</span></div>
-                                                        <span>如： 1*精炼油 + 2*氢 -> 1*高能石墨 + 3氢  => 1*精炼油 -> 1*高能石墨 + 1氢</span>
-                                                        <br>
+                                                    <div style="display: block;">
+                                                        <div class="toggle-switch">
+                                                            <input type="checkbox" id="switch-circle-cal" />
+                                                            <label for="switch-circle-cal">开启循环计算</label>
+                                                            <div>
+                                                                <div>如： 1*精炼油 + 2*氢 -> 1*高能石墨 + 3氢  => 1*精炼油 -> 1*高能石墨 + 1氢</div>
+                                                                <div>需要手动投入2个氢进行激活</div>
+                                                            </div>
+                                                            <br>
+                                                        </div>
 
+                                                        <label class="switch">
+                                                            <input type="checkbox" id="beltSwitch">
+                                                            <span class="slider">传送带运力拆分</span>
+                                                        </label>
                                                     </div>
 
                                                     <div class="row m-t-md">
