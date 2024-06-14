@@ -11,14 +11,12 @@ function cal_data() {
     }
 
     const beltSwitchNode = document.getElementById("beltSwitch")
-    beltSwitch = beltSwitchNode.checked;
+    beltSwitch = beltSwitchNode.checked
 
     // 计算要生产的物品
     for (const item in needs_list) {
         calItem("", item, needs_list[item]);
     }
-
-    // console.log(newResultData);
 }
 
 function splitCalItem(path, material, num) {

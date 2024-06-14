@@ -26,8 +26,6 @@ function addYieldEnhancerSelectNode(node, path) {
         // speed-1.5
         let value = event.target.value.split('-')[1];
 
-        treeListBuffChange(id, value);
-
         if (event.target.value.startsWith("speed")) {
             newResultData[id]["增产剂效果"] = "speed"
             if (value === "1.25") {
@@ -74,7 +72,7 @@ function getYieldEnhancerSelectNode(path) {
     const nullOption = document.createElement("option");
     nullOption.id = "无";
     nullOption.value = "无";
-    nullOption.textContent = "增产剂效果：无";
+    nullOption.textContent = getTranslate("增产剂效果：无");
     select.appendChild(nullOption);
 
     if (result_item.hasOwnProperty("notBuff")) {
@@ -86,8 +84,9 @@ function getYieldEnhancerSelectNode(path) {
     for (const item of data) {
         const option = document.createElement("option");
         option.value = "speed-" + item["加速生成"];
-        option.textContent = item["名字"].substring(3) + "加速：+" + (Math.ceil((item["加速生成"] - 1) * 1000) / 10) + "%";
+        option.textContent = item["名字"].substring(3) + getTranslate("加速") +"：+" + (Math.ceil((item["加速生成"] - 1) * 1000) / 10) + "%";
         option.id = "speed-" + item["加速生成"];
+        console.log("加速生成"+item["名字"]);
         select.appendChild(option);
 
         if (type === "speed") {
@@ -102,7 +101,8 @@ function getYieldEnhancerSelectNode(path) {
         for (const item of data) {
             const option = document.createElement("option");
             option.value = "increase-" + item["额外产出"];
-            option.textContent = item["名字"].substring(3) + "产出：+" + (Math.ceil((item["额外产出"] - 1) * 1000) / 10) + "%";
+            option.textContent = item["名字"].substring(3) + getTranslate("增产") +"：+" + (Math.ceil((item["额外产出"] - 1) * 1000) / 10) + "%";
+            console.log("额外产出"+item["名字"]);
             option.id = "increase-" + item["额外产出"];
             select.appendChild(option);
 
@@ -213,10 +213,12 @@ function getTotalBuffNumber() {
     }
 
     let buffListUl = document.getElementById("buffList");
-    buffListUl.innerHTML = '';
-    for (let key in buffNumber) {
-        let li = document.createElement("li");
-        li.textContent = key + "：" + buffNumber[key].toFixed(1) + "个";
-        buffListUl.appendChild(li);
+    if (buffListUl) {
+        buffListUl.innerHTML = '';
+        for (let key in buffNumber) {
+            let li = document.createElement("li");
+            li.textContent = key + "：" + buffNumber[key].toFixed(1) + "个";
+            buffListUl.appendChild(li);
+        }
     }
 }

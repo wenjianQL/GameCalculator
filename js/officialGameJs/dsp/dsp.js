@@ -1,5 +1,5 @@
 let selectDialogMaterialTable = [
-    ['铁块', '铜块', '高纯硅块', '钛块', '石材', '高能石墨', '精炼油', '石墨烯', '塑料', '增产剂MK.Ⅰ', '增产剂MK.Ⅱ', '增产剂MK.Ⅲ', '机枪弹箱', '导弹组'],
+    ['铁块', '铜块', '高纯硅块', '钛块', '石材', '高能石墨', '精炼油', '石墨烯', '塑料', '增产剂 Mk.I', '增产剂 Mk.II', '增产剂 Mk.III', '机枪弹箱', '导弹组'],
     ['磁铁', '磁线圈', '晶格硅', '钛合金', '玻璃', '金刚石', '', '', '有机晶体', '燃烧单元', '爆破单元', '晶石爆破单元', '钛化弹箱', '超音速导弹组'],
     ['钢材', '电动机', '', '钛化玻璃', '棱镜', '', '', '钛晶石', '', '动力引擎', '推进器', '加力推进器', '超合金弹箱', '引力导弹组'],
     ['齿轮', '电磁涡轮', '硅石', '电路板', '引力透镜', '硫酸', '氢', '碳纳米管', '奇异物质', '配送运输机', '物流运输机', '星际物流运输船', '等离子胶囊', '炮弹组'],
@@ -13,7 +13,7 @@ let selectDialogBuildTable = [
     ['电力感应塔', '无线输电塔', '卫星配电站', '风力涡轮机', '火力发电机', '太阳能板', '蓄电器', '地热发电站', '微型聚变发电站', '能量枢纽', '射线接收站', '人造恒星', '', ''],
     ['传送带', '高速传送带', '极速传送带', '四向分流器', '自动集装机', '流速监测器', '喷涂机', '小型储物仓', '大型储物仓', '储液罐', '物流配送器', '行星内物流运输站', '星际物流运输站', '轨道采集器'],
     ['分拣器', '高速分拣器', '极速分拣器', '采矿机', '大型采矿机', '抽水机', '原油萃取站', '原油精炼厂', '分馏塔', '化工厂', '量子化工厂', '微型粒子对撞机', '', ''],
-    ['电弧熔炉', '位面熔炉', '负熵熔炉', '制造台MK.Ⅰ', '制造台MK.Ⅱ', '制造台MK.Ⅲ', '重组式制造台', '研究站', '自演化研究站', '电磁轨道弹射器', '垂直发射井', '', '', ''],
+    ['电弧熔炉', '位面熔炉', '负熵熔炉', '制造台 Mk.I', '制造台 Mk.II', '制造台 Mk.III', '重组式制造台', '矩阵研究站', '自演化研究站', '电磁轨道弹射器', '垂直发射井', '', '', ''],
     ['高斯机枪塔', '导弹防御塔', '聚爆加农炮', '高频激光塔', '磁化电浆炮', '战场分析基站', '信号塔', '行星护盾发生器', '', '', '', '', '', '']
 ]
 
@@ -43,7 +43,8 @@ function initSelectDialog() {
         spanNode.onclick = function () {
             let inputNode = document.getElementById("needs_item");
             if (inputNode) {
-                inputNode.value = this.textContent;
+                inputNode.textContent = this.textContent;
+                inputNode.value = getTranslate(this.textContent)
             }
             let closeButton = document.getElementById("selectDialogClickClose");
             if (closeButton) {
@@ -93,7 +94,8 @@ function loadGridTable(tableData, targetId) {
             cell.onclick = function () {
                 let inputNode = document.getElementById("needs_item");
                 if (inputNode) {
-                    inputNode.value = this.getAttribute("data-name");
+                    inputNode.textContent = this.getAttribute("data-name");
+                    inputNode.value = getTranslate(this.getAttribute("data-name"));
                 }
                 let closeButton = document.getElementById("selectDialogClickClose");
                 if (closeButton) {
@@ -119,7 +121,6 @@ function calConfigChange(data) {
     let splits = data.split("-");
     let type = splits[0];
     let value = splits[1];
-    calValueChange(type, value);
 
     calValueMap[type] = parseInt(value) - 1;
 
@@ -165,13 +166,13 @@ function handleClickDspBuff(data) {
     let splits = data.split("-");
     let type = splits[0];
     let value = parseFloat(splits[1]); // 将字符串转换为浮点数
-    calValueChange(type, value);
 
     for (let key in newResultData) {
         let item = newResultData[key];
         if (item.hasOwnProperty("notBuff")) {
             continue;
         }
+        console.log(type);
         if (type === "加速") {
             item["增产剂效果"] = "speed";
             if (value === 1.25) {
@@ -202,11 +203,21 @@ function handleClickDspBuff(data) {
     // if newResultData not empty
     if (Object.keys(newResultData).length !== 0) {
         let buffText = "" + type + ":" + (((value - 1) * 100).toFixed(2) + "%");
+        if (needTranslate) {
+            if (type === "增产") {
+                buffText = "increase" + ":" + (((value - 1) * 100).toFixed(2) + "%");
+            } else {
+                buffText = "speed" + ":" + (((value - 1) * 100).toFixed(2) + "%");
+            }
+        }
+        console.log(buffText);
         // result = (value - 1) * 100,
         let spanNode = document.getElementById("showBuffText");
         if (spanNode) {
             spanNode.textContent = buffText;
         }
+    } else {
+        console.log("newResultData is empty")
     }
 
     // 刷新计算结果
@@ -214,10 +225,9 @@ function handleClickDspBuff(data) {
 }
 
 function clearAllBuff() {
-    // find span, it id is showBuffText, set text is 无
     let spanNode = document.getElementById("showBuffText");
     if (spanNode) {
-        spanNode.textContent = "无";
+        spanNode.textContent = "";
     }
 
     for (let key in newResultData) {
@@ -226,20 +236,6 @@ function clearAllBuff() {
         item["增产剂"] = 0;
     }
     refreshCalResultInValueChange();
-}
-
-/**
- * 重置计算参数
- */
-function resetCalValueSetting() {
-    // find div if id is calConfigSetting
-    let divNode = document.getElementsByClassName("calConfigSetting");
-    for (let i = 0; i < divNode.length; i++) {
-        const imgTags = divNode[i].querySelectorAll("img");
-        imgTags.forEach(img => {
-            img.style.backgroundColor = "";
-        });
-    }
 }
 
 /**
@@ -274,7 +270,4 @@ function changeBelt(data) {
     } else {
         beltSize = 1800;
     }
-
-    // 更新计算结果
-    // refreshCalResultInValueChange();
 }

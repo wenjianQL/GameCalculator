@@ -9,7 +9,6 @@ function findSelectRecipe(materialName, recipeIndex) {
     try {
         return game_data["recipe_data"][materialName]["data"][recipeIndex];
     } catch (e) {
-        // alert("获取" + materialName + "的配方错误!")
         return null;
     }
 }
@@ -41,52 +40,13 @@ function findSelectEquipment(equipmentType, index) {
     return list[index];
 }
 
-function findAllEquipmentByType(equipmentType) {
+function findDeviceType(equipmentType) {
     if (!game_data["equipment"].hasOwnProperty(equipmentType)) {
         console.log("没有对应的设备类型!" + equipmentType);
         return null;
     }
 
-    let data = game_data["equipment"][equipmentType];
-    return data["data"];
-}
-
-/**
- * 加载gameName对应的游戏数据。
- * 如果没有的话，就创建一个。
- * @param gameName 游戏名字
- */
-function loadCustomGameData(gameName) {
-    try {
-        const data = localStorage.getItem(curGameName);
-        if (data) {
-            game_data = JSON.parse(data);
-        } else {
-            game_data = {
-                "game_name": gameName,
-                "recipe_data": {},
-                "equipment": {}
-            }
-            saveDataToLocalStorage();
-        }
-    } catch (e) {
-        console.log(e);
-    }
-}
-
-/**
- * 从当前网页链接中，获取key为name对应的value
- * @param name key的名字
- * @returns {string|null}
- */
-function getParameterByName(name) {
-    let url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-    let results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    return game_data["equipment"][equipmentType];
 }
 
 /**
@@ -100,7 +60,11 @@ function loadCalPagerMaterialList() {
 
     let str = "";
     for (let i in material_data) {
-        str += "<option value=\"" + material_data[i] + "\">\n";
+        let optionElement = document.createElement('option');
+        optionElement.value = material_data[i];
+        optionElement.text = getTranslate(material_data[i]);
+        // str += "<option value=\"" + material_data[i] + "\">\n";
+        str += optionElement.outerHTML + "\n";
     }
 
     let node = document.getElementById("item_list");
@@ -196,13 +160,13 @@ function getStep(item) {
     let str = ""
     if (Object.keys(sourceList).length > 0) {
         for (let key in sourceList) {
-            str += sourceList[key] + " * " + key + " +"
+            str += sourceList[key] + " * " + getTranslate(key) + " +"
         }
         str = str.substring(0, str.length - 1)
         str += " = "
     }
     for (let key in productList) {
-        str += productList[key] + " * " + key + " +"
+        str += productList[key] + " * " + getTranslate(key) + " +"
     }
     str = str.substring(0, str.length - 1)
 
@@ -218,46 +182,17 @@ function getStep(item) {
  * @returns {string}
  */
 function getImgAndNameNodeStr(name) {
-
-    if (curGameName !== "game_dsp") {
-        return name;
-    }
-
     let imgNode = document.createElement("img");
     imgNode.style.width = "30px";
     imgNode.style.height = "30px";
-    if (game_data["game_name"] === "game_dsp") {
+    if (game_data["game_name"] === "Dsp") {
         imgNode.src = "../../../img/game/dsp/" + name + ".png";
+    } else if (game_data["game_name"] === "SatisFactory") {
+        imgNode.src = "../../../img/game/satisfactory/" + name + ".jpg";
     }
 
     // 将imgNode转换成字符串格式，并进行返回
-    return imgNode.outerHTML + name;
-}
-
-function initCommonSelectDialog() {
-    let node = document.getElementById("selectGridTableCustom")
-    if (!node) {
-        return;
-    }
-
-    node.innerHTML = '';
-
-    for (let item in material_data) {
-        // 将item数据添加到
-        let spanNode = document.createElement("span");
-        spanNode.textContent = material_data[item];
-        spanNode.onclick = function () {
-            let inputNode = document.getElementById("needs_item");
-            if (inputNode) {
-                inputNode.value = this.textContent;
-            }
-            let closeButton = document.getElementById("selectDialogClickClose");
-            if (closeButton) {
-                closeButton.click();
-            }
-        }
-        node.appendChild(spanNode);
-    }
+    return imgNode.outerHTML + getTranslate(name);
 }
 
 function compareAndModifyLists(proList, sourceList) {
@@ -276,7 +211,7 @@ function compareAndModifyLists(proList, sourceList) {
         });
     }
 
-    return { proList, sourceList };
+    return {proList, sourceList};
 }
 
 /**
@@ -326,14 +261,15 @@ function checkOutTargetMaterialNumber() {
     }
 
     if (needRefreshCal) {
-        console.log("重新计算。")
-        alert(`
+        if (!needTranslate) {
+            alert(`
 注意！
 由于多余产物中存在要生产的物品，计算逻辑已重新调整要计算的物品的数量。
 由于计算逻辑存在向上取整，请留意计算结果中的物品数量+多余产物的数量，是否符合你输入的要求。
 如果不符合，请确保输入的数据 是（结果物品数量+多余产物数量）/结果物品数量的结果的整数倍。
 如：生产91个精炼油，但结果物品数量为31，多余产物数量为62，(31+62)/31=3，因此需要输入3的整数倍。
         `);
+        }
         cal_data();
     }
 }
@@ -369,8 +305,15 @@ function showOutTotalList() {
 
     let out_str = "";
     for (let mapKey in map) {
-        out_str += "<li>" + map[mapKey].toFixed(1) + " * " + mapKey + "</li>";
+        out_str += "<li>" + map[mapKey].toFixed(1) + " * " + getImgAndNameNodeStr(mapKey) + "</li>";
     }
 
     document.getElementById("surplusList").innerHTML = out_str;
+}
+
+function getTranslate(str) {
+    if (needTranslate && game_data.hasOwnProperty("translate")) {
+        return game_data["translate"][str];
+    }
+    return str;
 }

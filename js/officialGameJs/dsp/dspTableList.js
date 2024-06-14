@@ -132,7 +132,7 @@ function show_table_list() {
             const nullOption = document.createElement("option");
             nullOption.id = "无";
             nullOption.value = "无";
-            nullOption.textContent = "增产剂效果：无";
+            nullOption.textContent = getTranslate("增产剂效果：无");
             selectNode.appendChild(nullOption);
 
             // 添加加速效果

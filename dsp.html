@@ -1,0 +1,434 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Dyson Sphere Program Calculate</title>
+    <meta name="author" content="Wind">
+
+    <!--通用文件-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--计算通用文件-->
+    <script src="./data/data_dsp.js"></script>
+    <script src="js/commonJs/commonJs.js"></script>
+    <script src="./js/commonJs/commonFun.js"></script>
+    <script src="./js/officialGameJs/dsp/dspCalculateFun.js"></script>
+
+    <!--结果显示通用文件-->
+    <script src="./js/officialGameJs/dsp/buff.js"></script>
+    <script src="./js/officialGameJs/dsp/dspTreeList.js"></script>
+    <script src="./js/officialGameJs/dsp/dspTableList.js"></script>
+
+    <!--dsp专有-->
+    <script src="./js/officialGameJs/dsp/dsp.js"></script>
+
+    <!--树形列表-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <link href="css/plugins/jsTree/style.min.css" rel="stylesheet">
+    <script src="js/plugins/jsTree/jstree.min.js"></script>
+</head>
+
+<body>
+<!--左右内间距10px-->
+<div style="padding-left: 10px; padding-right: 10px; padding-top: 10px;">
+    <div class="row">
+        <div class="col-lg-4">
+            <!-- 生产目标 -->
+            <div class="ibox" id="productInput">
+                <div class="ibox-title">
+                    <h5 id="text_product_target">生产目标</h5>
+                </div>
+                <div class="ibox-content" id="productInputContent">
+                    <div class="form-group">
+                        <datalist id="item_list"></datalist>
+                        <div>
+                            <label for="needs_item" id="text_goods">物品: </label>
+                            <input style="width: 30%; margin-left: 4px;"
+                                   list="item_list" size="5" id="needs_item"/>
+                            <button type="button" class="btn btn-default" id="text_select_dialog"
+                                    data-toggle="modal" onclick="initSelectDialog()"
+                                    data-target="#inputSelectDialog">弹窗选择
+                            </button>
+                        </div>
+                    </div>
+                    <!--弹窗选择的模态弹窗-->
+                    <div class="modal inmodal fade" id="inputSelectDialog" tabindex="-1"
+                         role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <button type="button" class="close"
+                                            id="selectDialogClickClose"
+                                            data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <!--内容填充-->
+                                    <div class="tabs-container">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li><a class="nav-link active" data-toggle="tab" href="#select-material" id="text_material">材料</a></li>
+                                            <li><a class="nav-link" data-toggle="tab" href="#select-build" id="text_building">建筑</a></li>
+                                            <li><a class="nav-link" data-toggle="tab" href="#select-custom" id="text_other">其它</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" id="select-material" class="tab-pane active">
+                                                <div class="panel-body" id="selectGridTableMaterial" style="background-color: #0a568c"></div>
+                                            </div>
+                                            <div role="tabpanel" id="select-build" class="tab-pane">
+                                                <div class="panel-body" id="selectGridTableBuild" style="background-color: #0a568c"></div>
+                                            </div>
+                                            <div role="tabpanel" id="select-custom" class="tab-pane">
+                                                <div class="panel-body" id="selectGridTableCustom" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-normal" for="needs_amount" id="text_number">数量:</label>
+                        <div style="display: inline-block; margin-left: 4px;">
+                            <input type="text" size="6" id="needs_amount" value="60"
+                                   name="demo1"/>个/min
+                        </div>
+                        <button class="ladda-button btn btn-info"
+                                style="margin-left:10px" onclick="clickCalculateBtn()"
+                                data-style="slide-right" id="text_calculate">单独计算
+                        </button>
+                        <button class="ladda-button btn btn-info"
+                                style="margin-left:10px" onclick="addCalculateBtn()"
+                                data-style="slide-right" id="text_add_calculate">累加计算
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-normal"
+                               for="need_equipment_count" id="text_device_number">设备数量:</label>
+                        <div style="display: inline-block; margin-left: 4px;">
+                            <input type="number" size="6" id="need_equipment_count"
+                                   value="1"/>个
+                        </div>
+                        <button class="ladda-button btn btn-info"
+                                style="margin-left:10px" onclick="clickEquCalBtn()"
+                                data-style="slide-right" id="text_device_calculate">单独计算
+                        </button>
+                        <button class="ladda-button btn btn-info"
+                                style="margin-left:10px" onclick="clickEquAddCalBtn()"
+                                data-style="slide-right" id="text_device_add_calculate">累加计算
+                        </button>
+                    </div>
+
+                    <div style="display: block;">
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="switch-circle-cal" />
+                            <label for="switch-circle-cal" id="text_open_circle_calculate">开启循环计算</label>
+                            <div>
+                                <div>1*A+2*B -> 1*C+3B => 1*A -> 1*C+1B</div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="beltSwitch">
+                            <span class="slider" id="text_belf_split">传送带运力拆分</span>
+                        </label>
+                    </div>
+
+
+                    <div class="row m-t-md">
+                        <div class="col-sm-12">
+                            <button class="ladda-button btn btn-danger" id="resetNeeds"
+                                    onclick="resetNeeds()" data-style="slide-left">
+                                重置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <!--计算参数设置-->
+            <div class="ibox" id="calValueSetting">
+                <div class="ibox-title">
+                    <h5 id="text_device_setting">设备设置</h5>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                        <!--  熔炉设置  -->
+                        <div class="calConfigSetting">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/电弧熔炉.png" id="冶炼设备-1"
+                                 onclick="calConfigChange(this.id)" alt="电弧熔炉">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/位面熔炉.png" id="冶炼设备-2"
+                                 onclick="calConfigChange(this.id)" alt="位面熔炉">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/负熵熔炉.png" id="冶炼设备-3"
+                                 onclick="calConfigChange(this.id)" alt="负熵熔炉">
+                        </div>
+                        <!--  制造台设置  -->
+                        <div class="calConfigSetting" style="margin-top: 10px;">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/制造台 Mk.I.png" id="制造台-1"
+                                 onclick="calConfigChange(this.id)" alt="制造台 Mk.I">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/制造台 Mk.II.png" id="制造台-2"
+                                 onclick="calConfigChange(this.id)" alt="制造台 Mk.II">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/制造台 Mk.III.png" id="制造台-3"
+                                 onclick="calConfigChange(this.id)" alt="制造台 Mk.III">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/重组式制造台.png" id="制造台-4"
+                                 onclick="calConfigChange(this.id)" alt="重组式制造台">
+                        </div>
+                        <!--  化工厂设置  -->
+                        <div class="calConfigSetting" style="margin-top: 10px;">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/化工厂.png" id="化工设备-1"
+                                 onclick="calConfigChange(this.id)" alt="化工厂">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/量子化工厂.png" id="化工设备-2"
+                                 onclick="calConfigChange(this.id)" alt="量子化工厂">
+                        </div>
+                        <!--  研究站设置  -->
+                        <div class="calConfigSetting" style="margin-top: 10px;">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/矩阵研究站.png" id="科研设备-1"
+                                 onclick="calConfigChange(this.id)" alt="矩阵研究站">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/自演化研究站.png" id="科研设备-2"
+                                 onclick="calConfigChange(this.id)" alt="自演化研究站">
+                        </div>
+                        <!--  传送带设置  -->
+                        <div class="calConfigSetting" style="margin-top: 10px;">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/传送带.png" id="传送带-1"
+                                 onclick="changeBelt(this.id)" alt="传送带">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/高速传送带.png" id="传送带-2"
+                                 onclick="changeBelt(this.id)" alt="高速传送带">
+                            <img class="image" style="height: 40px; width: 40px"
+                                 src="./img/game/dsp/极速传送带.png" id="传送带-3"
+                                 onclick="changeBelt(this.id)" alt="高速传送带">
+                            <h6 id="text_need_click_calculate">选择传送带后，需重新点击计算</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5 id="text_buff_setting">增产剂设置</h5>
+                </div>
+                <div class="ibox-content">
+                    <div style="display: flex;">
+                        <!--增产剂-->
+                        <div class="calConfigSetting_buff" style="margin-top: 10px;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img class="image" style="height: 40px; width: 40px;"
+                                             src="./img/game/dsp/增产剂 Mk.I.png" alt="增产剂 Mk.I">
+                                    </td>
+                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                        onclick="handleClickDspBuff('加速-1.25')" id="text_speed_25">加速:25%
+                                    </td>
+                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                        onclick="handleClickDspBuff('增产-1.125')" id="text_increase_12_5">增产:12.5%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img class="image" style="height: 40px; width: 40px;"
+                                             src="./img/game/dsp/增产剂 Mk.II.png" alt="增产剂 Mk.II">
+                                    </td>
+                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                        onclick="handleClickDspBuff('加速-1.5')" id="text_speed_50">加速:50%
+                                    </td>
+                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                        onclick="handleClickDspBuff('增产-1.2')" id="text_increase_20">增产:20%
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img class="image" style="height: 40px; width: 40px;"
+                                             src="./img/game/dsp/增产剂 Mk.III.png" alt="增产剂 Mk.III"></td>
+                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                        onclick="handleClickDspBuff('加速-2')" id="text_speed_100">加速:100%
+                                    </td>
+                                    <td style="border: 1px solid black; padding-left: 10px; padding-right: 10px; cursor: pointer;"
+                                        onclick="handleClickDspBuff('增产-1.25')" id="text_increase_25">增产:25%
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="calConfigSetting_buff" style="margin-top: 10px;">
+                                <label id="text_buff">全局增产剂效果：</label>
+                                <span id="showBuffText" style="font-size: 12px; color: red;" ></span>
+                            </div>
+                            <!--add button, it click function is clearAllBuff-->
+                            <div class="calConfigSetting_buff" style="margin-top: 10px;">
+                                <button class="btn btn-danger" onclick="clearAllBuff()" id="text_clear_buff">清除所有增产剂</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <!--计算结果显示-->
+            <div class="ibox" id="calResult">
+                <div class="ibox-title">
+                    <h5 id="text_calculate_result">计算结果</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="panel blank-panel">
+                        <div class="panel-heading" id="calResultHead">
+                            <div class="panel-options">
+                                <ul class="nav nav-tabs">
+                                    <li>
+                                        <a class="nav-link active" href="#tabTreeList" data-toggle="tab" id="text_tree_list_one">
+                                            树形列表1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="#tabLevelTable" data-toggle="tab" id="text_level_table">
+                                            层次表格
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="#tabJsTree" data-toggle="tab" id="text_tree_list_two">
+                                            树形列表2
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tabTreeList">
+                                    <div style="display: flex; flex-wrap: wrap;">
+                                        <div style="flex: 1;">
+                                            <div>
+                                                <label id="text_total_material">原材料合计</label>
+                                                <ul id="sourceList"></ul>
+                                            </div>
+                                            <div>
+                                                <label id="text_total_equipment">设备合计</label>
+                                                <ul id="totalList"></ul>
+                                            </div>
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <!-- 产物 -->
+                                            <div style="margin-top: 20px;">
+                                                <label id="text_total_product">Products：</label>
+                                                <ul id="surplusList"></ul>
+                                            </div>
+                                            <div>
+                                                <label id="text_total_energy">电量：</label>
+                                                <ul id="energyList"></ul>
+                                            </div>
+<!--                                            <div>-->
+<!--                                                增产剂总计：-->
+<!--                                                <ul id="buffList">-->
+<!--                                                </ul>-->
+<!--                                            </div>-->
+                                        </div>
+                                    </div>
+                                    <div class="feed-activity-list">
+                                        <ul class="tree" id="ul-">
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tabLevelTable">
+                                    <h5 id="text_level_bug_tips">如果在树形列表中进行了某个物品的其中一个路径的设备修改，那么在层次表格中目前无法进行统计区分的，是个bug，待修。</h5>
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th id="text_table_level">层级</th>
+                                            <th id="text_table_goods">物品</th>
+                                            <th id="text_table_goods_number">物品数量</th>
+                                            <th id="text_table_devices">所需设备</th>
+                                            <th id="text_table_devices_number">设备数量</th>
+                                            <th id="text_table_recipe">配方</th>
+                                            <th id="text_table_buff">增产剂</th>
+                                            <th id="text_table_is_calculate">是否计算</th>
+                                            <!-- <th> todo 原料数量</th> -->
+                                        </tr>
+                                        </thead>
+                                        <tbody id="material_table">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane" id="tabJsTree">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h6 id="text_tree_size">
+                                                这里没弄懂怎么调大小，所以先这样放两个按钮有需要的自己调。</h6>
+                                            <button onclick="zoomIn()" id="text_big">放大
+                                            </button>
+                                            <button onclick="zoomOut()" id="text_small">缩小
+                                            </button>
+
+                                            <div style="overflow: auto;">
+                                                <div id="deptTree"
+                                                     style="transform-origin: top left; margin-top: 20px;">
+                                                    <!-- deptTree 内容 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<script src="js/officialGameJs/dsp/initGameDsp.js"></script>
+<script src="./js/commonJs/commonTranslate.js"></script>
+
+<!--总计侧拉栏-->
+<script>
+    $(document).ready(function () {
+        $('#deptTree').jstree({
+            'core': {
+                'data': []
+            },
+            // "plugins" : [ "checkbox" ],
+            "checkbox" : {
+                "keep_selected_style" : false,
+                "three_state": true
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

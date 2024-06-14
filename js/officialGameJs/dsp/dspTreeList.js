@@ -71,6 +71,7 @@ function generateTreeHtml(data, path) {
     summary.id = "summary-" + path;
     summary.innerHTML = str;
 
+    addDevicesSelectNode(summary, path);
 
     if (recipeList.length > 1) {
         // 添加配方选择
@@ -122,7 +123,6 @@ function addRecipeSelectNode(node, path) {
     selectNode.style.marginLeft = "10px";
     // 配方修改事件
     selectNode.onchange = function (event) {
-        treeListRecipeChange(path, event.target.value);
         newResultData[path]["recipeIndex"] = event.target.value;
         newResultData[path]["equIndex"] = 0;
         updateResultAfterChangeRecipe(path);
@@ -238,12 +238,13 @@ function show_source_material_list() {
  * 将原材料总计结果显示到页面上
  */
 function show_source_material_list_to_pager() {
+    console.log("show_source_material")
     // 原材料
     let source_str = "";
     for (let sourceItem in source_data) {
         // 原材料
         if (source_data[sourceItem] >= 0) {
-            source_str += "<li>" + source_data[sourceItem].toFixed(2) + " * " + sourceItem + "</li>";
+            source_str += "<li>" + source_data[sourceItem].toFixed(2) + " * " + getImgAndNameNodeStr(sourceItem) + "</li>";
         }
     }
 
@@ -301,14 +302,18 @@ function show_equipment_in_tree_list_mode() {
     // 设备总计Node添加
     let total_str = "";
     for (let item in total_equipment_list) {
-        total_str += "<li>" + total_equipment_list[item] + " * " + item + "</li>";
+        total_str += "<li>" + total_equipment_list[item] + " * " + getImgAndNameNodeStr(item) + "</li>";
     }
     let totalListNode = document.getElementById("totalList");
     totalListNode.innerHTML = total_str;
 
     // 耗电添加
-    let energy_str = "<li title=\"取整机器数量 * 机器耗电量。\">最大耗电量：" + max_energy_count.toFixed(2) + "</li>";
-    energy_str += "<li title=\"实际机器数量 * 机器耗电量。\">标准耗电量：" + standard_energy_count.toFixed(2) + "</li>";
+    let energy_str = "<li title=\"取整机器数量 * 机器耗电量。\">最大：" + max_energy_count.toFixed(2) + "</li>";
+    energy_str += "<li title=\"实际机器数量 * 机器耗电量。\">标准：" + standard_energy_count.toFixed(2) + "</li>";
+    if (needTranslate) {
+        energy_str = "<li title=\"取整机器数量 * 机器耗电量。\">Max：" + max_energy_count.toFixed(2) + "</li>";
+        energy_str += "<li title=\"实际机器数量 * 机器耗电量。\">Normal：" + standard_energy_count.toFixed(2) + "</li>";
+    }
     let energyListNode = document.getElementById("energyList");
     energyListNode.innerHTML = energy_str;
 }
@@ -345,9 +350,9 @@ function refreshTreeListData()
                 // 材料名字
                 const pathName = path[i].replace("~", "");
                 const matName = pathName.split('`')[0];
-                let nodeName = num + "*" + matName + ", " + equNumber.toFixed(2) + "*" + equName;
+                let nodeName = num + "*" + getTranslate(matName) + ", " + equNumber.toFixed(2) + "*" + getTranslate(equName);
                 if (equName === undefined || equName === "") {
-                    nodeName = num + "*" + matName;
+                    nodeName = num + "*" + getTranslate(matName);
                 }
                 if (!currentNode.children) {
                     currentNode.children = [];
@@ -390,4 +395,55 @@ function zoomOut() {
     const deptTree = document.getElementById("deptTree");
     scale -= 0.1;
     deptTree.style.transform = "scale(" + scale + ")";
+}
+
+function addDevicesSelectNode(node, path) {
+    if (!node) {
+        return;
+    }
+
+    if (newResultData[path]["number"] < 0) {
+        return;
+    }
+
+    let selectNode = getDevicesSelectNode(path);
+    if (selectNode === null) {
+        return;
+    }
+    selectNode.id = "device-" + path;
+    selectNode.style.marginLeft = "10px";
+    // 配方修改事件
+    selectNode.onchange = function (event) {
+        newResultData[path]["equIndex"] = event.target.value;
+        updateResultAfterChangeRecipe(path);
+    }
+
+    node.appendChild(selectNode);
+}
+
+function getDevicesSelectNode(path) {
+    let item = newResultData[path];
+    let deviceList = findDeviceType(item["equType"]);
+    if (deviceList === null) {
+        return null;
+    }
+    let dataList = deviceList["data"];
+    if (dataList.length === 1) {
+        return null;
+    }
+
+    const select = document.createElement("select");
+    for (let i = 0; i < dataList.length; i++) {
+        let devItem = dataList[i];
+        const option = document.createElement("option");
+        option.value = i;
+        option.innerHTML = getTranslate(devItem["name"]);
+        option.id = "dev-option-" + i;
+        select.appendChild(option);
+
+        if (i == item["equIndex"]) {
+            select.value = option.value;
+        }
+    }
+    return select;
 }
