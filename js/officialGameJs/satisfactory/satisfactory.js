@@ -19,7 +19,15 @@ function initSatisFactorySelectDialog() {
                 let spanNode = document.createElement("span");
                 spanNode.textContent = getTranslate(name);
                 spanNode.nodeValue = name;
-                spanNode.onclick = function () {
+                // 添加一个img
+                let imgNode = document.createElement("img");
+                imgNode.style.width = "30px";
+                imgNode.style.height = "30px";
+                imgNode.src = "../../../img/game/satisfactory/" + name + ".jpg";
+                divNode.appendChild(imgNode);
+                divNode.appendChild(spanNode);
+
+                divNode.onclick = function () {
                     let inputNode = document.getElementById("needs_item");
                     if (inputNode) {
                         inputNode.textContent = name;
@@ -29,15 +37,7 @@ function initSatisFactorySelectDialog() {
                     if (closeButton) {
                         closeButton.click();
                     }
-                };
-
-                // 添加一个img
-                let imgNode = document.createElement("img");
-                imgNode.style.width = "30px";
-                imgNode.style.height = "30px";
-                imgNode.src = "../../../img/game/satisfactory/" + name + ".jpg";
-                divNode.appendChild(imgNode);
-                divNode.appendChild(spanNode);
+                }
                 node.appendChild(divNode);
             }
         }
