@@ -18,7 +18,7 @@ let beltSize = 360;
 let beltSwitch = false;
 
 // 判断地区是否是中国，如果不是，那么needTranslate设置为true
-needTranslate = navigator.language.toLowerCase().indexOf("zh") === -1;
+// needTranslate = navigator.language.toLowerCase().indexOf("zh") === -1;
 
 // 点击数量单独计算按钮
 function clickCalculateBtn() {

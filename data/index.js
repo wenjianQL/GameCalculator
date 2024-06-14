@@ -30,8 +30,9 @@ for (let i = 0; i < supportGameData.length; i++) {
 }
 
 // 如果是中国地区
-if (navigator.language.startsWith("zh")) {
-    document.getElementById("text_feedback").textContent = "如果你有建议、反馈、其它想玩的游戏，欢迎联系我：\n X: @Wind674179535"
-} else {
-    document.getElementById("text_feedback").textContent = "If you have any suggestions, feedback, or other games you want to play, please contact me: \n X: Wind674179535"
-}
+// if (navigator.language.startsWith("zh")) {
+//     document.getElementById("text_feedback").textContent = "如果你有建议、反馈、其它想玩的游戏，欢迎联系我：\n X: @Wind674179535"
+// } else {
+//     document.getElementById("text_feedback").textContent = "If you have any suggestions, feedback, or other games you want to play, please contact me: \n X: Wind674179535"
+// }
+document.getElementById("text_feedback").textContent = "If you have any suggestions, feedback, or other games you want to play, please contact me: \n X: Wind674179535"

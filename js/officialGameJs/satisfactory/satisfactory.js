@@ -17,13 +17,13 @@ function initSatisFactorySelectDialog() {
                 let divNode = document.createElement("div");
                 // 将item数据添加到
                 let spanNode = document.createElement("span");
-                spanNode.textContent = name;
+                spanNode.textContent = getTranslate(name);
                 spanNode.nodeValue = name;
                 spanNode.onclick = function () {
                     let inputNode = document.getElementById("needs_item");
                     if (inputNode) {
-                        inputNode.textContent = this.textContent;
-                        inputNode.value = getTranslate(this.textContent)
+                        inputNode.textContent = name;
+                        inputNode.value = getTranslate(name)
                     }
                     let closeButton = document.getElementById("selectDialogClickClose");
                     if (closeButton) {

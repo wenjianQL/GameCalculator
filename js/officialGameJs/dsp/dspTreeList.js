@@ -168,8 +168,14 @@ function addDisableBtn(node, path) {
 
     if (newResultData[path]["是否计算"] === true) {
         btn.textContent = "忽略";
+        if (needTranslate) {
+            btn.textContent = "Ignore";
+        }
     } else {
         btn.textContent = "恢复";
+        if (needTranslate) {
+            btn.textContent = "Restore";
+        }
     }
     btn.onclick = function (event) {
         let path = event.target.id.split("-")[2];

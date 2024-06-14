@@ -46,7 +46,10 @@ function show_table_list() {
                 // 是否计算
                 const materialNumber = material_list[material]["材料数量"];
                 const isCal = materialNumber !== 0;
-                const disableBtnText = isCal ? "忽略" : "恢复";
+                let disableBtnText = isCal ? "忽略" : "恢复";
+                if (needTranslate) {
+                    disableBtnText = isCal ? "Ignore" : "Restore";
+                }
                 material_str += `<td><button id="disable-btn-${material}" onclick="clickDisableBtn('${material}', ${isCal})">${disableBtnText}</button></td>`;
 
                 material_str += "</tr>";
