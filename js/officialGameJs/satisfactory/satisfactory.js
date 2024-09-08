@@ -16,13 +16,13 @@ function initSatisFactorySelectDialog() {
             if (material_data.concat(name)) {
                 let divNode = document.createElement("div");
                 // 将item数据添加到
-                let spanNode = document.createElement("span");
+                let spanNode = document.createElement("h5");
                 spanNode.textContent = getTranslate(name);
                 spanNode.nodeValue = name;
                 // 添加一个img
                 let imgNode = document.createElement("img");
-                imgNode.style.width = "30px";
-                imgNode.style.height = "30px";
+                imgNode.style.width = "60px";
+                imgNode.style.height = "60px";
                 imgNode.src = "../../../img/game/satisfactory/" + name + ".jpg";
                 divNode.appendChild(imgNode);
                 divNode.appendChild(spanNode);
