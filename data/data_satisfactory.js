@@ -92,20 +92,23 @@ let game_data = {
         "制造器": "Manufacturer",
         "冶炼器": "Smelter",
         "铸造器": "Foundry",
-        "精炼厂": "Oil Refinery"
+        "精炼厂": "Oil Refinery",
+        "Ficsite Ingot": "Ficsite Ingot",
+        "Dissolved Silica": "Dissolved Silica",
     },
     "select_dialog_data": {
-        "金属锭": ["铁锭", "铜锭", "钦锭", "钢锭", "铝锭"],
+        "金属锭": ["铁锭", "铜锭", "钦锭", "钢锭", "铝锭", "Ficsite Ingot"],
         "矿物": ["混凝土", "石英晶体", "石英砂", "铜粉", "聚合树脂", "油焦", "铝块"],
-        "液体": ["重渣油", "燃料", "液态生物燃料", "涡轮燃料", "氧化铝溶液", "硫酸", "硝酸"],
-        "标准零件": ["铁棒", "螺丝", "铁板", "加强铁板", "铜板", "镀铝板", "铝制外壳", "钢管", "钢梁", "钢筋混凝土梁", "模块化框架", "重型模块化框架", "熔合模块化框架", "布料", "塑料", "橡胶"],
+        "液体": ["重渣油", "燃料", "液态生物燃料", "涡轮燃料", "氧化铝溶液", "硫酸", "硝酸", "Dissolved Silica"],
+        "标准零件": ["铁棒", "螺丝", "铁板", "加强铁板", "铜板", "镀铝板", "铝制外壳", "钢管", "钢梁", "钢筋混凝土梁", "模块化框架", "重型模块化框架", "熔合模块化框架", "Ficsite Trigon", "布料", "塑料", "橡胶"],
         "工业零件": ["转子", "定子", "电池", "电机", "散热器", "冷却系统", "涡轮电机"],
-        "电子产品": ["电线", "电缆", "快速线", "电路板", "AI限制器", "高速连接器"],
-        "通讯": ["计算机", "超级计算机", "无线电控制单元", "晶体振荡器"],
+        "电子产品": ["电线", "电缆", "快速线", "电路板", "AI限制器", "高速连接器", "Reanimated SAM", "SAM Fluctuator"],
+        "通讯": ["计算机", "超级计算机", "量子计算机", "无线电控制单元", "晶体振荡器", "叠加振荡器"],
+        "Quantum Technology": ["Diamonds", "Time Crystal", "Dark Matter Crystal", "Dark Matter Residue", "Singularity Cell", "Excited Photonic Matter", "Neural-Quantum Processor"],
         "容器": ["空罐", "空瓶", "压力转换立方体"],
-        "燃料": ["铀燃料棒", "钚燃料棒"],
-        "核工业品": ["电磁控制杆", "贫铀", "钚丸"],
-        "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团"],
+        "燃料": ["Packaged Rocket Fuel","Packaged Ionized Fuel","铀燃料棒", "钚燃料棒"],
+        "核工业品": ["电磁控制杆", "铀核芯", "Non-Fissile Uranium", "贫铀", "钚丸"],
+        "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团", "Biochemical Sculptor", "Ballistic Warp Drive", "AI Expansion Server"],
     },
     "recipe_data": {
         "组装编导系统": {
@@ -665,7 +668,7 @@ let game_data = {
                         "橡胶": 45.0,
                         "冷却系统": 7.5
                     }
-                },{
+                }, {
                     "time": 60,
                     "equType": "制造器",
                     "equIndex": 0,
@@ -964,6 +967,20 @@ let game_data = {
                     "sourceList": {
                         "铝土矿": 120,
                         "水": 180
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英砂": 270,
+                        "水": 80
+                    },
+                    "sourceList": {
+                        "Dissolved Silica": 120,
+                        "石灰石": 50,
+                        "水": 100
                     }
                 }
             ]
@@ -2522,7 +2539,7 @@ let game_data = {
                 }
             ]
         },
-        "S.A.M. 矿石": {
+        "SAM": {
             "useIndex": 0,
             "data": [
                 {
@@ -2530,7 +2547,7 @@ let game_data = {
                     "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
-                        "S.A.M. 矿石": 60.0
+                        "SAM": 60.0
                     },
                     "sourceList": {}
                 }
@@ -2686,6 +2703,639 @@ let game_data = {
                     },
                     "sourceList": {
                         "钚燃料棒": 1
+                    }
+                }
+            ]
+        },
+        "Ficsite Ingot": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsite Ingot": 10.0
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": 60,
+                        "铝锭": 120,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsite Ingot": 15.0
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": 45,
+                        "钦锭": 60,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsite Ingot": 10.0
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": 40,
+                        "铁锭": 240,
+                    }
+                }
+            ]
+        },
+        "Dissolved Silica": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dissolved Silica": 60.0,
+                        "石英晶体": 75
+                    },
+                    "sourceList": {
+                        "原石英": 120,
+                        "硝酸": 10,
+                    }
+                }
+            ]
+        },
+        "Rocket Fuel": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Rocket Fuel": 100.0,
+                        "压缩煤": 10
+                    },
+                    "sourceList": {
+                        "涡轮燃料": 60,
+                        "硝酸": 10,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Rocket Fuel": 150.0,
+                        "压缩煤": 25
+                    },
+                    "sourceList": {
+                        "燃料": 100,
+                        "氮气": 75,
+                        "硫": 100,
+                        "煤": 50,
+                    }
+                }
+            ]
+        },
+        "Ionized Fuel": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ionized Fuel": 40.0,
+                        "压缩煤": 5
+                    },
+                    "sourceList": {
+                        "Rocket Fuel": 40,
+                        "能量碎片": 2.5,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ionized Fuel": 200.0,
+                        "压缩煤": 40
+                    },
+                    "sourceList": {
+                        "Packaged Rocket Fuel": 240,
+                        "Dark Matter Crystal": 80
+                    }
+                }
+            ]
+        },
+        "能量碎片": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "能量碎片": 5,
+                        "Dark Matter Residue": 60000
+                    },
+                    "sourceList": {
+                        "Time Crystal": 10,
+                        "Dark Matter Crystal": 10,
+                        "石英晶体": 60,
+                        "Excited Photonic Matter": 60000,
+                    }
+                }
+            ]
+        },
+        "Ficsite Trigon": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsite Trigon": 30
+                    },
+                    "sourceList": {
+                        "Ficsite Ingot": 10,
+                    }
+                }
+            ]
+        },
+        "Reanimated SAM": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Reanimated SAM": 30
+                    },
+                    "sourceList": {
+                        "SAM": 120,
+                    }
+                }
+            ]
+        },
+        "SAM Fluctuator": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "SAM Fluctuator": 10
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": 60,
+                        "电线": 50,
+                        "钢管": 30,
+                    }
+                }
+            ]
+        },
+        "叠加振荡器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "叠加振荡器": 10,
+                        "Dark Matter Residue": 125000,
+                    },
+                    "sourceList": {
+                        "Dark Matter Crystal": 30,
+                        "晶体振荡器": 5,
+                        "镀铝板": 45,
+                        "Excited Photonic Matter": 125000,
+                    }
+                }
+            ]
+        },
+        "Time Crystal": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Time Crystal": 6,
+                    },
+                    "sourceList": {
+                        "Diamonds": 12,
+                    }
+                }
+            ]
+        },
+        "Singularity Cell": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Singularity Cell": 10,
+                    },
+                    "sourceList": {
+                        "核子团": 1,
+                        "Dark Matter Crystal": 20,
+                        "铁板": 100,
+                        "混凝土": 200,
+                    }
+                }
+            ]
+        },
+        "Neural-Quantum Processor": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Neural-Quantum Processor": 3,
+                        "Dark Matter Residue": 75000,
+                    },
+                    "sourceList": {
+                        "Time Crystal": 15,
+                        "超级计算机": 3,
+                        "Ficsite Trigon": 45,
+                        "Excited Photonic Matter": 75000,
+                    }
+                }
+            ]
+        },
+        "Packaged Rocket Fuel": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Packaged Rocket Fuel": 60,
+                    },
+                    "sourceList": {
+                        "Rocket Fuel": 120,
+                        "空瓶": 60,
+                    }
+                }
+            ]
+        },
+        "Packaged Ionized Fuel": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Packaged Ionized Fuel": 40,
+                    },
+                    "sourceList": {
+                        "Ionized Fuel": 80,
+                        "空瓶": 40,
+                    }
+                }
+            ]
+        },
+        "Ficsonium": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsonium": 10,
+                    },
+                    "sourceList": {
+                        "钚废料": 10,
+                        "Singularity Cell": 10,
+                        "Dark Matter Residue": 200000,
+                    }
+                }
+            ]
+        },
+        "Ficsonium Fuel Rod": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsonium Fuel Rod": 2.5,
+                        "Dark Matter Residue": 50000,
+                    },
+                    "sourceList": {
+                        "Ficsonium": 5,
+                        "电磁控制杆": 5,
+                        "Ficsite Trigon": 100,
+                        "Excited Photonic Matter": 50000,
+                    }
+                }
+            ]
+        },
+        "Non-Fissile Uranium": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Non-Fissile Uranium": 50,
+                        "水": 15,
+                    },
+                    "sourceList": {
+                        "铀废料": 37.5,
+                        "石英砂": 25,
+                        "硝酸": 15,
+                        "硫酸": 15,
+                    }
+                },{
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Non-Fissile Uranium": 100,
+                        "水": 40,
+                    },
+                    "sourceList": {
+                        "铀": 25,
+                        "铀废料": 25,
+                        "硝酸": 15,
+                        "硫酸": 25,
+                    }
+                }
+            ]
+        },
+        "Biochemical Sculptor": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Biochemical Sculptor": 2,
+                    },
+                    "sourceList": {
+                        "组装编导系统": 0.5,
+                        "Ficsite Trigon": 40,
+                        "水": 10,
+                    }
+                }
+            ]
+        },
+        "Ballistic Warp Drive": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ballistic Warp Drive": 1,
+                    },
+                    "sourceList": {
+                        "热推进火箭": 1,
+                        "Singularity Cell": 5,
+                        "叠加振荡器": 2,
+                        "Dark Matter Crystal": 40,
+                    }
+                }
+            ]
+        },
+        "AI Expansion Server": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "AI Expansion Server": 4,
+                        "Dark Matter Residue": 100000,
+                    },
+                    "sourceList": {
+                        "磁场发生器": 4,
+                        "Neural-Quantum Processor": 4,
+                        "叠加振荡器": 4,
+                        "Excited Photonic Matter": 100000,
+                    }
+                }
+            ]
+        },
+        "Diamonds": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Diamonds": 10,
+                    },
+                    "sourceList": {
+                        "煤": 600,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Diamonds": 20,
+                    },
+                    "sourceList": {
+                        "煤": 240,
+                        "石灰石": 480,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Diamonds": 40,
+                    },
+                    "sourceList": {
+                        "原油": 200,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Diamonds": 30,
+                    },
+                    "sourceList": {
+                        "油焦": 720,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Diamonds": 15,
+                    },
+                    "sourceList": {
+                        "煤": 120,
+                        "石英晶体": 45,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Diamonds": 60,
+                    },
+                    "sourceList": {
+                        "煤": 600,
+                        "桶装涡轮燃料": 40,
+                    }
+                }
+            ]
+        },
+        "Dark Matter Crystal": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Crystal": 30,
+                    },
+                    "sourceList": {
+                        "Diamonds": 30,
+                        "Dark Matter Residue": 150000,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Crystal": 20,
+                    },
+                    "sourceList": {
+                        "Dark Matter Residue": 200000,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Crystal": 60,
+                    },
+                    "sourceList": {
+                        "Dark Matter Residue": 150000,
+                        "Time Crystal": 30,
+                    }
+                }
+            ]
+        },
+        "Dark Matter Residue": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": 100000,
+                        "AI Expansion Server": 4,
+                    },
+                    "sourceList": {
+                        "磁场发生器": 4,
+                        "Neural-Quantum Processor": 4,
+                        "Excited Photonic Matter": 100000,
+                        "叠加振荡器": 4
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": 60000,
+                    },
+                    "sourceList": {
+                        "SAM Fluctuator": 12.5,
+                        "能量碎片": 7.5,
+                        "叠加振荡器": 7.5,
+                        "Excited Photonic Matter": 60000
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": 100000,
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": 50,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": 500000,
+                        "Ficsonium Fuel Rod": 2.5,
+                    },
+                    "sourceList": {
+                        "Ficsonium": 5,
+                        "电磁控制杆": 5,
+                        "Ficsite Trigon": 100,
+                        "Excited Photonic Matter": 50000,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": 75000,
+                        "Neural-Quantum Processor": 3,
+                    },
+                    "sourceList": {
+                        "Time Crystal": 15,
+                        "超级计算机": 3,
+                        "Ficsite Trigon": 45,
+                        "Excited Photonic Matter": 75000,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": 60000,
+                        "能量碎片": 5,
+                    },
+                    "sourceList": {
+                        "Time Crystal": 10,
+                        "Dark Matter Crystal": 10,
+                        "石英晶体": 60,
+                        "Excited Photonic Matter": 60000,
+                    }
+                }, {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": 125000,
+                        "叠加振荡器": 5,
+                    },
+                    "sourceList": {
+                        "晶体振荡器": 5,
+                        "Dark Matter Crystal": 30,
+                        "镀铝板": 45,
+                        "Excited Photonic Matter": 125000,
                     }
                 }
             ]
