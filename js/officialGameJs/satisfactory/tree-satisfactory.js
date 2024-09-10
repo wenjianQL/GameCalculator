@@ -9,6 +9,8 @@ function showTreeList() {
     for (let path in newResultData) {
         generateTreeHtml(newResultData, path);
     }
+
+    refreshTreeListData();
 }
 
 function generateTreeHtml(data, path) {
@@ -325,4 +327,86 @@ function show_equipment_in_tree_list_mode() {
     }
     let energyListNode = document.getElementById("energyList");
     energyListNode.innerHTML = energy_str;
+}
+
+/**
+ * 刷新树形列表
+ */
+function refreshTreeListData()
+{
+    const treeData = convertToJsTreeFormat(newResultData);
+    // 修改deptTree的数据为demoData
+    $('#deptTree').jstree(true).settings.core.data = treeData.children;
+    // // 重新加载数据
+    $('#deptTree').jstree(true).refresh();
+
+    function convertToJsTreeFormat(data) {
+        let treeData = {};
+
+        // 循环计算结果
+        for (const key in data) {
+
+            // 不计算
+            if (data[key]["是否计算"] === false) {
+                continue;
+            }
+
+            const path = key.split('_');
+            let currentNode = treeData;
+            for (let i = 0; i < path.length; i++) {
+                let sourcePath = path.slice(0, i + 1).join('_');
+                // 物品数量
+                let num = data[sourcePath]["number"];
+                // 设备数量
+                let equNumber = data[sourcePath]["equNumber"];
+                // 设备名字
+                let equName = data[sourcePath]["equName"];
+                // 材料名字
+                const pathName = path[i].replace("~", "");
+                const matName = pathName.split('`')[0];
+                let nodeName = num + "*" + getTranslate(matName) + ", " + equNumber.toFixed(2) + "*" + getTranslate(equName);
+                if (equName === undefined || equName === "") {
+                    nodeName = num + "*" + getTranslate(matName);
+                }
+                if (!currentNode.children) {
+                    currentNode.children = [];
+                }
+                const existingNode = currentNode.children.find(function (node) {
+                    return node.path === sourcePath;
+                });
+                if (existingNode) {
+                    currentNode = existingNode;
+                } else {
+                    const newNode = {
+                        "path": sourcePath,
+                        "icon": `../../../img/game/satisfactory/px_16/${matName}.jpg`,
+                        "text": nodeName,
+                        "checked": false,
+                        "attributes": null,
+                        "state": {
+                            "opened": true
+                        },
+                        "children": []
+                    };
+                    currentNode.children.push(newNode);
+                    currentNode = newNode;
+                }
+            }
+        }
+        return treeData;
+    }
+}
+
+let scale = 1; // 初始缩放比例
+
+function zoomIn() {
+    const deptTree = document.getElementById("deptTree");
+    scale += 0.1;
+    deptTree.style.transform = "scale(" + scale + ")";
+}
+
+function zoomOut() {
+    const deptTree = document.getElementById("deptTree");
+    scale -= 0.1;
+    deptTree.style.transform = "scale(" + scale + ")";
 }
