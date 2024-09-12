@@ -1,0 +1,3710 @@
+{
+  "铁锭": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "冶炼器",
+        "equIndex": 0,
+        "productList": {
+          "30": "铁锭"
+        },
+        "sourceList": {
+          "30": "铁矿石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "50": "铁锭"
+        },
+        "sourceList": {
+          "25": "铁矿石",
+          "40": "石灰石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "100": "铁锭"
+        },
+        "sourceList": {
+          "50": "铁矿石",
+          "10m³": "硫酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "65": "铁锭"
+        },
+        "sourceList": {
+          "35": "铁矿石",
+          "20m³": "水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "75": "铁锭"
+        },
+        "sourceList": {
+          "10": "铜矿石",
+          "40": "铁矿石"
+        }
+      }
+    ]
+  },
+  "铜锭": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "冶炼器",
+        "equIndex": 0,
+        "productList": {
+          "30": "铜锭"
+        },
+        "sourceList": {
+          "30": "铜矿石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "110": "铜锭"
+        },
+        "sourceList": {
+          "45": "铜矿石",
+          "25m³": "硫酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "60": "铜锭"
+        },
+        "sourceList": {
+          "25": "铜矿石",
+          "40": "油焦"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "37.5": "铜锭"
+        },
+        "sourceList": {
+          "15": "铜矿石",
+          "10m³": "水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "100": "铜锭"
+        },
+        "sourceList": {
+          "50": "铁矿石"
+        }
+      }
+    ]
+  },
+  "钦锭": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "冶炼器",
+        "equIndex": 0,
+        "productList": {
+          "15": "钦锭"
+        },
+        "sourceList": {
+          "45": "钦矿石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "36": "钦锭"
+        },
+        "sourceList": {
+          "54": "钦矿石",
+          "30m³": "硫酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "22.5": "钦锭"
+        },
+        "sourceList": {
+          "15": "油焦",
+          "45": "钦矿石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "12": "钦锭"
+        },
+        "sourceList": {
+          "24": "钦矿石",
+          "24m³": "水"
+        }
+      }
+    ]
+  },
+  "钢锭": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "45": "钢锭"
+        },
+        "sourceList": {
+          "45": "煤"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "60": "钢锭"
+        },
+        "sourceList": {
+          "40": "煤"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "10": "钢锭"
+        },
+        "sourceList": {
+          "5": "铁矿石",
+          "2.5": "压缩煤"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "100": "钢锭"
+        },
+        "sourceList": {
+          "75": "油焦"
+        }
+      }
+    ]
+  },
+  "铝锭": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "60": "铝锭"
+        },
+        "sourceList": {
+          "75": "石英砂",
+          "90": "铝块"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "冶炼器",
+        "equIndex": 0,
+        "productList": {
+          "30": "铝锭"
+        },
+        "sourceList": {
+          "60": "铝块"
+        }
+      }
+    ]
+  },
+  "Ficsite Ingot": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "30": "Ficsite Ingot"
+        },
+        "sourceList": {
+          "60": "Reanimated SAM",
+          "120": "铝锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "15": "Ficsite Ingot"
+        },
+        "sourceList": {
+          "45": "Reanimated SAM",
+          "60": "钦锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "10": "Ficsite Ingot"
+        },
+        "sourceList": {
+          "40": "Reanimated SAM",
+          "240": "铁锭"
+        }
+      }
+    ]
+  },
+  "混凝土": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "15": "混凝土"
+        },
+        "sourceList": {
+          "45": "石灰石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "80": "混凝土"
+        },
+        "sourceList": {
+          "120": "石灰石",
+          "100m³": "水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "90": "混凝土"
+        },
+        "sourceList": {
+          "20": "橡胶",
+          "100": "石灰石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "50": "混凝土"
+        },
+        "sourceList": {
+          "15": "石英砂",
+          "60": "石灰石"
+        }
+      }
+    ]
+  },
+  "石英晶体": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "22.5": "石英晶体"
+        },
+        "sourceList": {
+          "37.5": "原石英"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "54": "石英晶体"
+        },
+        "sourceList": {
+          "36": "煤",
+          "75": "原石英"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "75": "石英晶体",
+          "60m³": "Dissolved Silica"
+        },
+        "sourceList": {
+          "120": "原石英",
+          "10m³": "硝酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "52.5": "石英晶体"
+        },
+        "sourceList": {
+          "67.5": "原石英",
+          "37.5m³": "水"
+        }
+      }
+    ]
+  },
+  "石英砂": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "50": "石英砂",
+          "120m³": "氧化铝溶液"
+        },
+        "sourceList": {
+          "120": "铝土矿",
+          "180m³": "水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "37.5": "石英砂"
+        },
+        "sourceList": {
+          "22.5": "原石英"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "270": "石英砂",
+          "80m³": "水"
+        },
+        "sourceList": {
+          "50": "石灰石",
+          "120m³": "Dissolved Silica",
+          "100m³": "水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "52.5": "石英砂"
+        },
+        "sourceList": {
+          "22.5": "原石英",
+          "37.5": "石灰石"
+        }
+      }
+    ]
+  },
+  "铜粉": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "50": "铜粉"
+        },
+        "sourceList": {
+          "300": "铜锭"
+        }
+      }
+    ]
+  },
+  "聚合树脂": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "30": "聚合树脂",
+          "40m³": "燃料"
+        },
+        "sourceList": {
+          "60m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "130": "聚合树脂",
+          "20m³": "重渣油"
+        },
+        "sourceList": {
+          "60m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "20": "聚合树脂",
+          "40m³": "重渣油"
+        },
+        "sourceList": {
+          "30m³": "原油"
+        }
+      }
+    ]
+  },
+  "油焦": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "120": "油焦"
+        },
+        "sourceList": {
+          "40m³": "重渣油"
+        }
+      }
+    ]
+  },
+  "铝块": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "360": "铝块",
+          "120m³": "水"
+        },
+        "sourceList": {
+          "120": "煤",
+          "240m³": "氧化铝溶液"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "300": "铝块",
+          "105m³": "水"
+        },
+        "sourceList": {
+          "60": "油焦",
+          "180m³": "氧化铝溶液"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "300": "铝块",
+          "50m³": "水"
+        },
+        "sourceList": {
+          "100": "煤",
+          "150": "铝土矿",
+          "50m³": "硫酸",
+          "60m³": "水"
+        }
+      }
+    ]
+  },
+  "重渣油": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "20": "塑料",
+          "10m³": "重渣油"
+        },
+        "sourceList": {
+          "30m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "20": "橡胶",
+          "20m³": "重渣油"
+        },
+        "sourceList": {
+          "30m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "130": "聚合树脂",
+          "20m³": "重渣油"
+        },
+        "sourceList": {
+          "60m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "20": "聚合树脂",
+          "40m³": "重渣油"
+        },
+        "sourceList": {
+          "30m³": "原油"
+        }
+      }
+    ]
+  },
+  "燃料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐",
+          "60m³": "燃料"
+        },
+        "sourceList": {
+          "60": "桶装燃油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "30": "聚合树脂",
+          "40m³": "燃料"
+        },
+        "sourceList": {
+          "60m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "100m³": "燃料"
+        },
+        "sourceList": {
+          "50m³": "重渣油",
+          "100m³": "水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "40m³": "燃料"
+        },
+        "sourceList": {
+          "60m³": "重渣油"
+        }
+      }
+    ]
+  },
+  "液态生物燃料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐",
+          "60m³": "液态生物燃料"
+        },
+        "sourceList": {
+          "60": "桶装液态生物燃料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "60m³": "液态生物燃料"
+        },
+        "sourceList": {
+          "90": "固体生物燃料",
+          "45m³": "水"
+        }
+      }
+    ]
+  },
+  "涡轮燃料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "20": "空罐",
+          "20m³": "涡轮燃料"
+        },
+        "sourceList": {
+          "20": "桶装涡轮燃料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "18.75m³": "涡轮燃料"
+        },
+        "sourceList": {
+          "15": "压缩煤",
+          "22.5m³": "燃料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "45m³": "涡轮燃料"
+        },
+        "sourceList": {
+          "15m³": "燃料",
+          "30m³": "重渣油",
+          "22.5": "油焦"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "30m³": "涡轮燃料"
+        },
+        "sourceList": {
+          "30": "压缩煤",
+          "37.5m³": "重渣油"
+        }
+      }
+    ]
+  },
+  "氧化铝溶液": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "120": "空罐",
+          "120m³": "氧化铝溶液"
+        },
+        "sourceList": {
+          "120": "桶装氧化铝溶液"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "50": "石英砂",
+          "120m³": "氧化铝溶液"
+        },
+        "sourceList": {
+          "120": "铝土矿",
+          "180m³": "水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "240m³": "氧化铝溶液"
+        },
+        "sourceList": {
+          "200": "铝土矿",
+          "200m³": "水"
+        }
+      }
+    ]
+  },
+  "硫酸": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐",
+          "60m³": "硫酸"
+        },
+        "sourceList": {
+          "60": "桶装硫酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "50m³": "硫酸"
+        },
+        "sourceList": {
+          "50": "硫",
+          "50m³": "水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "25": "铀核芯",
+          "10m³": "硫酸"
+        },
+        "sourceList": {
+          "15": "混凝土",
+          "50": "铀",
+          "40m³": "硫酸"
+        }
+      }
+    ]
+  },
+  "硝酸": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "20": "空瓶",
+          "20m³": "硝酸"
+        },
+        "sourceList": {
+          "20": "桶装硝酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "30m³": "硝酸"
+        },
+        "sourceList": {
+          "10": "铁板",
+          "120m³": "氮气",
+          "30m³": "水"
+        }
+      }
+    ]
+  },
+  "Dissolved Silica": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "75": "石英晶体",
+          "60m³": "Dissolved Silica"
+        },
+        "sourceList": {
+          "120": "原石英",
+          "10m³": "硝酸"
+        }
+      }
+    ]
+  },
+  "氮气": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "120m³": "氮气"
+        },
+        "sourceList": {
+          "10": "Reanimated SAM",
+          "100": "铝土矿"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "120m³": "氮气"
+        },
+        "sourceList": {
+          "10": "Reanimated SAM",
+          "120": "钦矿石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空瓶",
+          "240m³": "氮气"
+        },
+        "sourceList": {
+          "60": "瓶装氮气"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "矿井采集器",
+        "equIndex": 0,
+        "productList": {
+          "0m³": "氮气"
+        },
+        "sourceList": {
+          "0m³": "氮气"
+        }
+      }
+    ]
+  },
+  "Rocket Fuel": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "10": "压缩煤",
+          "100m³": "Rocket Fuel"
+        },
+        "sourceList": {
+          "60m³": "涡轮燃料",
+          "10m³": "硝酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空瓶",
+          "120m³": "Rocket Fuel"
+        },
+        "sourceList": {
+          "60": "Packaged Rocket Fuel"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "25": "压缩煤",
+          "150m³": "Rocket Fuel"
+        },
+        "sourceList": {
+          "50": "煤",
+          "100": "硫",
+          "100m³": "燃料",
+          "75m³": "氮气"
+        }
+      }
+    ]
+  },
+  "Ionized Fuel": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "5": "压缩煤",
+          "40m³": "Ionized Fuel"
+        },
+        "sourceList": {
+          "40m³": "Rocket Fuel",
+          "2.5": "能量碎片"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "40": "空瓶",
+          "80m³": "Ionized Fuel"
+        },
+        "sourceList": {
+          "40": "Packaged Ionized Fuel"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "40": "压缩煤",
+          "200m³": "Ionized Fuel"
+        },
+        "sourceList": {
+          "80": "Dark Matter Crystal",
+          "240": "Packaged Rocket Fuel"
+        }
+      }
+    ]
+  },
+  "铁板": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "20": "铁板"
+        },
+        "sourceList": {
+          "30": "铁锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "45": "铁板"
+        },
+        "sourceList": {
+          "15": "钢锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "75": "铁板"
+        },
+        "sourceList": {
+          "37.5": "铁锭",
+          "7.5": "塑料"
+        }
+      }
+    ]
+  },
+  "铁棒": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "15": "铁棒"
+        },
+        "sourceList": {
+          "15": "铁锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "52.5": "铁棒"
+        },
+        "sourceList": {
+          "7.5": "铝锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "48": "铁棒"
+        },
+        "sourceList": {
+          "12": "钢锭"
+        }
+      }
+    ]
+  },
+  "螺丝": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "40": "螺丝"
+        },
+        "sourceList": {
+          "10": "铁棒"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "260": "螺丝"
+        },
+        "sourceList": {
+          "5": "钢梁"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "50": "螺丝"
+        },
+        "sourceList": {
+          "12.5": "铁锭"
+        }
+      }
+    ]
+  },
+  "加强铁板": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "加强铁板"
+        },
+        "sourceList": {
+          "30": "铁板",
+          "60": "螺丝"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5.63": "加强铁板"
+        },
+        "sourceList": {
+          "18.75": "铁板",
+          "37.5": "电线"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "3.75": "加强铁板"
+        },
+        "sourceList": {
+          "11.25": "铁板",
+          "3.75": "橡胶"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "15": "加强铁板"
+        },
+        "sourceList": {
+          "90": "铁板",
+          "250": "螺丝"
+        }
+      }
+    ]
+  },
+  "铜板": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "10": "铜板"
+        },
+        "sourceList": {
+          "20": "铜锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "22.5": "铜板"
+        },
+        "sourceList": {
+          "22.5": "铜锭",
+          "22.5m³": "水"
+        }
+      }
+    ]
+  },
+  "镀铝板": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "30": "镀铝板"
+        },
+        "sourceList": {
+          "10": "铜锭",
+          "30": "铝锭"
+        }
+      }
+    ]
+  },
+  "铝制外壳": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "60": "铝制外壳"
+        },
+        "sourceList": {
+          "90": "铝锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "112.5": "铝制外壳"
+        },
+        "sourceList": {
+          "75": "铜锭",
+          "150": "铝锭"
+        }
+      }
+    ]
+  },
+  "钢管": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "20": "钢管"
+        },
+        "sourceList": {
+          "30": "钢锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "25": "钢管"
+        },
+        "sourceList": {
+          "100": "铁锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "50": "钢管"
+        },
+        "sourceList": {
+          "30": "混凝土",
+          "50": "钢锭"
+        }
+      }
+    ]
+  },
+  "钢梁": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "15": "钢梁"
+        },
+        "sourceList": {
+          "60": "钢锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "22.5": "钢梁"
+        },
+        "sourceList": {
+          "22.5": "铝锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "铸造器",
+        "equIndex": 0,
+        "productList": {
+          "45": "钢梁"
+        },
+        "sourceList": {
+          "80": "混凝土",
+          "120": "钢锭"
+        }
+      }
+    ]
+  },
+  "钢筋混凝土梁": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "6": "钢筋混凝土梁"
+        },
+        "sourceList": {
+          "18": "钢梁",
+          "36": "混凝土"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "4": "钢筋混凝土梁"
+        },
+        "sourceList": {
+          "20": "混凝土",
+          "24": "钢管"
+        }
+      }
+    ]
+  },
+  "模块化框架": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "2": "模块化框架"
+        },
+        "sourceList": {
+          "3": "加强铁板",
+          "12": "铁棒"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "3": "模块化框架"
+        },
+        "sourceList": {
+          "2": "加强铁板",
+          "10": "钢管"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "模块化框架"
+        },
+        "sourceList": {
+          "140": "螺丝",
+          "7.5": "加强铁板"
+        }
+      }
+    ]
+  },
+  "重型模块化框架": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "2": "重型模块化框架"
+        },
+        "sourceList": {
+          "10": "钢筋混凝土梁",
+          "40": "钢管",
+          "240": "螺丝"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "2.81": "重型模块化框架"
+        },
+        "sourceList": {
+          "7.5": "模块化框架",
+          "9.38": "钢筋混凝土梁",
+          "33.75": "钢管",
+          "20.63": "混凝土"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "3.75": "重型模块化框架"
+        },
+        "sourceList": {
+          "75": "橡胶",
+          "390": "螺丝",
+          "18.75": "模块化框架",
+          "11.25": "钢筋混凝土梁"
+        }
+      }
+    ]
+  },
+  "熔合模块化框架": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "1.5": "熔合模块化框架"
+        },
+        "sourceList": {
+          "75": "铝制外壳",
+          "1.5": "重型模块化框架",
+          "37.5m³": "氮气"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "3": "熔合模块化框架"
+        },
+        "sourceList": {
+          "3": "重型模块化框架",
+          "150": "铝锭",
+          "24m³": "硝酸",
+          "30m³": "燃料"
+        }
+      }
+    ]
+  },
+  "Ficsite Trigon": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "30": "Ficsite Trigon"
+        },
+        "sourceList": {
+          "10": "Ficsite Ingot"
+        }
+      }
+    ]
+  },
+  "布料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "15": "布料"
+        },
+        "sourceList": {
+          "15": "菌丝体",
+          "75": "生物质"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "30": "布料"
+        },
+        "sourceList": {
+          "30": "聚合树脂",
+          "30m³": "水"
+        }
+      }
+    ]
+  },
+  "塑料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "20": "塑料",
+          "10m³": "重渣油"
+        },
+        "sourceList": {
+          "30m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "60": "塑料"
+        },
+        "sourceList": {
+          "30": "橡胶",
+          "30m³": "燃料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "20": "塑料"
+        },
+        "sourceList": {
+          "60": "聚合树脂",
+          "20m³": "水"
+        }
+      }
+    ]
+  },
+  "橡胶": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "20": "橡胶",
+          "20m³": "重渣油"
+        },
+        "sourceList": {
+          "30m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "60": "橡胶"
+        },
+        "sourceList": {
+          "30": "塑料",
+          "30m³": "燃料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "20": "橡胶"
+        },
+        "sourceList": {
+          "40": "聚合树脂",
+          "40m³": "水"
+        }
+      }
+    ]
+  },
+  "转子": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "4": "转子"
+        },
+        "sourceList": {
+          "20": "铁棒",
+          "100": "螺丝"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "转子"
+        },
+        "sourceList": {
+          "10": "钢管",
+          "30": "电线"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "11.25": "转子"
+        },
+        "sourceList": {
+          "195": "螺丝",
+          "22.5": "铜板"
+        }
+      }
+    ]
+  },
+  "定子": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "定子"
+        },
+        "sourceList": {
+          "15": "钢管",
+          "40": "电线"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "8": "定子"
+        },
+        "sourceList": {
+          "16": "钢管",
+          "60": "快速线"
+        }
+      }
+    ]
+  },
+  "电池": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "20": "电池",
+          "30m³": "水"
+        },
+        "sourceList": {
+          "20": "铝制外壳",
+          "50m³": "硫酸",
+          "40m³": "氧化铝溶液"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "30": "电池"
+        },
+        "sourceList": {
+          "45": "硫",
+          "60": "塑料",
+          "90": "电线",
+          "52.5": "镀铝板"
+        }
+      }
+    ]
+  },
+  "电机": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "电机"
+        },
+        "sourceList": {
+          "10": "定子"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "7.5": "电机"
+        },
+        "sourceList": {
+          "3.75": "定子",
+          "1.25": "晶体振荡器"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "7.5": "电机"
+        },
+        "sourceList": {
+          "3.75": "电磁控制杆",
+          "7.5": "转子"
+        }
+      }
+    ]
+  },
+  "散热器": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "7.5": "散热器"
+        },
+        "sourceList": {
+          "37.5": "镀铝板",
+          "22.5": "铜板"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "10": "散热器"
+        },
+        "sourceList": {
+          "30": "橡胶"
+        }
+      }
+    ]
+  },
+  "冷却系统": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "6": "冷却系统"
+        },
+        "sourceList": {
+          "12": "橡胶",
+          "30m³": "水",
+          "150m³": "氮气"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "5": "冷却系统"
+        },
+        "sourceList": {
+          "10": "散热器",
+          "2.5": "电机",
+          "60m³": "氮气"
+        }
+      }
+    ]
+  },
+  "涡轮电机": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "1.88": "涡轮电机"
+        },
+        "sourceList": {
+          "45": "橡胶",
+          "7.5": "电机",
+          "3.75": "无线电控制单元"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "3.75": "涡轮电机"
+        },
+        "sourceList": {
+          "15": "定子",
+          "45": "瓶装氮气",
+          "7.5": "电机",
+          "1.88": "压力转换立方体"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "2.81": "涡轮电机"
+        },
+        "sourceList": {
+          "6.56": "转子",
+          "8.44": "无线电控制单元",
+          "4.69": "电磁控制杆"
+        }
+      }
+    ]
+  },
+  "电线": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "30": "电线"
+        },
+        "sourceList": {
+          "15": "铜锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "90": "电线"
+        },
+        "sourceList": {
+          "3": "钦锭",
+          "12": "铜锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "120": "电线"
+        },
+        "sourceList": {
+          "15": "钦锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "22.5": "电线"
+        },
+        "sourceList": {
+          "12.5": "铁锭"
+        }
+      }
+    ]
+  },
+  "电缆": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "30": "电缆"
+        },
+        "sourceList": {
+          "60": "电线"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "27.5": "电缆"
+        },
+        "sourceList": {
+          "5": "橡胶",
+          "7.5": "快速线"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "100": "电缆"
+        },
+        "sourceList": {
+          "30": "橡胶",
+          "45": "电线"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "67.5": "电缆"
+        },
+        "sourceList": {
+          "37.5": "电线",
+          "15m³": "重渣油"
+        }
+      }
+    ]
+  },
+  "快速线": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "60": "快速线"
+        },
+        "sourceList": {
+          "12": "钦锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "90": "快速线"
+        },
+        "sourceList": {
+          "7.5": "钦锭",
+          "37.5": "铜锭"
+        }
+      }
+    ]
+  },
+  "电路板": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "7.5": "电路板"
+        },
+        "sourceList": {
+          "15": "铜板",
+          "30": "塑料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "电路板"
+        },
+        "sourceList": {
+          "20": "橡胶",
+          "40": "油焦"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "12.5": "电路板"
+        },
+        "sourceList": {
+          "27.5": "石英砂"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "8.75": "电路板"
+        },
+        "sourceList": {
+          "12.5": "塑料",
+          "37.5": "快速线"
+        }
+      }
+    ]
+  },
+  "AI限制器": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "AI限制器"
+        },
+        "sourceList": {
+          "25": "铜板",
+          "100": "快速线"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "8": "AI限制器"
+        },
+        "sourceList": {
+          "28": "塑料",
+          "120": "快速线"
+        }
+      }
+    ]
+  },
+  "高速连接器": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "3.75": "高速连接器"
+        },
+        "sourceList": {
+          "210": "快速线",
+          "37.5": "电缆",
+          "3.75": "电路板"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "3": "高速连接器"
+        },
+        "sourceList": {
+          "3": "电路板",
+          "90": "快速线",
+          "37.5": "石英砂"
+        }
+      }
+    ]
+  },
+  "Reanimated SAM": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "30": "Reanimated SAM"
+        },
+        "sourceList": {
+          "120": "SAM"
+        }
+      }
+    ]
+  },
+  "SAM Fluctuator": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "10": "SAM Fluctuator"
+        },
+        "sourceList": {
+          "30": "钢管",
+          "50": "电线",
+          "60": "Reanimated SAM"
+        }
+      }
+    ]
+  },
+  "计算机": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "2.5": "计算机"
+        },
+        "sourceList": {
+          "10": "电路板",
+          "20": "电缆",
+          "40": "塑料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "3.33": "计算机"
+        },
+        "sourceList": {
+          "5": "电路板",
+          "1.67": "晶体振荡器"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "3.75": "计算机"
+        },
+        "sourceList": {
+          "15": "电路板",
+          "52.5": "快速线",
+          "22.5": "橡胶"
+        }
+      }
+    ]
+  },
+  "超级计算机": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "1.88": "超级计算机"
+        },
+        "sourceList": {
+          "7.5": "计算机",
+          "3.75": "AI限制器",
+          "5.63": "高速连接器",
+          "52.5": "塑料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "2.4": "超级计算机"
+        },
+        "sourceList": {
+          "24": "电池",
+          "60": "电线",
+          "7.2": "计算机",
+          "2.4": "电磁控制杆"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "3": "超级计算机"
+        },
+        "sourceList": {
+          "6": "冷却系统"
+        }
+      }
+    ]
+  },
+  "无线电控制单元": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "2.5": "无线电控制单元"
+        },
+        "sourceList": {
+          "40": "铝制外壳",
+          "1.25": "晶体振荡器",
+          "2.5": "计算机"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "4.5": "无线电控制单元"
+        },
+        "sourceList": {
+          "15": "电路板",
+          "45": "橡胶",
+          "90": "铝制外壳",
+          "1.5": "晶体振荡器"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "3.75": "无线电控制单元"
+        },
+        "sourceList": {
+          "15": "散热器",
+          "45": "石英晶体",
+          "7.5": "高速连接器"
+        }
+      }
+    ]
+  },
+  "晶体振荡器": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "1": "晶体振荡器"
+        },
+        "sourceList": {
+          "14": "电缆",
+          "18": "石英晶体",
+          "2.5": "加强铁板"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "1.88": "晶体振荡器"
+        },
+        "sourceList": {
+          "18.75": "石英晶体",
+          "13.13": "橡胶",
+          "1.88": "AI限制器"
+        }
+      }
+    ]
+  },
+  "叠加振荡器": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "5": "叠加振荡器",
+          "125,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "5": "晶体振荡器",
+          "30": "Dark Matter Crystal",
+          "45": "镀铝板",
+          "125,000": "Excited Photonic Matter"
+        }
+      }
+    ]
+  },
+  "Diamonds": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "30": "Diamonds"
+        },
+        "sourceList": {
+          "600": "煤"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "20": "Diamonds"
+        },
+        "sourceList": {
+          "240": "煤",
+          "480": "石灰石"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "40": "Diamonds"
+        },
+        "sourceList": {
+          "200m³": "原油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "30": "Diamonds"
+        },
+        "sourceList": {
+          "720": "油焦"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "15": "Diamonds"
+        },
+        "sourceList": {
+          "45": "石英晶体",
+          "120": "煤"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "60": "Diamonds"
+        },
+        "sourceList": {
+          "40": "桶装涡轮燃料",
+          "600": "煤"
+        }
+      }
+    ]
+  },
+  "Time Crystal": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "6": "Time Crystal"
+        },
+        "sourceList": {
+          "12": "Diamonds"
+        }
+      }
+    ]
+  },
+  "Dark Matter Crystal": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "30": "Dark Matter Crystal"
+        },
+        "sourceList": {
+          "30": "Diamonds",
+          "150,000": "Dark Matter Residue"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "20": "Dark Matter Crystal"
+        },
+        "sourceList": {
+          "200,000": "Dark Matter Residue"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "60": "Dark Matter Crystal"
+        },
+        "sourceList": {
+          "30": "Time Crystal",
+          "150,000": "Dark Matter Residue"
+        }
+      }
+    ]
+  },
+  "Dark Matter Residue": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "4": "AI Expansion Server",
+          "100,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "4": "叠加振荡器",
+          "100,000": "Excited Photonic Matter"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "60,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "12.5": "SAM Fluctuator",
+          "7.5": "叠加振荡器",
+          "60,000": "Excited Photonic Matter"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "100,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "50": "Reanimated SAM"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "2.5": "Ficsonium Fuel Rod",
+          "50,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "5": "电磁控制杆",
+          "100": "Ficsite Trigon",
+          "50,000": "Excited Photonic Matter"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "3": "Neural-Quantum Processor",
+          "75,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "3": "超级计算机",
+          "15": "Time Crystal",
+          "45": "Ficsite Trigon",
+          "75,000": "Excited Photonic Matter"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "5": "能量碎片",
+          "60,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "10": "Dark Matter Crystal",
+          "60": "石英晶体",
+          "60,000": "Excited Photonic Matter"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "5": "叠加振荡器",
+          "125,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "5": "晶体振荡器",
+          "30": "Dark Matter Crystal",
+          "45": "镀铝板",
+          "125,000": "Excited Photonic Matter"
+        }
+      }
+    ]
+  },
+  "Singularity Cell": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "10": "Singularity Cell"
+        },
+        "sourceList": {
+          "1": "核子团",
+          "20": "Dark Matter Crystal",
+          "100": "铁板",
+          "200": "混凝土"
+        }
+      }
+    ]
+  },
+  "Excited Photonic Matter": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "200,000": "Excited Photonic Matter"
+        },
+        "sourceList": {}
+      }
+    ]
+  },
+  "Neural-Quantum Processor": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "3": "Neural-Quantum Processor",
+          "75,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "3": "超级计算机",
+          "15": "Time Crystal",
+          "45": "Ficsite Trigon",
+          "75,000": "Excited Photonic Matter"
+        }
+      }
+    ]
+  },
+  "空罐": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐",
+          "60m³": "原油"
+        },
+        "sourceList": {
+          "60": "桶装石油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "120": "空罐",
+          "120m³": "氧化铝溶液"
+        },
+        "sourceList": {
+          "120": "桶装氧化铝溶液"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "120": "空罐",
+          "120m³": "水"
+        },
+        "sourceList": {
+          "120": "桶装水"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "20": "空罐",
+          "20m³": "涡轮燃料"
+        },
+        "sourceList": {
+          "20": "桶装涡轮燃料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐",
+          "60m³": "液态生物燃料"
+        },
+        "sourceList": {
+          "60": "桶装液态生物燃料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐",
+          "60m³": "燃料"
+        },
+        "sourceList": {
+          "60": "桶装燃油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐",
+          "60m³": "硫酸"
+        },
+        "sourceList": {
+          "60": "桶装硫酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "20": "空罐",
+          "20m³": "重渣油"
+        },
+        "sourceList": {
+          "20": "桶装重渣油"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐"
+        },
+        "sourceList": {
+          "30": "塑料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "40": "空罐"
+        },
+        "sourceList": {
+          "40": "钢锭"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "60": "空罐"
+        },
+        "sourceList": {
+          "15": "铜板",
+          "30": "铁板"
+        }
+      }
+    ]
+  },
+  "空瓶": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "40": "空瓶",
+          "80m³": "Ionized Fuel"
+        },
+        "sourceList": {
+          "40": "Packaged Ionized Fuel"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空瓶",
+          "120m³": "Rocket Fuel"
+        },
+        "sourceList": {
+          "60": "Packaged Rocket Fuel"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "空瓶",
+          "240m³": "氮气"
+        },
+        "sourceList": {
+          "60": "瓶装氮气"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "20": "空瓶",
+          "20m³": "硝酸"
+        },
+        "sourceList": {
+          "20": "桶装硝酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "60": "空瓶"
+        },
+        "sourceList": {
+          "60": "铝锭"
+        }
+      }
+    ]
+  },
+  "压力转换立方体": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "1": "压力转换立方体"
+        },
+        "sourceList": {
+          "1": "熔合模块化框架",
+          "2": "无线电控制单元"
+        }
+      }
+    ]
+  },
+  "桶装水": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "桶装水"
+        },
+        "sourceList": {
+          "60": "空罐",
+          "60m³": "水"
+        }
+      }
+    ]
+  },
+  "桶装氧化铝溶液": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "120": "桶装氧化铝溶液"
+        },
+        "sourceList": {
+          "120": "空罐",
+          "120m³": "氧化铝溶液"
+        }
+      }
+    ]
+  },
+  "桶装硫酸": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "40": "桶装硫酸"
+        },
+        "sourceList": {
+          "40": "空罐",
+          "40m³": "硫酸"
+        }
+      }
+    ]
+  },
+  "桶装硝酸": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "30": "桶装硝酸"
+        },
+        "sourceList": {
+          "30": "空瓶",
+          "30m³": "硝酸"
+        }
+      }
+    ]
+  },
+  "瓶装氮气": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "瓶装氮气"
+        },
+        "sourceList": {
+          "60": "空瓶",
+          "240m³": "氮气"
+        }
+      }
+    ]
+  },
+  "桶装石油": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "30": "桶装石油"
+        },
+        "sourceList": {
+          "30": "空罐",
+          "30m³": "原油"
+        }
+      }
+    ]
+  },
+  "桶装重渣油": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "30": "桶装重渣油"
+        },
+        "sourceList": {
+          "30": "空罐",
+          "30m³": "重渣油"
+        }
+      }
+    ]
+  },
+  "固体生物燃料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "60": "固体生物燃料"
+        },
+        "sourceList": {
+          "120": "生物质"
+        }
+      }
+    ]
+  },
+  "桶装燃油": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "40": "桶装燃油"
+        },
+        "sourceList": {
+          "40": "空罐",
+          "40m³": "燃料"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "60": "桶装燃油"
+        },
+        "sourceList": {
+          "60": "桶装水",
+          "30m³": "重渣油"
+        }
+      }
+    ]
+  },
+  "桶装液态生物燃料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "40": "桶装液态生物燃料"
+        },
+        "sourceList": {
+          "40": "空罐",
+          "40m³": "液态生物燃料"
+        }
+      }
+    ]
+  },
+  "桶装涡轮燃料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "20": "桶装涡轮燃料"
+        },
+        "sourceList": {
+          "20": "空罐",
+          "20m³": "涡轮燃料"
+        }
+      }
+    ]
+  },
+  "Packaged Rocket Fuel": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "60": "Packaged Rocket Fuel"
+        },
+        "sourceList": {
+          "60": "空瓶",
+          "120m³": "Rocket Fuel"
+        }
+      }
+    ]
+  },
+  "Packaged Ionized Fuel": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "灌装机",
+        "equIndex": 0,
+        "productList": {
+          "40": "Packaged Ionized Fuel"
+        },
+        "sourceList": {
+          "40": "空瓶",
+          "80m³": "Ionized Fuel"
+        }
+      }
+    ]
+  },
+  "铀燃料棒": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "0.4": "铀燃料棒"
+        },
+        "sourceList": {
+          "2": "电磁控制杆",
+          "20": "铀核芯",
+          "1.2": "钢筋混凝土梁"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "0.6": "铀燃料棒"
+        },
+        "sourceList": {
+          "2": "转子",
+          "20": "铀核芯",
+          "0.6": "晶体振荡器"
+        }
+      }
+    ]
+  },
+  "钚燃料棒": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "0.25": "钚燃料棒"
+        },
+        "sourceList": {
+          "7.5": "钚核芯",
+          "4.5": "钢梁",
+          "1.5": "电磁控制杆",
+          "2.5": "散热器"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "0.5": "钚燃料棒"
+        },
+        "sourceList": {
+          "10": "钚核芯",
+          "0.5": "压力转换立方体"
+        }
+      }
+    ]
+  },
+  "电磁控制杆": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "4": "电磁控制杆"
+        },
+        "sourceList": {
+          "4": "AI限制器",
+          "6": "定子"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "8": "电磁控制杆"
+        },
+        "sourceList": {
+          "4": "高速连接器",
+          "8": "定子"
+        }
+      }
+    ]
+  },
+  "铀核芯": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "25": "铀核芯",
+          "10m³": "硫酸"
+        },
+        "sourceList": {
+          "15": "混凝土",
+          "50": "铀",
+          "40m³": "硫酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "20": "铀核芯"
+        },
+        "sourceList": {
+          "15": "石英砂",
+          "25": "硫",
+          "75": "快速线"
+        }
+      }
+    ]
+  },
+  "Non-Fissile Uranium": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "50": "Non-Fissile Uranium",
+          "15m³": "水"
+        },
+        "sourceList": {
+          "25": "石英砂",
+          "37.5": "铀废料",
+          "15m³": "硫酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "100": "Non-Fissile Uranium",
+          "40m³": "水"
+        },
+        "sourceList": {
+          "25": "铀废料",
+          "15m³": "硝酸",
+          "25m³": "硫酸"
+        }
+      }
+    ]
+  },
+  "钚丸": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "30": "钚丸"
+        },
+        "sourceList": {
+          "25": "铀废料",
+          "100": "Non-Fissile Uranium"
+        }
+      }
+    ]
+  },
+  "钚核芯": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "钚核芯"
+        },
+        "sourceList": {
+          "10": "钚丸",
+          "20": "混凝土"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "10": "钚核芯"
+        },
+        "sourceList": {
+          "10": "铝制外壳",
+          "75": "Non-Fissile Uranium"
+        }
+      }
+    ]
+  },
+  "Ficsonium": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "10": "Ficsonium"
+        },
+        "sourceList": {
+          "10": "Singularity Cell",
+          "200,000": "Dark Matter Residue"
+        }
+      }
+    ]
+  },
+  "Ficsonium Fuel Rod": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "2.5": "Ficsonium Fuel Rod",
+          "50,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "5": "电磁控制杆",
+          "100": "Ficsite Trigon",
+          "50,000": "Excited Photonic Matter"
+        }
+      }
+    ]
+  },
+  "铀废料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "核电站",
+        "equIndex": 0,
+        "productList": {
+          "10": "铀废料"
+        },
+        "sourceList": {
+          "0.2": "铀燃料棒"
+        }
+      }
+    ]
+  },
+  "钚废料": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "核电站",
+        "equIndex": 0,
+        "productList": {
+          "1": "钚废料"
+        },
+        "sourceList": {
+          "0.1": "钚燃料棒"
+        }
+      }
+    ]
+  },
+  "压缩煤": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "精炼厂",
+        "equIndex": 0,
+        "productList": {
+          "5": "压缩煤",
+          "40m³": "Ionized Fuel"
+        },
+        "sourceList": {
+          "40m³": "Rocket Fuel",
+          "2.5": "能量碎片"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "10": "压缩煤",
+          "100m³": "Rocket Fuel"
+        },
+        "sourceList": {
+          "60m³": "涡轮燃料",
+          "10m³": "硝酸"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "25": "压缩煤"
+        },
+        "sourceList": {
+          "25": "硫"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "1级采矿机",
+        "equIndex": 0,
+        "productList": {
+          "40": "压缩煤",
+          "200m³": "Ionized Fuel"
+        },
+        "sourceList": {
+          "80": "Dark Matter Crystal",
+          "240": "Packaged Rocket Fuel"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "25": "压缩煤",
+          "150m³": "Rocket Fuel"
+        },
+        "sourceList": {
+          "50": "煤",
+          "100": "硫",
+          "100m³": "燃料",
+          "75m³": "氮气"
+        }
+      }
+    ]
+  },
+  "能量碎片": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "5": "能量碎片",
+          "60,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "10": "Dark Matter Crystal",
+          "60": "石英晶体",
+          "60,000": "Excited Photonic Matter"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "7.5": "能量碎片"
+        },
+        "sourceList": {
+          "7.5": "蓝色能量蛞蝓"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "10": "能量碎片"
+        },
+        "sourceList": {
+          "5": "黄色能量蛞蝓"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "构造器",
+        "equIndex": 0,
+        "productList": {
+          "12.5": "能量碎片"
+        },
+        "sourceList": {
+          "2.5": "紫色能量蛞蝓"
+        }
+      }
+    ]
+  },
+  "智能护板": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "2": "智能护板"
+        },
+        "sourceList": {
+          "2": "转子"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "5": "智能护板"
+        },
+        "sourceList": {
+          "2.5": "转子",
+          "7.5": "塑料"
+        }
+      }
+    ]
+  },
+  "多功能框架": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "5": "多功能框架"
+        },
+        "sourceList": {
+          "30": "钢梁",
+          "2.5": "模块化框架"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "7.5": "多功能框架"
+        },
+        "sourceList": {
+          "30": "橡胶",
+          "3.75": "模块化框架",
+          "22.5": "钢梁"
+        }
+      }
+    ]
+  },
+  "自动线路": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "2.5": "自动线路"
+        },
+        "sourceList": {
+          "50": "电缆",
+          "2.5": "定子"
+        }
+      },
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "7.5": "自动线路"
+        },
+        "sourceList": {
+          "75": "电线",
+          "3.75": "定子",
+          "1.88": "高速连接器"
+        }
+      }
+    ]
+  },
+  "模块化引擎": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "1": "模块化引擎"
+        },
+        "sourceList": {
+          "2": "智能护板",
+          "15": "橡胶"
+        }
+      }
+    ]
+  },
+  "自适应控制单元": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "1": "自适应控制单元"
+        },
+        "sourceList": {
+          "1": "重型模块化框架",
+          "2": "计算机",
+          "5": "电路板"
+        }
+      }
+    ]
+  },
+  "组装编导系统": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "0.75": "组装编导系统"
+        },
+        "sourceList": {
+          "1.5": "自适应控制单元",
+          "0.75": "超级计算机"
+        }
+      }
+    ]
+  },
+  "磁场发生器": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "组装器",
+        "equIndex": 0,
+        "productList": {
+          "1": "磁场发生器"
+        },
+        "sourceList": {
+          "1": "电磁控制杆",
+          "2.5": "多功能框架"
+        }
+      }
+    ]
+  },
+  "热推进火箭": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "1": "热推进火箭"
+        },
+        "sourceList": {
+          "1": "熔合模块化框架",
+          "3": "冷却系统",
+          "2.5": "模块化引擎"
+        }
+      }
+    ]
+  },
+  "核子团": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {
+          "0.5": "核子团"
+        },
+        "sourceList": {
+          "100": "铜粉",
+          "0.5": "压力转换立方体"
+        }
+      }
+    ]
+  },
+  "Biochemical Sculptor": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "搅拌器",
+        "equIndex": 0,
+        "productList": {
+          "2": "Biochemical Sculptor"
+        },
+        "sourceList": {
+          "40": "Ficsite Trigon",
+          "0.5": "组装编导系统",
+          "10m³": "水"
+        }
+      }
+    ]
+  },
+  "Ballistic Warp Drive": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "制造器",
+        "equIndex": 0,
+        "productList": {
+          "1": "Ballistic Warp Drive"
+        },
+        "sourceList": {
+          "1": "热推进火箭",
+          "2": "叠加振荡器",
+          "5": "Singularity Cell",
+          "40": "Dark Matter Crystal"
+        }
+      }
+    ]
+  },
+  "AI Expansion Server": {
+    "useIndex": 0,
+    "data": [
+      {
+        "time": 60,
+        "equType": "Quantum Encoder",
+        "equIndex": 0,
+        "productList": {
+          "4": "AI Expansion Server",
+          "100,000": "Dark Matter Residue"
+        },
+        "sourceList": {
+          "4": "叠加振荡器",
+          "100,000": "Excited Photonic Matter"
+        }
+      }
+    ]
+  }
+}
