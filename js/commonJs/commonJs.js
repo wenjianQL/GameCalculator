@@ -1,5 +1,5 @@
 // 是否需要翻译
-let needTranslate = true;
+let needTranslate = false;
 // 是否支持图片
 let isSupportImg = true;
 

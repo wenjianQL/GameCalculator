@@ -364,9 +364,9 @@ function refreshTreeListData()
                 // 材料名字
                 const pathName = path[i].replace("~", "");
                 const matName = pathName.split('`')[0];
-                let nodeName = num + "*" + getTranslate(matName) + ", " + equNumber.toFixed(2) + "*" + getTranslate(equName);
+                let nodeName = num.toFixed(2) + "*" + getTranslate(matName) + ", " + equNumber.toFixed(2) + "*" + getTranslate(equName);
                 if (equName === undefined || equName === "") {
-                    nodeName = num + "*" + getTranslate(matName);
+                    nodeName = num.toFixed(2) + "*" + getTranslate(matName);
                 }
                 if (!currentNode.children) {
                     currentNode.children = [];

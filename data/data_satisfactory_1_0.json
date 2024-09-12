@@ -634,18 +634,6 @@
     "data": [
       {
         "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "60": "空罐",
-          "60m³": "燃料"
-        },
-        "sourceList": {
-          "60": "桶装燃油"
-        }
-      },
-      {
-        "time": 60,
         "equType": "精炼厂",
         "equIndex": 0,
         "productList": {
@@ -686,18 +674,6 @@
     "data": [
       {
         "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "60": "空罐",
-          "60m³": "液态生物燃料"
-        },
-        "sourceList": {
-          "60": "桶装液态生物燃料"
-        }
-      },
-      {
-        "time": 60,
         "equType": "精炼厂",
         "equIndex": 0,
         "productList": {
@@ -713,18 +689,6 @@
   "涡轮燃料": {
     "useIndex": 0,
     "data": [
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "20": "空罐",
-          "20m³": "涡轮燃料"
-        },
-        "sourceList": {
-          "20": "桶装涡轮燃料"
-        }
-      },
       {
         "time": 60,
         "equType": "精炼厂",
@@ -769,18 +733,6 @@
     "data": [
       {
         "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "120": "空罐",
-          "120m³": "氧化铝溶液"
-        },
-        "sourceList": {
-          "120": "桶装氧化铝溶液"
-        }
-      },
-      {
-        "time": 60,
         "equType": "精炼厂",
         "equIndex": 0,
         "productList": {
@@ -809,18 +761,6 @@
   "硫酸": {
     "useIndex": 0,
     "data": [
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "60": "空罐",
-          "60m³": "硫酸"
-        },
-        "sourceList": {
-          "60": "桶装硫酸"
-        }
-      },
       {
         "time": 60,
         "equType": "精炼厂",
@@ -852,18 +792,6 @@
   "硝酸": {
     "useIndex": 0,
     "data": [
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "20": "空瓶",
-          "20m³": "硝酸"
-        },
-        "sourceList": {
-          "20": "桶装硝酸"
-        }
-      },
       {
         "time": 60,
         "equType": "搅拌器",
@@ -2625,102 +2553,6 @@
     "data": [
       {
         "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "60": "空罐",
-          "60m³": "原油"
-        },
-        "sourceList": {
-          "60": "桶装石油"
-        }
-      },
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "120": "空罐",
-          "120m³": "氧化铝溶液"
-        },
-        "sourceList": {
-          "120": "桶装氧化铝溶液"
-        }
-      },
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "120": "空罐",
-          "120m³": "水"
-        },
-        "sourceList": {
-          "120": "桶装水"
-        }
-      },
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "20": "空罐",
-          "20m³": "涡轮燃料"
-        },
-        "sourceList": {
-          "20": "桶装涡轮燃料"
-        }
-      },
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "60": "空罐",
-          "60m³": "液态生物燃料"
-        },
-        "sourceList": {
-          "60": "桶装液态生物燃料"
-        }
-      },
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "60": "空罐",
-          "60m³": "燃料"
-        },
-        "sourceList": {
-          "60": "桶装燃油"
-        }
-      },
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "60": "空罐",
-          "60m³": "硫酸"
-        },
-        "sourceList": {
-          "60": "桶装硫酸"
-        }
-      },
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "20": "空罐",
-          "20m³": "重渣油"
-        },
-        "sourceList": {
-          "20": "桶装重渣油"
-        }
-      },
-      {
-        "time": 60,
         "equType": "构造器",
         "equIndex": 0,
         "productList": {
@@ -2792,18 +2624,6 @@
         },
         "sourceList": {
           "60": "瓶装氮气"
-        }
-      },
-      {
-        "time": 60,
-        "equType": "灌装机",
-        "equIndex": 0,
-        "productList": {
-          "20": "空瓶",
-          "20m³": "硝酸"
-        },
-        "sourceList": {
-          "20": "桶装硝酸"
         }
       },
       {

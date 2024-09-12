@@ -111,334 +111,30 @@ let game_data = {
         "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团", "Biochemical Sculptor", "Ballistic Warp Drive", "AI Expansion Server"],
     },
     "recipe_data": {
-        "组装编导系统": {
+        "铁锭": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "组装器",
+                    "equType": "冶炼器",
                     "equIndex": 0,
                     "productList": {
-                        "组装编导系统": 0.75
+                        "铁锭": "30"
                     },
                     "sourceList": {
-                        "自适应控制单元": 1.5,
-                        "超级计算机": 0.75
-                    }
-                }
-            ]
-        },
-        "自适应控制单元": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "自适应控制单元": 1.0
-                    },
-                    "sourceList": {
-                        "自动线路": 7.5,
-                        "电路板": 5.0,
-                        "计算机": 1.0,
-                        "重型模块化框架": 1.0
-                    }
-                }
-            ]
-        },
-        "自动线路": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "自动线路": 2.5
-                    },
-                    "sourceList": {
-                        "定子": 2.5,
-                        "电缆": 50.0
+                        "铁矿石": "30"
                     }
                 },
                 {
                     "time": 60,
-                    "equType": "制造器",
+                    "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "自动线路": 7.5
+                        "铁锭": "50"
                     },
                     "sourceList": {
-                        "定子": 3.75,
-                        "高速连接器": 1.875,
-                        "电线": 75.0
-                    }
-                }
-            ]
-        },
-        "转子": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "转子": 4.0
-                    },
-                    "sourceList": {
-                        "铁棒": 20.0,
-                        "螺丝": 100.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "转子": 11.25
-                    },
-                    "sourceList": {
-                        "铜板": 22.5,
-                        "螺丝": 195.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "转子": 5.0
-                    },
-                    "sourceList": {
-                        "钢管": 10.0,
-                        "电线": 30.0
-                    }
-                }
-            ]
-        },
-        "重渣油": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "重渣油": 10.0,
-                        "塑料": 20.0
-                    },
-                    "sourceList": {
-                        "原油": 30.0
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "重渣油": 20.0,
-                        "橡胶": 20.0
-                    },
-                    "sourceList": {
-                        "原油": 30.0
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "重渣油": 20.0,
-                        "聚合树脂": 130.0
-                    },
-                    "sourceList": {
-                        "原油": 60.0
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "重渣油": 40.0,
-                        "聚合树脂": 20.0
-                    },
-                    "sourceList": {
-                        "原油": 30.0
-                    }
-                }
-            ]
-        },
-        "重型模块化框架": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "重型模块化框架": 2.0
-                    },
-                    "sourceList": {
-                        "模块化框架": 10.0,
-                        "钢筋混凝土梁": 10.0,
-                        "钢管": 30.0,
-                        "螺丝": 200.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "重型模块化框架": 3.75
-                    },
-                    "sourceList": {
-                        "模块化框架": 18.75,
-                        "钢筋混凝土梁": 11.25,
-                        "橡胶": 75.0,
-                        "螺丝": 390.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "重型模块化框架": 2.8125
-                    },
-                    "sourceList": {
-                        "模块化框架": 7.5,
-                        "钢筋混凝土梁": 9.375,
-                        "钢管": 33.75,
-                        "混凝土": 20.625
-                    }
-                }
-            ]
-        },
-        "智能护板": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "智能护板": 2.0
-                    },
-                    "sourceList": {
-                        "加强铁板": 2.0,
-                        "转子": 2.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "智能护板": 5.0
-                    },
-                    "sourceList": {
-                        "塑料": 7.5,
-                        "加强铁板": 2.5,
-                        "转子": 2.5
-                    }
-                }
-            ]
-        },
-        "铀燃料棒": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铀燃料棒": 0.4
-                    },
-                    "sourceList": {
-                        "铀核心": 20.0,
-                        "电磁控制杆": 2.0,
-                        "钢筋混凝土梁": 1.2
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铀燃料棒": 0.6
-                    },
-                    "sourceList": {
-                        "铀核心": 20.0,
-                        "电磁控制杆": 2.0,
-                        "晶体振荡器": 0.6,
-                        "信标": 1.2
-                    }
-                }
-            ]
-        },
-        "铀核心": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铀核心": 25.0,
-                        "硫酸": 10.0
-                    },
-                    "sourceList": {
-                        "铀": 50.0,
-                        "硫酸": 40.0,
-                        "混凝土": 15.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铀核心": 20.0
-                    },
-                    "sourceList": {
-                        "铀": 25.0,
-                        "硫": 25.0,
-                        "石英砂": 15.0,
-                        "快速线": 75.0
-                    }
-                }
-            ]
-        },
-        "油焦": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "油焦": 120.0
-                    },
-                    "sourceList": {
-                        "重渣油": 40.0
-                    }
-                }
-            ]
-        },
-        "氧化铝溶液": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "氧化铝溶液": 240.0
-                    },
-                    "sourceList": {
-                        "铝土矿": 200.0,
-                        "水": 200.0
+                        "铁矿石": "25",
+                        "石灰石": "40"
                     }
                 },
                 {
@@ -446,96 +142,11 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "氧化铝溶液": 120.0,
-                        "石英砂": 50.0
+                        "铁锭": "100"
                     },
                     "sourceList": {
-                        "铝土矿": 120.0,
-                        "水": 180.0
-                    }
-                }
-            ]
-        },
-        "压力转换立方体": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "压力转换立方体": 1.0
-                    },
-                    "sourceList": {
-                        "熔合模块化框架": 1.0,
-                        "无线电控制单元": 2.0
-                    }
-                }
-            ]
-        },
-        "信标": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "信标": 7.5
-                    },
-                    "sourceList": {
-                        "铁板": 22.5,
-                        "铁棒": 7.5,
-                        "电线": 112.5,
-                        "电缆": 15.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "信标": 10.0
-                    },
-                    "sourceList": {
-                        "晶体振荡器": 0.5,
-                        "钢管": 8.0,
-                        "钢梁": 2.0
-                    }
-                }
-            ]
-        },
-        "硝酸": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "硝酸": 30.0
-                    },
-                    "sourceList": {
-                        "氮气": 120.0,
-                        "铁板": 10.0,
-                        "水": 30.0
-                    }
-                }
-            ]
-        },
-        "橡胶": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "橡胶": 20.0,
-                        "重渣油": 20.0
-                    },
-                    "sourceList": {
-                        "原油": 30.0
+                        "铁矿石": "50",
+                        "硫酸": "10"
                     }
                 },
                 {
@@ -543,173 +154,23 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "橡胶": 20.0
+                        "铁锭": "65"
                     },
                     "sourceList": {
-                        "聚合树脂": 40.0,
-                        "水": 40.0
+                        "铁矿石": "35",
+                        "水": "20"
                     }
                 },
                 {
                     "time": 60,
-                    "equType": "精炼厂",
+                    "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "橡胶": 60.0
+                        "铁锭": "75"
                     },
                     "sourceList": {
-                        "燃料": 30.0,
-                        "塑料": 30.0
-                    }
-                }
-            ]
-        },
-        "无线电控制单元": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "无线电控制单元": 2.5
-                    },
-                    "sourceList": {
-                        "铝制外壳": 40.0,
-                        "晶体振荡器": 1.25,
-                        "计算机": 1.25
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "无线电控制单元": 3.75
-                    },
-                    "sourceList": {
-                        "散热器": 15.0,
-                        "高速连接器": 7.5,
-                        "石英晶体": 45.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "无线电控制单元": 4.5
-                    },
-                    "sourceList": {
-                        "晶体振荡器": 1.5,
-                        "电路板": 15.0,
-                        "橡胶": 45.0,
-                        "铝制外壳": 90.0
-                    }
-                }
-            ]
-        },
-        "涡轮燃料": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "涡轮燃料": 18.75
-                    },
-                    "sourceList": {
-                        "燃料": 22.5,
-                        "压缩煤": 15.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "涡轮燃料": 30.0
-                    },
-                    "sourceList": {
-                        "重渣油": 37.5,
-                        "压缩煤": 30.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "涡轮燃料": 45.0
-                    },
-                    "sourceList": {
-                        "燃料": 15.0,
-                        "重渣油": 30.0,
-                        "硫": 22.5,
-                        "油焦": 22.5
-                    }
-                }
-            ]
-        },
-        "涡轮电机": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "涡轮电机": 1.875
-                    },
-                    "sourceList": {
-                        "电机": 7.5,
-                        "无线电控制单元": 3.75,
-                        "橡胶": 45.0,
-                        "冷却系统": 7.5
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "涡轮电机": 3.75
-                    },
-                    "sourceList": {
-                        "电机": 7.5,
-                        "压力转换立方体": 1.875,
-                        "定子": 15.0,
-                        "瓶装氮气": 45.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "涡轮电机": 2.8125
-                    },
-                    "sourceList": {
-                        "电机": 6.5625,
-                        "无线电控制单元": 8.4375,
-                        "电磁控制杆": 4.6875,
-                        "转子": 6.5625
-                    }
-                }
-            ]
-        },
-        "铜粉": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铜粉": 50.0
-                    },
-                    "sourceList": {
-                        "铜锭": 300.0
+                        "铜矿石": "10",
+                        "铁矿石": "40"
                     }
                 }
             ]
@@ -722,10 +183,22 @@ let game_data = {
                     "equType": "冶炼器",
                     "equIndex": 0,
                     "productList": {
-                        "铜锭": 30.0
+                        "铜锭": "30"
                     },
                     "sourceList": {
-                        "铜矿": 30.0
+                        "铜矿石": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "铜锭": "110"
+                    },
+                    "sourceList": {
+                        "铜矿石": "45",
+                        "硫酸": "25"
                     }
                 },
                 {
@@ -733,11 +206,11 @@ let game_data = {
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "铜锭": 100.0
+                        "铜锭": "60"
                     },
                     "sourceList": {
-                        "铜矿": 50.0,
-                        "铁矿": 25.0
+                        "铜矿石": "25",
+                        "油焦": "40"
                     }
                 },
                 {
@@ -745,55 +218,11 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "铜锭": 37.5
+                        "铜锭": "37.5"
                     },
                     "sourceList": {
-                        "铜矿": 15.0,
-                        "水": 10.0
-                    }
-                }
-            ]
-        },
-        "铜板": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铜板": 10.0
-                    },
-                    "sourceList": {
-                        "铜锭": 20.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "铜板": 22.5
-                    },
-                    "sourceList": {
-                        "铜锭": 22.5,
-                        "水": 22.5
-                    }
-                }
-            ]
-        },
-        "铁锭": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "冶炼器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铁锭": 30.0
-                    },
-                    "sourceList": {
-                        "铁矿": 30.0
+                        "铜矿石": "15",
+                        "水": "10"
                     }
                 },
                 {
@@ -801,333 +230,10 @@ let game_data = {
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "铁锭": 50.0
+                        "铜锭": "100"
                     },
                     "sourceList": {
-                        "铁矿": 20.0,
-                        "铜矿": 20.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "铁锭": 65.0
-                    },
-                    "sourceList": {
-                        "铁矿": 35.0,
-                        "水": 20.0
-                    }
-                }
-            ]
-        },
-        "铁棒": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铁棒": 15.0
-                    },
-                    "sourceList": {
-                        "铁锭": 15.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铁棒": 48.0
-                    },
-                    "sourceList": {
-                        "钢锭": 12.0
-                    }
-                }
-            ]
-        },
-        "铁板": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铁板": 20.0
-                    },
-                    "sourceList": {
-                        "铁锭": 30.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铁板": 45.0
-                    },
-                    "sourceList": {
-                        "钢锭": 7.5,
-                        "塑料": 5.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铁板": 75.0
-                    },
-                    "sourceList": {
-                        "铁锭": 50.0,
-                        "塑料": 10.0
-                    }
-                }
-            ]
-        },
-        "塑料": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "塑料": 20.0,
-                        "重渣油": 10.0
-                    },
-                    "sourceList": {
-                        "原油": 30.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "塑料": 20.0
-                    },
-                    "sourceList": {
-                        "聚合树脂": 60.0,
-                        "水": 20.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "塑料": 60.0
-                    },
-                    "sourceList": {
-                        "燃料": 30.0,
-                        "橡胶": 30.0
-                    }
-                }
-            ]
-        },
-        "石英砂": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "石英砂": 37.5
-                    },
-                    "sourceList": {
-                        "原石英": 22.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "石英砂": 26.25
-                    },
-                    "sourceList": {
-                        "原石英": 11.25,
-                        "石灰石": 18.75
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "石英砂": 50,
-                        "氧化铝溶液": 120
-                    },
-                    "sourceList": {
-                        "铝土矿": 120,
-                        "水": 180
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "石英砂": 270,
-                        "水": 80
-                    },
-                    "sourceList": {
-                        "Dissolved Silica": 120,
-                        "石灰石": 50,
-                        "水": 100
-                    }
-                }
-            ]
-        },
-        "石英晶体": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "石英晶体": 22.5
-                    },
-                    "sourceList": {
-                        "原石英": 37.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "石英晶体": 52.5
-                    },
-                    "sourceList": {
-                        "原石英": 67.5,
-                        "水": 37.5
-                    }
-                }
-            ]
-        },
-        "散热器": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "散热器": 7.5
-                    },
-                    "sourceList": {
-                        "镀铝板": 37.5,
-                        "铜板": 22.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "散热器": 10.0
-                    },
-                    "sourceList": {
-                        "铝制外壳": 30.0,
-                        "橡胶": 30.0
-                    }
-                }
-            ]
-        },
-        "熔合模块化框架": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "熔合模块化框架": 1.5
-                    },
-                    "sourceList": {
-                        "重型模块化框架": 1.5,
-                        "铝制外壳": 75.0,
-                        "氮气": 37.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "熔合模块化框架": 3.0
-                    },
-                    "sourceList": {
-                        "重型模块化框架": 3.0,
-                        "铝锭": 150.0,
-                        "硝酸": 24.0,
-                        "燃料": 30.0
-                    }
-                }
-            ]
-        },
-        "热推进火箭": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "热推进火箭": 1.0
-                    },
-                    "sourceList": {
-                        "模块化引擎": 2.5,
-                        "涡轮电机": 1.0,
-                        "冷却系统": 3.0,
-                        "熔合模块化框架": 1.0
-                    }
-                }
-            ]
-        },
-        "燃料": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "燃料": 40.0,
-                        "聚合树脂": 30.0
-                    },
-                    "sourceList": {
-                        "原油": 60.0
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "燃料": 40.0
-                    },
-                    "sourceList": {
-                        "重渣油": 60.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "燃料": 100.0
-                    },
-                    "sourceList": {
-                        "重渣油": 50.0,
-                        "水": 100.0
+                        "铁矿石": "50"
                     }
                 }
             ]
@@ -1140,10 +246,10 @@ let game_data = {
                     "equType": "冶炼器",
                     "equIndex": 0,
                     "productList": {
-                        "钦锭": 15.0
+                        "钦锭": "15"
                     },
                     "sourceList": {
-                        "钦矿": 45.0
+                        "钦矿石": "45"
                     }
                 },
                 {
@@ -1151,195 +257,11 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "钦锭": 12.0
+                        "钦锭": "36"
                     },
                     "sourceList": {
-                        "钦矿": 24.0,
-                        "水": 24.0
-                    }
-                }
-            ]
-        },
-        "贫铀": {
-            "useIndex": 0,
-            "data": [
-                ,
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "贫铀": 50.0,
-                        "水": 15.0
-                    },
-                    "sourceList": {
-                        "铀废料": 37.5,
-                        "硫酸": 15.0,
-                        "硝酸": 15.0,
-                        "石英砂": 25.0
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "贫铀": 100.0,
-                        "水": 40.0
-                    },
-                    "sourceList": {
-                        "铀废料": 25.0,
-                        "硫酸": 25.0,
-                        "硝酸": 15.0,
-                        "铀": 25.0
-                    }
-                }
-            ]
-        },
-        "模块化引擎": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "模块化引擎": 1.0
-                    },
-                    "sourceList": {
-                        "智能护板": 2.0,
-                        "橡胶": 15.0,
-                        "电机": 2.0
-                    }
-                }
-            ]
-        },
-        "模块化框架": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "模块化框架": 2.0
-                    },
-                    "sourceList": {
-                        "加强铁板": 3.0,
-                        "铁棒": 12.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "模块化框架": 3.0
-                    },
-                    "sourceList": {
-                        "加强铁板": 2.0,
-                        "钢管": 10.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "模块化框架": 5.0
-                    },
-                    "sourceList": {
-                        "加强铁板": 7.5,
-                        "螺丝": 140.0
-                    }
-                }
-            ]
-        },
-        "铝制外壳": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铝制外壳": 60.0
-                    },
-                    "sourceList": {
-                        "铝锭": 90.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铝制外壳": 112.5
-                    },
-                    "sourceList": {
-                        "铝锭": 150.0,
-                        "铜锭": 75.0
-                    }
-                }
-            ]
-        },
-        "铝块": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "铝块": 360.0,
-                        "水": 120.0
-                    },
-                    "sourceList": {
-                        "氧化铝溶液": 240.0,
-                        "煤": 120.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铝块": 300.0,
-                        "水": 50.0
-                    },
-                    "sourceList": {
-                        "铝土矿": 150.0,
-                        "煤": 100.0,
-                        "硫酸": 50.0,
-                        "水": 60.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "铝块": 300.0,
-                        "水": 105.0
-                    },
-                    "sourceList": {
-                        "氧化铝溶液": 180.0,
-                        "油焦": 60.0
-                    }
-                }
-            ]
-        },
-        "铝锭": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "冶炼器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铝锭": 30.0
-                    },
-                    "sourceList": {
-                        "铝块": 60.0
+                        "钦矿石": "54",
+                        "硫酸": "30"
                     }
                 },
                 {
@@ -1347,222 +269,11 @@ let game_data = {
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "铝锭": 60.0
+                        "钦锭": "22.5"
                     },
                     "sourceList": {
-                        "铝块": 90.0,
-                        "石英砂": 75.0
-                    }
-                }
-            ]
-        },
-        "螺丝": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "螺丝": 40.0
-                    },
-                    "sourceList": {
-                        "铁棒": 10.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "螺丝": 50.0
-                    },
-                    "sourceList": {
-                        "铁锭": 12.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "螺丝": 260.0
-                    },
-                    "sourceList": {
-                        "钢梁": 5.0
-                    }
-                }
-            ]
-        },
-        "硫酸": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "硫酸": 50.0
-                    },
-                    "sourceList": {
-                        "硫": 50.0,
-                        "水": 50.0
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "硫酸": 10.0,
-                        "铀核芯": 25.0
-                    },
-                    "sourceList": {
-                        "铀": 50.0,
-                        "混凝土": 15.0,
-                        "硫酸": 40.0,
-                    }
-                }
-            ]
-        },
-        "冷却系统": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "冷却系统": 6.0
-                    },
-                    "sourceList": {
-                        "散热器": 12.0,
-                        "氮气": 150.0,
-                        "橡胶": 12.0,
-                        "水": 30.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "冷却系统": 3.75
-                    },
-                    "sourceList": {
-                        "散热器": 9.375,
-                        "氮气": 45.0,
-                        "电机": 1.875
-                    }
-                },
-            ]
-        },
-        "快速线": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "快速线": 60.0
-                    },
-                    "sourceList": {
-                        "钦锭": 12.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "快速线": 90.0
-                    },
-                    "sourceList": {
-                        "钦锭": 7.5,
-                        "铜锭": 37.5
-                    }
-                }
-            ]
-        },
-        "空瓶": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "空瓶": 60.0
-                    },
-                    "sourceList": {
-                        "铝锭": 60.0
-                    }
-                }
-            ]
-        },
-        "空罐": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "空罐": 60.0
-                    },
-                    "sourceList": {
-                        "塑料": 30.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "空罐": 40.0
-                    },
-                    "sourceList": {
-                        "钢锭": 60.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "空罐": 60.0
-                    },
-                    "sourceList": {
-                        "铁板": 30.0,
-                        "铜板": 15.0
-                    }
-                }
-            ]
-        },
-        "聚合树脂": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "聚合树脂": 30.0,
-                        "燃料": 40.0
-                    },
-                    "sourceList": {
-                        "原油": 60.0
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "聚合树脂": 130.0,
-                        "重渣油": 20.0
-                    },
-                    "sourceList": {
-                        "原油": 60.0
+                        "油焦": "15",
+                        "钦矿石": "45"
                     }
                 },
                 {
@@ -1570,300 +281,10 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "聚合树脂": 20.0,
-                        "重渣油": 40.0
+                        "钦锭": "12"
                     },
                     "sourceList": {
-                        "原油": 30.0
-                    }
-                }
-            ]
-        },
-        "晶体振荡器": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "晶体振荡器": 1.0
-                    },
-                    "sourceList": {
-                        "石英晶体": 18.0,
-                        "电缆": 14.0,
-                        "加强铁板": 2.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "晶体振荡器": 1.875
-                    },
-                    "sourceList": {
-                        "石英晶体": 18.75,
-                        "橡胶": 13.125,
-                        "AI限制器": 1.875
-                    }
-                }
-            ]
-        },
-        "加强铁板": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "加强铁板": 5.0
-                    },
-                    "sourceList": {
-                        "铁板": 30.0,
-                        "螺丝": 60.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "加强铁板": 15.0
-                    },
-                    "sourceList": {
-                        "铁板": 90.0,
-                        "螺丝": 250.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "加强铁板": 5.63
-                    },
-                    "sourceList": {
-                        "铁板": 18.75,
-                        "电线": 37.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "加强铁板": 3.75
-                    },
-                    "sourceList": {
-                        "铁板": 11.25,
-                        "橡胶": 3.75
-                    }
-                }
-            ]
-        },
-        "计算机": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "计算机": 2.5
-                    },
-                    "sourceList": {
-                        "电路板": 25.0,
-                        "电缆": 22.5,
-                        "塑料": 45.0,
-                        "螺丝": 130.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "计算机": 3.75
-                    },
-                    "sourceList": {
-                        "电路板": 26.25,
-                        "快速线": 105.0,
-                        "橡胶": 45.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "计算机": 2.8125
-                    },
-                    "sourceList": {
-                        "电路板": 7.5,
-                        "晶体振荡器": 2.8125
-                    }
-                }
-            ]
-        },
-        "混凝土": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "混凝土": 15.0
-                    },
-                    "sourceList": {
-                        "石灰石": 45.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "混凝土": 25.0
-                    },
-                    "sourceList": {
-                        "石灰石": 30.0,
-                        "石英砂": 7.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "混凝土": 45.0
-                    },
-                    "sourceList": {
-                        "石灰石": 50.0,
-                        "橡胶": 10.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "混凝土": 80.0
-                    },
-                    "sourceList": {
-                        "石灰石": 120.0,
-                        "水": 100.0
-                    }
-                }
-            ]
-        },
-        "核子团": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "粒子加速器",
-                    "equIndex": 0,
-                    "productList": {
-                        "核子团": 0.5
-                    },
-                    "sourceList": {
-                        "压力转换立方体": 0.5,
-                        "铜粉": 100.0
-                    }
-                }
-            ]
-        },
-        "高速连接器": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "高速连接器": 3.75
-                    },
-                    "sourceList": {
-                        "电路板": 3.75,
-                        "电缆": 37.5,
-                        "快速线": 210.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "高速连接器": 3.0
-                    },
-                    "sourceList": {
-                        "电路板": 3.0,
-                        "石英砂": 37.5,
-                        "快速线": 90.0
-                    }
-                }
-            ]
-        },
-        "钢梁": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "钢梁": 15.0
-                    },
-                    "sourceList": {
-                        "钢锭": 60.0
-                    }
-                }
-            ]
-        },
-        "钢筋混凝土梁": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "钢筋混凝土梁": 6.0
-                    },
-                    "sourceList": {
-                        "钢梁": 24.0,
-                        "混凝土": 30.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "钢筋混凝土梁": 4.0
-                    },
-                    "sourceList": {
-                        "钢管": 28.0,
-                        "混凝土": 20.0
-                    }
-                }
-            ]
-        },
-        "钢管": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "钢管": 20.0
-                    },
-                    "sourceList": {
-                        "钢锭": 30.0
+                        "水": "24"
                     }
                 }
             ]
@@ -1876,11 +297,10 @@ let game_data = {
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "钢锭": 45.0
+                        "钢锭": "45"
                     },
                     "sourceList": {
-                        "铁矿": 45.0,
-                        "煤": 45.0
+                        "煤": "45"
                     }
                 },
                 {
@@ -1888,11 +308,10 @@ let game_data = {
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "钢锭": 37.5
+                        "钢锭": "60"
                     },
                     "sourceList": {
-                        "铁矿": 22.5,
-                        "压缩煤": 11.25
+                        "煤": "40"
                     }
                 },
                 {
@@ -1900,11 +319,11 @@ let game_data = {
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "钢锭": 60.0
+                        "钢锭": "10"
                     },
                     "sourceList": {
-                        "铁锭": 40.0,
-                        "煤": 40.0
+                        "铁矿石": "5",
+                        "压缩煤": "2.5"
                     }
                 },
                 {
@@ -1912,92 +331,84 @@ let game_data = {
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "钢锭": 100.0
+                        "钢锭": "100"
                     },
                     "sourceList": {
-                        "铁矿": 75.0,
-                        "油焦": 75.0
+                        "油焦": "75"
                     }
                 }
             ]
         },
-        "多功能框架": {
+        "铝锭": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "组装器",
+                    "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
-                        "多功能框架": 5.0
+                        "铝锭": "60"
                     },
                     "sourceList": {
-                        "模块化框架": 2.5,
-                        "钢梁": 30.0
+                        "石英砂": "75",
+                        "铝块": "90"
                     }
                 },
                 {
                     "time": 60,
-                    "equType": "制造器",
+                    "equType": "冶炼器",
                     "equIndex": 0,
                     "productList": {
-                        "多功能框架": 7.5
+                        "铝锭": "30"
                     },
                     "sourceList": {
-                        "模块化框架": 3.75,
-                        "钢梁": 22.5,
-                        "橡胶": 30.0
+                        "铝块": "60"
                     }
                 }
             ]
         },
-        "镀铝板": {
+        "Ficsite Ingot": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "组装器",
+                    "equType": "1级采矿机",
                     "equIndex": 0,
                     "productList": {
-                        "镀铝板": 30.0
+                        "Ficsite Ingot": "30"
                     },
                     "sourceList": {
-                        "铝锭": 30.0,
-                        "铜锭": 10.0
-                    }
-                }
-            ]
-        },
-        "定子": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "定子": 5.0
-                    },
-                    "sourceList": {
-                        "钢管": 15.0,
-                        "电线": 40.0
+                        "Reanimated SAM": "60",
+                        "铝锭": "120"
                     }
                 },
                 {
                     "time": 60,
-                    "equType": "组装器",
+                    "equType": "1级采矿机",
                     "equIndex": 0,
                     "productList": {
-                        "定子": 8.0
+                        "Ficsite Ingot": "15"
                     },
                     "sourceList": {
-                        "钢管": 16.0,
-                        "快速线": 60.0
+                        "Reanimated SAM": "45",
+                        "钦锭": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "1级采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsite Ingot": "10"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "40",
+                        "铁锭": "240"
                     }
                 }
             ]
         },
-        "电线": {
+        "混凝土": {
             "useIndex": 0,
             "data": [
                 {
@@ -2005,137 +416,10 @@ let game_data = {
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
-                        "电线": 30.0
+                        "混凝土": "15"
                     },
                     "sourceList": {
-                        "铜锭": 15.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电线": 22.5
-                    },
-                    "sourceList": {
-                        "铁锭": 12.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电线": 90.0
-                    },
-                    "sourceList": {
-                        "铜锭": 12.0,
-                        "钦锭": 3.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电线": 120.0
-                    },
-                    "sourceList": {
-                        "钦锭": 15.0
-                    }
-                }
-            ]
-        },
-        "电路板": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电路板": 7.5
-                    },
-                    "sourceList": {
-                        "铜板": 15.0,
-                        "塑料": 30.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电路板": 8.75
-                    },
-                    "sourceList": {
-                        "塑料": 12.5,
-                        "快速线": 37.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电路板": 12.5
-                    },
-                    "sourceList": {
-                        "铜板": 27.5,
-                        "石英砂": 27.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电路板": 5.0
-                    },
-                    "sourceList": {
-                        "橡胶": 30.0,
-                        "油焦": 45.0
-                    }
-                }
-            ]
-        },
-        "电缆": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电缆": 30.0
-                    },
-                    "sourceList": {
-                        "电线": 60.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电缆": 27.5
-                    },
-                    "sourceList": {
-                        "快速线": 7.5,
-                        "橡胶": 5.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电缆": 100.0
-                    },
-                    "sourceList": {
-                        "电线": 45.0,
-                        "橡胶": 30.0
+                        "石灰石": "45"
                     }
                 },
                 {
@@ -2143,41 +427,11 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "电缆": 67.5
+                        "混凝土": "80"
                     },
                     "sourceList": {
-                        "电线": 37.5,
-                        "重渣油": 15.0
-                    }
-                }
-            ]
-        },
-        "电机": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电机": 5.0
-                    },
-                    "sourceList": {
-                        "转子": 10.0,
-                        "定子": 10.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电机": 7.5
-                    },
-                    "sourceList": {
-                        "转子": 3.75,
-                        "定子": 3.75,
-                        "晶体振荡器": 1.25
+                        "石灰石": "120",
+                        "水": "100"
                     }
                 },
                 {
@@ -2185,28 +439,11 @@ let game_data = {
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
-                        "电机": 7.5
+                        "混凝土": "90"
                     },
                     "sourceList": {
-                        "转子": 7.5,
-                        "电磁控制杆": 3.75
-                    }
-                }
-            ]
-        },
-        "电磁控制杆": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电磁控制杆": 4.0
-                    },
-                    "sourceList": {
-                        "定子": 6.0,
-                        "AI限制器": 4.0
+                        "橡胶": "20",
+                        "石灰石": "100"
                     }
                 },
                 {
@@ -2214,95 +451,107 @@ let game_data = {
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
-                        "电磁控制杆": 8.0
+                        "混凝土": "50"
                     },
                     "sourceList": {
-                        "定子": 8.0,
-                        "高速连接器": 4.0
+                        "石英砂": "15",
+                        "石灰石": "60"
                     }
                 }
             ]
         },
-        "电池": {
+        "石英晶体": {
             "useIndex": 0,
             "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英晶体": "22.5"
+                    },
+                    "sourceList": {
+                        "原石英": "37.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "铸造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英晶体": "54"
+                    },
+                    "sourceList": {
+                        "煤": "36",
+                        "原石英": "75"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英晶体": "75",
+                        "Dissolved Silica": "60"
+                    },
+                    "sourceList": {
+                        "原石英": "120",
+                        "硝酸": "10"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英晶体": "52.5"
+                    },
+                    "sourceList": {
+                        "原石英": "67.5",
+                        "水": "37.5"
+                    }
+                }
+            ]
+        },
+        "石英砂": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英砂": "50",
+                        "氧化铝溶液": "120"
+                    },
+                    "sourceList": {
+                        "铝土矿": "120",
+                        "水": "180"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英砂": "37.5"
+                    },
+                    "sourceList": {
+                        "原石英": "22.5"
+                    }
+                },
                 {
                     "time": 60,
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "电池": 20.0,
-                        "水": 30.0
+                        "石英砂": "270",
+                        "水": "80"
                     },
                     "sourceList": {
-                        "氧化铝溶液": 40.0,
-                        "硫酸": 50.0,
-                        "铝制外壳": 20.0
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "电池": 30.0
-                    },
-                    "sourceList": {
-                        "硫": 45.0,
-                        "镀铝板": 52.5,
-                        "电线": 90.0,
-                        "塑料": 60.0
-                    }
-                }
-            ]
-        },
-        "磁场发生器": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "磁场发生器": 1.0
-                    },
-                    "sourceList": {
-                        "多功能框架": 2.5,
-                        "电磁控制杆": 1.0,
-                        "电池": 5.0
-                    }
-                }
-            ]
-        },
-        "超级计算机": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "超级计算机": 1.875
-                    },
-                    "sourceList": {
-                        "计算机": 3.75,
-                        "AI限制器": 3.75,
-                        "高速连接器": 5.625,
-                        "塑料": 52.5
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "超级计算机": 2.4
-                    },
-                    "sourceList": {
-                        "计算机": 3.6,
-                        "电磁控制杆": 2.4,
-                        "电线": 54.0,
-                        "电池": 24.0
+                        "石灰石": "50",
+                        "Dissolved Silica": "120",
+                        "水": "100"
                     }
                 },
                 {
@@ -2310,246 +559,223 @@ let game_data = {
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
-                        "超级计算机": 3.0
+                        "石英砂": "52.5"
                     },
                     "sourceList": {
-                        "无线电控制单元": 9.0,
-                        "冷却系统": 9.0
+                        "原石英": "22.5",
+                        "石灰石": "37.5"
                     }
                 }
             ]
         },
-        "钚丸": {
+        "铜粉": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "粒子加速器",
+                    "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
-                        "钚丸": 30.0
+                        "铜粉": "50"
                     },
                     "sourceList": {
-                        "贫铀": 100.0,
-                        "铀废料": 25.0
+                        "铜锭": "300"
                     }
                 }
             ]
         },
-        "钚燃料棒": {
+        "聚合树脂": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "制造器",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "钚燃料棒": 0.25
+                        "聚合树脂": "30",
+                        "燃料": "40"
                     },
                     "sourceList": {
-                        "钢梁": 4.5,
-                        "散热器": 2.5,
-                        "钚核心": 7.5,
-                        "电磁控制杆": 1.5
+                        "原油": "60"
                     }
                 },
                 {
                     "time": 60,
-                    "equType": "组装器",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "钚燃料棒": 0.5
+                        "聚合树脂": "130",
+                        "重渣油": "20"
                     },
                     "sourceList": {
-                        "压力转换立方体": 0.5,
-                        "钚核心": 10.0
-                    }
-                }
-            ]
-        },
-        "钚核心": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "粒子加速器",
-                    "equIndex": 0,
-                    "productList": {
-                        "钚核心": 10.0
-                    },
-                    "sourceList": {
-                        "贫铀": 75.0,
-                        "铝制外壳": 10.0
+                        "原油": "60"
                     }
                 },
                 {
                     "time": 60,
-                    "equType": "组装器",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "钚核心": 5.0
+                        "聚合树脂": "20",
+                        "重渣油": "40"
                     },
                     "sourceList": {
-                        "钚丸": 10.0,
-                        "混凝土": 20.0
+                        "原油": "30"
                     }
                 }
             ]
         },
-        "AI限制器": {
+        "油焦": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "组装器",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "AI限制器": 5.0
+                        "油焦": "120"
                     },
                     "sourceList": {
-                        "铜板": 25.0,
-                        "快速线": 100.0
+                        "重渣油": "40"
                     }
                 }
             ]
         },
-        "铁矿": {
+        "铝块": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "铁矿": 60.0
+                        "铝块": "360",
+                        "水": "120"
                     },
-                    "sourceList": {}
+                    "sourceList": {
+                        "煤": "120",
+                        "氧化铝溶液": "240"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝块": "300",
+                        "水": "105"
+                    },
+                    "sourceList": {
+                        "油焦": "60",
+                        "氧化铝溶液": "180"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝块": "300",
+                        "水": "50"
+                    },
+                    "sourceList": {
+                        "煤": "100",
+                        "铝土矿": "150",
+                        "硫酸": "50",
+                        "水": "60"
+                    }
                 }
             ]
         },
-        "铜矿": {
+        "重渣油": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "铜矿": 60.0
+                        "塑料": "20",
+                        "重渣油": "10"
                     },
-                    "sourceList": {}
+                    "sourceList": {
+                        "原油": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "重渣油": "20"
+                    },
+                    "sourceList": {
+                        "原油": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "聚合树脂": "130",
+                        "重渣油": "20"
+                    },
+                    "sourceList": {
+                        "原油": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "聚合树脂": "20",
+                        "重渣油": "40"
+                    },
+                    "sourceList": {
+                        "原油": "30"
+                    }
                 }
             ]
         },
-        "石灰石": {
+        "燃料": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "石灰石": 60.0
+                        "聚合树脂": "30",
+                        "燃料": "40"
                     },
-                    "sourceList": {}
-                }
-            ]
-        },
-        "钦矿石": {
-            "useIndex": 0,
-            "data": [
+                    "sourceList": {
+                        "原油": "60"
+                    }
+                },
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "钦矿石": 60.0
+                        "燃料": "100"
                     },
-                    "sourceList": {}
-                }
-            ]
-        },
-        "煤": {
-            "useIndex": 0,
-            "data": [
+                    "sourceList": {
+                        "重渣油": "50",
+                        "水": "100"
+                    }
+                },
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "煤": 60.0
+                        "燃料": "40"
                     },
-                    "sourceList": {}
-                }
-            ]
-        },
-        "原石英": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "原石英": 60.0
-                    },
-                    "sourceList": {}
-                }
-            ]
-        },
-        "硫": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "硫": 60.0
-                    },
-                    "sourceList": {}
-                }
-            ]
-        },
-        "铝土矿": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "铝土矿": 60.0
-                    },
-                    "sourceList": {}
-                }
-            ]
-        },
-        "铀": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "铀": 60.0
-                    },
-                    "sourceList": {}
-                }
-            ]
-        },
-        "SAM": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "SAM": 60.0
-                    },
-                    "sourceList": {}
+                    "sourceList": {
+                        "重渣油": "60"
+                    }
                 }
             ]
         },
@@ -2561,61 +787,117 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "液态生物燃料": 60.0
+                        "液态生物燃料": "60"
                     },
                     "sourceList": {
-                        "固体生物燃料": 90,
-                        "水": 45
+                        "固体生物燃料": "90",
+                        "水": "45"
                     }
                 }
             ]
         },
-        "布料": {
+        "涡轮燃料": {
             "useIndex": 0,
             "data": [
                 {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "布料": 15.0
-                    },
-                    "sourceList": {
-                        "菌丝体": 15,
-                        "生物质": 75
-                    }
-                }, {
                     "time": 60,
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "布料": 30.0
+                        "涡轮燃料": "18.75"
                     },
                     "sourceList": {
-                        "聚合树脂": 30,
-                        "水": 30
+                        "压缩煤": "15",
+                        "燃料": "22.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "涡轮燃料": "45"
+                    },
+                    "sourceList": {
+                        "燃料": "15",
+                        "重渣油": "30",
+                        "油焦": "22.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "涡轮燃料": "30"
+                    },
+                    "sourceList": {
+                        "压缩煤": "30",
+                        "重渣油": "37.5"
                     }
                 }
             ]
         },
-        "瓶装氮气": {
+        "氧化铝溶液": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "罐装机",
+                    "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "布料": 60.0
+                        "石英砂": "50",
+                        "氧化铝溶液": "120"
                     },
                     "sourceList": {
-                        "氮气": 240,
-                        "空瓶": 60
+                        "铝土矿": "120",
+                        "水": "180"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "氧化铝溶液": "240"
+                    },
+                    "sourceList": {
+                        "水": "200"
                     }
                 }
             ]
         },
-        "铀核芯": {
+        "硫酸": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "硫酸": "50"
+                    },
+                    "sourceList": {
+                        "水": "50"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铀核芯": "25",
+                        "硫酸": "10"
+                    },
+                    "sourceList": {
+                        "混凝土": "15",
+                        "铀": "50",
+                        "硫酸": "40"
+                    }
+                }
+            ]
+        },
+        "硝酸": {
             "useIndex": 0,
             "data": [
                 {
@@ -2623,125 +905,12 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "铀核芯": 25.0,
-                        "硫酸": 10.0
+                        "硝酸": "30"
                     },
                     "sourceList": {
-                        "铀": 50,
-                        "硫酸": 40,
-                        "混凝土": 15
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "铀核芯": 20.0
-                    },
-                    "sourceList": {
-                        "铀": 25,
-                        "石英砂": 15,
-                        "硫": 25,
-                        "快速线": 75,
-                    }
-                }
-            ]
-        },
-        "钚核芯": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "钚核芯": 5.0
-                    },
-                    "sourceList": {
-                        "钚丸": 10,
-                        "混凝土": 20
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "粒子加速器",
-                    "equIndex": 0,
-                    "productList": {
-                        "钚核芯": 10.0
-                    },
-                    "sourceList": {
-                        "贫铀": 75,
-                        "铝制外壳": 10
-                    }
-                }
-            ]
-        },
-        "铀废料": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "核电站",
-                    "equIndex": 0,
-                    "productList": {
-                        "铀废料": 50.0
-                    },
-                    "sourceList": {
-                        "铀燃料棒": 1
-                    }
-                }
-            ]
-        },
-        "钚废料": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "核电站",
-                    "equIndex": 0,
-                    "productList": {
-                        "钚废料": 10.0
-                    },
-                    "sourceList": {
-                        "钚燃料棒": 1
-                    }
-                }
-            ]
-        },
-        "Ficsite Ingot": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Ficsite Ingot": 10.0
-                    },
-                    "sourceList": {
-                        "Reanimated SAM": 60,
-                        "铝锭": 120,
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Ficsite Ingot": 15.0
-                    },
-                    "sourceList": {
-                        "Reanimated SAM": 45,
-                        "钦锭": 60,
-                    }
-                }, {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Ficsite Ingot": 10.0
-                    },
-                    "sourceList": {
-                        "Reanimated SAM": 40,
-                        "铁锭": 240,
+                        "铁板": "10",
+                        "氮气": "120",
+                        "水": "30"
                     }
                 }
             ]
@@ -2754,12 +923,64 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "Dissolved Silica": 60.0,
-                        "石英晶体": 75
+                        "石英晶体": "75",
+                        "Dissolved Silica": "60"
                     },
                     "sourceList": {
-                        "原石英": 120,
-                        "硝酸": 10,
+                        "原石英": "120",
+                        "硝酸": "10"
+                    }
+                }
+            ]
+        },
+        "氮气": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "1级采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "氮气": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "铝土矿": "100"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "1级采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "氮气": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "钦矿石": "120"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "空瓶": "60",
+                        "氮气": "240"
+                    },
+                    "sourceList": {
+                        "瓶装氮气": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "矿井采集器",
+                    "equIndex": 0,
+                    "productList": {
+                        "氮气": "0"
+                    },
+                    "sourceList": {
+                        "氮气": "0"
                     }
                 }
             ]
@@ -2772,26 +993,38 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "Rocket Fuel": 100.0,
-                        "压缩煤": 10
+                        "压缩煤": "10",
+                        "Rocket Fuel": "100"
                     },
                     "sourceList": {
-                        "涡轮燃料": 60,
-                        "硝酸": 10,
+                        "涡轮燃料": "60",
+                        "硝酸": "10"
                     }
-                }, {
+                },
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "空瓶": "60",
+                        "Rocket Fuel": "120"
+                    },
+                    "sourceList": {
+                        "Packaged Rocket Fuel": "60"
+                    }
+                },
+                {
                     "time": 60,
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "Rocket Fuel": 150.0,
-                        "压缩煤": 25
+                        "压缩煤": "25",
+                        "Rocket Fuel": "150"
                     },
                     "sourceList": {
-                        "燃料": 100,
-                        "氮气": 75,
-                        "硫": 100,
-                        "煤": 50,
+                        "煤": "50",
+                        "燃料": "100",
+                        "氮气": "75"
                     }
                 }
             ]
@@ -2804,44 +1037,503 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "Ionized Fuel": 40.0,
-                        "压缩煤": 5
+                        "压缩煤": "5",
+                        "Ionized Fuel": "40"
                     },
                     "sourceList": {
-                        "Rocket Fuel": 40,
-                        "能量碎片": 2.5,
+                        "Rocket Fuel": "40",
+                        "能量碎片": "2.5"
                     }
-                }, {
+                },
+                {
                     "time": 60,
-                    "equType": "采矿机",
+                    "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "Ionized Fuel": 200.0,
-                        "压缩煤": 40
+                        "空瓶": "40",
+                        "Ionized Fuel": "80"
                     },
                     "sourceList": {
-                        "Packaged Rocket Fuel": 240,
-                        "Dark Matter Crystal": 80
+                        "Packaged Ionized Fuel": "40"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "1级采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "压缩煤": "40",
+                        "Ionized Fuel": "200"
+                    },
+                    "sourceList": {
+                        "Dark Matter Crystal": "80",
+                        "Packaged Rocket Fuel": "240"
                     }
                 }
             ]
         },
-        "能量碎片": {
+        "铁板": {
             "useIndex": 0,
             "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁板": "20"
+                    },
+                    "sourceList": {
+                        "铁锭": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "铸造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁板": "45"
+                    },
+                    "sourceList": {
+                        "钢锭": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁板": "75"
+                    },
+                    "sourceList": {
+                        "铁锭": "37.5",
+                        "塑料": "7.5"
+                    }
+                }
+            ]
+        },
+        "铁棒": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁棒": "15"
+                    },
+                    "sourceList": {
+                        "铁锭": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁棒": "52.5"
+                    },
+                    "sourceList": {
+                        "铝锭": "7.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁棒": "48"
+                    },
+                    "sourceList": {
+                        "钢锭": "12"
+                    }
+                }
+            ]
+        },
+        "螺丝": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "螺丝": "40"
+                    },
+                    "sourceList": {
+                        "铁棒": "10"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "螺丝": "260"
+                    },
+                    "sourceList": {
+                        "钢梁": "5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "螺丝": "50"
+                    },
+                    "sourceList": {
+                        "铁锭": "12.5"
+                    }
+                }
+            ]
+        },
+        "加强铁板": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "加强铁板": "5"
+                    },
+                    "sourceList": {
+                        "铁板": "30",
+                        "螺丝": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "加强铁板": "5.63"
+                    },
+                    "sourceList": {
+                        "铁板": "18.75",
+                        "电线": "37.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "加强铁板": "3.75"
+                    },
+                    "sourceList": {
+                        "铁板": "11.25",
+                        "橡胶": "3.75"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "加强铁板": "15"
+                    },
+                    "sourceList": {
+                        "铁板": "90",
+                        "螺丝": "250"
+                    }
+                }
+            ]
+        },
+        "铜板": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铜板": "10"
+                    },
+                    "sourceList": {
+                        "铜锭": "20"
+                    }
+                },
                 {
                     "time": 60,
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "能量碎片": 5,
-                        "Dark Matter Residue": 60000
+                        "铜板": "22.5"
                     },
                     "sourceList": {
-                        "Time Crystal": 10,
-                        "Dark Matter Crystal": 10,
-                        "石英晶体": 60,
-                        "Excited Photonic Matter": 60000,
+                        "水": "22.5"
+                    }
+                }
+            ]
+        },
+        "镀铝板": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "镀铝板": "30"
+                    },
+                    "sourceList": {
+                        "铜锭": "10",
+                        "铝锭": "30"
+                    }
+                }
+            ]
+        },
+        "铝制外壳": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝制外壳": "60"
+                    },
+                    "sourceList": {
+                        "铝锭": "90"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝制外壳": "112.5"
+                    },
+                    "sourceList": {
+                        "铜锭": "75",
+                        "铝锭": "150"
+                    }
+                }
+            ]
+        },
+        "钢管": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢管": "20"
+                    },
+                    "sourceList": {
+                        "钢锭": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢管": "25"
+                    },
+                    "sourceList": {
+                        "铁锭": "100"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "铸造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢管": "50"
+                    },
+                    "sourceList": {
+                        "混凝土": "30",
+                        "钢锭": "50"
+                    }
+                }
+            ]
+        },
+        "钢梁": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢梁": "15"
+                    },
+                    "sourceList": {
+                        "钢锭": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢梁": "22.5"
+                    },
+                    "sourceList": {
+                        "铝锭": "22.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "铸造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢梁": "45"
+                    },
+                    "sourceList": {
+                        "混凝土": "80",
+                        "钢锭": "120"
+                    }
+                }
+            ]
+        },
+        "钢筋混凝土梁": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢筋混凝土梁": "6"
+                    },
+                    "sourceList": {
+                        "钢梁": "18",
+                        "混凝土": "36"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢筋混凝土梁": "4"
+                    },
+                    "sourceList": {
+                        "混凝土": "20",
+                        "钢管": "24"
+                    }
+                }
+            ]
+        },
+        "模块化框架": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "模块化框架": "2"
+                    },
+                    "sourceList": {
+                        "加强铁板": "3",
+                        "铁棒": "12"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "模块化框架": "3"
+                    },
+                    "sourceList": {
+                        "加强铁板": "2",
+                        "钢管": "10"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "模块化框架": "5"
+                    },
+                    "sourceList": {
+                        "螺丝": "140",
+                        "加强铁板": "7.5"
+                    }
+                }
+            ]
+        },
+        "重型模块化框架": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "重型模块化框架": "2"
+                    },
+                    "sourceList": {
+                        "钢筋混凝土梁": "10",
+                        "钢管": "40",
+                        "螺丝": "240"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "重型模块化框架": "2.81"
+                    },
+                    "sourceList": {
+                        "模块化框架": "7.5",
+                        "钢筋混凝土梁": "9.38",
+                        "钢管": "33.75",
+                        "混凝土": "20.63"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "重型模块化框架": "3.75"
+                    },
+                    "sourceList": {
+                        "橡胶": "75",
+                        "螺丝": "390",
+                        "模块化框架": "18.75",
+                        "钢筋混凝土梁": "11.25"
+                    }
+                }
+            ]
+        },
+        "熔合模块化框架": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "熔合模块化框架": "1.5"
+                    },
+                    "sourceList": {
+                        "铝制外壳": "75",
+                        "重型模块化框架": "1.5",
+                        "氮气": "37.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "熔合模块化框架": "3"
+                    },
+                    "sourceList": {
+                        "重型模块化框架": "3",
+                        "铝锭": "150",
+                        "硝酸": "24",
+                        "燃料": "30"
                     }
                 }
             ]
@@ -2854,10 +1546,605 @@ let game_data = {
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
-                        "Ficsite Trigon": 30
+                        "Ficsite Trigon": "30"
                     },
                     "sourceList": {
-                        "Ficsite Ingot": 10,
+                        "Ficsite Ingot": "10"
+                    }
+                }
+            ]
+        },
+        "布料": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "布料": "15"
+                    },
+                    "sourceList": {
+                        "菌丝体": "15",
+                        "生物质": "75"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "布料": "30"
+                    },
+                    "sourceList": {
+                        "水": "30"
+                    }
+                }
+            ]
+        },
+        "塑料": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "塑料": "20",
+                        "重渣油": "10"
+                    },
+                    "sourceList": {
+                        "原油": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "塑料": "60"
+                    },
+                    "sourceList": {
+                        "燃料": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "塑料": "20"
+                    },
+                    "sourceList": {
+                        "聚合树脂": "60",
+                        "水": "20"
+                    }
+                }
+            ]
+        },
+        "橡胶": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "重渣油": "20"
+                    },
+                    "sourceList": {
+                        "原油": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "橡胶": "60"
+                    },
+                    "sourceList": {
+                        "燃料": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "橡胶": "20"
+                    },
+                    "sourceList": {
+                        "水": "40"
+                    }
+                }
+            ]
+        },
+        "转子": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "转子": "4"
+                    },
+                    "sourceList": {
+                        "铁棒": "20",
+                        "螺丝": "100"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "转子": "5"
+                    },
+                    "sourceList": {
+                        "钢管": "10",
+                        "电线": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "转子": "11.25"
+                    },
+                    "sourceList": {
+                        "螺丝": "195",
+                        "铜板": "22.5"
+                    }
+                }
+            ]
+        },
+        "定子": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "定子": "5"
+                    },
+                    "sourceList": {
+                        "钢管": "15",
+                        "电线": "40"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "定子": "8"
+                    },
+                    "sourceList": {
+                        "钢管": "16",
+                        "快速线": "60"
+                    }
+                }
+            ]
+        },
+        "电池": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电池": "20",
+                        "水": "30"
+                    },
+                    "sourceList": {
+                        "铝制外壳": "20",
+                        "硫酸": "50",
+                        "氧化铝溶液": "40"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电池": "30"
+                    },
+                    "sourceList": {
+                        "硫": "45",
+                        "塑料": "60",
+                        "电线": "90",
+                        "镀铝板": "52.5"
+                    }
+                }
+            ]
+        },
+        "电机": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电机": "5"
+                    },
+                    "sourceList": {
+                        "定子": "10"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电机": "7.5"
+                    },
+                    "sourceList": {
+                        "定子": "3.75",
+                        "晶体振荡器": "1.25"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电机": "7.5"
+                    },
+                    "sourceList": {
+                        "电磁控制杆": "3.75",
+                        "转子": "7.5"
+                    }
+                }
+            ]
+        },
+        "散热器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "散热器": "7.5"
+                    },
+                    "sourceList": {
+                        "镀铝板": "37.5",
+                        "铜板": "22.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "散热器": "10"
+                    },
+                    "sourceList": {
+                        "橡胶": "30"
+                    }
+                }
+            ]
+        },
+        "冷却系统": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "冷却系统": "6"
+                    },
+                    "sourceList": {
+                        "橡胶": "12",
+                        "水": "30",
+                        "氮气": "150"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "冷却系统": "5"
+                    },
+                    "sourceList": {
+                        "散热器": "10",
+                        "电机": "2.5",
+                        "氮气": "60"
+                    }
+                }
+            ]
+        },
+        "涡轮电机": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "涡轮电机": "1.88"
+                    },
+                    "sourceList": {
+                        "橡胶": "45",
+                        "电机": "7.5",
+                        "无线电控制单元": "3.75"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "涡轮电机": "3.75"
+                    },
+                    "sourceList": {
+                        "定子": "15",
+                        "瓶装氮气": "45",
+                        "电机": "7.5",
+                        "压力转换立方体": "1.88"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "涡轮电机": "2.81"
+                    },
+                    "sourceList": {
+                        "转子": "6.56",
+                        "无线电控制单元": "8.44",
+                        "电磁控制杆": "4.69"
+                    }
+                }
+            ]
+        },
+        "电线": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电线": "30"
+                    },
+                    "sourceList": {
+                        "铜锭": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电线": "90"
+                    },
+                    "sourceList": {
+                        "钦锭": "3",
+                        "铜锭": "12"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电线": "120"
+                    },
+                    "sourceList": {
+                        "钦锭": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电线": "22.5"
+                    },
+                    "sourceList": {
+                        "铁锭": "12.5"
+                    }
+                }
+            ]
+        },
+        "电缆": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电缆": "30"
+                    },
+                    "sourceList": {
+                        "电线": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电缆": "27.5"
+                    },
+                    "sourceList": {
+                        "橡胶": "5",
+                        "快速线": "7.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电缆": "100"
+                    },
+                    "sourceList": {
+                        "橡胶": "30",
+                        "电线": "45"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "电缆": "67.5"
+                    },
+                    "sourceList": {
+                        "电线": "37.5",
+                        "重渣油": "15"
+                    }
+                }
+            ]
+        },
+        "快速线": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "快速线": "60"
+                    },
+                    "sourceList": {
+                        "钦锭": "12"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "快速线": "90"
+                    },
+                    "sourceList": {
+                        "钦锭": "7.5",
+                        "铜锭": "37.5"
+                    }
+                }
+            ]
+        },
+        "电路板": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电路板": "7.5"
+                    },
+                    "sourceList": {
+                        "铜板": "15",
+                        "塑料": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电路板": "5"
+                    },
+                    "sourceList": {
+                        "橡胶": "20",
+                        "油焦": "40"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电路板": "12.5"
+                    },
+                    "sourceList": {
+                        "石英砂": "27.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电路板": "8.75"
+                    },
+                    "sourceList": {
+                        "塑料": "12.5",
+                        "快速线": "37.5"
+                    }
+                }
+            ]
+        },
+        "AI限制器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "AI限制器": "5"
+                    },
+                    "sourceList": {
+                        "铜板": "25",
+                        "快速线": "100"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "AI限制器": "8"
+                    },
+                    "sourceList": {
+                        "塑料": "28",
+                        "快速线": "120"
+                    }
+                }
+            ]
+        },
+        "高速连接器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "高速连接器": "3.75"
+                    },
+                    "sourceList": {
+                        "快速线": "210",
+                        "电缆": "37.5",
+                        "电路板": "3.75"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "高速连接器": "3"
+                    },
+                    "sourceList": {
+                        "电路板": "3",
+                        "快速线": "90",
+                        "石英砂": "37.5"
                     }
                 }
             ]
@@ -2870,10 +2157,10 @@ let game_data = {
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
-                        "Reanimated SAM": 30
+                        "Reanimated SAM": "30"
                     },
                     "sourceList": {
-                        "SAM": 120,
+                        "SAM": "120"
                     }
                 }
             ]
@@ -2886,12 +2173,175 @@ let game_data = {
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
-                        "SAM Fluctuator": 10
+                        "SAM Fluctuator": "10"
                     },
                     "sourceList": {
-                        "Reanimated SAM": 60,
-                        "电线": 50,
-                        "钢管": 30,
+                        "钢管": "30",
+                        "电线": "50",
+                        "Reanimated SAM": "60"
+                    }
+                }
+            ]
+        },
+        "计算机": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "计算机": "2.5"
+                    },
+                    "sourceList": {
+                        "电路板": "10",
+                        "电缆": "20",
+                        "塑料": "40"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "计算机": "3.33"
+                    },
+                    "sourceList": {
+                        "电路板": "5",
+                        "晶体振荡器": "1.67"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "计算机": "3.75"
+                    },
+                    "sourceList": {
+                        "电路板": "15",
+                        "快速线": "52.5",
+                        "橡胶": "22.5"
+                    }
+                }
+            ]
+        },
+        "超级计算机": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "超级计算机": "1.88"
+                    },
+                    "sourceList": {
+                        "计算机": "7.5",
+                        "AI限制器": "3.75",
+                        "高速连接器": "5.63",
+                        "塑料": "52.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "超级计算机": "2.4"
+                    },
+                    "sourceList": {
+                        "电池": "24",
+                        "电线": "60",
+                        "计算机": "7.2",
+                        "电磁控制杆": "2.4"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "超级计算机": "3"
+                    },
+                    "sourceList": {
+                        "冷却系统": "6"
+                    }
+                }
+            ]
+        },
+        "无线电控制单元": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "无线电控制单元": "2.5"
+                    },
+                    "sourceList": {
+                        "铝制外壳": "40",
+                        "晶体振荡器": "1.25",
+                        "计算机": "2.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "无线电控制单元": "4.5"
+                    },
+                    "sourceList": {
+                        "电路板": "15",
+                        "橡胶": "45",
+                        "铝制外壳": "90",
+                        "晶体振荡器": "1.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "无线电控制单元": "3.75"
+                    },
+                    "sourceList": {
+                        "散热器": "15",
+                        "石英晶体": "45",
+                        "高速连接器": "7.5"
+                    }
+                }
+            ]
+        },
+        "晶体振荡器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "晶体振荡器": "1"
+                    },
+                    "sourceList": {
+                        "电缆": "14",
+                        "石英晶体": "18",
+                        "加强铁板": "2.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "晶体振荡器": "1.88"
+                    },
+                    "sourceList": {
+                        "石英晶体": "18.75",
+                        "橡胶": "13.13",
+                        "AI限制器": "1.88"
                     }
                 }
             ]
@@ -2901,235 +2351,17 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "叠加振荡器": 10,
-                        "Dark Matter Residue": 125000,
-                    },
-                    "sourceList": {
-                        "Dark Matter Crystal": 30,
-                        "晶体振荡器": 5,
-                        "镀铝板": 45,
-                        "Excited Photonic Matter": 125000,
-                    }
-                }
-            ]
-        },
-        "Time Crystal": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Time Crystal": 6,
-                    },
-                    "sourceList": {
-                        "Diamonds": 12,
-                    }
-                }
-            ]
-        },
-        "Singularity Cell": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Singularity Cell": 10,
-                    },
-                    "sourceList": {
-                        "核子团": 1,
-                        "Dark Matter Crystal": 20,
-                        "铁板": 100,
-                        "混凝土": 200,
-                    }
-                }
-            ]
-        },
-        "Neural-Quantum Processor": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Neural-Quantum Processor": 3,
-                        "Dark Matter Residue": 75000,
-                    },
-                    "sourceList": {
-                        "Time Crystal": 15,
-                        "超级计算机": 3,
-                        "Ficsite Trigon": 45,
-                        "Excited Photonic Matter": 75000,
-                    }
-                }
-            ]
-        },
-        "Packaged Rocket Fuel": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "灌装机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Packaged Rocket Fuel": 60,
-                    },
-                    "sourceList": {
-                        "Rocket Fuel": 120,
-                        "空瓶": 60,
-                    }
-                }
-            ]
-        },
-        "Packaged Ionized Fuel": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "灌装机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Packaged Ionized Fuel": 40,
-                    },
-                    "sourceList": {
-                        "Ionized Fuel": 80,
-                        "空瓶": 40,
-                    }
-                }
-            ]
-        },
-        "Ficsonium": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "粒子加速器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Ficsonium": 10,
-                    },
-                    "sourceList": {
-                        "钚废料": 10,
-                        "Singularity Cell": 10,
-                        "Dark Matter Residue": 200000,
-                    }
-                }
-            ]
-        },
-        "Ficsonium Fuel Rod": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
                     "equType": "Quantum Encoder",
                     "equIndex": 0,
                     "productList": {
-                        "Ficsonium Fuel Rod": 2.5,
-                        "Dark Matter Residue": 50000,
+                        "叠加振荡器": "5",
+                        "Dark Matter Residue": "125000"
                     },
                     "sourceList": {
-                        "Ficsonium": 5,
-                        "电磁控制杆": 5,
-                        "Ficsite Trigon": 100,
-                        "Excited Photonic Matter": 50000,
-                    }
-                }
-            ]
-        },
-        "Non-Fissile Uranium": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Non-Fissile Uranium": 50,
-                        "水": 15,
-                    },
-                    "sourceList": {
-                        "铀废料": 37.5,
-                        "石英砂": 25,
-                        "硝酸": 15,
-                        "硫酸": 15,
-                    }
-                },{
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Non-Fissile Uranium": 100,
-                        "水": 40,
-                    },
-                    "sourceList": {
-                        "铀": 25,
-                        "铀废料": 25,
-                        "硝酸": 15,
-                        "硫酸": 25,
-                    }
-                }
-            ]
-        },
-        "Biochemical Sculptor": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Biochemical Sculptor": 2,
-                    },
-                    "sourceList": {
-                        "组装编导系统": 0.5,
-                        "Ficsite Trigon": 40,
-                        "水": 10,
-                    }
-                }
-            ]
-        },
-        "Ballistic Warp Drive": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Ballistic Warp Drive": 1,
-                    },
-                    "sourceList": {
-                        "热推进火箭": 1,
-                        "Singularity Cell": 5,
-                        "叠加振荡器": 2,
-                        "Dark Matter Crystal": 40,
-                    }
-                }
-            ]
-        },
-        "AI Expansion Server": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "AI Expansion Server": 4,
-                        "Dark Matter Residue": 100000,
-                    },
-                    "sourceList": {
-                        "磁场发生器": 4,
-                        "Neural-Quantum Processor": 4,
-                        "叠加振荡器": 4,
-                        "Excited Photonic Matter": 100000,
+                        "晶体振荡器": "5",
+                        "Dark Matter Crystal": "30",
+                        "镀铝板": "45",
+                        "Excited Photonic Matter": "125000"
                     }
                 }
             ]
@@ -3142,63 +2374,84 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": 10,
+                        "Diamonds": "30"
                     },
                     "sourceList": {
-                        "煤": 600,
+                        "煤": "600"
                     }
-                }, {
+                },
+                {
                     "time": 60,
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": 20,
+                        "Diamonds": "20"
                     },
                     "sourceList": {
-                        "煤": 240,
-                        "石灰石": 480,
+                        "煤": "240",
+                        "石灰石": "480"
                     }
-                }, {
+                },
+                {
                     "time": 60,
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": 40,
+                        "Diamonds": "40"
                     },
                     "sourceList": {
-                        "原油": 200,
+                        "原油": "200"
                     }
-                }, {
+                },
+                {
                     "time": 60,
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": 30,
+                        "Diamonds": "30"
                     },
                     "sourceList": {
-                        "油焦": 720,
+                        "油焦": "720"
                     }
-                }, {
+                },
+                {
                     "time": 60,
-                    "equType": "采矿机",
+                    "equType": "1级采矿机",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": 15,
+                        "Diamonds": "15"
                     },
                     "sourceList": {
-                        "煤": 120,
-                        "石英晶体": 45,
+                        "石英晶体": "45",
+                        "煤": "120"
                     }
-                }, {
+                },
+                {
                     "time": 60,
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": 60,
+                        "Diamonds": "60"
                     },
                     "sourceList": {
-                        "煤": 600,
-                        "桶装涡轮燃料": 40,
+                        "桶装涡轮燃料": "40",
+                        "煤": "600"
+                    }
+                }
+            ]
+        },
+        "Time Crystal": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "1级采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Time Crystal": "6"
+                    },
+                    "sourceList": {
+                        "Diamonds": "12"
                     }
                 }
             ]
@@ -3211,32 +2464,34 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Crystal": 30,
+                        "Dark Matter Crystal": "30"
                     },
                     "sourceList": {
-                        "Diamonds": 30,
-                        "Dark Matter Residue": 150000,
+                        "Diamonds": "30",
+                        "Dark Matter Residue": "150000"
                     }
-                }, {
+                },
+                {
                     "time": 60,
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Crystal": 20,
+                        "Dark Matter Crystal": "20"
                     },
                     "sourceList": {
-                        "Dark Matter Residue": 200000,
+                        "Dark Matter Residue": "200000"
                     }
-                }, {
+                },
+                {
                     "time": 60,
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Crystal": 60,
+                        "Dark Matter Crystal": "60"
                     },
                     "sourceList": {
-                        "Dark Matter Residue": 150000,
-                        "Time Crystal": 30,
+                        "Time Crystal": "30",
+                        "Dark Matter Residue": "150000"
                     }
                 }
             ]
@@ -3246,96 +2501,1118 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "搅拌器",
+                    "equType": "Quantum Encoder",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": 100000,
-                        "AI Expansion Server": 4,
+                        "AI Expansion Server": "4",
+                        "Dark Matter Residue": "100000"
                     },
                     "sourceList": {
-                        "磁场发生器": 4,
-                        "Neural-Quantum Processor": 4,
-                        "Excited Photonic Matter": 100000,
-                        "叠加振荡器": 4
+                        "叠加振荡器": "4",
+                        "Excited Photonic Matter": "100000"
                     }
-                }, {
+                },
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": "60000"
+                    },
+                    "sourceList": {
+                        "SAM Fluctuator": "12.5",
+                        "叠加振荡器": "7.5",
+                        "Excited Photonic Matter": "60000"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "1级采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Dark Matter Residue": "100000"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "50"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsonium Fuel Rod": "2.5",
+                        "Dark Matter Residue": "50000"
+                    },
+                    "sourceList": {
+                        "电磁控制杆": "5",
+                        "Ficsite Trigon": "100",
+                        "Excited Photonic Matter": "50000"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "Neural-Quantum Processor": "3",
+                        "Dark Matter Residue": "75000"
+                    },
+                    "sourceList": {
+                        "超级计算机": "3",
+                        "Time Crystal": "15",
+                        "Ficsite Trigon": "45",
+                        "Excited Photonic Matter": "75000"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "能量碎片": "5",
+                        "Dark Matter Residue": "60000"
+                    },
+                    "sourceList": {
+                        "Dark Matter Crystal": "10",
+                        "石英晶体": "60",
+                        "Excited Photonic Matter": "60000"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "叠加振荡器": "5",
+                        "Dark Matter Residue": "125000"
+                    },
+                    "sourceList": {
+                        "晶体振荡器": "5",
+                        "Dark Matter Crystal": "30",
+                        "镀铝板": "45",
+                        "Excited Photonic Matter": "125000"
+                    }
+                }
+            ]
+        },
+        "Singularity Cell": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Singularity Cell": "10"
+                    },
+                    "sourceList": {
+                        "核子团": "1",
+                        "Dark Matter Crystal": "20",
+                        "铁板": "100",
+                        "混凝土": "200"
+                    }
+                }
+            ]
+        },
+        "Excited Photonic Matter": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "1级采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Excited Photonic Matter": "200000"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "Neural-Quantum Processor": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "Neural-Quantum Processor": "3",
+                        "Dark Matter Residue": "75000"
+                    },
+                    "sourceList": {
+                        "超级计算机": "3",
+                        "Time Crystal": "15",
+                        "Ficsite Trigon": "45",
+                        "Excited Photonic Matter": "75000"
+                    }
+                }
+            ]
+        },
+        "空罐": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "空罐": "60"
+                    },
+                    "sourceList": {
+                        "塑料": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "空罐": "40"
+                    },
+                    "sourceList": {
+                        "钢锭": "40"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "空罐": "60"
+                    },
+                    "sourceList": {
+                        "铜板": "15",
+                        "铁板": "30"
+                    }
+                }
+            ]
+        },
+        "空瓶": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "空瓶": "40",
+                        "Ionized Fuel": "80"
+                    },
+                    "sourceList": {
+                        "Packaged Ionized Fuel": "40"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "空瓶": "60",
+                        "Rocket Fuel": "120"
+                    },
+                    "sourceList": {
+                        "Packaged Rocket Fuel": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "空瓶": "60",
+                        "氮气": "240"
+                    },
+                    "sourceList": {
+                        "瓶装氮气": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "空瓶": "60"
+                    },
+                    "sourceList": {
+                        "铝锭": "60"
+                    }
+                }
+            ]
+        },
+        "压力转换立方体": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "压力转换立方体": "1"
+                    },
+                    "sourceList": {
+                        "熔合模块化框架": "1",
+                        "无线电控制单元": "2"
+                    }
+                }
+            ]
+        },
+        "桶装水": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装水": "60"
+                    },
+                    "sourceList": {
+                        "水": "60"
+                    }
+                }
+            ]
+        },
+        "桶装氧化铝溶液": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装氧化铝溶液": "120"
+                    },
+                    "sourceList": {
+                        "氧化铝溶液": "120"
+                    }
+                }
+            ]
+        },
+        "桶装硫酸": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装硫酸": "40"
+                    },
+                    "sourceList": {
+                        "硫酸": "40"
+                    }
+                }
+            ]
+        },
+        "桶装硝酸": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装硝酸": "30"
+                    },
+                    "sourceList": {
+                        "硝酸": "30"
+                    }
+                }
+            ]
+        },
+        "瓶装氮气": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "瓶装氮气": "60"
+                    },
+                    "sourceList": {
+                        "空瓶": "60",
+                        "氮气": "240"
+                    }
+                }
+            ]
+        },
+        "桶装石油": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装石油": "30"
+                    },
+                    "sourceList": {
+                        "原油": "30"
+                    }
+                }
+            ]
+        },
+        "桶装重渣油": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装重渣油": "30"
+                    },
+                    "sourceList": {
+                        "重渣油": "30"
+                    }
+                }
+            ]
+        },
+        "固体生物燃料": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "固体生物燃料": "60"
+                    },
+                    "sourceList": {
+                        "生物质": "120"
+                    }
+                }
+            ]
+        },
+        "桶装燃油": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装燃油": "40"
+                    },
+                    "sourceList": {
+                        "燃料": "40"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装燃油": "60"
+                    },
+                    "sourceList": {
+                        "桶装水": "60",
+                        "重渣油": "30"
+                    }
+                }
+            ]
+        },
+        "桶装液态生物燃料": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装液态生物燃料": "40"
+                    },
+                    "sourceList": {
+                        "液态生物燃料": "40"
+                    }
+                }
+            ]
+        },
+        "桶装涡轮燃料": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "桶装涡轮燃料": "20"
+                    },
+                    "sourceList": {
+                        "涡轮燃料": "20"
+                    }
+                }
+            ]
+        },
+        "Packaged Rocket Fuel": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Packaged Rocket Fuel": "60"
+                    },
+                    "sourceList": {
+                        "空瓶": "60",
+                        "Rocket Fuel": "120"
+                    }
+                }
+            ]
+        },
+        "Packaged Ionized Fuel": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "灌装机",
+                    "equIndex": 0,
+                    "productList": {
+                        "Packaged Ionized Fuel": "40"
+                    },
+                    "sourceList": {
+                        "空瓶": "40",
+                        "Ionized Fuel": "80"
+                    }
+                }
+            ]
+        },
+        "铀燃料棒": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铀燃料棒": "0.4"
+                    },
+                    "sourceList": {
+                        "电磁控制杆": "2",
+                        "铀核芯": "20",
+                        "钢筋混凝土梁": "1.2"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铀燃料棒": "0.6"
+                    },
+                    "sourceList": {
+                        "转子": "2",
+                        "铀核芯": "20",
+                        "晶体振荡器": "0.6"
+                    }
+                }
+            ]
+        },
+        "钚燃料棒": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钚燃料棒": "0.25"
+                    },
+                    "sourceList": {
+                        "钚核芯": "7.5",
+                        "钢梁": "4.5",
+                        "电磁控制杆": "1.5",
+                        "散热器": "2.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钚燃料棒": "0.5"
+                    },
+                    "sourceList": {
+                        "钚核芯": "10",
+                        "压力转换立方体": "0.5"
+                    }
+                }
+            ]
+        },
+        "电磁控制杆": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电磁控制杆": "4"
+                    },
+                    "sourceList": {
+                        "AI限制器": "4",
+                        "定子": "6"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电磁控制杆": "8"
+                    },
+                    "sourceList": {
+                        "高速连接器": "4",
+                        "定子": "8"
+                    }
+                }
+            ]
+        },
+        "铀核芯": {
+            "useIndex": 0,
+            "data": [
+                {
                     "time": 60,
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": 60000,
+                        "铀核芯": "25",
+                        "硫酸": "10"
                     },
                     "sourceList": {
-                        "SAM Fluctuator": 12.5,
-                        "能量碎片": 7.5,
-                        "叠加振荡器": 7.5,
-                        "Excited Photonic Matter": 60000
+                        "混凝土": "15",
+                        "铀": "50",
+                        "硫酸": "40"
                     }
-                }, {
+                },
+                {
                     "time": 60,
-                    "equType": "采矿机",
+                    "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": 100000,
+                        "铀核芯": "20"
                     },
                     "sourceList": {
-                        "Reanimated SAM": 50,
+                        "石英砂": "15",
+                        "硫": "25",
+                        "快速线": "75"
                     }
-                }, {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Dark Matter Residue": 500000,
-                        "Ficsonium Fuel Rod": 2.5,
-                    },
-                    "sourceList": {
-                        "Ficsonium": 5,
-                        "电磁控制杆": 5,
-                        "Ficsite Trigon": 100,
-                        "Excited Photonic Matter": 50000,
-                    }
-                }, {
+                }
+            ]
+        },
+        "Non-Fissile Uranium": {
+            "useIndex": 0,
+            "data": [
+                {
                     "time": 60,
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": 75000,
-                        "Neural-Quantum Processor": 3,
+                        "Non-Fissile Uranium": "50",
+                        "水": "15"
                     },
                     "sourceList": {
-                        "Time Crystal": 15,
-                        "超级计算机": 3,
-                        "Ficsite Trigon": 45,
-                        "Excited Photonic Matter": 75000,
+                        "石英砂": "25",
+                        "铀废料": "37.5",
+                        "硫酸": "15"
                     }
-                }, {
+                },
+                {
                     "time": 60,
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": 60000,
-                        "能量碎片": 5,
+                        "Non-Fissile Uranium": "100",
+                        "水": "40"
                     },
                     "sourceList": {
-                        "Time Crystal": 10,
-                        "Dark Matter Crystal": 10,
-                        "石英晶体": 60,
-                        "Excited Photonic Matter": 60000,
+                        "硫酸": "25",
+                        "硝酸": "15"
                     }
-                }, {
+                }
+            ]
+        },
+        "钚丸": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钚丸": "30"
+                    },
+                    "sourceList": {
+                        "铀废料": "25",
+                        "Non-Fissile Uranium": "100"
+                    }
+                }
+            ]
+        },
+        "钚核芯": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钚核芯": "5"
+                    },
+                    "sourceList": {
+                        "钚丸": "10",
+                        "混凝土": "20"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钚核芯": "10"
+                    },
+                    "sourceList": {
+                        "铝制外壳": "10",
+                        "Non-Fissile Uranium": "75"
+                    }
+                }
+            ]
+        },
+        "Ficsonium": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsonium": "10"
+                    },
+                    "sourceList": {
+                        "Singularity Cell": "10",
+                        "Dark Matter Residue": "200000"
+                    }
+                }
+            ]
+        },
+        "Ficsonium Fuel Rod": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsonium Fuel Rod": "2.5",
+                        "Dark Matter Residue": "50000"
+                    },
+                    "sourceList": {
+                        "电磁控制杆": "5",
+                        "Ficsite Trigon": "100",
+                        "Excited Photonic Matter": "50000"
+                    }
+                }
+            ]
+        },
+        "铀废料": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "核电站",
+                    "equIndex": 0,
+                    "productList": {
+                        "铀废料": "10"
+                    },
+                    "sourceList": {
+                        "铀燃料棒": "0.2"
+                    }
+                }
+            ]
+        },
+        "钚废料": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "核电站",
+                    "equIndex": 0,
+                    "productList": {
+                        "钚废料": "1"
+                    },
+                    "sourceList": {
+                        "钚燃料棒": "0.1"
+                    }
+                }
+            ]
+        },
+        "压缩煤": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "压缩煤": "5",
+                        "Ionized Fuel": "40"
+                    },
+                    "sourceList": {
+                        "Rocket Fuel": "40",
+                        "能量碎片": "2.5"
+                    }
+                },
+                {
                     "time": 60,
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": 125000,
-                        "叠加振荡器": 5,
+                        "压缩煤": "10",
+                        "Rocket Fuel": "100"
                     },
                     "sourceList": {
-                        "晶体振荡器": 5,
-                        "Dark Matter Crystal": 30,
-                        "镀铝板": 45,
-                        "Excited Photonic Matter": 125000,
+                        "涡轮燃料": "60",
+                        "硝酸": "10"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "压缩煤": "25"
+                    },
+                    "sourceList": {
+                        "硫": "25"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "1级采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "压缩煤": "40",
+                        "Ionized Fuel": "200"
+                    },
+                    "sourceList": {
+                        "Dark Matter Crystal": "80",
+                        "Packaged Rocket Fuel": "240"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "压缩煤": "25",
+                        "Rocket Fuel": "150"
+                    },
+                    "sourceList": {
+                        "煤": "50",
+                        "燃料": "100",
+                        "氮气": "75"
+                    }
+                }
+            ]
+        },
+        "能量碎片": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "能量碎片": "5",
+                        "Dark Matter Residue": "60000"
+                    },
+                    "sourceList": {
+                        "Dark Matter Crystal": "10",
+                        "石英晶体": "60",
+                        "Excited Photonic Matter": "60000"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "能量碎片": "7.5"
+                    },
+                    "sourceList": {
+                        "蓝色能量蛞蝓": "7.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "能量碎片": "10"
+                    },
+                    "sourceList": {
+                        "黄色能量蛞蝓": "5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "能量碎片": "12.5"
+                    },
+                    "sourceList": {
+                        "紫色能量蛞蝓": "2.5"
+                    }
+                }
+            ]
+        },
+        "智能护板": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "智能护板": "2"
+                    },
+                    "sourceList": {
+                        "转子": "2"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "智能护板": "5"
+                    },
+                    "sourceList": {
+                        "转子": "2.5",
+                        "塑料": "7.5"
+                    }
+                }
+            ]
+        },
+        "多功能框架": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "多功能框架": "5"
+                    },
+                    "sourceList": {
+                        "钢梁": "30",
+                        "模块化框架": "2.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "多功能框架": "7.5"
+                    },
+                    "sourceList": {
+                        "橡胶": "30",
+                        "模块化框架": "3.75",
+                        "钢梁": "22.5"
+                    }
+                }
+            ]
+        },
+        "自动线路": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "自动线路": "2.5"
+                    },
+                    "sourceList": {
+                        "电缆": "50",
+                        "定子": "2.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "自动线路": "7.5"
+                    },
+                    "sourceList": {
+                        "电线": "75",
+                        "定子": "3.75",
+                        "高速连接器": "1.88"
+                    }
+                }
+            ]
+        },
+        "模块化引擎": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "模块化引擎": "1"
+                    },
+                    "sourceList": {
+                        "智能护板": "2",
+                        "橡胶": "15"
+                    }
+                }
+            ]
+        },
+        "自适应控制单元": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "自适应控制单元": "1"
+                    },
+                    "sourceList": {
+                        "重型模块化框架": "1",
+                        "计算机": "2",
+                        "电路板": "5"
+                    }
+                }
+            ]
+        },
+        "组装编导系统": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "组装编导系统": "0.75"
+                    },
+                    "sourceList": {
+                        "自适应控制单元": "1.5",
+                        "超级计算机": "0.75"
+                    }
+                }
+            ]
+        },
+        "磁场发生器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "磁场发生器": "1"
+                    },
+                    "sourceList": {
+                        "电磁控制杆": "1",
+                        "多功能框架": "2.5"
+                    }
+                }
+            ]
+        },
+        "热推进火箭": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "热推进火箭": "1"
+                    },
+                    "sourceList": {
+                        "熔合模块化框架": "1",
+                        "冷却系统": "3",
+                        "模块化引擎": "2.5"
+                    }
+                }
+            ]
+        },
+        "核子团": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "粒子加速器",
+                    "equIndex": 0,
+                    "productList": {
+                        "核子团": "0.5"
+                    },
+                    "sourceList": {
+                        "铜粉": "100",
+                        "压力转换立方体": "0.5"
+                    }
+                }
+            ]
+        },
+        "Biochemical Sculptor": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Biochemical Sculptor": "2"
+                    },
+                    "sourceList": {
+                        "Ficsite Trigon": "40",
+                        "组装编导系统": "0.5",
+                        "水": "10"
+                    }
+                }
+            ]
+        },
+        "Ballistic Warp Drive": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ballistic Warp Drive": "1"
+                    },
+                    "sourceList": {
+                        "热推进火箭": "1",
+                        "叠加振荡器": "2",
+                        "Singularity Cell": "5",
+                        "Dark Matter Crystal": "40"
+                    }
+                }
+            ]
+        },
+        "AI Expansion Server": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "Quantum Encoder",
+                    "equIndex": 0,
+                    "productList": {
+                        "AI Expansion Server": "4",
+                        "Dark Matter Residue": "100000"
+                    },
+                    "sourceList": {
+                        "叠加振荡器": "4",
+                        "Excited Photonic Matter": "100000"
                     }
                 }
             ]
@@ -3432,12 +3709,12 @@ let game_data = {
                 },
                 {
                     "name": "2级采矿机",
-                    "energy": 12,
+                    "energy": 15,
                     "rate": 2
                 },
                 {
                     "name": "3级采矿机",
-                    "energy": 30,
+                    "energy": 45,
                     "rate": 4
                 },
             ]
@@ -3447,6 +3724,10 @@ let game_data = {
             "data": [
                 {
                     "name": "抽水站",
+                    "energy": 20,
+                    "rate": 1
+                }, {
+                    "name": "油井",
                     "energy": 40,
                     "rate": 1
                 }
@@ -3457,7 +3738,27 @@ let game_data = {
             "data": [
                 {
                     "name": "粒子加速器",
-                    "energy": 500,
+                    "energy": 1500,
+                    "rate": 1
+                }
+            ]
+        },
+        "矿井增压器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "name": "矿井增压器",
+                    "energy": 150,
+                    "rate": 1
+                }
+            ]
+        },
+        "Quantum Encoder": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "name": "Quantum Encoder",
+                    "energy": 0,
                     "rate": 1
                 }
             ]
@@ -3465,157 +3766,3 @@ let game_data = {
 
     }
 }
-
-// 材料分类表格（暂时没有使用到）
-let materialCategoryTable = [
-    {
-        "category": "特殊",
-        "data": [
-            {
-                "category": "项目",
-                "data": [
-                    "枢纽", "太空电梯", "分子分析机", "蓝图设计器"
-                ]
-            },
-            {
-                "category": "AWESOME奖励项目",
-                "data": [
-                    "AWESOME商店", "AWESOME回收器"
-                ]
-            }
-        ]
-    }, {
-        "category": "生产",
-        "data": [
-            {
-                "category": "制造设备",
-                "data": [
-                    "构造器", "组装器", "制造器", "灌装机", "精炼厂", "搅拌器"
-                ]
-            },
-            {
-                "category": "冶炼设备",
-                "data": [
-                    "冶炼器", "铸造器"
-                ]
-            },
-            {
-                "category": "采矿机",
-                "data": [
-                    "1级采矿机", "2级采矿机"
-                ]
-            },
-            {
-                "category": "流体采集器",
-                "data": [
-                    "抽水站", "油井"
-                ]
-            },
-            {
-                "category": "工作站",
-                "data": [
-                    "制作台", "设备车间"
-                ]
-            }
-        ]
-    }, {
-        "category": "电力",
-        "data": [
-            {
-                "category": "发电机",
-                "data": [
-                    "生物质燃烧器", "煤炭发电机", "燃油发电机", "地热发电机", "蓄电池"
-                ]
-            }, {
-                "category": "电线杆",
-                "data": [
-                    "电源线", "1级电线杆", "2级电线杆", "3级电线杆", "电源开关"
-                ]
-            }
-
-        ]
-    }, {
-        "category": "物流",
-        "data": [
-            {
-                "category": "传送带",
-                "data": [
-                    "1级传送带", "2级传送带", "3级传送带", "4级传送带"
-                ]
-            }, {
-                "category": "垂直传送带",
-                "data": [
-                    "1级垂直传送带", "2级垂直传送带", "3级垂直传送带", "4级垂直传送带"
-                ]
-            }, {
-                "category": "传送带支架",
-                "data": [
-                    "传送带立架", "传送带叠架", "传送带壁架", "传送带吊架"
-                ]
-            }, {
-                "category": "管道",
-                "data": [
-                    "1级管道", "2级管道", "管道交叉接头", "1级管道泵", "2级管道泵", "阀门"
-                ]
-            }, {
-                "category": "管道支架",
-                "data": [
-                    "管道立架", "管道叠架"
-                ]
-            }, {
-                "category": "引导设备",
-                "data": [
-                    "传送合并器", "传送分离器", "智能分离器", "可编程分离器"
-                ]
-            }
-
-        ]
-    }, {
-        "category": "组织",
-        "data": [
-            {
-                "category": "标志牌",
-                "data": [
-                    "标志牌 2m", "标志牌 3m", "标志牌 4m", "展示牌", "竖向牌", "方形牌 0.5m",
-                    "方形牌 1m", "方形牌 2m", "小型告示牌", "大型告示牌"
-                ]
-            }, {
-                "category": "存储",
-                "data": [
-                    "个人储物盒", "存储器", "工业存储器", "液体缓冲罐", "工业液体缓冲罐"
-                ]
-            }, {
-                "category": "塔",
-                "data": [
-                    "瞭望塔", "雷达塔"
-                ]
-            }
-        ]
-    }, {
-        "category": "运输",
-        "data": [
-            {
-                "category": "载具运输",
-                "data": [
-                    "卡车站", "拖拉机", "卡车", "探险家"
-                ]
-            }, {
-                "category": "超级管道",
-                "data": [
-                    "超级管道", "超级管道入口", "超级管道立架", "超级管道叠架"
-                ]
-            }, {
-                "category": "铁路运输",
-                "data": [
-                    "电力火车头", "货运车厢", "火车站", "货运站台", "液体货运站台", "空站台",
-                    "带天桥空站台", "铁轨", "区间信号灯", "路径信号灯"
-                ]
-            }, {
-                "category": "弹射板",
-                "data": [
-                    "弹射板", "酸性凝胶着陆垫"
-                ]
-            }
-        ]
-    }
-]
