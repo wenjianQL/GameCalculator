@@ -24,7 +24,7 @@
     <script src="./js/officialGameJs/satisfactory/tree-satisfactory.js"></script>
     <script src="./js/officialGameJs/satisfactory/table-satisfactory.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2040100387385862"
-        crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script>
 
     <!--树形列表-->
     <script src="js/jquery-3.1.1.min.js"></script>
@@ -45,222 +45,212 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <nav class="navbar-default navbar-static-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav metismenu" id="side-menu">
-                    <li class="nav-header">
-                        <div class="dropdown profile-element">
-                            <img alt="image" class="w-50 h-50" src="img/logo/SatisFactory.webp" />
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="block m-t-xs font-bold">幸福工厂</span>
-                                    <!--                                <b class="caret"></b>-->
-                                </span>
-                            </a>
-                            <!--                     有版本区分，才进行实现。代码不要删除。   -->
-                            <!--                        <ul class="dropdown-menu animated fadeInRight m-t-xs">-->
-                            <!--                            <li><a class="dropdown-item" href="">游戏版本1</a></li>-->
-                            <!--                            <li><a class="dropdown-item" href="">游戏版本2</a></li>-->
-                            <!--                            <li><a class="dropdown-item" href="">游戏版本3</a></li>-->
-                            <!--                        </ul>-->
-                        </div>
-                        <div class="logo-element">
-                            <img src="img/logo/logo.png" style="width: 80px; height: 80px; scale: max(1,1);" alt="logo">
-                        </div>
-                    </li>
-                    <li class="active"><a href="satisfactory.html" target="_blank"
-                            onclick="_czc.push(['_trackEvent', '页面', '点击', '幸福工厂-量化计算器']);"><span
-                                class="nav-label">量化计算器</span></a></li>
-                    <li><a href="satisfactory_blue.html" target="_blank"
-                            onclick="_czc.push(['_trackEvent', '页面', '点击', '幸福工厂-蓝图']);"><span
-                                class="nav-label">蓝图</span></a></li>
-                </ul>
-
-            </div>
-        </nav>
-        <div id="page-wrapper" class="gray-bg">
-            <div class="row border-bottom">
-                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                    <div class="navbar-header">
-                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">侧边栏</a>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="w-50 h-50" src="img/logo/SatisFactory.webp"/>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold">幸福工厂</span>
+                            <!--                                <b class="caret"></b>-->
+                            </span>
+                        </a>
+                        <!--                     有版本区分，才进行实现。代码不要删除。   -->
+                        <!--                        <ul class="dropdown-menu animated fadeInRight m-t-xs">-->
+                        <!--                            <li><a class="dropdown-item" href="">游戏版本1</a></li>-->
+                        <!--                            <li><a class="dropdown-item" href="">游戏版本2</a></li>-->
+                        <!--                            <li><a class="dropdown-item" href="">游戏版本3</a></li>-->
+                        <!--                        </ul>-->
                     </div>
-                    <ul class="nav navbar-top-links navbar-right">
-                        <li><span class="m-r-sm text-muted welcome-message">幸福工厂-量化计算器</span></li>
-                        <li><a href="https://txc.qq.com/products/605145" target="_blank">bug/建议反馈</a></li>
-                        <li><a href="index.html" target="_blank">网站首页</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="wrapper wrapper-content">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <!-- 生产目标 -->
-                        <div class="ibox" id="productInput">
-                            <div class="ibox-title">
-                                <h5 id="text_product_target">生产目标</h5>
-                            </div>
-                            <div class="ibox-content" id="productInputContent">
-                                <div class="form-group">
-                                    <datalist id="item_list"></datalist>
-                                    <div>
-                                        <label for="needs_item" id="text_goods">物品: </label>
-                                        <input style="width: 30%; margin-left: 4px;" list="item_list" size="5"
-                                            id="needs_item" />
-                                        <button type="button" class="btn btn-default" data-toggle="modal"
+                    <div class="logo-element">
+                        <img src="img/logo/logo.png" style="width: 80px; height: 80px; scale: max(1,1);" alt="logo">
+                    </div>
+                </li>
+                <li class="active"><a href="satisfactory.html" target="_blank"
+                                      onclick="_czc.push(['_trackEvent', '页面', '点击', '幸福工厂-量化计算器']);"><span
+                        class="nav-label">量化计算器</span></a></li>
+                <li><a href="satisfactory_blue.html" target="_blank"
+                       onclick="_czc.push(['_trackEvent', '页面', '点击', '幸福工厂-蓝图']);"><span
+                        class="nav-label">蓝图</span></a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">侧边栏</a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li><span class="m-r-sm text-muted welcome-message">幸福工厂-量化计算器</span></li>
+                    <li><a href="https://txc.qq.com/products/605145" target="_blank">bug/建议反馈</a></li>
+                    <li><a href="index.html" target="_blank">网站首页</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="wrapper wrapper-content">
+            <!-- 生产目标 -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox" id="productInput">
+                        <div class="ibox-title">
+                            <h5 id="text_product_target">生产目标</h5>
+                        </div>
+                        <div class="ibox-content" id="productInputContent">
+                            <div class="form-group">
+                                <datalist id="item_list"></datalist>
+                                <div>
+                                    <label for="needs_item" id="text_goods">物品: </label>
+                                    <input style="width: 10%; margin-left: 4px;" list="item_list" size="5"
+                                           id="needs_item"/>
+                                    <button type="button" class="btn btn-info" data-toggle="modal"
                                             data-target="#inputSelectDialog" id="text_select_dialog"
                                             onclick="initSatisFactorySelectDialog()">弹窗选择
-                                        </button>
-                                    </div>
-                                </div>
-                                <!--弹窗选择的模态弹窗-->
-                                <div class="modal inmodal fade" id="inputSelectDialog" tabindex="-1" role="dialog"
-                                    aria-hidden="true">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" id="selectDialogClickClose"
-                                                    data-dismiss="modal">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                <h4 class="modal-title" id="text_select">Select</h4>
-                                            </div>
-                                            <div class="modal-body selectMaterialModal" id="selectGridTableCustom"
-                                                style="display: grid; grid-template-columns: repeat(8, 1fr); grid-gap: 16px;">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </button>
 
-                                <div class="form-group">
-                                    <label class="font-normal" for="needs_amount" id="text_number">数量:</label>
-                                    <div style="display: inline-block; margin-left: 4px;">
-                                        <input type="text" size="6" id="needs_amount" value="5" name="demo1" />个/min
-                                    </div>
+                                    <label class="font-normal" for="needs_amount" id="text_number"
+                                           style="margin-left: 30px;">数量:</label>
+                                    <input type="text" size="6" id="needs_amount" value="4" name="demo1"
+                                           style="margin-left: 4px; width: 10%;"/>
+                                    <label>个/min</label>
+
                                     <button class="ladda-button btn btn-info" style="margin-left:10px"
-                                        onclick="clickCalculateBtn()" data-style="slide-right" id="text_calculate">单独计算
+                                            onclick="clickCalculateBtn()" data-style="slide-right" id="text_calculate">
+                                        单独计算
                                     </button>
-                                    <button class="ladda-button btn btn-info" style="margin-left:10px"
-                                        onclick="addCalculateBtn()" data-style="slide-right"
-                                        id="text_add_calculate">累加计算
+                                    <button class="ladda-button btn btn-default" style="margin-left:10px"
+                                            onclick="addCalculateBtn()" data-style="slide-right"
+                                            id="text_add_calculate">累加计算
                                     </button>
-                                </div>
-                                <div class="row m-t-md">
-                                    <div class="col-sm-12">
-                                        <button class="ladda-button btn btn-danger" id="resetNeeds"
-                                            onclick="resetNeeds()" data-style="slide-left">
-                                            重置
-                                        </button>
-                                    </div>
+                                    <button class="ladda-button btn btn-danger" id="resetNeeds"
+                                            onclick="resetNeeds()" data-style="slide-left" style="margin-left: 10px;">
+                                        重置
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="ibox" id="total">
-                            <div class="ibox-title">
-                                <h5 id="text_total">统计</h5>
-                            </div>
-                            <div class="ibox-content" style="display: flex; flex-wrap: wrap;">
-                                <div style="flex: 1;">
-                                    <div>
-                                        <label id="text_total_material">原材料合计</label>
-                                        <ul id="sourceList"></ul>
-                                    </div>
-                                    <div>
-                                        <label id="text_total_equipment">设备合计</label>
-                                        <ul id="totalList"></ul>
-                                    </div>
-                                </div>
-                                <div style="flex: 1;">
-                                    <!-- 产物 -->
-                                    <div style="margin-top: 20px;">
-                                        <label id="text_total_product">Products：</label>
-                                        <ul id="surplusList"></ul>
-                                    </div>
-                                    <div>
-                                        <label id="text_total_energy">电量：</label>
-                                        <ul id="energyList"></ul>
+                            <!--弹窗选择的模态弹窗-->
+                            <div class="modal inmodal fade" id="inputSelectDialog" tabindex="-1" role="dialog"
+                                 aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" id="selectDialogClickClose"
+                                                    data-dismiss="modal">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h4 class="modal-title" id="text_select">Select</h4>
+                                        </div>
+                                        <div class="modal-body selectMaterialModal" id="selectGridTableCustom"
+                                             style="display: grid; grid-template-columns: repeat(8, 1fr); grid-gap: 16px;">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <!--计算结果显示-->
-                        <div class="ibox" id="calResult">
-                            <div class="ibox-title">
-                                <h5 id="text_calculate_result">计算结果</h5>
+            </div>
+            <!--  统计信息  -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox" id="total">
+                        <div class="ibox-title">
+                            <h5 id="text_total">统计</h5>
+                        </div>
+                        <div class="ibox-content" style="display: flex; flex-wrap: wrap;">
+                            <div style="flex: 1;">
+                                <label id="text_total_material">原材料合计</label>
+                                <ul id="sourceList"></ul>
                             </div>
-                            <div class="ibox-content">
-                                <div class="row m-t-sm">
-                                    <div class="col-lg-12">
-                                        <div class="panel blank-panel">
-                                            <div class="panel-heading" id="calResultHead">
-                                                <div class="panel-options">
-                                                    <ul class="nav nav-tabs">
-                                                        <li>
-                                                            <a class="nav-link active" href="#tabTreeList"
-                                                                data-toggle="tab" id="text_tree_list_one">
-                                                                树形列表1
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="nav-link" href="#tabLevelTable" data-toggle="tab"
-                                                                id="text_level_table">
-                                                                层次表格
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="nav-link" href="#tabJsTree" data-toggle="tab"
-                                                                id="text_tree_list_two">
-                                                                树形列表2
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                            <div style="flex: 1;">
+                                <label id="text_total_equipment">设备合计</label>
+                                <ul id="totalList"></ul>
+                            </div>
+                            <div style="flex: 1;">
+                                <label id="text_total_energy">电量：</label>
+                                <ul id="energyList"></ul>
+                            </div>
+                            <div style="flex: 1;">
+                                <label id="text_total_product">Products：</label>
+                                <ul id="surplusList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--计算结果显示-->
+                    <div class="ibox" id="calResult">
+                        <div class="ibox-title">
+                            <h5 id="text_calculate_result">计算结果</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="panel blank-panel">
+                                <div class="panel-heading" id="calResultHead">
+                                    <div class="panel-options">
+                                        <ul class="nav nav-tabs">
+                                            <li>
+                                                <a class="nav-link active" href="#tabTreeList"
+                                                   data-toggle="tab" id="text_tree_list_one">
+                                                    树形列表1
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="#tabLevelTable" data-toggle="tab"
+                                                   id="text_level_table">
+                                                    层次表格
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="nav-link" href="#tabJsTree" data-toggle="tab"
+                                                   id="text_tree_list_two">
+                                                    树形列表2
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tabTreeList">
+                                            <div class="feed-activity-list">
+                                                <ul class="tree" id="ul-">
+                                                </ul>
                                             </div>
-                                            <div class="panel-body">
-                                                <div class="tab-content">
-                                                    <div class="tab-pane active" id="tabTreeList">
-                                                        <div class="feed-activity-list">
-                                                            <ul class="tree" id="ul-">
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tab-pane" id="tabLevelTable">
-                                                        <table class="table table-striped">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th id="text_table_level">层级</th>
-                                                                    <th id="text_table_goods">物品</th>
-                                                                    <th id="text_table_goods_number">物品数量</th>
-                                                                    <th id="text_table_devices">所需设备</th>
-                                                                    <th id="text_table_devices_number">设备数量</th>
-                                                                    <th id="text_table_recipe">配方</th>
-                                                                    <!--                                                            <th id="text_table_is_calculate">是否计算</th>-->
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="material_table">
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="tab-pane" id="tabJsTree">
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <button onclick="zoomIn()" id="text_big">放大
-                                                                </button>
-                                                                <button onclick="zoomOut()" id="text_small">缩小
-                                                                </button>
+                                        </div>
+                                        <div class="tab-pane" id="tabLevelTable">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th id="text_table_level">层级</th>
+                                                    <th id="text_table_goods">物品</th>
+                                                    <th id="text_table_goods_number">物品数量</th>
+                                                    <th id="text_table_devices">所需设备</th>
+                                                    <th id="text_table_devices_number">设备数量</th>
+                                                    <th id="text_table_recipe">配方</th>
+                                                    <!--                                                            <th id="text_table_is_calculate">是否计算</th>-->
+                                                </tr>
+                                                </thead>
+                                                <tbody id="material_table">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="tab-pane" id="tabJsTree">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <button onclick="zoomIn()" id="text_big">放大
+                                                    </button>
+                                                    <button onclick="zoomOut()" id="text_small">缩小
+                                                    </button>
 
-                                                                <div style="overflow: auto;">
-                                                                    <div id="deptTree"
-                                                                        style="transform-origin: top left; margin-top: 20px;">
-                                                                        <!-- deptTree 内容 -->
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                    <div style="overflow: auto;">
+                                                        <div id="deptTree"
+                                                             style="transform-origin: top left; margin-top: 20px;">
+                                                            <!-- deptTree 内容 -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -275,31 +265,32 @@
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Mainly scripts -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Mainly scripts -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
-    <script src="./js/commonJs/commonTranslate.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#deptTree').jstree({
-                'core': {
-                    'data': []
-                },
-                // "plugins" : [ "checkbox" ],
-                "checkbox": {
-                    "keep_selected_style": false,
-                    "three_state": true
-                }
-            });
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script src="./js/commonJs/commonTranslate.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#deptTree').jstree({
+            'core': {
+                'data': []
+            },
+            // "plugins" : [ "checkbox" ],
+            "checkbox": {
+                "keep_selected_style": false,
+                "three_state": true
+            }
         });
-    </script>
+    });
+</script>
 </body>
 
 </html>

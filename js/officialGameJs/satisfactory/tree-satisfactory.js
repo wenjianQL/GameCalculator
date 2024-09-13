@@ -313,7 +313,7 @@ function show_equipment_in_tree_list_mode() {
     // 设备总计Node添加
     let total_str = "";
     for (let item in total_equipment_list) {
-        total_str += "<li>" + total_equipment_list[item] + " * " + getSatisFactoryImgAndNameNodeStr(item) + "</li>";
+        total_str += "<li>" + total_equipment_list[item].toFixed(2) + " * " + getSatisFactoryImgAndNameNodeStr(item) + "</li>";
     }
     let totalListNode = document.getElementById("totalList");
     totalListNode.innerHTML = total_str;
