@@ -107,25 +107,11 @@ let game_data = {
         "通讯": ["计算机", "超级计算机", "量子计算机", "无线电控制单元", "晶体振荡器", "叠加振荡器"],
         "Quantum Technology": ["Diamonds", "Time Crystal", "Dark Matter Crystal", "Dark Matter Residue", "Singularity Cell", "Excited Photonic Matter", "Neural-Quantum Processor"],
         "容器": ["空罐", "空瓶", "压力转换立方体"],
-        "燃料": ["Packaged Rocket Fuel","Packaged Ionized Fuel","铀燃料棒", "钚燃料棒"],
+        "燃料": ["Packaged Rocket Fuel", "Packaged Ionized Fuel", "铀燃料棒", "钚燃料棒"],
         "核工业品": ["电磁控制杆", "铀核芯", "Non-Fissile Uranium", "贫铀", "钚丸"],
         "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团", "Biochemical Sculptor", "Ballistic Warp Drive", "AI Expansion Server"],
     },
     "recipe_data": {
-        "铁矿石": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "铁矿石": "30"
-                    },
-                    "sourceList": {}
-                }
-            ]
-        },
         "石灰石": {
             "useIndex": 0,
             "data": [
@@ -137,6 +123,44 @@ let game_data = {
                         "石灰石": "30"
                     },
                     "sourceList": {}
+                }, {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "石灰石": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "硫": "20"
+                    }
+                }
+            ]
+        },
+        "铁矿石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁矿石": "30"
+                    },
+                    "sourceList": {}
+                }, {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁矿石": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "石灰石": "240"
+                    }
                 }
             ]
         },
@@ -151,6 +175,31 @@ let game_data = {
                         "铜矿石": "30"
                     },
                     "sourceList": {}
+                }, {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铜矿石": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "原石英": "100"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铜矿石": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "硫": "120"
+                    }
                 }
             ]
         },
@@ -165,6 +214,31 @@ let game_data = {
                         "钦矿石": "30"
                     },
                     "sourceList": {}
+                }, {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钦矿石": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "铜矿石": "150"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钦矿石": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "原石英": "120"
+                    }
                 }
             ]
         },
@@ -179,6 +253,55 @@ let game_data = {
                         " 煤": "30"
                     },
                     "sourceList": {}
+                }, {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "煤": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "铁矿石": "180"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "煤": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "石灰石": "360"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "煤": "150"
+                    },
+                    "sourceList": {
+                        "木材": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "煤": "45"
+                    },
+                    "sourceList": {
+                        "生物质": "37.5"
+                    }
                 }
             ]
         },
@@ -193,6 +316,31 @@ let game_data = {
                         "原石英": "30"
                     },
                     "sourceList": {}
+                }, {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "原石英": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "铝土矿": "100"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "原石英": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "煤": "240"
+                    }
                 }
             ]
         },
@@ -207,6 +355,31 @@ let game_data = {
                         "硫": "30"
                     },
                     "sourceList": {}
+                }, {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "硫": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "煤": "200"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "硫": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "铁矿石": "300"
+                    }
                 }
             ]
         },
@@ -221,6 +394,31 @@ let game_data = {
                         "铝土矿": "30"
                     },
                     "sourceList": {}
+                }, {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝土矿": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "钦矿石": "150"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "替代配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝土矿": "120"
+                    },
+                    "sourceList": {
+                        "Reanimated SAM": "10",
+                        "铜矿石": "180"
+                    }
                 }
             ]
         },
@@ -229,6 +427,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
@@ -243,24 +442,11 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "铀": "30"
-                    },
-                    "sourceList": {}
-                }
-            ]
-        },
-        "原油": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "抽水设备",
-                    "equIndex": 0,
-                    "productList": {
-                        "原油": "60"
                     },
                     "sourceList": {}
                 }
@@ -301,7 +487,7 @@ let game_data = {
                     },
                     "sourceList": {
                         "铁矿石": "50",
-                        "硫酸": "10"
+                        "硫酸": "10m³"
                     }
                 },
                 {
@@ -313,7 +499,7 @@ let game_data = {
                     },
                     "sourceList": {
                         "铁矿石": "35",
-                        "水": "20"
+                        "水": "20m³"
                     }
                 },
                 {
@@ -324,8 +510,8 @@ let game_data = {
                         "铁锭": "75"
                     },
                     "sourceList": {
-                        "铜矿石": "10",
-                        "铁矿石": "40"
+                        "铁矿石": "40",
+                        "铜矿石": "10"
                     }
                 }
             ]
@@ -335,6 +521,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "冶炼器",
                     "equIndex": 0,
                     "productList": {
@@ -346,6 +533,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -358,6 +546,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
@@ -370,6 +559,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -382,12 +572,14 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "铜锭": "100"
                     },
                     "sourceList": {
+                        "铜矿石": "50",
                         "铁矿石": "50"
                     }
                 }
@@ -398,6 +590,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "冶炼器",
                     "equIndex": 0,
                     "productList": {
@@ -409,6 +602,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -421,24 +615,27 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "钦锭": "22.5"
                     },
                     "sourceList": {
-                        "油焦": "15",
-                        "钦矿石": "45"
+                        "钦矿石": "45",
+                        "油焦": "15"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "钦锭": "12"
                     },
                     "sourceList": {
+                        "钦矿石": "24",
                         "水": "24"
                     }
                 }
@@ -449,30 +646,33 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "钢锭": "45"
                     },
                     "sourceList": {
-                        "煤": "45",
-                        "铁矿石": "45"
+                        "铁矿石": "45",
+                        "煤": "45"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "钢锭": "60"
                     },
                     "sourceList": {
-                        "煤": "40",
-                        "铁矿石": "40",
+                        "铁锭": "40",
+                        "煤": "40"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
@@ -485,12 +685,14 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "钢锭": "100"
                     },
                     "sourceList": {
+                        "铁矿石": "75",
                         "油焦": "75"
                     }
                 }
@@ -501,18 +703,20 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "铝锭": "60"
                     },
                     "sourceList": {
-                        "石英砂": "75",
-                        "铝块": "90"
+                        "铝块": "90",
+                        "石英砂": "75"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "冶炼器",
                     "equIndex": 0,
                     "productList": {
@@ -529,7 +733,8 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "name": "配方",
+                    "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
                         "Ficsite Ingot": "30"
@@ -541,7 +746,8 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "name": "配方",
+                    "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
                         "Ficsite Ingot": "15"
@@ -553,7 +759,8 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "name": "配方",
+                    "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
                         "Ficsite Ingot": "10"
@@ -570,6 +777,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -581,6 +789,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -593,18 +802,20 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "混凝土": "90"
                     },
                     "sourceList": {
-                        "橡胶": "20",
-                        "石灰石": "100"
+                        "石灰石": "100",
+                        "橡胶": "20"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -622,6 +833,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -633,23 +845,25 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "石英晶体": "54"
                     },
                     "sourceList": {
-                        "煤": "36",
-                        "原石英": "75"
+                        "原石英": "75",
+                        "煤": "36"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "石英晶体": "75",
-                        "Dissolved Silica": "60"
+                        "Dissolved Silica": "60m³"
                     },
                     "sourceList": {
                         "原石英": "120",
@@ -658,6 +872,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -675,11 +890,12 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "石英砂": "50",
-                        "氧化铝溶液": "120"
+                        "氧化铝溶液": "120m³",
+                        "石英砂": "50"
                     },
                     "sourceList": {
                         "铝土矿": "120",
@@ -688,6 +904,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -699,20 +916,22 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "石英砂": "270",
-                        "水": "80"
+                        "水": "80m³"
                     },
                     "sourceList": {
-                        "石灰石": "50",
                         "Dissolved Silica": "120",
+                        "石灰石": "50",
                         "水": "100"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -730,6 +949,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -746,11 +966,12 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "聚合树脂": "30",
-                        "燃料": "40"
+                        "燃料": "40m³",
+                        "聚合树脂": "30"
                     },
                     "sourceList": {
                         "原油": "60"
@@ -758,11 +979,12 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "聚合树脂": "130",
-                        "重渣油": "20"
+                        "重渣油": "20m³"
                     },
                     "sourceList": {
                         "原油": "60"
@@ -770,30 +992,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "聚合树脂": "20",
-                        "重渣油": "40"
+                        "重渣油": "40m³",
+                        "聚合树脂": "20"
                     },
                     "sourceList": {
                         "原油": "30"
-                    }
-                }
-            ]
-        },
-        "油焦": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "油焦": "120"
-                    },
-                    "sourceList": {
-                        "重渣油": "40"
                     }
                 }
             ]
@@ -803,44 +1010,225 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "铝块": "360",
-                        "水": "120"
+                        "水": "120m³"
                     },
                     "sourceList": {
-                        "煤": "120",
-                        "氧化铝溶液": "240"
+                        "氧化铝溶液": "240",
+                        "煤": "120"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "铝块": "300",
-                        "水": "105"
+                        "水": "105m³"
                     },
                     "sourceList": {
-                        "油焦": "60",
-                        "氧化铝溶液": "180"
+                        "氧化铝溶液": "180",
+                        "油焦": "60"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "铝块": "300",
-                        "水": "50"
+                        "水": "50m³"
                     },
                     "sourceList": {
-                        "煤": "100",
                         "铝土矿": "150",
+                        "煤": "100",
                         "硫酸": "50",
                         "水": "60"
                     }
+                }
+            ]
+        },
+        "外星蛋白质": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "外星蛋白质": "20"
+                    },
+                    "sourceList": {
+                        "刺蛛残骸": "20"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "外星蛋白质": "20"
+                    },
+                    "sourceList": {
+                        "Spitter Remains": "20"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "外星蛋白质": "20"
+                    },
+                    "sourceList": {
+                        "孵化巢残骸": "20"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "外星蛋白质": "20"
+                    },
+                    "sourceList": {
+                        "野猪残骸": "20"
+                    }
+                }
+            ]
+        },
+        "水": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Non-Fissile Uranium": "50",
+                        "水": "15m³"
+                    },
+                    "sourceList": {
+                        "铀废料": "37.5",
+                        "石英砂": "25",
+                        "硝酸": "15",
+                        "硫酸": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电池": "20",
+                        "水": "30m³"
+                    },
+                    "sourceList": {
+                        "硫酸": "50",
+                        "氧化铝溶液": "40",
+                        "铝制外壳": "20"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝块": "360",
+                        "水": "120m³"
+                    },
+                    "sourceList": {
+                        "氧化铝溶液": "240",
+                        "煤": "120"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英砂": "270",
+                        "水": "80m³"
+                    },
+                    "sourceList": {
+                        "Dissolved Silica": "120",
+                        "石灰石": "50",
+                        "水": "100"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Non-Fissile Uranium": "100",
+                        "水": "40m³"
+                    },
+                    "sourceList": {
+                        "铀": "25",
+                        "铀废料": "25",
+                        "硝酸": "15",
+                        "硫酸": "25"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝块": "300",
+                        "水": "105m³"
+                    },
+                    "sourceList": {
+                        "氧化铝溶液": "180",
+                        "油焦": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝块": "300",
+                        "水": "50m³"
+                    },
+                    "sourceList": {
+                        "铝土矿": "150",
+                        "煤": "100",
+                        "硫酸": "50",
+                        "水": "60"
+                    }
+                }
+            ]
+        },
+        "原油": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "抽水设备",
+                    "equIndex": 0,
+                    "productList": {
+                        "原油": "60"
+                    },
+                    "sourceList": {}
                 }
             ]
         },
@@ -849,11 +1237,12 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "塑料": "20",
-                        "重渣油": "10"
+                        "重渣油": "10m³"
                     },
                     "sourceList": {
                         "原油": "30"
@@ -861,10 +1250,12 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "重渣油": "20"
+                        "橡胶": "20",
+                        "重渣油": "20m³"
                     },
                     "sourceList": {
                         "原油": "30"
@@ -872,11 +1263,12 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "聚合树脂": "130",
-                        "重渣油": "20"
+                        "重渣油": "20m³"
                     },
                     "sourceList": {
                         "原油": "60"
@@ -884,54 +1276,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "聚合树脂": "20",
-                        "重渣油": "40"
+                        "重渣油": "40m³",
+                        "聚合树脂": "20"
                     },
                     "sourceList": {
                         "原油": "30"
-                    }
-                }
-            ]
-        },
-        "燃料": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "聚合树脂": "30",
-                        "燃料": "40"
-                    },
-                    "sourceList": {
-                        "原油": "60"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "燃料": "100"
-                    },
-                    "sourceList": {
-                        "重渣油": "50",
-                        "水": "100"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "燃料": "40"
-                    },
-                    "sourceList": {
-                        "重渣油": "60"
                     }
                 }
             ]
@@ -941,10 +1294,11 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "液态生物燃料": "60"
+                        "液态生物燃料": "60m³"
                     },
                     "sourceList": {
                         "固体生物燃料": "90",
@@ -958,39 +1312,43 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "涡轮燃料": "18.75"
+                        "涡轮燃料": "18.75m³"
                     },
                     "sourceList": {
-                        "压缩煤": "15",
-                        "燃料": "22.5"
+                        "燃料": "22.5",
+                        "压缩煤": "15"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "涡轮燃料": "45"
+                        "涡轮燃料": "45m³"
                     },
                     "sourceList": {
                         "燃料": "15",
                         "重渣油": "30",
+                        "硫": "22.5",
                         "油焦": "22.5"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "涡轮燃料": "30"
+                        "涡轮燃料": "30m³"
                     },
                     "sourceList": {
-                        "压缩煤": "30",
-                        "重渣油": "37.5"
+                        "重渣油": "37.5",
+                        "压缩煤": "30"
                     }
                 }
             ]
@@ -1000,11 +1358,12 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "石英砂": "50",
-                        "氧化铝溶液": "120"
+                        "氧化铝溶液": "120m³",
+                        "石英砂": "50"
                     },
                     "sourceList": {
                         "铝土矿": "120",
@@ -1013,12 +1372,14 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "氧化铝溶液": "240"
+                        "氧化铝溶液": "240m³"
                     },
                     "sourceList": {
+                        "铝土矿": "200",
                         "水": "200"
                     }
                 }
@@ -1029,26 +1390,29 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "硫酸": "50"
+                        "硫酸": "50m³"
                     },
                     "sourceList": {
+                        "硫": "50",
                         "水": "50"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "铀核芯": "25",
-                        "硫酸": "10"
+                        "硫酸": "10m³"
                     },
                     "sourceList": {
-                        "混凝土": "15",
                         "铀": "50",
+                        "混凝土": "15",
                         "硫酸": "40"
                     }
                 }
@@ -1059,15 +1423,16 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "硝酸": "30"
+                        "硝酸": "30m³"
                     },
                     "sourceList": {
-                        "铁板": "10",
                         "氮气": "120",
-                        "水": "30"
+                        "水": "30",
+                        "铁板": "10"
                     }
                 }
             ]
@@ -1077,11 +1442,12 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "替代配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "石英晶体": "75",
-                        "Dissolved Silica": "60"
+                        "Dissolved Silica": "60m³"
                     },
                     "sourceList": {
                         "原石英": "120",
@@ -1095,10 +1461,36 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "name": "配方",
+                    "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "氮气": "120"
+                        "氮气": "240m³",
+                        "空瓶": "60"
+                    },
+                    "sourceList": {
+                        "瓶装氮气": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "矿井采集器",
+                    "equIndex": 0,
+                    "productList": {
+                        "氮气": "0m³"
+                    },
+                    "sourceList": {
+                        "氮气": "0"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "氮气": "120m³"
                     },
                     "sourceList": {
                         "Reanimated SAM": "10",
@@ -1107,51 +1499,30 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "name": "配方",
+                    "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "氮气": "120"
+                        "氮气": "120m³"
                     },
                     "sourceList": {
                         "Reanimated SAM": "10",
                         "钦矿石": "120"
                     }
-                },
-                {
-                    "time": 60,
-                    "equType": "灌装机",
-                    "equIndex": 0,
-                    "productList": {
-                        "空瓶": "60",
-                        "氮气": "240"
-                    },
-                    "sourceList": {
-                        "瓶装氮气": "60"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "矿井采集器",
-                    "equIndex": 0,
-                    "productList": {
-                        "氮气": "0"
-                    },
-                    "sourceList": {
-                        "氮气": "0"
-                    }
                 }
             ]
         },
-        "Rocket Fuel": {
+        "火箭燃料": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "压缩煤": "10",
-                        "Rocket Fuel": "100"
+                        "火箭燃料": "100m³",
+                        "压缩煤": "10"
                     },
                     "sourceList": {
                         "涡轮燃料": "60",
@@ -1160,28 +1531,18 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "灌装机",
-                    "equIndex": 0,
-                    "productList": {
-                        "空瓶": "60",
-                        "Rocket Fuel": "120"
-                    },
-                    "sourceList": {
-                        "Packaged Rocket Fuel": "60"
-                    }
-                },
-                {
-                    "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "压缩煤": "25",
-                        "Rocket Fuel": "150"
+                        "火箭燃料": "150m³",
+                        "压缩煤": "25"
                     },
                     "sourceList": {
-                        "煤": "50",
                         "燃料": "100",
-                        "氮气": "75"
+                        "氮气": "75",
+                        "硫": "100",
+                        "煤": "50"
                     }
                 }
             ]
@@ -1191,24 +1552,26 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "压缩煤": "5",
-                        "Ionized Fuel": "40"
+                        "Ionized Fuel": "40m³",
+                        "压缩煤": "5"
                     },
                     "sourceList": {
-                        "Rocket Fuel": "40",
+                        "火箭燃料": "40",
                         "能量碎片": "2.5"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "空瓶": "40",
-                        "Ionized Fuel": "80"
+                        "Ionized Fuel": "80m³",
+                        "空瓶": "40"
                     },
                     "sourceList": {
                         "Packaged Ionized Fuel": "40"
@@ -1216,55 +1579,144 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "name": "配方",
+                    "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "压缩煤": "40",
-                        "Ionized Fuel": "200"
+                        "Ionized Fuel": "200m³",
+                        "压缩煤": "40"
                     },
                     "sourceList": {
-                        "Dark Matter Crystal": "80",
-                        "Packaged Rocket Fuel": "240"
+                        "桶装火箭燃料": "240",
+                        "Dark Matter Crystal": "80"
                     }
                 }
             ]
         },
-        "铁板": {
+        "Dark Matter Residue": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
-                    "equType": "构造器",
+                    "name": "配方",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
-                        "铁板": "20"
+                        "AI Expansion Server": "4",
+                        "Dark Matter Residue": "100m³"
                     },
                     "sourceList": {
-                        "铁锭": "30"
+                        "磁场发生器": "4",
+                        "Neural-Quantum Processor": "4",
+                        "叠加振荡器": "4",
+                        "Excited Photonic Matter": "100"
                     }
                 },
                 {
                     "time": 60,
-                    "equType": "铸造器",
+                    "name": "配方",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
-                        "铁板": "45"
+                        "Dark Matter Residue": "60m³"
                     },
                     "sourceList": {
-                        "钢锭": "15"
+                        "SAM波动器": "12.5",
+                        "能量碎片": "7.5",
+                        "叠加振荡器": "7.5",
+                        "Excited Photonic Matter": "60"
                     }
                 },
                 {
                     "time": 60,
-                    "equType": "组装器",
+                    "name": "配方",
+                    "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "铁板": "75"
+                        "Dark Matter Residue": "100m³"
                     },
                     "sourceList": {
-                        "铁锭": "37.5",
-                        "塑料": "7.5"
+                        "Reanimated SAM": "50"
                     }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "量子编码器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ficsonium Fuel Rod": "2.5",
+                        "Dark Matter Residue": "50m³"
+                    },
+                    "sourceList": {
+                        "Ficsonium": "5",
+                        "电磁控制杆": "5",
+                        "Ficsite Trigon": "100",
+                        "Excited Photonic Matter": "50"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "量子编码器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Neural-Quantum Processor": "3",
+                        "Dark Matter Residue": "75m³"
+                    },
+                    "sourceList": {
+                        "Time Crystal": "15",
+                        "超级计算机": "3",
+                        "Ficsite Trigon": "45",
+                        "Excited Photonic Matter": "75"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "量子编码器",
+                    "equIndex": 0,
+                    "productList": {
+                        "能量碎片": "5",
+                        "Dark Matter Residue": "60m³"
+                    },
+                    "sourceList": {
+                        "Time Crystal": "10",
+                        "Dark Matter Crystal": "10",
+                        "石英晶体": "60",
+                        "Excited Photonic Matter": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "量子编码器",
+                    "equIndex": 0,
+                    "productList": {
+                        "叠加振荡器": "5",
+                        "Dark Matter Residue": "125m³"
+                    },
+                    "sourceList": {
+                        "Dark Matter Crystal": "30",
+                        "晶体振荡器": "5",
+                        "镀铝板": "45",
+                        "Excited Photonic Matter": "125"
+                    }
+                }
+            ]
+        },
+        "Excited Photonic Matter": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Excited Photonic Matter": "200m³"
+                    },
+                    "sourceList": {}
                 }
             ]
         },
@@ -1273,6 +1725,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1284,6 +1737,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1295,6 +1749,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1311,6 +1766,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1322,6 +1778,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1333,6 +1790,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1344,11 +1802,55 @@ let game_data = {
                 }
             ]
         },
+        "铁板": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁板": "20"
+                    },
+                    "sourceList": {
+                        "铁锭": "30"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "铸造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁板": "45"
+                    },
+                    "sourceList": {
+                        "铁锭": "15",
+                        "钢锭": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁板": "75"
+                    },
+                    "sourceList": {
+                        "铁锭": "37.5",
+                        "塑料": "7.5"
+                    }
+                }
+            ]
+        },
         "加强铁板": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1361,6 +1863,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1373,6 +1876,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1385,6 +1889,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1402,6 +1907,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1413,30 +1919,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "铜板": "22.5"
                     },
                     "sourceList": {
+                        "铜锭": "22.5",
                         "水": "22.5"
-                    }
-                }
-            ]
-        },
-        "镀铝板": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "镀铝板": "30"
-                    },
-                    "sourceList": {
-                        "铜锭": "10",
-                        "铝锭": "30"
                     }
                 }
             ]
@@ -1446,6 +1937,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1457,14 +1949,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "铝制外壳": "112.5"
                     },
                     "sourceList": {
-                        "铜锭": "75",
-                        "铝锭": "150"
+                        "铝锭": "150",
+                        "铜锭": "75"
                     }
                 }
             ]
@@ -1474,6 +1967,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1485,6 +1979,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1496,14 +1991,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "钢管": "50"
                     },
                     "sourceList": {
-                        "混凝土": "30",
-                        "钢锭": "50"
+                        "钢锭": "50",
+                        "混凝土": "30"
                     }
                 }
             ]
@@ -1513,6 +2009,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1524,6 +2021,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1535,14 +2033,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "铸造器",
                     "equIndex": 0,
                     "productList": {
                         "钢梁": "45"
                     },
                     "sourceList": {
-                        "混凝土": "80",
-                        "钢锭": "120"
+                        "钢锭": "120",
+                        "混凝土": "80"
                     }
                 }
             ]
@@ -1552,6 +2051,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1564,14 +2064,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "钢筋混凝土梁": "4"
                     },
                     "sourceList": {
-                        "混凝土": "20",
-                        "钢管": "24"
+                        "钢管": "24",
+                        "混凝土": "20"
                     }
                 }
             ]
@@ -1581,6 +2082,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1593,6 +2095,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1605,14 +2108,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "模块化框架": "5"
                     },
                     "sourceList": {
-                        "螺丝": "140",
-                        "加强铁板": "7.5"
+                        "加强铁板": "7.5",
+                        "螺丝": "140"
                     }
                 }
             ]
@@ -1622,19 +2126,22 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "重型模块化框架": "2"
                     },
                     "sourceList": {
-                        "钢筋混凝土梁": "10",
+                        "模块化框架": "10",
                         "钢管": "40",
+                        "钢筋混凝土梁": "10",
                         "螺丝": "240"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -1649,16 +2156,17 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "重型模块化框架": "3.75"
                     },
                     "sourceList": {
-                        "橡胶": "75",
-                        "螺丝": "390",
                         "模块化框架": "18.75",
-                        "钢筋混凝土梁": "11.25"
+                        "钢筋混凝土梁": "11.25",
+                        "橡胶": "75",
+                        "螺丝": "390"
                     }
                 }
             ]
@@ -1668,19 +2176,21 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "熔合模块化框架": "1.5"
                     },
                     "sourceList": {
-                        "铝制外壳": "75",
                         "重型模块化框架": "1.5",
+                        "铝制外壳": "75",
                         "氮气": "37.5"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
@@ -1700,6 +2210,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -1716,6 +2227,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1728,12 +2240,14 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "布料": "30"
                     },
                     "sourceList": {
+                        "聚合树脂": "30",
                         "水": "30"
                     }
                 }
@@ -1744,11 +2258,12 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "塑料": "20",
-                        "重渣油": "10"
+                        "重渣油": "10m³"
                     },
                     "sourceList": {
                         "原油": "30"
@@ -1756,17 +2271,20 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "塑料": "60"
                     },
                     "sourceList": {
+                        "橡胶": "30",
                         "燃料": "30"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -1784,11 +2302,12 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "橡胶": "20",
-                        "重渣油": "20",
+                        "重渣油": "20m³"
                     },
                     "sourceList": {
                         "原油": "30"
@@ -1796,23 +2315,27 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "橡胶": "60"
                     },
                     "sourceList": {
+                        "塑料": "30",
                         "燃料": "30"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
                         "橡胶": "20"
                     },
                     "sourceList": {
+                        "聚合树脂": "40",
                         "水": "40"
                     }
                 }
@@ -1823,6 +2346,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1835,6 +2359,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1847,14 +2372,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "转子": "11.25"
                     },
                     "sourceList": {
-                        "螺丝": "195",
-                        "铜板": "22.5"
+                        "铜板": "22.5",
+                        "螺丝": "195"
                     }
                 }
             ]
@@ -1864,6 +2390,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1876,6 +2403,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1893,20 +2421,22 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "电池": "20",
-                        "水": "30"
+                        "水": "30m³"
                     },
                     "sourceList": {
-                        "铝制外壳": "20",
                         "硫酸": "50",
-                        "氧化铝溶液": "40"
+                        "氧化铝溶液": "40",
+                        "铝制外壳": "20"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -1914,9 +2444,9 @@ let game_data = {
                     },
                     "sourceList": {
                         "硫": "45",
+                        "镀铝板": "52.5",
                         "塑料": "60",
-                        "电线": "90",
-                        "镀铝板": "52.5"
+                        "电线": "90"
                     }
                 }
             ]
@@ -1926,30 +2456,34 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "电机": "5"
                     },
                     "sourceList": {
-                        "定子": "10",
-                        "转子": "10"
+                        "转子": "10",
+                        "定子": "10"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "电机": "7.5"
                     },
                     "sourceList": {
+                        "转子": "3.75",
                         "定子": "3.75",
                         "晶体振荡器": "1.25"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1967,6 +2501,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -1979,12 +2514,14 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "散热器": "10"
                     },
                     "sourceList": {
+                        "铝制外壳": "30",
                         "橡胶": "30"
                     }
                 }
@@ -1995,12 +2532,14 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "冷却系统": "6"
                     },
                     "sourceList": {
+                        "散热器": "12",
                         "橡胶": "12",
                         "水": "30",
                         "氮气": "150"
@@ -2008,6 +2547,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
@@ -2026,42 +2566,47 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "涡轮电机": "1.88"
                     },
                     "sourceList": {
-                        "橡胶": "45",
+                        "冷却系统": "7.5",
+                        "无线电控制单元": "3.75",
                         "电机": "7.5",
-                        "无线电控制单元": "3.75"
+                        "橡胶": "45"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "涡轮电机": "3.75"
                     },
                     "sourceList": {
-                        "定子": "15",
-                        "瓶装氮气": "45",
                         "电机": "7.5",
-                        "压力转换立方体": "1.88"
+                        "压力转换立方体": "1.88",
+                        "瓶装氮气": "45",
+                        "定子": "15"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "涡轮电机": "2.81"
                     },
                     "sourceList": {
-                        "转子": "6.56",
+                        "电机": "6.56",
                         "无线电控制单元": "8.44",
-                        "电磁控制杆": "4.69"
+                        "电磁控制杆": "4.69",
+                        "转子": "6.56"
                     }
                 }
             ]
@@ -2071,6 +2616,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2082,18 +2628,20 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "电线": "90"
                     },
                     "sourceList": {
-                        "钦锭": "3",
-                        "铜锭": "12"
+                        "铜锭": "12",
+                        "钦锭": "3"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2105,6 +2653,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2121,6 +2670,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2132,30 +2682,33 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "电缆": "27.5"
                     },
                     "sourceList": {
-                        "橡胶": "5",
-                        "快速线": "7.5"
+                        "快速线": "7.5",
+                        "橡胶": "5"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "电缆": "100"
                     },
                     "sourceList": {
-                        "橡胶": "30",
-                        "电线": "45"
+                        "电线": "45",
+                        "橡胶": "30"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -2173,6 +2726,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2184,6 +2738,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -2201,6 +2756,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -2213,6 +2769,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -2225,17 +2782,20 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "电路板": "12.5"
                     },
                     "sourceList": {
+                        "铜板": "27.5",
                         "石英砂": "27.5"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -2253,6 +2813,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -2265,14 +2826,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "AI限制器": "8"
                     },
                     "sourceList": {
-                        "塑料": "28",
-                        "快速线": "120"
+                        "快速线": "120",
+                        "塑料": "28"
                     }
                 }
             ]
@@ -2282,6 +2844,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -2295,15 +2858,16 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "高速连接器": "3"
                     },
                     "sourceList": {
-                        "电路板": "3",
                         "快速线": "90",
-                        "石英砂": "37.5"
+                        "石英砂": "37.5",
+                        "电路板": "3"
                     }
                 }
             ]
@@ -2313,6 +2877,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2324,20 +2889,21 @@ let game_data = {
                 }
             ]
         },
-        "SAM Fluctuator": {
+        "SAM波动器": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
-                        "SAM Fluctuator": "10"
+                        "SAM波动器": "10"
                     },
                     "sourceList": {
-                        "钢管": "30",
+                        "Reanimated SAM": "60",
                         "电线": "50",
-                        "Reanimated SAM": "60"
+                        "钢管": "30"
                     }
                 }
             ]
@@ -2347,6 +2913,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -2360,6 +2927,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -2372,6 +2940,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -2390,6 +2959,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -2404,36 +2974,44 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "超级计算机": "2.4"
                     },
                     "sourceList": {
-                        "电池": "24",
-                        "电线": "60",
                         "计算机": "7.2",
-                        "电磁控制杆": "2.4"
+                        "电磁控制杆": "2.4",
+                        "电池": "24",
+                        "电线": "60"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "超级计算机": "3"
                     },
                     "sourceList": {
+                        "无线电控制单元": "6",
                         "冷却系统": "6"
                     }
                 }
             ]
+        },
+        "量子计算机": {
+            "useIndex": 0,
+            "data": []
         },
         "无线电控制单元": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -2447,20 +3025,22 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "无线电控制单元": "4.5"
                     },
                     "sourceList": {
+                        "晶体振荡器": "1.5",
                         "电路板": "15",
-                        "橡胶": "45",
                         "铝制外壳": "90",
-                        "晶体振荡器": "1.5"
+                        "橡胶": "45"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -2468,8 +3048,8 @@ let game_data = {
                     },
                     "sourceList": {
                         "散热器": "15",
-                        "石英晶体": "45",
-                        "高速连接器": "7.5"
+                        "高速连接器": "7.5",
+                        "石英晶体": "45"
                     }
                 }
             ]
@@ -2479,19 +3059,21 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "晶体振荡器": "1"
                     },
                     "sourceList": {
-                        "电缆": "14",
                         "石英晶体": "18",
+                        "电缆": "14",
                         "加强铁板": "2.5"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -2510,17 +3092,18 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "叠加振荡器": "5",
-                        "Dark Matter Residue": "125000"
+                        "Dark Matter Residue": "125m³"
                     },
                     "sourceList": {
-                        "晶体振荡器": "5",
                         "Dark Matter Crystal": "30",
+                        "晶体振荡器": "5",
                         "镀铝板": "45",
-                        "Excited Photonic Matter": "125000"
+                        "Excited Photonic Matter": "125"
                     }
                 }
             ]
@@ -2530,6 +3113,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
@@ -2541,6 +3125,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
@@ -2553,6 +3138,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
@@ -2564,6 +3150,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
@@ -2575,26 +3162,28 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "name": "配方",
+                    "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
                         "Diamonds": "15"
                     },
                     "sourceList": {
-                        "石英晶体": "45",
-                        "煤": "120"
+                        "煤": "120",
+                        "石英晶体": "45"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
                         "Diamonds": "60"
                     },
                     "sourceList": {
-                        "桶装涡轮燃料": "40",
-                        "煤": "600"
+                        "煤": "600",
+                        "桶装涡轮燃料": "40"
                     }
                 }
             ]
@@ -2604,7 +3193,8 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "采矿机",
+                    "name": "配方",
+                    "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
                         "Time Crystal": "6"
@@ -2620,6 +3210,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
@@ -2627,22 +3218,24 @@ let game_data = {
                     },
                     "sourceList": {
                         "Diamonds": "30",
-                        "Dark Matter Residue": "150000"
+                        "Dark Matter Residue": "150"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
                         "Dark Matter Crystal": "20"
                     },
                     "sourceList": {
-                        "Dark Matter Residue": "200000"
+                        "Dark Matter Residue": "200"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
@@ -2650,107 +3243,7 @@ let game_data = {
                     },
                     "sourceList": {
                         "Time Crystal": "30",
-                        "Dark Matter Residue": "150000"
-                    }
-                }
-            ]
-        },
-        "Dark Matter Residue": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "量子编码器",
-                    "equIndex": 0,
-                    "productList": {
-                        "AI Expansion Server": "4",
-                        "Dark Matter Residue": "100000"
-                    },
-                    "sourceList": {
-                        "叠加振荡器": "4",
-                        "Excited Photonic Matter": "100000"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "量子编码器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Dark Matter Residue": "60000"
-                    },
-                    "sourceList": {
-                        "SAM Fluctuator": "12.5",
-                        "叠加振荡器": "7.5",
-                        "Excited Photonic Matter": "60000"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Dark Matter Residue": "100000"
-                    },
-                    "sourceList": {
-                        "Reanimated SAM": "50"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "量子编码器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Ficsonium Fuel Rod": "2.5",
-                        "Dark Matter Residue": "50000"
-                    },
-                    "sourceList": {
-                        "电磁控制杆": "5",
-                        "Ficsite Trigon": "100",
-                        "Excited Photonic Matter": "50000"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "量子编码器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Neural-Quantum Processor": "3",
-                        "Dark Matter Residue": "75000"
-                    },
-                    "sourceList": {
-                        "超级计算机": "3",
-                        "Time Crystal": "15",
-                        "Ficsite Trigon": "45",
-                        "Excited Photonic Matter": "75000"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "量子编码器",
-                    "equIndex": 0,
-                    "productList": {
-                        "能量碎片": "5",
-                        "Dark Matter Residue": "60000"
-                    },
-                    "sourceList": {
-                        "Dark Matter Crystal": "10",
-                        "石英晶体": "60",
-                        "Excited Photonic Matter": "60000"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "量子编码器",
-                    "equIndex": 0,
-                    "productList": {
-                        "叠加振荡器": "5",
-                        "Dark Matter Residue": "125000"
-                    },
-                    "sourceList": {
-                        "晶体振荡器": "5",
-                        "Dark Matter Crystal": "30",
-                        "镀铝板": "45",
-                        "Excited Photonic Matter": "125000"
+                        "Dark Matter Residue": "150"
                     }
                 }
             ]
@@ -2760,6 +3253,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -2774,36 +3268,23 @@ let game_data = {
                 }
             ]
         },
-        "Excited Photonic Matter": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "Excited Photonic Matter": "200000"
-                    },
-                    "sourceList": {}
-                }
-            ]
-        },
         "Neural-Quantum Processor": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "Neural-Quantum Processor": "3",
-                        "Dark Matter Residue": "75000"
+                        "Dark Matter Residue": "75m³"
                     },
                     "sourceList": {
-                        "超级计算机": "3",
                         "Time Crystal": "15",
+                        "超级计算机": "3",
                         "Ficsite Trigon": "45",
-                        "Excited Photonic Matter": "75000"
+                        "Excited Photonic Matter": "75"
                     }
                 }
             ]
@@ -2813,6 +3294,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2824,6 +3306,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2835,14 +3318,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "空罐": "60"
                     },
                     "sourceList": {
-                        "铜板": "15",
-                        "铁板": "30"
+                        "铁板": "30",
+                        "铜板": "15"
                     }
                 }
             ]
@@ -2852,11 +3336,12 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "空瓶": "40",
-                        "Ionized Fuel": "80"
+                        "Ionized Fuel": "80m³",
+                        "空瓶": "40"
                     },
                     "sourceList": {
                         "Packaged Ionized Fuel": "40"
@@ -2864,30 +3349,32 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "空瓶": "60",
-                        "Rocket Fuel": "120"
+                        "火箭燃料": "120m³",
+                        "空瓶": "60"
                     },
                     "sourceList": {
-                        "Packaged Rocket Fuel": "60"
+                        "桶装火箭燃料": "60"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "空瓶": "60",
-                        "氮气": "240"
+                        "氮气": "240m³",
+                        "空瓶": "60"
                     },
                     "sourceList": {
                         "瓶装氮气": "60"
                     }
-                },
-                {
+                },{
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -2904,6 +3391,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -2921,13 +3409,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "桶装水": "60"
                     },
                     "sourceList": {
-                        "水": "60"
+                        "水": "60",
+                        "空罐": "60"
                     }
                 }
             ]
@@ -2937,13 +3427,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "桶装氧化铝溶液": "120"
                     },
                     "sourceList": {
-                        "氧化铝溶液": "120"
+                        "氧化铝溶液": "120",
+                        "空罐": "120"
                     }
                 }
             ]
@@ -2953,13 +3445,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "桶装硫酸": "40"
                     },
                     "sourceList": {
-                        "硫酸": "40"
+                        "硫酸": "40",
+                        "空罐": "40"
                     }
                 }
             ]
@@ -2969,13 +3463,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "桶装硝酸": "30"
                     },
                     "sourceList": {
-                        "硝酸": "30"
+                        "硝酸": "30",
+                        "空瓶": "30"
                     }
                 }
             ]
@@ -2985,14 +3481,160 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "瓶装氮气": "60"
                     },
                     "sourceList": {
-                        "空瓶": "60",
-                        "氮气": "240"
+                        "氮气": "240",
+                        "空瓶": "60"
+                    }
+                }
+            ]
+        },
+        "树叶": {
+            "useIndex": 0,
+            "data": []
+        },
+        "菌丝体": {
+            "useIndex": 0,
+            "data": []
+        },
+        "花瓣": {
+            "useIndex": 0,
+            "data": []
+        },
+        "木材": {
+            "useIndex": 0,
+            "data": []
+        },
+        "生物质": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "生物质": "1500"
+                    },
+                    "sourceList": {
+                        "外星蛋白质": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "生物质": "300"
+                    },
+                    "sourceList": {
+                        "木材": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "生物质": "60"
+                    },
+                    "sourceList": {
+                        "树叶": "120"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "生物质": "150"
+                    },
+                    "sourceList": {
+                        "菌丝体": "15"
+                    }
+                }
+            ]
+        },
+        "压缩煤": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ionized Fuel": "40m³",
+                        "压缩煤": "5"
+                    },
+                    "sourceList": {
+                        "火箭燃料": "40",
+                        "能量碎片": "2.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "压缩煤": "25"
+                    },
+                    "sourceList": {
+                        "煤": "25",
+                        "硫": "25"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "火箭燃料": "100m³",
+                        "压缩煤": "10"
+                    },
+                    "sourceList": {
+                        "涡轮燃料": "60",
+                        "硝酸": "10"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "转换器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Ionized Fuel": "200m³",
+                        "压缩煤": "40"
+                    },
+                    "sourceList": {
+                        "桶装火箭燃料": "240",
+                        "Dark Matter Crystal": "80"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "火箭燃料": "150m³",
+                        "压缩煤": "25"
+                    },
+                    "sourceList": {
+                        "燃料": "100",
+                        "氮气": "75",
+                        "硫": "100",
+                        "煤": "50"
                     }
                 }
             ]
@@ -3002,13 +3644,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "桶装石油": "30"
                     },
                     "sourceList": {
-                        "原油": "30"
+                        "原油": "30",
+                        "空罐": "30"
                     }
                 }
             ]
@@ -3018,13 +3662,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "桶装重渣油": "30"
                     },
                     "sourceList": {
-                        "重渣油": "30"
+                        "重渣油": "30",
+                        "空罐": "30"
                     }
                 }
             ]
@@ -3034,6 +3680,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -3045,79 +3692,38 @@ let game_data = {
                 }
             ]
         },
-        "桶装燃油": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "灌装机",
-                    "equIndex": 0,
-                    "productList": {
-                        "桶装燃油": "40"
-                    },
-                    "sourceList": {
-                        "燃料": "40"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "桶装燃油": "60"
-                    },
-                    "sourceList": {
-                        "桶装水": "60",
-                        "重渣油": "30"
-                    }
-                }
-            ]
-        },
-        "桶装液态生物燃料": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "灌装机",
-                    "equIndex": 0,
-                    "productList": {
-                        "桶装液态生物燃料": "40"
-                    },
-                    "sourceList": {
-                        "液态生物燃料": "40"
-                    }
-                }
-            ]
-        },
         "桶装涡轮燃料": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "桶装涡轮燃料": "20"
                     },
                     "sourceList": {
-                        "涡轮燃料": "20"
+                        "涡轮燃料": "20",
+                        "空罐": "20"
                     }
                 }
             ]
         },
-        "Packaged Rocket Fuel": {
+        "桶装火箭燃料": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "Packaged Rocket Fuel": "60"
+                        "桶装火箭燃料": "60"
                     },
                     "sourceList": {
-                        "空瓶": "60",
-                        "Rocket Fuel": "120"
+                        "火箭燃料": "120",
+                        "空瓶": "60"
                     }
                 }
             ]
@@ -3127,14 +3733,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
                         "Packaged Ionized Fuel": "40"
                     },
                     "sourceList": {
-                        "空瓶": "40",
-                        "Ionized Fuel": "80"
+                        "Ionized Fuel": "80",
+                        "空瓶": "40"
                     }
                 }
             ]
@@ -3144,28 +3751,31 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "铀燃料棒": "0.4"
                     },
                     "sourceList": {
-                        "电磁控制杆": "2",
                         "铀核芯": "20",
-                        "钢筋混凝土梁": "1.2"
+                        "钢筋混凝土梁": "1.2",
+                        "电磁控制杆": "2"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "铀燃料棒": "0.6"
                     },
                     "sourceList": {
-                        "转子": "2",
                         "铀核芯": "20",
-                        "晶体振荡器": "0.6"
+                        "电磁控制杆": "2",
+                        "晶体振荡器": "0.6",
+                        "转子": "2"
                     }
                 }
             ]
@@ -3175,6 +3785,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
@@ -3189,6 +3800,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -3201,31 +3813,361 @@ let game_data = {
                 }
             ]
         },
+        "黑火药": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "黑火药": "30"
+                    },
+                    "sourceList": {
+                        "煤": "15",
+                        "硫": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "黑火药": "45"
+                    },
+                    "sourceList": {
+                        "硫": "7.5",
+                        "压缩煤": "15"
+                    }
+                }
+            ]
+        },
+        "无烟火药": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "精炼厂",
+                    "equIndex": 0,
+                    "productList": {
+                        "无烟火药": "20"
+                    },
+                    "sourceList": {
+                        "黑火药": "20",
+                        "重渣油": "10"
+                    }
+                }
+            ]
+        },
+        "气体过滤器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "气体过滤器": "7.5"
+                    },
+                    "sourceList": {
+                        "布料": "15",
+                        "煤": "30",
+                        "铁板": "15"
+                    }
+                }
+            ]
+        },
+        "彩色子弹": {
+            "useIndex": 0,
+            "data": []
+        },
+        "信标": {
+            "useIndex": 0,
+            "data": []
+        },
+        "Iodine-Infused Filter": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "Iodine-Infused Filter": "3.75"
+                    },
+                    "sourceList": {
+                        "气体过滤器": "3.75",
+                        "快速线": "30",
+                        "铝制外壳": "3.75"
+                    }
+                }
+            ]
+        },
+        "钢筋": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "钢筋": "15"
+                    },
+                    "sourceList": {
+                        "铁棒": "15"
+                    }
+                }
+            ]
+        },
+        "电击钢筋": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "电击钢筋": "10"
+                    },
+                    "sourceList": {
+                        "钢筋": "10",
+                        "快速线": "50"
+                    }
+                }
+            ]
+        },
+        "霰射钢筋": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "霰射钢筋": "5"
+                    },
+                    "sourceList": {
+                        "钢筋": "10",
+                        "石英晶体": "15"
+                    }
+                }
+            ]
+        },
+        "爆炸钢筋": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "爆炸钢筋": "5"
+                    },
+                    "sourceList": {
+                        "钢筋": "10",
+                        "无烟火药": "10",
+                        "钢管": "10"
+                    }
+                }
+            ]
+        },
+        "步枪子弹": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "步枪子弹": "75"
+                    },
+                    "sourceList": {
+                        "铜板": "15",
+                        "无烟火药": "10"
+                    }
+                }
+            ]
+        },
+        "追踪子弹": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "追踪子弹": "25"
+                    },
+                    "sourceList": {
+                        "步枪子弹": "50",
+                        "高速连接器": "2.5"
+                    }
+                }
+            ]
+        },
+        "涡轮子弹": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "涡轮子弹": "250"
+                    },
+                    "sourceList": {
+                        "步枪子弹": "125",
+                        "铝制外壳": "15",
+                        "桶装涡轮燃料": "15"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "搅拌器",
+                    "equIndex": 0,
+                    "productList": {
+                        "涡轮子弹": "250"
+                    },
+                    "sourceList": {
+                        "步枪子弹": "125",
+                        "铝制外壳": "15",
+                        "涡轮燃料": "15"
+                    }
+                }
+            ]
+        },
+        "诺石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "诺石": "10"
+                    },
+                    "sourceList": {
+                        "黑火药": "20",
+                        "钢管": "20"
+                    }
+                }
+            ]
+        },
+        "毒气诺石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "毒气诺石": "5"
+                    },
+                    "sourceList": {
+                        "诺石": "5",
+                        "生物质": "50"
+                    }
+                }
+            ]
+        },
+        "脉冲诺石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "脉冲诺石": "5"
+                    },
+                    "sourceList": {
+                        "诺石": "5",
+                        "晶体振荡器": "1"
+                    }
+                }
+            ]
+        },
+        "集束诺石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "集束诺石": "2.5"
+                    },
+                    "sourceList": {
+                        "诺石": "7.5",
+                        "无烟火药": "10"
+                    }
+                }
+            ]
+        },
+        "核子诺石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "制造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "核子诺石": "0.5"
+                    },
+                    "sourceList": {
+                        "诺石": "2.5",
+                        "铀核芯": "10",
+                        "无烟火药": "5",
+                        "AI限制器": "3"
+                    }
+                }
+            ]
+        },
         "电磁控制杆": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "电磁控制杆": "4"
                     },
                     "sourceList": {
-                        "AI限制器": "4",
-                        "定子": "6"
+                        "定子": "6",
+                        "AI限制器": "4"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "电磁控制杆": "8"
                     },
                     "sourceList": {
-                        "高速连接器": "4",
-                        "定子": "8"
+                        "定子": "8",
+                        "高速连接器": "4"
                     }
                 }
             ]
@@ -3235,26 +4177,29 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "铀核芯": "25",
-                        "硫酸": "10"
+                        "硫酸": "10m³"
                     },
                     "sourceList": {
-                        "混凝土": "15",
                         "铀": "50",
+                        "混凝土": "15",
                         "硫酸": "40"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "铀核芯": "20"
                     },
                     "sourceList": {
+                        "铀": "25",
                         "石英砂": "15",
                         "硫": "25",
                         "快速线": "75"
@@ -3267,29 +4212,34 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "Non-Fissile Uranium": "50",
-                        "水": "15"
+                        "水": "15m³"
                     },
                     "sourceList": {
-                        "石英砂": "25",
                         "铀废料": "37.5",
+                        "石英砂": "25",
+                        "硝酸": "15",
                         "硫酸": "15"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "Non-Fissile Uranium": "100",
-                        "水": "40"
+                        "水": "40m³"
                     },
                     "sourceList": {
-                        "硫酸": "25",
-                        "硝酸": "15"
+                        "铀": "25",
+                        "铀废料": "25",
+                        "硝酸": "15",
+                        "硫酸": "25"
                     }
                 }
             ]
@@ -3299,14 +4249,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
                         "钚丸": "30"
                     },
                     "sourceList": {
-                        "铀废料": "25",
-                        "Non-Fissile Uranium": "100"
+                        "Non-Fissile Uranium": "100",
+                        "铀废料": "25"
                     }
                 }
             ]
@@ -3316,6 +4267,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -3328,14 +4280,15 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
                         "钚核芯": "10"
                     },
                     "sourceList": {
-                        "铝制外壳": "10",
-                        "Non-Fissile Uranium": "75"
+                        "Non-Fissile Uranium": "75",
+                        "铝制外壳": "10"
                     }
                 }
             ]
@@ -3345,14 +4298,16 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
                         "Ficsonium": "10"
                     },
                     "sourceList": {
+                        "钚废料": "10",
                         "Singularity Cell": "10",
-                        "Dark Matter Residue": "200000"
+                        "Dark Matter Residue": "200"
                     }
                 }
             ]
@@ -3362,16 +4317,18 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "Ficsonium Fuel Rod": "2.5",
-                        "Dark Matter Residue": "50000"
+                        "Dark Matter Residue": "50m³"
                     },
                     "sourceList": {
+                        "Ficsonium": "5",
                         "电磁控制杆": "5",
                         "Ficsite Trigon": "100",
-                        "Excited Photonic Matter": "50000"
+                        "Excited Photonic Matter": "50"
                     }
                 }
             ]
@@ -3381,6 +4338,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "核电站",
                     "equIndex": 0,
                     "productList": {
@@ -3397,6 +4355,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "核电站",
                     "equIndex": 0,
                     "productList": {
@@ -3408,94 +4367,40 @@ let game_data = {
                 }
             ]
         },
-        "压缩煤": {
+        "蓝色能量蛞蝓": {
             "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "精炼厂",
-                    "equIndex": 0,
-                    "productList": {
-                        "压缩煤": "5",
-                        "Ionized Fuel": "40"
-                    },
-                    "sourceList": {
-                        "Rocket Fuel": "40",
-                        "能量碎片": "2.5"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "压缩煤": "10",
-                        "Rocket Fuel": "100"
-                    },
-                    "sourceList": {
-                        "涡轮燃料": "60",
-                        "硝酸": "10"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "压缩煤": "25"
-                    },
-                    "sourceList": {
-                        "硫": "25"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "采矿机",
-                    "equIndex": 0,
-                    "productList": {
-                        "压缩煤": "40",
-                        "Ionized Fuel": "200"
-                    },
-                    "sourceList": {
-                        "Dark Matter Crystal": "80",
-                        "Packaged Rocket Fuel": "240"
-                    }
-                },
-                {
-                    "time": 60,
-                    "equType": "搅拌器",
-                    "equIndex": 0,
-                    "productList": {
-                        "压缩煤": "25",
-                        "Rocket Fuel": "150"
-                    },
-                    "sourceList": {
-                        "煤": "50",
-                        "燃料": "100",
-                        "氮气": "75"
-                    }
-                }
-            ]
+            "data": []
+        },
+        "黄色能量蛞蝓": {
+            "useIndex": 0,
+            "data": []
+        },
+        "紫色能量蛞蝓": {
+            "useIndex": 0,
+            "data": []
         },
         "能量碎片": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "能量碎片": "5",
-                        "Dark Matter Residue": "60000"
+                        "Dark Matter Residue": "60m³"
                     },
                     "sourceList": {
+                        "Time Crystal": "10",
                         "Dark Matter Crystal": "10",
                         "石英晶体": "60",
-                        "Excited Photonic Matter": "60000"
+                        "Excited Photonic Matter": "60"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -3507,6 +4412,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -3518,6 +4424,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
@@ -3529,29 +4436,36 @@ let game_data = {
                 }
             ]
         },
+        "FICSIT兑换券": {
+            "useIndex": 0,
+            "data": []
+        },
         "智能护板": {
             "useIndex": 0,
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "智能护板": "2"
                     },
                     "sourceList": {
-                        "转子": "2",
-                        "加强铁板": "2"
+                        "加强铁板": "2",
+                        "转子": "2"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "智能护板": "5"
                     },
                     "sourceList": {
+                        "加强铁板": "2.5",
                         "转子": "2.5",
                         "塑料": "7.5"
                     }
@@ -3563,27 +4477,29 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "多功能框架": "5"
                     },
                     "sourceList": {
-                        "钢梁": "30",
-                        "模块化框架": "2.5"
+                        "模块化框架": "2.5",
+                        "钢梁": "30"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "多功能框架": "7.5"
                     },
                     "sourceList": {
-                        "橡胶": "30",
                         "模块化框架": "3.75",
-                        "钢梁": "22.5"
+                        "钢梁": "22.5",
+                        "橡胶": "30"
                     }
                 }
             ]
@@ -3593,26 +4509,28 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "自动线路": "2.5"
                     },
                     "sourceList": {
-                        "电缆": "50",
-                        "定子": "2.5"
+                        "定子": "2.5",
+                        "电缆": "50"
                     }
                 },
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "自动线路": "7.5"
                     },
                     "sourceList": {
-                        "电线": "75",
                         "定子": "3.75",
+                        "电线": "75",
                         "高速连接器": "1.88"
                     }
                 }
@@ -3623,14 +4541,16 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "模块化引擎": "1"
                     },
                     "sourceList": {
-                        "智能护板": "2",
-                        "橡胶": "15"
+                        "电机": "2",
+                        "橡胶": "15",
+                        "智能护板": "2"
                     }
                 }
             ]
@@ -3640,15 +4560,17 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "自适应控制单元": "1"
                     },
                     "sourceList": {
+                        "自动线路": "5",
+                        "电路板": "5",
                         "重型模块化框架": "1",
-                        "计算机": "2",
-                        "电路板": "5"
+                        "计算机": "2"
                     }
                 }
             ]
@@ -3658,6 +4580,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
@@ -3675,14 +4598,15 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "组装器",
                     "equIndex": 0,
                     "productList": {
                         "磁场发生器": "1"
                     },
                     "sourceList": {
-                        "电磁控制杆": "1",
-                        "多功能框架": "2.5"
+                        "多功能框架": "2.5",
+                        "电磁控制杆": "1"
                     }
                 }
             ]
@@ -3692,15 +4616,17 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
                         "热推进火箭": "1"
                     },
                     "sourceList": {
-                        "熔合模块化框架": "1",
+                        "模块化引擎": "2.5",
+                        "涡轮电机": "1",
                         "冷却系统": "3",
-                        "模块化引擎": "2.5"
+                        "熔合模块化框架": "1"
                     }
                 }
             ]
@@ -3710,6 +4636,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
@@ -3727,34 +4654,16 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
                         "Biochemical Sculptor": "2"
                     },
                     "sourceList": {
-                        "Ficsite Trigon": "40",
                         "组装编导系统": "0.5",
+                        "Ficsite Trigon": "40",
                         "水": "10"
-                    }
-                }
-            ]
-        },
-        "Ballistic Warp Drive": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "equType": "制造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "Ballistic Warp Drive": "1"
-                    },
-                    "sourceList": {
-                        "热推进火箭": "1",
-                        "叠加振荡器": "2",
-                        "Singularity Cell": "5",
-                        "Dark Matter Crystal": "40"
                     }
                 }
             ]
@@ -3764,15 +4673,18 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
+                    "name": "配方",
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "AI Expansion Server": "4",
-                        "Dark Matter Residue": "100000"
+                        "Dark Matter Residue": "100m³"
                     },
                     "sourceList": {
+                        "磁场发生器": "4",
+                        "Neural-Quantum Processor": "4",
                         "叠加振荡器": "4",
-                        "Excited Photonic Matter": "100000"
+                        "Excited Photonic Matter": "100"
                     }
                 }
             ]
