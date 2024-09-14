@@ -95,6 +95,7 @@ let game_data = {
         "精炼厂": "Oil Refinery",
         "Ficsite Ingot": "Ficsite Ingot",
         "Dissolved Silica": "Dissolved Silica",
+        "量子编码器": "Quantum Encoder",
     },
     "select_dialog_data": {
         "金属锭": ["铁锭", "铜锭", "钦锭", "钢锭", "铝锭", "Ficsite Ingot"],
@@ -111,6 +112,160 @@ let game_data = {
         "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团", "Biochemical Sculptor", "Ballistic Warp Drive", "AI Expansion Server"],
     },
     "recipe_data": {
+        "铁矿石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "铁矿石": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "石灰石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "石灰石": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "铜矿石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "铜矿石": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "钦矿石": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "钦矿石": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "煤": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        " 煤": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "原石英": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "原石英": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "硫": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "硫": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "铝土矿": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "铝土矿": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "SAM": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "SAM": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "铀": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "采矿机",
+                    "equIndex": 0,
+                    "productList": {
+                        "铀": "30"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
+        "原油": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "equType": "抽水设备",
+                    "equIndex": 0,
+                    "productList": {
+                        "原油": "60"
+                    },
+                    "sourceList": {}
+                }
+            ]
+        },
         "铁锭": {
             "useIndex": 0,
             "data": [
@@ -300,7 +455,8 @@ let game_data = {
                         "钢锭": "45"
                     },
                     "sourceList": {
-                        "煤": "45"
+                        "煤": "45",
+                        "铁矿石": "45"
                     }
                 },
                 {
@@ -311,7 +467,8 @@ let game_data = {
                         "钢锭": "60"
                     },
                     "sourceList": {
-                        "煤": "40"
+                        "煤": "40",
+                        "铁矿石": "40",
                     }
                 },
                 {
@@ -372,7 +529,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "Ficsite Ingot": "30"
@@ -384,7 +541,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "Ficsite Ingot": "15"
@@ -396,7 +553,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "Ficsite Ingot": "10"
@@ -938,7 +1095,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "氮气": "120"
@@ -950,7 +1107,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "氮气": "120"
@@ -1059,7 +1216,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "压缩煤": "40",
@@ -1630,7 +1787,8 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "重渣油": "20"
+                        "橡胶": "20",
+                        "重渣油": "20",
                     },
                     "sourceList": {
                         "原油": "30"
@@ -2352,7 +2510,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "叠加振荡器": "5",
@@ -2417,7 +2575,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "Diamonds": "15"
@@ -2446,7 +2604,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "Time Crystal": "6"
@@ -2502,7 +2660,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "AI Expansion Server": "4",
@@ -2515,7 +2673,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "Dark Matter Residue": "60000"
@@ -2528,7 +2686,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "Dark Matter Residue": "100000"
@@ -2539,7 +2697,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "Ficsonium Fuel Rod": "2.5",
@@ -2553,7 +2711,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "Neural-Quantum Processor": "3",
@@ -2568,7 +2726,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "能量碎片": "5",
@@ -2582,7 +2740,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "叠加振荡器": "5",
@@ -2621,7 +2779,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "Excited Photonic Matter": "200000"
@@ -2635,7 +2793,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "Neural-Quantum Processor": "3",
@@ -3204,7 +3362,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "Ficsonium Fuel Rod": "2.5",
@@ -3292,7 +3450,7 @@ let game_data = {
                 },
                 {
                     "time": 60,
-                    "equType": "1级采矿机",
+                    "equType": "采矿机",
                     "equIndex": 0,
                     "productList": {
                         "压缩煤": "40",
@@ -3324,7 +3482,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "能量碎片": "5",
@@ -3606,7 +3764,7 @@ let game_data = {
             "data": [
                 {
                     "time": 60,
-                    "equType": "Quantum Encoder",
+                    "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
                         "AI Expansion Server": "4",
@@ -3755,12 +3913,22 @@ let game_data = {
                 }
             ]
         },
-        "Quantum Encoder": {
+        "量子编码器": {
             "useIndex": 0,
             "data": [
                 {
-                    "name": "Quantum Encoder",
+                    "name": "量子编码器",
                     "energy": 0,
+                    "rate": 1
+                }
+            ]
+        },
+        "转换器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "name": "转换器",
+                    "energy": 300,
                     "rate": 1
                 }
             ]
