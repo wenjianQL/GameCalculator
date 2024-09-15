@@ -14,6 +14,7 @@ function showTreeList() {
 }
 
 function generateTreeHtml(data, path) {
+    console.log(path);
     let item = data[path];
     // 查找父节点
     let parentNode = document.getElementById("ul-" + item['prePath']);

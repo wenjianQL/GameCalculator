@@ -487,7 +487,7 @@ let game_data = {
                     },
                     "sourceList": {
                         "铁矿石": "50",
-                        "硫酸": "10m³"
+                        "硫酸": "10"
                     }
                 },
                 {
@@ -499,7 +499,7 @@ let game_data = {
                     },
                     "sourceList": {
                         "铁矿石": "35",
-                        "水": "20m³"
+                        "水": "20"
                     }
                 },
                 {
@@ -863,7 +863,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "石英晶体": "75",
-                        "Dissolved Silica": "60m³"
+                        "Dissolved Silica": "60"
                     },
                     "sourceList": {
                         "原石英": "120",
@@ -894,7 +894,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "氧化铝溶液": "120m³",
+                        "氧化铝溶液": "120",
                         "石英砂": "50"
                     },
                     "sourceList": {
@@ -921,7 +921,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "石英砂": "270",
-                        "水": "80m³"
+                        "水": "80"
                     },
                     "sourceList": {
                         "Dissolved Silica": "120",
@@ -970,7 +970,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "燃料": "40m³",
+                        "燃料": "40",
                         "聚合树脂": "30"
                     },
                     "sourceList": {
@@ -984,7 +984,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "聚合树脂": "130",
-                        "重渣油": "20m³"
+                        "重渣油": "20"
                     },
                     "sourceList": {
                         "原油": "60"
@@ -996,7 +996,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "重渣油": "40m³",
+                        "重渣油": "40",
                         "聚合树脂": "20"
                     },
                     "sourceList": {
@@ -1015,7 +1015,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "铝块": "360",
-                        "水": "120m³"
+                        "水": "120"
                     },
                     "sourceList": {
                         "氧化铝溶液": "240",
@@ -1029,7 +1029,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "铝块": "300",
-                        "水": "105m³"
+                        "水": "105"
                     },
                     "sourceList": {
                         "氧化铝溶液": "180",
@@ -1043,7 +1043,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "铝块": "300",
-                        "水": "50m³"
+                        "水": "50"
                     },
                     "sourceList": {
                         "铝土矿": "150",
@@ -1117,7 +1117,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Non-Fissile Uranium": "50",
-                        "水": "15m³"
+                        "水": "15"
                     },
                     "sourceList": {
                         "铀废料": "37.5",
@@ -1133,7 +1133,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "电池": "20",
-                        "水": "30m³"
+                        "水": "30"
                     },
                     "sourceList": {
                         "硫酸": "50",
@@ -1148,7 +1148,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "铝块": "360",
-                        "水": "120m³"
+                        "水": "120"
                     },
                     "sourceList": {
                         "氧化铝溶液": "240",
@@ -1162,7 +1162,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "石英砂": "270",
-                        "水": "80m³"
+                        "水": "80"
                     },
                     "sourceList": {
                         "Dissolved Silica": "120",
@@ -1177,7 +1177,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Non-Fissile Uranium": "100",
-                        "水": "40m³"
+                        "水": "40"
                     },
                     "sourceList": {
                         "铀": "25",
@@ -1193,7 +1193,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "铝块": "300",
-                        "水": "105m³"
+                        "水": "105"
                     },
                     "sourceList": {
                         "氧化铝溶液": "180",
@@ -1207,7 +1207,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "铝块": "300",
-                        "水": "50m³"
+                        "水": "50"
                     },
                     "sourceList": {
                         "铝土矿": "150",
@@ -1242,7 +1242,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "塑料": "20",
-                        "重渣油": "10m³"
+                        "重渣油": "10"
                     },
                     "sourceList": {
                         "原油": "30"
@@ -1255,7 +1255,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "橡胶": "20",
-                        "重渣油": "20m³"
+                        "重渣油": "20"
                     },
                     "sourceList": {
                         "原油": "30"
@@ -1268,7 +1268,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "聚合树脂": "130",
-                        "重渣油": "20m³"
+                        "重渣油": "20"
                     },
                     "sourceList": {
                         "原油": "60"
@@ -1280,7 +1280,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "重渣油": "40m³",
+                        "重渣油": "40",
                         "聚合树脂": "20"
                     },
                     "sourceList": {
@@ -1298,7 +1298,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "液态生物燃料": "60m³"
+                        "液态生物燃料": "60"
                     },
                     "sourceList": {
                         "固体生物燃料": "90",
@@ -1316,7 +1316,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "涡轮燃料": "18.75m³"
+                        "涡轮燃料": "18.75"
                     },
                     "sourceList": {
                         "燃料": "22.5",
@@ -1329,7 +1329,7 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "涡轮燃料": "45m³"
+                        "涡轮燃料": "45"
                     },
                     "sourceList": {
                         "燃料": "15",
@@ -1344,7 +1344,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "涡轮燃料": "30m³"
+                        "涡轮燃料": "30"
                     },
                     "sourceList": {
                         "重渣油": "37.5",
@@ -1362,7 +1362,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "氧化铝溶液": "120m³",
+                        "氧化铝溶液": "120",
                         "石英砂": "50"
                     },
                     "sourceList": {
@@ -1376,7 +1376,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "氧化铝溶液": "240m³"
+                        "氧化铝溶液": "240"
                     },
                     "sourceList": {
                         "铝土矿": "200",
@@ -1394,7 +1394,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "硫酸": "50m³"
+                        "硫酸": "50"
                     },
                     "sourceList": {
                         "硫": "50",
@@ -1408,7 +1408,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "铀核芯": "25",
-                        "硫酸": "10m³"
+                        "硫酸": "10"
                     },
                     "sourceList": {
                         "铀": "50",
@@ -1427,7 +1427,7 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "硝酸": "30m³"
+                        "硝酸": "30"
                     },
                     "sourceList": {
                         "氮气": "120",
@@ -1447,7 +1447,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "石英晶体": "75",
-                        "Dissolved Silica": "60m³"
+                        "Dissolved Silica": "60"
                     },
                     "sourceList": {
                         "原石英": "120",
@@ -1465,7 +1465,7 @@ let game_data = {
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "氮气": "240m³",
+                        "氮气": "240",
                         "空瓶": "60"
                     },
                     "sourceList": {
@@ -1478,7 +1478,7 @@ let game_data = {
                     "equType": "矿井采集器",
                     "equIndex": 0,
                     "productList": {
-                        "氮气": "0m³"
+                        "氮气": "0"
                     },
                     "sourceList": {
                         "氮气": "0"
@@ -1490,7 +1490,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "氮气": "120m³"
+                        "氮气": "120"
                     },
                     "sourceList": {
                         "Reanimated SAM": "10",
@@ -1503,7 +1503,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "氮气": "120m³"
+                        "氮气": "120"
                     },
                     "sourceList": {
                         "Reanimated SAM": "10",
@@ -1521,7 +1521,7 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "火箭燃料": "100m³",
+                        "火箭燃料": "100",
                         "压缩煤": "10"
                     },
                     "sourceList": {
@@ -1535,7 +1535,7 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "火箭燃料": "150m³",
+                        "火箭燃料": "150",
                         "压缩煤": "25"
                     },
                     "sourceList": {
@@ -1556,7 +1556,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "Ionized Fuel": "40m³",
+                        "Ionized Fuel": "40",
                         "压缩煤": "5"
                     },
                     "sourceList": {
@@ -1570,7 +1570,7 @@ let game_data = {
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "Ionized Fuel": "80m³",
+                        "Ionized Fuel": "80",
                         "空瓶": "40"
                     },
                     "sourceList": {
@@ -1583,7 +1583,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Ionized Fuel": "200m³",
+                        "Ionized Fuel": "200",
                         "压缩煤": "40"
                     },
                     "sourceList": {
@@ -1603,7 +1603,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "AI Expansion Server": "4",
-                        "Dark Matter Residue": "100m³"
+                        "Dark Matter Residue": "100"
                     },
                     "sourceList": {
                         "磁场发生器": "4",
@@ -1618,7 +1618,7 @@ let game_data = {
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": "60m³"
+                        "Dark Matter Residue": "60"
                     },
                     "sourceList": {
                         "SAM波动器": "12.5",
@@ -1633,7 +1633,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": "100m³"
+                        "Dark Matter Residue": "100"
                     },
                     "sourceList": {
                         "Reanimated SAM": "50"
@@ -1646,7 +1646,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Ficsonium Fuel Rod": "2.5",
-                        "Dark Matter Residue": "50m³"
+                        "Dark Matter Residue": "50"
                     },
                     "sourceList": {
                         "Ficsonium": "5",
@@ -1662,7 +1662,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Neural-Quantum Processor": "3",
-                        "Dark Matter Residue": "75m³"
+                        "Dark Matter Residue": "75"
                     },
                     "sourceList": {
                         "Time Crystal": "15",
@@ -1678,7 +1678,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "能量碎片": "5",
-                        "Dark Matter Residue": "60m³"
+                        "Dark Matter Residue": "60"
                     },
                     "sourceList": {
                         "Time Crystal": "10",
@@ -1694,7 +1694,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "叠加振荡器": "5",
-                        "Dark Matter Residue": "125m³"
+                        "Dark Matter Residue": "125"
                     },
                     "sourceList": {
                         "Dark Matter Crystal": "30",
@@ -1714,7 +1714,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Excited Photonic Matter": "200m³"
+                        "Excited Photonic Matter": "200"
                     },
                     "sourceList": {}
                 }
@@ -2263,7 +2263,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "塑料": "20",
-                        "重渣油": "10m³"
+                        "重渣油": "10"
                     },
                     "sourceList": {
                         "原油": "30"
@@ -2307,7 +2307,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "橡胶": "20",
-                        "重渣油": "20m³"
+                        "重渣油": "20"
                     },
                     "sourceList": {
                         "原油": "30"
@@ -2426,7 +2426,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "电池": "20",
-                        "水": "30m³"
+                        "水": "30"
                     },
                     "sourceList": {
                         "硫酸": "50",
@@ -3097,7 +3097,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "叠加振荡器": "5",
-                        "Dark Matter Residue": "125m³"
+                        "Dark Matter Residue": "125"
                     },
                     "sourceList": {
                         "Dark Matter Crystal": "30",
@@ -3278,7 +3278,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Neural-Quantum Processor": "3",
-                        "Dark Matter Residue": "75m³"
+                        "Dark Matter Residue": "75"
                     },
                     "sourceList": {
                         "Time Crystal": "15",
@@ -3340,7 +3340,7 @@ let game_data = {
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "Ionized Fuel": "80m³",
+                        "Ionized Fuel": "80",
                         "空瓶": "40"
                     },
                     "sourceList": {
@@ -3353,7 +3353,7 @@ let game_data = {
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "火箭燃料": "120m³",
+                        "火箭燃料": "120",
                         "空瓶": "60"
                     },
                     "sourceList": {
@@ -3366,7 +3366,7 @@ let game_data = {
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "氮气": "240m³",
+                        "氮气": "240",
                         "空瓶": "60"
                     },
                     "sourceList": {
@@ -3572,7 +3572,7 @@ let game_data = {
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
-                        "Ionized Fuel": "40m³",
+                        "Ionized Fuel": "40",
                         "压缩煤": "5"
                     },
                     "sourceList": {
@@ -3599,7 +3599,7 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "火箭燃料": "100m³",
+                        "火箭燃料": "100",
                         "压缩煤": "10"
                     },
                     "sourceList": {
@@ -3613,7 +3613,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Ionized Fuel": "200m³",
+                        "Ionized Fuel": "200",
                         "压缩煤": "40"
                     },
                     "sourceList": {
@@ -3627,7 +3627,7 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "火箭燃料": "150m³",
+                        "火箭燃料": "150",
                         "压缩煤": "25"
                     },
                     "sourceList": {
@@ -4182,7 +4182,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "铀核芯": "25",
-                        "硫酸": "10m³"
+                        "硫酸": "10"
                     },
                     "sourceList": {
                         "铀": "50",
@@ -4217,7 +4217,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Non-Fissile Uranium": "50",
-                        "水": "15m³"
+                        "水": "15"
                     },
                     "sourceList": {
                         "铀废料": "37.5",
@@ -4233,7 +4233,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Non-Fissile Uranium": "100",
-                        "水": "40m³"
+                        "水": "40"
                     },
                     "sourceList": {
                         "铀": "25",
@@ -4322,7 +4322,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Ficsonium Fuel Rod": "2.5",
-                        "Dark Matter Residue": "50m³"
+                        "Dark Matter Residue": "50"
                     },
                     "sourceList": {
                         "Ficsonium": "5",
@@ -4389,7 +4389,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "能量碎片": "5",
-                        "Dark Matter Residue": "60m³"
+                        "Dark Matter Residue": "60"
                     },
                     "sourceList": {
                         "Time Crystal": "10",
@@ -4678,7 +4678,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "AI Expansion Server": "4",
-                        "Dark Matter Residue": "100m³"
+                        "Dark Matter Residue": "100"
                     },
                     "sourceList": {
                         "磁场发生器": "4",
