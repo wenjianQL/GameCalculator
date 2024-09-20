@@ -35,4 +35,4 @@ for (let i = 0; i < supportGameData.length; i++) {
 // } else {
 //     document.getElementById("text_feedback").textContent = "If you have any suggestions, feedback, or other games you want to play, please contact me: \n X: Wind674179535"
 // }
-document.getElementById("text_feedback").textContent = "If you have any suggestions, feedback, or other games you want to play, please contact me: \n X: Wind674179535"
+// document.getElementById("text_feedback").textContent = "If you have any suggestions, feedback, or other games you want to play, please contact me: \n X: Wind674179535"
