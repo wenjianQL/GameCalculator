@@ -112,6 +112,16 @@ let game_data = {
         "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团", "Biochemical Sculptor", "Ballistic Warp Drive", "AI Expansion Server"],
     },
     "recipe_data": {
+        "油焦": {
+            "useIndex": 0,
+            "data": [{
+                "time": 60,
+                "equType": "精炼厂",
+                "equIndex": 0,
+                "productList": {"油焦": "120"},
+                "sourceList": {"重渣油": "40"}
+            }]
+        },
         "石灰石": {
             "useIndex": 0,
             "data": [
