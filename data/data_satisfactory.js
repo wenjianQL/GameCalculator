@@ -1113,6 +1113,16 @@ let game_data = {
                 {
                     "time": 60,
                     "name": "配方",
+                    "equType": "抽水设备",
+                    "equIndex": 0,
+                    "productList": {
+                        "水": "60"
+                    },
+                    "sourceList": {}
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
@@ -3372,7 +3382,7 @@ let game_data = {
                     "sourceList": {
                         "瓶装氮气": "60"
                     }
-                },{
+                }, {
                     "time": 60,
                     "name": "配方",
                     "equType": "构造器",
@@ -3472,24 +3482,6 @@ let game_data = {
                     "sourceList": {
                         "硝酸": "30",
                         "空瓶": "30"
-                    }
-                }
-            ]
-        },
-        "瓶装氮气": {
-            "useIndex": 0,
-            "data": [
-                {
-                    "time": 60,
-                    "name": "配方",
-                    "equType": "灌装机",
-                    "equIndex": 0,
-                    "productList": {
-                        "瓶装氮气": "60"
-                    },
-                    "sourceList": {
-                        "氮气": "240",
-                        "空瓶": "60"
                     }
                 }
             ]
@@ -3727,6 +3719,28 @@ let game_data = {
                     }
                 }
             ]
+        },
+        "燃料": {
+            "useIndex": 0,
+            "data": [{
+                "time": 60,
+                "equType": "精炼厂",
+                "equIndex": 0,
+                "productList": {"燃料": "40", "聚合树脂": "30"},
+                "sourceList": {"原油": "60"}
+            }, {
+                "time": 60,
+                "equType": "搅拌器",
+                "equIndex": 0,
+                "productList": {"燃料": "100"},
+                "sourceList": {"重渣油": "50", "水": "100"}
+            }, {
+                "time": 60,
+                "equType": "精炼厂",
+                "equIndex": 0,
+                "productList": {"燃料": "40"},
+                "sourceList": {"重渣油": "60"}
+            }]
         },
         "Packaged Ionized Fuel": {
             "useIndex": 0,
@@ -4685,6 +4699,24 @@ let game_data = {
                         "Neural-Quantum Processor": "4",
                         "叠加振荡器": "4",
                         "Excited Photonic Matter": "100"
+                    }
+                }
+            ]
+        },
+        "镀铝板": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 60,
+                    "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "镀铝板": "30",
+                    },
+                    "sourceList": {
+                        "铝锭": "30",
+                        "铜锭": "10",
                     }
                 }
             ]
