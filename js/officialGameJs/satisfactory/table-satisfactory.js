@@ -85,6 +85,7 @@ function get_material_list() {
         if (newResultData[key]["是否计算"] === false) {
             continue;
         }
+        console.log(newResultData[key]);
         let depth = newResultData[key]["path"].split("_").length;
         let material = newResultData[key]["material"];
         let materialNumber = newResultData[key]["number"];
@@ -92,7 +93,7 @@ function get_material_list() {
         let matEquipNumber = newResultData[key]["equNumber"];
         if (material_list.hasOwnProperty(material)) {
             material_list[material]["材料数量"] += materialNumber;
-            material_list[material]["设备数量"] += Math.ceil(matEquipNumber);
+            material_list[material]["设备数量"] += matEquipNumber;
             material_list[material]["深度"] = Math.max(depth, material_list[material]["深度"]);
         } else {
             material_list[material] = {};
