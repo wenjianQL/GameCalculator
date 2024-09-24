@@ -74,6 +74,7 @@ function cal_data() {
  * @param num 材料数量
  */
 function calItem(path, material, num) {
+    // console.log("calItem: "+path);
     let curPath = "";
     if (num < 0) {
         curPath = path === "" ? material : path + "_~" + material;
@@ -86,7 +87,11 @@ function calItem(path, material, num) {
     }
     // 检查是否存在同路径的材料了
     if (newResultData.hasOwnProperty(curPath) && (Number(newResultData[curPath]["number"]) * num > 0)) {
-        newResultData[curPath]["number"] = num;
+        if (num < 0) {
+            newResultData[curPath]["number"] += num;
+        } else {
+            newResultData[curPath]["number"] = num;
+        }
     } else {
         newResultData[curPath] = {
             "path": curPath,
