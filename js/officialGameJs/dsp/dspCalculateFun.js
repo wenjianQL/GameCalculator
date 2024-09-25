@@ -17,6 +17,7 @@ function cal_data() {
     // 计算要生产的物品
     for (const item in needs_list) {
         calItem("", item, needs_list[item]);
+        needCalStr += item + "*" + needs_list[item] + " ";
     }
     _czc.push(['_trackEvent', '按钮', '计算', game_data["game_name"] + '：' + needCalStr]);
 }
