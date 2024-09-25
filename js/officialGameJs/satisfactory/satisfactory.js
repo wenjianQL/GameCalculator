@@ -103,7 +103,9 @@ function calItem(path, material, num) {
             "number": num,
             "是否计算": true,
             "recipeIndex": 0,
-
+            "加速": "无",
+            "增产剂": 0,
+            "电力消耗倍率":1,
             "equType": "",
             "equIndex": 0,
             "equNumber": 0,
@@ -129,6 +131,16 @@ function calItem(path, material, num) {
     let increase = 1;
     // 加速倍率
     let speed = 1;
+
+    // 根据增产剂，获取对应的倍率
+    if (item["加速"] !== "无") {
+        if (item["加速"] === "speed") {
+            speed = getSpeedRateByBuff(item["加速"], item["增产剂"], speed);
+        }
+        item["电力消耗倍率"] = getEnergyRateByBuff(item["加速"], item["增产剂"], 1);
+    } else {
+        item["电力消耗倍率"] = 1;
+    }
 
     // 从配方中获取产物列表
     let pList = Object.assign({}, recipe.productList);

@@ -79,7 +79,7 @@ function generateTreeHtml(data, path) {
     }
 
     // 添加增产剂效果选择
-    // addYieldEnhancerSelectNode(summary, id);
+    addYieldEnhancerSelectNode(summary, path);
 
     // 添加忽略按钮
     addDisableBtn(summary, path);
