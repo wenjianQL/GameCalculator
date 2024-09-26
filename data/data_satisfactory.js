@@ -4919,6 +4919,16 @@ let game_data = {
                     "rate": 1
                 }
             ]
+        },
+        "核电站": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "name": "核电站",
+                    "energy": -2500,
+                    "rate": 1
+                }
+            ]
         }
 
     }
