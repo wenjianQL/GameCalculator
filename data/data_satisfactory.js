@@ -934,6 +934,18 @@ let game_data = {
                 {
                     "time": 60,
                     "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "石英砂": "37.5"
+                    },
+                    "sourceList": {
+                        "原石英": "22.5"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -943,18 +955,6 @@ let game_data = {
                     "sourceList": {
                         "铝土矿": "120",
                         "水": "180"
-                    }
-                },
-                {
-                    "time": 60,
-                    "name": "配方",
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "石英砂": "37.5"
-                    },
-                    "sourceList": {
-                        "原石英": "22.5"
                     }
                 },
                 {
@@ -1515,26 +1515,12 @@ let game_data = {
                 {
                     "time": 60,
                     "name": "配方",
-                    "equType": "灌装机",
-                    "equIndex": 0,
-                    "productList": {
-                        "氮气": "240",
-                        "空瓶": "60"
-                    },
-                    "sourceList": {
-                        "瓶装氮气": "60"
-                    }
-                },
-                {
-                    "time": 60,
-                    "name": "配方",
                     "equType": "矿井采集器",
                     "equIndex": 0,
                     "productList": {
-                        "氮气": "0"
+                        "氮气": "60"
                     },
                     "sourceList": {
-                        "氮气": "0"
                     }
                 },
                 {
