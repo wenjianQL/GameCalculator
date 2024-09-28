@@ -228,6 +228,9 @@ function show_source_material_list() {
     for (let i = 0; i < sourceMaterialList.length; i++) {
         let path = sourceMaterialList[i];
         let item = newResultData[path];
+        if (item['number'] < 0) {
+            continue;
+        }
         // 从item中获取 物品 和 数量， 并以物品：数量的形式存到source_data中。要注意source_data中是否以存在物品了，如果存在，则数量累加。
         if (source_data.hasOwnProperty(item['material'])) {
             source_data[item['material']] += item['number'];
