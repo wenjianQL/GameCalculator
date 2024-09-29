@@ -3,69 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Game Calculator</title>
+    <title>量化计算器</title>
     <meta name="author" content="Wind">
     <!--通用样式文件-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <!-- 自定义样式 -->
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
 
-        .title {
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: white;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .btn-game {
-            margin: 0 10px;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            background-color: transparent;
-        }
-
-        .btn-game img {
-            width: 200px;
-            height: 200px;
-        }
-
-        .game_name {
-            color: white;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f8f9fa; /* 背景颜色可以根据需要调整 */
-            padding: 10px; /* 内边距可以根据需要调整 */
-            text-align: center; /* 文本居中对齐 */
-        }
-
-        .footer a {
-            margin: 0 10px; /* 链接之间的间距 */
-        }
-
-    </style>
-
+    <!-- 谷歌广告 -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2040100387385862"
             crossorigin="anonymous"></script>
     <!--  友盟统计  -->
@@ -81,21 +27,107 @@
 </head>
 </head>
 <body>
-<div class="container">
-    <h1 class="title">Game Calculator</h1>
-    <div class="button-container" id="support_game_list">
+
+    <body id="page-top" class="landing-page no-skin-config">
+        <div class="navbar-wrapper">
+            <nav class="navbar navbar-default navbar-fixed-top navbar-expand-md" role="navigation">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">量化计算器</a>
+                    <div class="navbar-header page-scroll">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                    <!-- <div class="collapse navbar-collapse justify-content-end" id="navbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="nav-link page-scroll" href="#page-top">功能</a></li>
+                            <li><a class="nav-link page-scroll" href="#contact">联系</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </nav>
+
+            <section id="features" class="container services">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="text-center">
+                            <a href="dsp.html">
+                                <img alt="image" class="rounded-circle m-t-xs img-fluid" src="img/logo/dsp.webp"  style="width: 100px; height: 100px;">
+                                <div class="m-t-xs font-bold">戴森球计划</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="text-center">
+                            <a href="satisfactory.html">
+                                <img alt="image" class="rounded-circle m-t-xs img-fluid" src="img/logo/SatisFactory.webp" style="width: 100px; height: 100px;">
+                                <div class="m-t-xs font-bold">幸福工厂</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="gray-section contact">
+                <div class="container">
+                    <div class="row m-b-lg">
+                        <div class="col-lg-12 text-center">
+                            <div class="navy-line"></div>
+                            <h1>联系我们</h1>
+                            <p>如果你有建议、反馈、其它想玩的游戏。</p>
+                        </div>
+                    </div>
+                    <div class="row m-b-lg justify-content-center">
+                        <div class="col-lg-3 ">
+                            <address>
+                                <strong><span class="navy">熊与倦猫贸易（深圳）有限公司</span></strong><br/>
+                                深圳市宝安区怀德新村9巷66号102<br/>
+                                深圳, 518103<br/>
+                                <abbr title="Phone">电话:</abbr> 180-2701-1107
+                            </address>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="text-color">
+                                量化计算器是一个免费的在线工具，旨在帮助玩家计算游戏中的各种资源和物品的制造数量。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <a href="mailto:674179535@qq.com" class="btn btn-primary">寄给我们邮件</a>
+                            <p class="m-t-sm">
+                                或者跟随我们在社交平台上
+                                <br/>
+                                <a href="https://space.bilibili.com/471353500?spm_id_from=333.1296.0.0">Bilibili</a>
+                                <br/>
+                                <a href="https://github.com/wenjianQL/GameCalculator">Github</a>
+                            </p>
+                          
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 text-center m-t-lg m-b-lg">
+                            <p><strong>熊与倦猫贸易（深圳）有限公司</strong><br/></p>
+                            <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024283143号-2</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
     </div>
-    <div style="color: white; margin-top: 10px;" id="text_feedback">
-        如果你有建议、反馈、其它想玩的游戏，欢迎发送邮件到：formulacalculator@163.com
-    </div>
-    <div style="color: white; margin-top: 10px;">
-        <a href="https://github.com/wenjianQL/GameCalculator" target="_blank">Github仓库</a>
-    </div>
-    <!--  TODO: 提交海外版本的时候，都要隐藏掉。  -->
-    <div class="footer">
-        <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024283143号-2</a>
-    </div>
-    <script src="./data/index.js"></script>
-</div>
+    </body>
+
+   
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
 </body>
 </html>
