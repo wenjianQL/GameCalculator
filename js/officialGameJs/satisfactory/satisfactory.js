@@ -77,17 +77,12 @@ function cal_data() {
  * @param num 材料数量
  */
 function calItem(path, material, num) {
-    // console.log("calItem: "+path);
-    let curPath = "";
-    if (num < 0) {
-        curPath = path === "" ? material : path + "_~" + material;
-    } else {
-        curPath = path === "" ? material : path + "_" + material;
-    }
+    let curPath = path === "" ? material : path + "_" + material;
     // 防止死循环崩溃
     if (curPath.split("_").length > 15) {
         return;
     }
+
     // 检查是否存在同路径的材料了
     if (newResultData.hasOwnProperty(curPath) && (Number(newResultData[curPath]["number"]) * num > 0)) {
         if (num < 0) {
@@ -109,13 +104,10 @@ function calItem(path, material, num) {
             "equType": "",
             "equIndex": 0,
             "equNumber": 0,
-            "isShow": true
+            "isShow": true,
+            // 多余产物Map
+            "otherProductMap": {}
         };
-    }
-
-    if (num <= 0) {
-        // 需要的数量小于等于0，是多余产物，不处理。
-        return;
     }
 
     let item = newResultData[curPath];
@@ -172,7 +164,7 @@ function calItem(path, material, num) {
             let amount = productList[product];
             // 实际的产出数量
             let real_amount = amount * multiplier * -1;
-            calItem(path, product, real_amount);
+            item["otherProductMap"][product] = real_amount;
         }
     }
 

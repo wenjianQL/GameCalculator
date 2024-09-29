@@ -30,10 +30,18 @@ function show_table_list() {
                 
                 // 配方
                 material_str += "<td><select id=\"recipe_select_" + material + "\"></select></td>";
+
+                // 其它：多余产物
+                let otherProductStr = "";
+                for (let otherProduct in material_list[material]["otherProductMap"]) {
+                    otherProductStr += (-1 * material_list[material]["otherProductMap"][otherProduct]) + "*" + otherProduct  + ",";
+                }
+                material_str += "<td>" + otherProductStr + "</td>";
+
                 material_str += "</tr>";
             }
         }
-        material_str += "<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+        material_str += "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
     }
 
     let materialListNode = document.getElementById("material_table");
@@ -58,6 +66,7 @@ function show_table_list() {
                 // material的配方都进行修改
                 if (key.endsWith(material)) {
                     newResultData[key].recipeIndex = parseInt(event.target.value);
+                    newResultData[key].otherProductMap = {};
                 }
             }
             game_data["recipe_data"][material]["useIndex"] = parseInt(event.target.value);
@@ -85,7 +94,7 @@ function get_material_list() {
         if (newResultData[key]["是否计算"] === false) {
             continue;
         }
-        console.log(newResultData[key]);
+        // console.log(newResultData[key]);
         let depth = newResultData[key]["path"].split("_").length;
         let material = newResultData[key]["material"];
         let materialNumber = newResultData[key]["number"];
@@ -95,12 +104,17 @@ function get_material_list() {
             material_list[material]["材料数量"] += materialNumber;
             material_list[material]["设备数量"] += matEquipNumber;
             material_list[material]["深度"] = Math.max(depth, material_list[material]["深度"]);
+            // 遍历newResultData[key]["otherProductMap"]
+            for (let otherProduct in newResultData[key]["otherProductMap"]) {
+                material_list[material]["otherProductMap"][otherProduct] += newResultData[key]["otherProductMap"][otherProduct];
+            }
         } else {
             material_list[material] = {};
             material_list[material]["深度"] = depth;
             material_list[material]["材料数量"] = materialNumber;
             material_list[material]["设备数量"] = matEquipNumber;
             material_list[material]["设备"] = matEquipName;
+            material_list[material]["otherProductMap"] = newResultData[key]["otherProductMap"];
         }
     }
 

@@ -77,7 +77,7 @@ function getYieldEnhancerSelectNode(path) {
         option.value = "speed-" + item["加速生成"];
         option.textContent = getTranslate("加速") +"：+" + (Math.ceil((item["加速生成"] - 1) * 1000) / 10) + "%";
         option.id = "speed-" + item["加速生成"];
-        console.log("加速生成"+item["名字"]);
+        // console.log("加速生成"+item["名字"]);
         select.appendChild(option);
 
         if (type === "speed") {

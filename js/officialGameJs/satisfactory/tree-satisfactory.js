@@ -87,6 +87,18 @@ function generateTreeHtml(data, path) {
     let ul = document.createElement("ul");
     ul.id = "ul-" + path;
 
+    // 如果data的otherProductMap不为空，则表示有副产物
+    if (Object.keys(item["otherProductMap"]).length > 0) {
+        // 循环otherProductMap, 创建li，添加到ul
+        for (let key in item["otherProductMap"]) {
+            let liNode = document.createElement('li');
+            liNode.innerHTML = "多余产物："+item["otherProductMap"][key].toFixed(2) + " * " + getSatisFactoryImgAndNameNodeStr(key);
+            // liNode.style.marginTop = "6px";
+            ul.appendChild(liNode);
+        }
+    }
+
+
     let details = document.createElement("details");
     details.id = "details-" + path;
     details.open = item["isShow"] === true
@@ -118,15 +130,14 @@ function addRecipeSelectNode(node, path) {
         return;
     }
 
+    // 获取配方选择节点
     let selectNode = getRecipeSelectNode(path);
     selectNode.id = "recipe-" + path;
     selectNode.style.marginLeft = "10px";
     // 配方修改事件
     selectNode.onchange = function (event) {
         newResultData[path]["recipeIndex"] = event.target.value;
-        // 局部修改，不修改整体，所以下面这行注释掉。或者说应该修改成，只改计算数据中的所有这个物品对应的配方。
-        // game_data["recipe_data"][name]["useIndex"] = event.target.value;
-        // saveDataToLocalStorage();
+        newResultData[path]["otherProductMap"] = {};
         updateResultAfterChangeRecipe(path);
     }
 
