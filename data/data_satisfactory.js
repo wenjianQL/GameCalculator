@@ -103,7 +103,7 @@ let game_data = {
         "液体": ["重渣油", "燃料", "液态生物燃料", "涡轮燃料", "氧化铝溶液", "硫酸", "硝酸", "Dissolved Silica"],
         "标准零件": ["铁棒", "螺丝", "铁板", "加强铁板", "铜板", "镀铝板", "铝制外壳", "钢管", "钢梁", "钢筋混凝土梁", "模块化框架", "重型模块化框架", "熔合模块化框架", "Ficsite Trigon", "布料", "塑料", "橡胶"],
         "工业零件": ["转子", "定子", "电池", "电机", "散热器", "冷却系统", "涡轮电机"],
-        "电子产品": ["电线", "电缆", "快速线", "电路板", "AI限制器", "高速连接器", "Reanimated SAM", "SAM Fluctuator"],
+        "电子产品": ["电线", "电缆", "快速线", "电路板", "AI限制器", "高速连接器", "活性SAM物质", "SAM物质波波动器"],
         "通讯": ["计算机", "超级计算机", "量子计算机", "无线电控制单元", "晶体振荡器", "叠加振荡器"],
         "Quantum Technology": ["Diamonds", "Time Crystal", "Dark Matter Crystal", "Dark Matter Residue", "Singularity Cell", "Excited Photonic Matter", "Neural-Quantum Processor"],
         "容器": ["空罐", "空瓶", "压力转换立方体"],
@@ -175,7 +175,7 @@ let game_data = {
                         "石灰石": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "硫": "20"
                     }
                 }
@@ -201,7 +201,7 @@ let game_data = {
                         "铁矿石": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "石灰石": "240"
                     }
                 }
@@ -227,7 +227,7 @@ let game_data = {
                         "铜矿石": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "原石英": "100"
                     }
                 },
@@ -240,7 +240,7 @@ let game_data = {
                         "铜矿石": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "硫": "120"
                     }
                 }
@@ -266,7 +266,7 @@ let game_data = {
                         "钦矿石": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "铜矿石": "150"
                     }
                 },
@@ -279,7 +279,7 @@ let game_data = {
                         "钦矿石": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "原石英": "120"
                     }
                 }
@@ -305,7 +305,7 @@ let game_data = {
                         "煤": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "铁矿石": "180"
                     }
                 },
@@ -318,7 +318,7 @@ let game_data = {
                         "煤": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "石灰石": "360"
                     }
                 },
@@ -368,7 +368,7 @@ let game_data = {
                         "原石英": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "铝土矿": "100"
                     }
                 },
@@ -381,7 +381,7 @@ let game_data = {
                         "原石英": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "煤": "240"
                     }
                 }
@@ -407,7 +407,7 @@ let game_data = {
                         "硫": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "煤": "200"
                     }
                 },
@@ -420,7 +420,7 @@ let game_data = {
                         "硫": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "铁矿石": "300"
                     }
                 }
@@ -446,7 +446,7 @@ let game_data = {
                         "铝土矿": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "钦矿石": "150"
                     }
                 },
@@ -459,7 +459,7 @@ let game_data = {
                         "铝土矿": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "铜矿石": "180"
                     }
                 }
@@ -783,7 +783,7 @@ let game_data = {
                         "Ficsite Ingot": "30"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "60",
+                        "活性SAM物质": "60",
                         "铝锭": "120"
                     }
                 },
@@ -796,7 +796,7 @@ let game_data = {
                         "Ficsite Ingot": "15"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "45",
+                        "活性SAM物质": "45",
                         "钦锭": "60"
                     }
                 },
@@ -809,7 +809,7 @@ let game_data = {
                         "Ficsite Ingot": "10"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "40",
+                        "活性SAM物质": "40",
                         "铁锭": "240"
                     }
                 }
@@ -1532,7 +1532,7 @@ let game_data = {
                         "氮气": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "铝土矿": "100"
                     }
                 },
@@ -1545,7 +1545,7 @@ let game_data = {
                         "氮气": "120"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "10",
+                        "活性SAM物质": "10",
                         "钦矿石": "120"
                     }
                 }
@@ -1660,7 +1660,7 @@ let game_data = {
                         "Dark Matter Residue": "60"
                     },
                     "sourceList": {
-                        "SAM波动器": "12.5",
+                        "SAM物质波波动器": "12.5",
                         "能量碎片": "7.5",
                         "叠加振荡器": "7.5",
                         "Excited Photonic Matter": "60"
@@ -1675,7 +1675,7 @@ let game_data = {
                         "Dark Matter Residue": "100"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "50"
+                        "活性SAM物质": "50"
                     }
                 },
                 {
@@ -2911,7 +2911,7 @@ let game_data = {
                 }
             ]
         },
-        "Reanimated SAM": {
+        "活性SAM物质": {
             "useIndex": 0,
             "data": [
                 {
@@ -2920,7 +2920,7 @@ let game_data = {
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
-                        "Reanimated SAM": "30"
+                        "活性SAM物质": "30"
                     },
                     "sourceList": {
                         "SAM": "120"
@@ -2928,7 +2928,7 @@ let game_data = {
                 }
             ]
         },
-        "SAM波动器": {
+        "SAM物质波波动器": {
             "useIndex": 0,
             "data": [
                 {
@@ -2937,10 +2937,10 @@ let game_data = {
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
-                        "SAM波动器": "10"
+                        "SAM物质波波动器": "10"
                     },
                     "sourceList": {
-                        "Reanimated SAM": "60",
+                        "活性SAM物质": "60",
                         "电线": "50",
                         "钢管": "30"
                     }
