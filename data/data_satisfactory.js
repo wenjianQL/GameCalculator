@@ -93,23 +93,23 @@ let game_data = {
         "冶炼器": "Smelter",
         "铸造器": "Foundry",
         "精炼厂": "Oil Refinery",
-        "Ficsite Ingot": "Ficsite Ingot",
-        "Dissolved Silica": "Dissolved Silica",
+        "F金锭": "F金锭",
+        "二氧化硅溶解液": "二氧化硅溶解液",
         "量子编码器": "Quantum Encoder",
     },
     "select_dialog_data": {
-        "金属锭": ["铁锭", "铜锭", "钦锭", "钢锭", "铝锭", "Ficsite Ingot"],
+        "金属锭": ["铁锭", "铜锭", "钦锭", "钢锭", "铝锭", "F金锭"],
         "矿物": ["混凝土", "石英晶体", "石英砂", "铜粉", "聚合树脂", "油焦", "铝块"],
-        "液体": ["重渣油", "燃料", "液态生物燃料", "涡轮燃料", "氧化铝溶液", "硫酸", "硝酸", "Dissolved Silica"],
-        "标准零件": ["铁棒", "螺丝", "铁板", "加强铁板", "铜板", "镀铝板", "铝制外壳", "钢管", "钢梁", "钢筋混凝土梁", "模块化框架", "重型模块化框架", "熔合模块化框架", "Ficsite Trigon", "布料", "塑料", "橡胶"],
+        "液体": ["重渣油", "燃料", "液态生物燃料", "涡轮燃料", "氧化铝溶液", "硫酸", "硝酸", "二氧化硅溶解液"],
+        "标准零件": ["铁棒", "螺丝", "铁板", "加强铁板", "铜板", "镀铝板", "铝制外壳", "钢管", "钢梁", "钢筋混凝土梁", "模块化框架", "重型模块化框架", "熔合模块化框架", "F金三角", "布料", "塑料", "橡胶"],
         "工业零件": ["转子", "定子", "电池", "电机", "散热器", "冷却系统", "涡轮电机"],
         "电子产品": ["电线", "电缆", "快速线", "电路板", "AI限制器", "高速连接器", "活性SAM物质", "SAM物质波波动器"],
         "通讯": ["计算机", "超级计算机", "量子计算机", "无线电控制单元", "晶体振荡器", "叠加振荡器"],
-        "Quantum Technology": ["Diamonds", "Time Crystal", "Dark Matter Crystal", "Dark Matter Residue", "Singularity Cell", "Excited Photonic Matter", "Neural-Quantum Processor"],
+        "量子科技": ["钻石", "时间水晶", "暗物质晶体", "暗物质残渣", "奇点电池", "激发态光子物质", "神经量子处理器", "外星能量矩阵"],
         "容器": ["空罐", "空瓶", "压力转换立方体"],
-        "燃料": ["Packaged Rocket Fuel", "Packaged Ionized Fuel", "铀燃料棒", "钚燃料棒"],
+        "燃料": ["桶装火箭燃料", "桶装电离燃油", "铀燃料棒", "钚燃料棒"],
         "核工业品": ["电磁控制杆", "铀核芯", "Non-Fissile Uranium", "贫铀", "钚丸"],
-        "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团", "Biochemical Sculptor", "Ballistic Warp Drive", "AI Expansion Server"],
+        "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团", "生化塑造器", "弹道跃迁引擎", "AI拓展伺服器"],
     },
     "buff": {
         "增产剂": {
@@ -145,6 +145,36 @@ let game_data = {
         }
     },
     "recipe_data": {
+        "外星能量矩阵": {
+            "useIndex": 0,
+            "data": [{
+                "time": 60,
+                "equType": "量子编码站",
+                "equIndex": 0,
+                "productList": {"外星能量矩阵": "2.5", "暗物质残渣": "60"},
+                "sourceList": {
+                    "SAM物质波波动器": "12.5",
+                    "能量碎片": "7.5",
+                    "叠加振荡器": "7.5",
+                    "激发态光子物质": "60"
+                }
+            }]
+        },
+        "弹道跃迁引擎": {
+            "useIndex": 0,
+            "data": [{
+                "time": 60,
+                "equType": "制造器",
+                "equIndex": 0,
+                "productList": {"弹道跃迁引擎": "1"},
+                "sourceList": {
+                    "热能推进火箭": "1",
+                    "奇点电池": "5",
+                    "叠加振荡器": "2",
+                    "暗物质晶体": "40",
+                }
+            }]
+        },
         "油焦": {
             "useIndex": 0,
             "data": [{
@@ -771,7 +801,7 @@ let game_data = {
                 }
             ]
         },
-        "Ficsite Ingot": {
+        "F金锭": {
             "useIndex": 0,
             "data": [
                 {
@@ -780,7 +810,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Ficsite Ingot": "30"
+                        "F金锭": "30"
                     },
                     "sourceList": {
                         "活性SAM物质": "60",
@@ -793,7 +823,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Ficsite Ingot": "15"
+                        "F金锭": "15"
                     },
                     "sourceList": {
                         "活性SAM物质": "45",
@@ -806,7 +836,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Ficsite Ingot": "10"
+                        "F金锭": "10"
                     },
                     "sourceList": {
                         "活性SAM物质": "40",
@@ -906,7 +936,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "石英晶体": "75",
-                        "Dissolved Silica": "60"
+                        "二氧化硅溶解液": "60"
                     },
                     "sourceList": {
                         "原石英": "120",
@@ -967,7 +997,7 @@ let game_data = {
                         "水": "80"
                     },
                     "sourceList": {
-                        "Dissolved Silica": "120",
+                        "二氧化硅溶解液": "120",
                         "石灰石": "50",
                         "水": "100"
                     }
@@ -1218,7 +1248,7 @@ let game_data = {
                         "水": "80"
                     },
                     "sourceList": {
-                        "Dissolved Silica": "120",
+                        "二氧化硅溶解液": "120",
                         "石灰石": "50",
                         "水": "100"
                     }
@@ -1490,7 +1520,7 @@ let game_data = {
                 }
             ]
         },
-        "Dissolved Silica": {
+        "二氧化硅溶解液": {
             "useIndex": 0,
             "data": [
                 {
@@ -1500,7 +1530,7 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "石英晶体": "75",
-                        "Dissolved Silica": "60"
+                        "二氧化硅溶解液": "60"
                     },
                     "sourceList": {
                         "原石英": "120",
@@ -1520,8 +1550,7 @@ let game_data = {
                     "productList": {
                         "氮气": "60"
                     },
-                    "sourceList": {
-                    }
+                    "sourceList": {}
                 },
                 {
                     "time": 60,
@@ -1613,7 +1642,7 @@ let game_data = {
                         "空瓶": "40"
                     },
                     "sourceList": {
-                        "Packaged Ionized Fuel": "40"
+                        "桶装电离燃油": "40"
                     }
                 },
                 {
@@ -1627,12 +1656,12 @@ let game_data = {
                     },
                     "sourceList": {
                         "桶装火箭燃料": "240",
-                        "Dark Matter Crystal": "80"
+                        "暗物质晶体": "80"
                     }
                 }
             ]
         },
-        "Dark Matter Residue": {
+        "暗物质残渣": {
             "useIndex": 0,
             "data": [
                 {
@@ -1641,14 +1670,14 @@ let game_data = {
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
-                        "AI Expansion Server": "4",
-                        "Dark Matter Residue": "100"
+                        "AI拓展伺服器": "4",
+                        "暗物质残渣": "100"
                     },
                     "sourceList": {
                         "磁场发生器": "4",
-                        "Neural-Quantum Processor": "4",
+                        "神经量子处理器": "4",
                         "叠加振荡器": "4",
-                        "Excited Photonic Matter": "100"
+                        "激发态光子物质": "100"
                     }
                 },
                 {
@@ -1657,13 +1686,13 @@ let game_data = {
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": "60"
+                        "暗物质残渣": "60"
                     },
                     "sourceList": {
                         "SAM物质波波动器": "12.5",
                         "能量碎片": "7.5",
                         "叠加振荡器": "7.5",
-                        "Excited Photonic Matter": "60"
+                        "激发态光子物质": "60"
                     }
                 },
                 {
@@ -1672,7 +1701,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Residue": "100"
+                        "暗物质残渣": "100"
                     },
                     "sourceList": {
                         "活性SAM物质": "50"
@@ -1685,13 +1714,13 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Ficsonium Fuel Rod": "2.5",
-                        "Dark Matter Residue": "50"
+                        "暗物质残渣": "50"
                     },
                     "sourceList": {
                         "Ficsonium": "5",
                         "电磁控制杆": "5",
-                        "Ficsite Trigon": "100",
-                        "Excited Photonic Matter": "50"
+                        "F金三角": "100",
+                        "激发态光子物质": "50"
                     }
                 },
                 {
@@ -1700,14 +1729,14 @@ let game_data = {
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
-                        "Neural-Quantum Processor": "3",
-                        "Dark Matter Residue": "75"
+                        "神经量子处理器": "3",
+                        "暗物质残渣": "75"
                     },
                     "sourceList": {
-                        "Time Crystal": "15",
+                        "时间水晶": "15",
                         "超级计算机": "3",
-                        "Ficsite Trigon": "45",
-                        "Excited Photonic Matter": "75"
+                        "F金三角": "45",
+                        "激发态光子物质": "75"
                     }
                 },
                 {
@@ -1717,13 +1746,13 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "能量碎片": "5",
-                        "Dark Matter Residue": "60"
+                        "暗物质残渣": "60"
                     },
                     "sourceList": {
-                        "Time Crystal": "10",
-                        "Dark Matter Crystal": "10",
+                        "时间水晶": "10",
+                        "暗物质晶体": "10",
                         "石英晶体": "60",
-                        "Excited Photonic Matter": "60"
+                        "激发态光子物质": "60"
                     }
                 },
                 {
@@ -1733,18 +1762,18 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "叠加振荡器": "5",
-                        "Dark Matter Residue": "125"
+                        "暗物质残渣": "125"
                     },
                     "sourceList": {
-                        "Dark Matter Crystal": "30",
+                        "暗物质晶体": "30",
                         "晶体振荡器": "5",
                         "镀铝板": "45",
-                        "Excited Photonic Matter": "125"
+                        "激发态光子物质": "125"
                     }
                 }
             ]
         },
-        "Excited Photonic Matter": {
+        "激发态光子物质": {
             "useIndex": 0,
             "data": [
                 {
@@ -1753,7 +1782,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Excited Photonic Matter": "200"
+                        "激发态光子物质": "200"
                     },
                     "sourceList": {}
                 }
@@ -2244,7 +2273,7 @@ let game_data = {
                 }
             ]
         },
-        "Ficsite Trigon": {
+        "F金三角": {
             "useIndex": 0,
             "data": [
                 {
@@ -2253,10 +2282,10 @@ let game_data = {
                     "equType": "构造器",
                     "equIndex": 0,
                     "productList": {
-                        "Ficsite Trigon": "30"
+                        "F金三角": "30"
                     },
                     "sourceList": {
-                        "Ficsite Ingot": "10"
+                        "F金锭": "10"
                     }
                 }
             ]
@@ -3136,18 +3165,18 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "叠加振荡器": "5",
-                        "Dark Matter Residue": "125"
+                        "暗物质残渣": "125"
                     },
                     "sourceList": {
-                        "Dark Matter Crystal": "30",
+                        "暗物质晶体": "30",
                         "晶体振荡器": "5",
                         "镀铝板": "45",
-                        "Excited Photonic Matter": "125"
+                        "激发态光子物质": "125"
                     }
                 }
             ]
         },
-        "Diamonds": {
+        "钻石": {
             "useIndex": 0,
             "data": [
                 {
@@ -3156,7 +3185,7 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": "30"
+                        "钻石": "30"
                     },
                     "sourceList": {
                         "煤": "600"
@@ -3168,7 +3197,7 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": "20"
+                        "钻石": "20"
                     },
                     "sourceList": {
                         "煤": "240",
@@ -3181,7 +3210,7 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": "40"
+                        "钻石": "40"
                     },
                     "sourceList": {
                         "原油": "200"
@@ -3193,7 +3222,7 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": "30"
+                        "钻石": "30"
                     },
                     "sourceList": {
                         "油焦": "720"
@@ -3205,7 +3234,7 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": "15"
+                        "钻石": "15"
                     },
                     "sourceList": {
                         "煤": "120",
@@ -3218,7 +3247,7 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Diamonds": "60"
+                        "钻石": "60"
                     },
                     "sourceList": {
                         "煤": "600",
@@ -3227,7 +3256,7 @@ let game_data = {
                 }
             ]
         },
-        "Time Crystal": {
+        "时间水晶": {
             "useIndex": 0,
             "data": [
                 {
@@ -3236,15 +3265,15 @@ let game_data = {
                     "equType": "转换器",
                     "equIndex": 0,
                     "productList": {
-                        "Time Crystal": "6"
+                        "时间水晶": "6"
                     },
                     "sourceList": {
-                        "Diamonds": "12"
+                        "钻石": "12"
                     }
                 }
             ]
         },
-        "Dark Matter Crystal": {
+        "暗物质晶体": {
             "useIndex": 0,
             "data": [
                 {
@@ -3253,11 +3282,11 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Crystal": "30"
+                        "暗物质晶体": "30"
                     },
                     "sourceList": {
-                        "Diamonds": "30",
-                        "Dark Matter Residue": "150"
+                        "钻石": "30",
+                        "暗物质残渣": "150"
                     }
                 },
                 {
@@ -3266,10 +3295,10 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Crystal": "20"
+                        "暗物质晶体": "20"
                     },
                     "sourceList": {
-                        "Dark Matter Residue": "200"
+                        "暗物质残渣": "200"
                     }
                 },
                 {
@@ -3278,16 +3307,16 @@ let game_data = {
                     "equType": "粒子加速器",
                     "equIndex": 0,
                     "productList": {
-                        "Dark Matter Crystal": "60"
+                        "暗物质晶体": "60"
                     },
                     "sourceList": {
-                        "Time Crystal": "30",
-                        "Dark Matter Residue": "150"
+                        "时间水晶": "30",
+                        "暗物质残渣": "150"
                     }
                 }
             ]
         },
-        "Singularity Cell": {
+        "奇点电池": {
             "useIndex": 0,
             "data": [
                 {
@@ -3296,18 +3325,18 @@ let game_data = {
                     "equType": "制造器",
                     "equIndex": 0,
                     "productList": {
-                        "Singularity Cell": "10"
+                        "奇点电池": "10"
                     },
                     "sourceList": {
                         "核子团": "1",
-                        "Dark Matter Crystal": "20",
+                        "暗物质晶体": "20",
                         "铁板": "100",
                         "混凝土": "200"
                     }
                 }
             ]
         },
-        "Neural-Quantum Processor": {
+        "神经量子处理器": {
             "useIndex": 0,
             "data": [
                 {
@@ -3316,14 +3345,14 @@ let game_data = {
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
-                        "Neural-Quantum Processor": "3",
-                        "Dark Matter Residue": "75"
+                        "神经量子处理器": "3",
+                        "暗物质残渣": "75"
                     },
                     "sourceList": {
-                        "Time Crystal": "15",
+                        "时间水晶": "15",
                         "超级计算机": "3",
-                        "Ficsite Trigon": "45",
-                        "Excited Photonic Matter": "75"
+                        "F金三角": "45",
+                        "激发态光子物质": "75"
                     }
                 }
             ]
@@ -3383,7 +3412,7 @@ let game_data = {
                         "空瓶": "40"
                     },
                     "sourceList": {
-                        "Packaged Ionized Fuel": "40"
+                        "桶装电离燃油": "40"
                     }
                 },
                 {
@@ -3639,7 +3668,7 @@ let game_data = {
                     },
                     "sourceList": {
                         "桶装火箭燃料": "240",
-                        "Dark Matter Crystal": "80"
+                        "暗物质晶体": "80"
                     }
                 },
                 {
@@ -3771,7 +3800,7 @@ let game_data = {
                 "sourceList": {"重渣油": "60"}
             }]
         },
-        "Packaged Ionized Fuel": {
+        "桶装电离燃油": {
             "useIndex": 0,
             "data": [
                 {
@@ -3780,7 +3809,7 @@ let game_data = {
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
-                        "Packaged Ionized Fuel": "40"
+                        "桶装电离燃油": "40"
                     },
                     "sourceList": {
                         "Ionized Fuel": "80",
@@ -4349,8 +4378,8 @@ let game_data = {
                     },
                     "sourceList": {
                         "钚废料": "10",
-                        "Singularity Cell": "10",
-                        "Dark Matter Residue": "200"
+                        "奇点电池": "10",
+                        "暗物质残渣": "200"
                     }
                 }
             ]
@@ -4365,13 +4394,13 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "Ficsonium Fuel Rod": "2.5",
-                        "Dark Matter Residue": "50"
+                        "暗物质残渣": "50"
                     },
                     "sourceList": {
                         "Ficsonium": "5",
                         "电磁控制杆": "5",
-                        "Ficsite Trigon": "100",
-                        "Excited Photonic Matter": "50"
+                        "F金三角": "100",
+                        "激发态光子物质": "50"
                     }
                 }
             ]
@@ -4432,13 +4461,13 @@ let game_data = {
                     "equIndex": 0,
                     "productList": {
                         "能量碎片": "5",
-                        "Dark Matter Residue": "60"
+                        "暗物质残渣": "60"
                     },
                     "sourceList": {
-                        "Time Crystal": "10",
-                        "Dark Matter Crystal": "10",
+                        "时间水晶": "10",
+                        "暗物质晶体": "10",
                         "石英晶体": "60",
-                        "Excited Photonic Matter": "60"
+                        "激发态光子物质": "60"
                     }
                 },
                 {
@@ -4692,7 +4721,7 @@ let game_data = {
                 }
             ]
         },
-        "Biochemical Sculptor": {
+        "生化塑造器": {
             "useIndex": 0,
             "data": [
                 {
@@ -4701,17 +4730,17 @@ let game_data = {
                     "equType": "搅拌器",
                     "equIndex": 0,
                     "productList": {
-                        "Biochemical Sculptor": "2"
+                        "生化塑造器": "2"
                     },
                     "sourceList": {
                         "组装编导系统": "0.5",
-                        "Ficsite Trigon": "40",
+                        "F金三角": "40",
                         "水": "10"
                     }
                 }
             ]
         },
-        "AI Expansion Server": {
+        "AI拓展伺服器": {
             "useIndex": 0,
             "data": [
                 {
@@ -4720,14 +4749,14 @@ let game_data = {
                     "equType": "量子编码器",
                     "equIndex": 0,
                     "productList": {
-                        "AI Expansion Server": "4",
-                        "Dark Matter Residue": "100"
+                        "AI拓展伺服器": "4",
+                        "暗物质残渣": "100"
                     },
                     "sourceList": {
                         "磁场发生器": "4",
-                        "Neural-Quantum Processor": "4",
+                        "神经量子处理器": "4",
                         "叠加振荡器": "4",
-                        "Excited Photonic Matter": "100"
+                        "激发态光子物质": "100"
                     }
                 }
             ]
