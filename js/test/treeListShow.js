@@ -33,8 +33,8 @@ function setLiContent(liNode, data) {
         let needDeviceNumber = 0;
         // 根据设备类型，获取设备
         const equ = getDevice(data.equType);
-        // 根据物品的rate，用总数量/（一台设备制造的产物数量*rate），得到需要制造的次数
-        needDeviceNumber = Math.ceil((data.number / (data.oneEquProductNumber * equ.rate)) * 100) / 100;
+        // 根据物品的accelerate，用总数量/（一台设备制造的产物数量*accelerateIndex），得到需要制造的次数
+        needDeviceNumber = Math.ceil((data.number / (data.oneEquProductNumber * equ.rate * (1 + deviceAccelerateList[data.accelerateIndex]))) * 100) / 100;
         const textNode = document.createTextNode(
             `${data.number}*${data.name}（${needDeviceNumber}*${equ.name}）`);
         liNode.appendChild(textNode);
@@ -103,6 +103,33 @@ function setLiContent(liNode, data) {
         });
         liNode.appendChild(select);
     }
+
+    // 添加加速select
+    const accelerateSelect = document.createElement('select');
+    accelerateSelect.style.marginLeft = '16px';
+    // 创建option
+    for (let i = 0; i < deviceAccelerateList.length; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.innerHTML = "加速: " + deviceAccelerateList[i];
+        option.id = data.path + "-加速_" + i;
+        accelerateSelect.appendChild(option);
+    }
+    accelerateSelect.value = data.accelerateIndex;
+    accelerateSelect.addEventListener('change', () => {
+        const selectId = accelerateSelect.options[accelerateSelect.selectedIndex].id;
+        const selectIdArr = selectId.split("_");
+        const index = selectIdArr[1];
+        data.accelerateIndex = index;
+        // // 配方中一台设备制造的产物数量要根据加速倍数进行调整
+        // data.oneEquProductNumber = data.oneEquProductNumber * (1 + accelerateIndex);
+
+        liNode.innerHTML = "";
+        setLiContent(liNode, data);
+        // 重新进行结果统计
+        treeTotal();
+    });
+    liNode.appendChild(accelerateSelect);
 
     // 给liNode添加一个忽略按钮，点击后将data中的isCalculator设置为false
     const ignoreButton = document.createElement('button');

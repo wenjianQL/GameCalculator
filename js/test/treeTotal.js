@@ -36,8 +36,7 @@ function treeTotal() {
     countDevice(treeRootNode);
     showDeviceResult();
     
-    // 统计电量
-    countElectricity();
+    // 电量显示
     showElectricityResult();
 
     // 统计多余产物
@@ -128,13 +127,18 @@ function countDevice(treeNode) {
 
     // 获取equType下的设备（幸福工厂设备类型下只有一个设备，因此获取第一个）
     const device = getDeviceByIndex(treeNode.equType, 0);
+    // 加速倍率
+    const accelerate = deviceAccelerateList[treeNode.accelerateIndex];
     // 根据number/oneEquProductNumber，计算设备数量
-    let equNumber = Math.ceil(treeNode.number / (treeNode.oneEquProductNumber * device.rate));
+    let equNumber = Math.ceil(treeNode.number / (treeNode.oneEquProductNumber * device.rate * (1 + accelerate)));
     if (device.name in treeTotalList["设备"]) {
         treeTotalList["设备"][device.name] = Math.ceil(treeTotalList["设备"][device.name] + equNumber);
     } else {
         treeTotalList["设备"][device.name] = Math.ceil(equNumber);
     }
+
+    // 电量统计
+    treeTotalList["电量"] = Math.ceil(treeTotalList["电量"] + (device.energy * (1+accelerate)) * equNumber);
     
     // 遍历treeNode的childNodeList
     for (let i = 0; i < treeNode.childNodeList.length; i++) {
@@ -180,21 +184,6 @@ function showDeviceResult() {
             li.appendChild(document.createTextNode(text));
         }
         deviceList.appendChild(li);
-    }
-}
-
-/**
- * 统计电量
- */
-function countElectricity() {
-    // 遍历treeTotalList中的设备
-    for (let key in treeTotalList["设备"]) {
-        // 获取设备电量
-        const electricity = getDeviceElectricity(key);
-        // 设备数量
-        const equNumber = treeTotalList["设备"][key];
-        // 将电量累加到treeTotalList["电量"]
-        treeTotalList["电量"] = Math.ceil(treeTotalList["电量"] + electricity * equNumber);
     }
 }
 

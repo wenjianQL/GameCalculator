@@ -88,7 +88,7 @@ function getCalculateResult(path, name, number) {
         "childNodeList": [], // 原料节点列表，用于存储下一级物品的制造结果
         "isCalculator": true, // 是否是计算
         "isExpand": true, // 是否展开
-        "rate": 1, // 加速比例
+        "accelerateIndex": 0, // 加速比例
         "increaseRate": 1 // 增产比例
     };
 
@@ -141,4 +141,4 @@ function getCalculateResult(path, name, number) {
 }
 
 
-calculateItem("弹道跃迁引擎", 1)
+calculateItem("加强铁板", 10)

@@ -8,6 +8,9 @@
 // 设备类型中默认选中的位置
 let deviceIndexMap = {};
 
+// 加速选项：0、50%、100%、150%
+let deviceAccelerateList = [0, 0.5, 1, 1.5];
+
 /**
  * 获取设备类型对应的数据列表
  */
