@@ -14,6 +14,7 @@ function getRecipeList(name) {
  */
 function getRecipe(name) {
     // 如果配方中没有name，则返回null
+    console.log("getRecipe name = "+name);
     if (!recipeData[name]) {
         return null
     }
@@ -31,6 +32,11 @@ function getRecipe(name) {
  */
 function getRecipeByIndex(name, index) {
     // 防止index越界
+    console.log("getRecipeByIndex name = "+name);
+    if (!recipeData[name]) {
+        return null
+    }
+    
     if (recipeData[name].length === 0) {
         return null
     }

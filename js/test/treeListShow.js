@@ -15,24 +15,20 @@ function renderTree(ulNode, data) {
     // 根据物品名字和数量，在ulNode中添加对应的li进行结果显示
     const currentNode = document.createElement('li');
 
-    let needDeviceNumber = 0;
-    // 根据设备类型，获取设备
-    const equ = getDevice(data.equType);
     // 如果childNodeList不为空，那么计算需要的设备数量
     if (data.childNodeList.length !== 0) {
+        let needDeviceNumber = 0;
+        // 根据设备类型，获取设备
+        const equ = getDevice(data.equType);
         // 根据物品的rate，用总数量/（一台设备制造的产物数量*rate），得到需要制造的次数
         needDeviceNumber = Math.ceil((data.number / (data.oneEquProductNumber * equ.rate)) * 100) / 100;
+        const textNode = document.createTextNode(
+            `${data.number}*${data.name}（${needDeviceNumber}*${equ.name}）`);
+        currentNode.appendChild(textNode);
+    } else {
+        const textNode = document.createTextNode(`${data.number}*${data.name}`);
+        currentNode.appendChild(textNode);
     }
-
-    // 创建文本节点和按钮
-    const textNode = document.createTextNode(
-        needDeviceNumber === 0
-            ? `${data.number}*${data.name}`
-            : `${data.number}*${data.name}（${needDeviceNumber}*${equ.name}）`
-    );
-
-    // 将文本节点和按钮添加到li元素中
-    currentNode.appendChild(textNode);
 
     // TODO 忽略按钮
     // const button = document.createElement('button');

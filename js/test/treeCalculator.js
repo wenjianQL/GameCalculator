@@ -72,6 +72,7 @@ function getCalculateResult(path, name, number) {
         currentPath += "-";
     }
     currentPath += name;
+    console.log("getCalculateResult currentPath = "+currentPath);
 
     // 初始化制造结果对象
     let result = {
@@ -137,4 +138,4 @@ function getCalculateResult(path, name, number) {
 }
 
 
-calculateItem("铁板", 60)
+calculateItem("弹道跃迁引擎", 1)
