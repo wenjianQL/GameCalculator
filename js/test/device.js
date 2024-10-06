@@ -49,3 +49,18 @@ function getDeviceByIndex(deviceName, index) {
 function setDefaultDevice(deviceName, index) {
     deviceIndexMap[deviceName] = index
 }
+
+/**
+ * 获取设备电量
+ */
+function getDeviceElectricity(deviceName) {
+    // 遍历deviceData，在key对应的value列表中，找到name和deviceName相同的设备，返回其energy
+    for (let key in deviceData) {
+        for (let i = 0; i < deviceData[key].length; i++) {
+            if (deviceData[key][i].name === deviceName) {
+                return deviceData[key][i].energy
+            }
+        }
+    }
+    return 0
+}

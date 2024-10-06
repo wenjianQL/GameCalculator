@@ -37,6 +37,8 @@ function treeTotal() {
     showDeviceResult();
     
     // 统计电量
+    countElectricity();
+    showElectricityResult();
 
     // 统计产物
 }
@@ -177,4 +179,55 @@ function showDeviceResult() {
         }
         deviceList.appendChild(li);
     }
+}
+
+/**
+ * 统计电量
+ */
+function countElectricity() {
+    // 遍历treeTotalList中的设备
+    for (let key in treeTotalList["设备"]) {
+        // 获取设备电量
+        const electricity = getDeviceElectricity(key);
+        // 设备数量
+        const equNumber = treeTotalList["设备"][key];
+        // 将电量累加到treeTotalList["电量"]
+        treeTotalList["电量"] = Math.ceil(treeTotalList["电量"] + electricity * equNumber);
+    }
+}
+
+/**
+ * 显示“统计电量”结果
+ */
+function showElectricityResult() {
+    // 找到id为totalList的ul
+    let electricityList = document.getElementById("electricityList");
+    // null判断
+    if (!electricityList) {
+        return;
+    }
+    // 先清空electricityList
+    electricityList.innerHTML = "";
+    // 进行电量变化对比
+    let text = treeTotalList["电量"].toLocaleString() + " MW";
+    let li = document.createElement("li");
+    
+    if (oldTreeTotalList["电量"]) {
+        let diff = treeTotalList["电量"] - oldTreeTotalList["电量"];
+        console.log("diff：" + diff);
+        if (diff !== 0) {
+            let span = document.createElement("span");
+            span.style.color = diff < 0 ? "green" : "red";
+            span.style.fontWeight = "bold";
+            span.textContent = diff > 0 ? " (+" + diff.toLocaleString() + ")" : " (" + diff.toLocaleString() + ")";
+            li.appendChild(document.createTextNode(text));
+            li.appendChild(span);
+        } else {
+            li.appendChild(document.createTextNode(text));
+        }
+    } else {
+        li.appendChild(document.createTextNode(text));
+    }
+    
+    electricityList.appendChild(li);
 }
