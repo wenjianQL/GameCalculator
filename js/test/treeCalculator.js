@@ -85,6 +85,7 @@ function getCalculateResult(path, name, number) {
         "otherProductList": {}, // 多余产物及数量
         "childNodeList": [], // 原料节点列表，用于存储下一级物品的制造结果
         "isCalculator": true, // 是否是计算
+        "isExpand": true, // 是否展开
         "rate": 1, // 加速比例
         "increaseRate": 1 // 增产比例
     };

@@ -98,7 +98,19 @@ function renderTree(ulNode, data) {
         // 创建一个名字childUlNode的ul
         const childUlNode = document.createElement('ul');
         childUlNode.id = data.path;
+        childUlNode.style.display = data.isExpand ? 'block' : 'none';
         currentNode.appendChild(childUlNode);
+
+        const toggleButton = document.createElement('span');
+        toggleButton.textContent = data.isExpand ? '▼' : '►';
+        toggleButton.style.cursor = 'pointer';
+        toggleButton.style.marginRight = '5px';
+        toggleButton.addEventListener('click', () => {
+            data.isExpand = !data.isExpand;
+            childUlNode.style.display = data.isExpand ? 'block' : 'none';
+            toggleButton.textContent = data.isExpand ? '▼' : '►';
+        });
+        currentNode.insertBefore(toggleButton, currentNode.firstChild);
 
         // 如果sourceList不为空
         if (data.childNodeList) {
