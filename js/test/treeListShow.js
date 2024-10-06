@@ -9,7 +9,10 @@ function renderTree(ulNode, data) {
 
     // 根据物品名字和数量，在ulNode中添加对应的li进行结果显示
     const currentNode = document.createElement('li');
-
+    // 设置高度为50px
+    // currentNode.style.height = '16px';
+    // 文字垂直居中
+    // currentNode.style.lineHeight = '50px';
     // 设置li节点内容
     setLiContent(currentNode, data);
 
@@ -22,6 +25,10 @@ function renderTree(ulNode, data) {
  * 给li节点添加：物品名称和数量、设备数量、配方选择select
  */
 function setLiContent(liNode, data) {
+    // 创建图片元素
+    const img = createImageElement(data.name);
+    liNode.appendChild(img);
+
     if (data.childNodeList.length !== 0) {
         let needDeviceNumber = 0;
         // 根据设备类型，获取设备
@@ -40,6 +47,8 @@ function setLiContent(liNode, data) {
     if (data.childNodeList.length !== 0) {
         // 添加配方选择select
         const select = document.createElement('select');
+        // margin left 16px
+        select.style.marginLeft = '16px';
         // 获取物品对应的recipeList
         const recipeList = getRecipeList(data.name);
         // 遍历recipeList，将recipeList中的数据添加到select中
@@ -107,9 +116,22 @@ function setLiContent(liNode, data) {
             for (let key in data.otherProductList) {
                 const otherNumber = data.otherProductList[key];
                 const li = document.createElement('li');
-                li.textContent = `多余产物：${key} x ${otherNumber}`;
+                // 创建图片元素
+                const img = createImageElement(key);
+                const textNode = document.createTextNode(`多余产物：${otherNumber}*${key}`);
+                li.appendChild(textNode);
+                li.appendChild(img);
                 childUlNode.appendChild(li);
             }
         }
     }
+}
+
+function createImageElement(key) {
+    const img = document.createElement('img');
+    img.src = imgPath + "/" + key + ".jpg";
+    img.style.width = '40px';
+    img.style.height = '40px';
+    img.style.marginRight = '4px';
+    return img;
 }

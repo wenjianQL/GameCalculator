@@ -1,4 +1,12 @@
 /**
+ * 图片路径
+ * 这是当前文件所在的路径：js\test\data.js
+ * 图片文件夹所在的路径：img\game\satisfactory
+ * 所以图片路径为：../../img/game/satisfactory
+ */
+const imgPath = "../../img/game/satisfactory";
+
+/**
  * 设备数据
  */
 const deviceData = {
