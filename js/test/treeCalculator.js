@@ -141,4 +141,4 @@ function getCalculateResult(path, name, number) {
 }
 
 
-calculateItem("加强铁板", 10)
+// calculateItem("加强铁板", 10)
