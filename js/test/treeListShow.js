@@ -178,6 +178,16 @@ function setLiContent(liNode, data) {
     });
     liNode.appendChild(ignoreButton);
 
+    const markButton = document.createElement('a');
+    markButton.style.marginLeft = '16px';
+    markButton.classList.add('btn', 'btn-white', 'btn-bitbucket');
+    markButton.innerHTML = '新建页面';
+    // 打开一个新页面，并在域名后添加data.name=data.number
+    markButton.addEventListener('click', () => {
+        window.open(`satisfactory_tree.html?name=${data.name}&number=${data.number}`);
+    });
+    liNode.appendChild(markButton);
+
     // 如果otherProductList不为空或sourceList不为空
     if (data.otherProductList || data.childNodeList) {
         // 创建一个名字childUlNode的ul

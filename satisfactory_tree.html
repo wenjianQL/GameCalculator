@@ -24,6 +24,17 @@
     <script src="js/test/goods.js"></script>
     <script src="js/test/treeTotal.js"></script>
     <script src="js/test/commonMethod.js"></script>
+
+    <!--  友盟统计  -->
+    <script>
+        var _czc = _czc || [];
+        (function () {
+            var um = document.createElement("script");
+            um.src = "https://v1.cnzz.com/z.js?id=1281381569&async=1";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(um, s);
+        })();
+    </script>
 </head>
 <body>
 <div id="wrapper">
@@ -35,7 +46,6 @@
                         <img alt="image" class="w-50 h-50" src="img/logo/SatisFactory.webp"/>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="block m-t-xs font-bold">幸福工厂</span>
-                            <!--                                <b class="caret"></b>-->
                             </span>
                         </a>
                     </div>
@@ -43,9 +53,13 @@
                         <img src="img/logo/logo.png" style="width: 80px; height: 80px; scale: max(1,1);" alt="logo">
                     </div>
                 </li>
-                <li class="active"><a href="test.html" target="_blank"
-                                      onclick="_czc.push(['_trackEvent', '页面', '点击', '幸福工厂-量化计算器']);"><span
+                <li><a href="satisfactory.html" target="_blank"
+                       onclick="_czc.push(['_trackEvent', '侧拉栏', '点击', '幸福工厂-量化计算器']);"><span
                         class="nav-label">量化计算器</span></a></li>
+
+                <li class="active"><a href="satisfactory_tree.html" target="_blank"
+                                      onclick="_czc.push(['_trackEvent', '侧拉栏', '点击', '幸福工厂-树形计算']);"><span
+                        class="nav-label">新-树形计算</span></a></li>
             </ul>
 
         </div>
@@ -180,22 +194,11 @@
 <!-- Custom and plugin javascript -->
 <script src="js/inspinia.js"></script>
 <script src="js/plugins/pace/pace.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#deptTree').jstree({
-            'core': {
-                'data': []
-            },
-            // "plugins" : [ "checkbox" ],
-            "checkbox": {
-                "keep_selected_style": false,
-                "three_state": true
-            }
-        });
-    });
-</script>
-
 <script src="js/test/treeCalculator.js"></script>
+<script>
+    _czc.push(['_trackEvent', '页面', '进入', '幸福工厂-树形计算']);
+    setNameAndNumber();
+</script>
 
 </body>
 </html>
