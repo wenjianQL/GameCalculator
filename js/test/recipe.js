@@ -32,11 +32,10 @@ function getRecipe(name) {
  */
 function getRecipeByIndex(name, index) {
     // 防止index越界
-    console.log("getRecipeByIndex name = "+name);
     if (!recipeData[name]) {
         return null
     }
-    
+
     if (recipeData[name].length === 0) {
         return null
     }

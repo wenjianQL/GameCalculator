@@ -22,6 +22,7 @@
     <script src="js/test/recipe.js"></script>
     <script src="js/test/treeListShow.js"></script>
     <script src="js/test/goods.js"></script>
+    <script src="js/test/treeTotal.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -67,82 +68,45 @@
             <div class="wrapper wrapper-content">
                 <div class="row">
                     <div class="col-lg-12">
+                        <!--统计结果显示-->
+                        <div class="ibox" id="calResult">
+                            <div class="ibox-title">
+                                <h5>统计结果</h5>
+                            </div>
+                            <div class="ibox-content" style="display: flex; flex-wrap: wrap;">
+                                <div style="flex: 1;">
+                                    <label id="text_total_material">原材料合计：</label>
+                                    <ul id="sourceList">
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <label id="text_total_equipment">设备合计：</label>
+                                    <ul id="totalList">
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <label id="text_total_energy">电量：</label>
+                                    <ul id="energyList">
+                                    </ul>
+                                </div>
+                                <div style="flex: 1;">
+                                    <label id="text_total_product">产物：</label>
+                                    <ul id="surplusList">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
                         <!--计算结果显示-->
                         <div class="ibox" id="calResult">
                             <div class="ibox-title">
                                 <h5 id="text_calculate_result">计算结果</h5>
                             </div>
                             <div class="ibox-content">
-                                <div class="panel blank-panel">
-                                    <div class="panel-heading" id="calResultHead">
-                                        <div class="panel-options">
-                                            <ul class="nav nav-tabs">
-                                                <li>
-                                                    <a class="nav-link active" href="#tabTreeList"
-                                                       data-toggle="tab" id="text_tree_list_one">
-                                                        树形列表1
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="nav-link" href="#tabLevelTable" data-toggle="tab"
-                                                       id="text_level_table">
-                                                        层次表格
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="nav-link" href="#tabJsTree" data-toggle="tab"
-                                                       id="text_tree_list_two">
-                                                        树形列表2
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="panel-body">
-                                        <div class="tab-content">
-                                            <div class="tab-pane active" id="tabTreeList">
-                                                <div class="feed-activity-list">
-                                                    <ul class="tree" id="ul-0">
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane" id="tabLevelTable">
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                    <tr>
-                                                        <th id="text_table_level">层级</th>
-                                                        <th id="text_table_goods">物品</th>
-                                                        <th id="text_table_goods_number">物品数量</th>
-                                                        <th id="text_table_devices">所需设备</th>
-                                                        <th id="text_table_devices_number">设备数量</th>
-                                                        <th id="text_table_recipe">配方</th>
-                                                        <th id="text_table_other">多余产物</th>
-                                                        <!--                                                            <th id="text_table_is_calculate">是否计算</th>-->
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody id="material_table">
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="tab-pane" id="tabJsTree">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <button onclick="zoomIn()" id="text_big">放大
-                                                        </button>
-                                                        <button onclick="zoomOut()" id="text_small">缩小
-                                                        </button>
-    
-                                                        <div style="overflow: auto;">
-                                                            <div id="deptTree"
-                                                                 style="transform-origin: top left; margin-top: 20px;">
-                                                                <!-- deptTree 内容 -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="feed-activity-list">
+                                    <ul class="tree" id="ul-0">
+                                    </ul>
                                 </div>
                             </div>
                         </div>

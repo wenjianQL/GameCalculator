@@ -52,6 +52,9 @@ function calculateItem(name, number) {
     
     // 渲染计算结果树
     renderTree(treeContainer, treeRootNode);
+
+    // 进行统计
+    treeTotal();
 }
 
 
@@ -72,7 +75,6 @@ function getCalculateResult(path, name, number) {
         currentPath += "-";
     }
     currentPath += name;
-    console.log("getCalculateResult currentPath = "+currentPath);
 
     // 初始化制造结果对象
     let result = {

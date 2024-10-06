@@ -54,8 +54,11 @@ function setLiContent(liNode, data) {
             data.isCalculator = true;
             liNode.innerHTML = "";
             setLiContent(liNode, data);
+            // 重新进行结果统计
+            treeTotal();
         });
         liNode.appendChild(recoverButton);
+        
         return;
     }
 
@@ -95,6 +98,8 @@ function setLiContent(liNode, data) {
 
             liNode.innerHTML = "";
             setLiContent(liNode, data);
+            // 重新进行结果统计
+            treeTotal();
         });
         liNode.appendChild(select);
     }
@@ -108,6 +113,9 @@ function setLiContent(liNode, data) {
         data.isCalculator = false;
         liNode.innerHTML = "";
         setLiContent(liNode, data);
+
+        // 重新进行结果统计
+        treeTotal();
     });
     liNode.appendChild(ignoreButton);
 
