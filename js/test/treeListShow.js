@@ -43,6 +43,22 @@ function setLiContent(liNode, data) {
         liNode.appendChild(textNode);
     }
 
+    // 如果data中的isCalculator是false，那么给liNode中的文字添加一个删除线的效果
+    if (!data.isCalculator) {
+        // 给liNode添加一个恢复按钮，点击后将data中的isCalculator设置为true
+        const recoverButton = document.createElement('button');
+        recoverButton.classList.add('btn', 'btn-outline', 'btn-danger');
+        recoverButton.textContent = '恢复';
+        recoverButton.style.marginLeft = '16px';
+        recoverButton.addEventListener('click', () => {
+            data.isCalculator = true;
+            liNode.innerHTML = "";
+            setLiContent(liNode, data);
+        });
+        liNode.appendChild(recoverButton);
+        return;
+    }
+
     // 如果data中的childNodeList不为空
     if (data.childNodeList.length !== 0) {
         // 添加配方选择select
@@ -82,6 +98,18 @@ function setLiContent(liNode, data) {
         });
         liNode.appendChild(select);
     }
+
+    // 给liNode添加一个忽略按钮，点击后将data中的isCalculator设置为false
+    const ignoreButton = document.createElement('button');
+    ignoreButton.classList.add('btn', 'btn-outline', 'btn-default');
+    ignoreButton.textContent = '忽略';
+    ignoreButton.style.marginLeft = '16px';
+    ignoreButton.addEventListener('click', () => {
+        data.isCalculator = false;
+        liNode.innerHTML = "";
+        setLiContent(liNode, data);
+    });
+    liNode.appendChild(ignoreButton);
 
     // 如果otherProductList不为空或sourceList不为空
     if (data.otherProductList || data.childNodeList) {
