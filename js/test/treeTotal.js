@@ -91,7 +91,6 @@ function showMaterialResult() {
         
         if (oldTreeTotalList["原材料"] && key in oldTreeTotalList["原材料"]) {
             let diff = treeTotalList["原材料"][key] - oldTreeTotalList["原材料"][key];
-            console.log("diff：" + key + ": " + diff);
             if (diff !== 0) {
                 let span = document.createElement("span");
                 span.style.color = diff < 0 ? "green" : "red";
@@ -168,7 +167,6 @@ function showDeviceResult() {
 
         if (oldTreeTotalList["设备"] && key in oldTreeTotalList["设备"]) {
             let diff = treeTotalList["设备"][key] - oldTreeTotalList["设备"][key];
-            console.log("diff：" + key + ": " + diff);
             if (diff !== 0) {
                 let span = document.createElement("span");
                 span.style.color = diff < 0 ? "green" : "red";
@@ -205,7 +203,6 @@ function showElectricityResult() {
     
     if (oldTreeTotalList["电量"]) {
         let diff = treeTotalList["电量"] - oldTreeTotalList["电量"];
-        console.log("diff：" + diff);
         if (diff !== 0) {
             let span = document.createElement("span");
             span.style.color = diff < 0 ? "green" : "red";
@@ -234,7 +231,6 @@ function countExcessProduct(treeNode) {
 
     // 如果otherProductList不为空，则进行统计
     if (treeNode.otherProductList && Object.keys(treeNode.otherProductList).length > 0) {
-        console.log(treeNode.otherProductList);
         // 遍历otherProductList
         for (let productName in treeNode.otherProductList) {
             // 获取产物数量
@@ -275,7 +271,6 @@ function showExcessProductResult() {
         let text = key + "：" + treeTotalList["多余产物"][key];
         if (oldTreeTotalList["多余产物"] && key in oldTreeTotalList["多余产物"]) {
             let diff = treeTotalList["多余产物"][key] - oldTreeTotalList["多余产物"][key];
-            console.log("diff：" + key + ": " + diff);
             if (diff !== 0) {
                 let span = document.createElement("span");
                 span.style.color = diff < 0 ? "green" : "red";

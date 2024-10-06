@@ -35,11 +35,44 @@ function setLiContent(liNode, data) {
         const equ = getDevice(data.equType);
         // 根据物品的accelerate，用总数量/（一台设备制造的产物数量*accelerateIndex），得到需要制造的次数
         needDeviceNumber = Math.ceil((data.number / (data.oneEquProductNumber * equ.rate * (1 + deviceAccelerateList[data.accelerateIndex]))) * 100) / 100;
+        
+        const inputNumber = document.createElement('input');
+        inputNumber.type = 'number';
+        inputNumber.value = data.number;
+        inputNumber.style.width = '60px';
+        inputNumber.addEventListener('change', (e) => {
+            const newData = getCalculateResult(data.path, data.name, e.target.value);
+            data.number = newData.number;
+            data.otherProductList = newData.otherProductList;
+            data.childNodeList = newData.childNodeList;
+            liNode.innerHTML = "";
+            setLiContent(liNode, data);
+            // 重新进行结果统计
+            treeTotal();
+        });
+        
+        liNode.appendChild(inputNumber);
         const textNode = document.createTextNode(
-            `${data.number}*${data.name}（${needDeviceNumber}*${equ.name}）`);
+            `*${data.name}（${needDeviceNumber}*${equ.name}）`);
         liNode.appendChild(textNode);
     } else {
-        const textNode = document.createTextNode(`${data.number}*${data.name}`);
+        const inputNumber = document.createElement('input');
+        inputNumber.type = 'number';
+        inputNumber.value = data.number;
+        inputNumber.style.width = '60px';
+        inputNumber.addEventListener('change', (e) => {
+            const newData = getCalculateResult(data.path, data.name, e.target.value);
+            data.number = newData.number;
+            data.otherProductList = newData.otherProductList;
+            data.childNodeList = newData.childNodeList;
+            liNode.innerHTML = "";
+            setLiContent(liNode, data);
+            // 重新进行结果统计
+            treeTotal();
+        });
+        
+        liNode.appendChild(inputNumber);
+        const textNode = document.createTextNode(`*${data.name}`);
         liNode.appendChild(textNode);
     }
 
