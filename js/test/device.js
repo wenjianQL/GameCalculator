@@ -8,8 +8,11 @@
 // 设备类型中默认选中的位置
 let deviceIndexMap = {};
 
-// 加速选项：0、50%、100%、150%
+// 加速选项：0、0.5、1、1.5
 let deviceAccelerateList = [0, 0.5, 1, 1.5];
+
+// 增产选项：0、0.25、0.5、0.75、1 （增产计算逻辑：新的number = number / (1 + increase)）
+let deviceIncreaseList = [0, 0.25, 0.5, 0.75, 1];
 
 /**
  * 获取设备类型对应的数据列表

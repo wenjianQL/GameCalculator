@@ -88,8 +88,8 @@ function getCalculateResult(path, name, number) {
         "childNodeList": [], // 原料节点列表，用于存储下一级物品的制造结果
         "isCalculator": true, // 是否是计算
         "isExpand": true, // 是否展开
-        "accelerateIndex": 0, // 加速比例
-        "increaseRate": 1 // 增产比例
+        "accelerateIndex": 0, // 加速index
+        "increaseIndex": 0 // 增产index
     };
 
     // 如果treeNodeRecipeIndexMap中存在currentPath，则直接返回

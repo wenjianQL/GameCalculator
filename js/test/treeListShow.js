@@ -131,6 +131,38 @@ function setLiContent(liNode, data) {
     });
     liNode.appendChild(accelerateSelect);
 
+    // 添加增产select
+    const increaseSelect = document.createElement('select');
+    increaseSelect.style.marginLeft = '16px';
+    // 创建option
+    for (let i = 0; i < deviceIncreaseList.length; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.innerHTML = "增产: " + deviceIncreaseList[i];
+        option.id = data.path + "-增产_" + i;
+        increaseSelect.appendChild(option);
+    }
+    increaseSelect.value = data.increaseIndex;
+    increaseSelect.addEventListener('change', () => {
+        const selectId = increaseSelect.options[increaseSelect.selectedIndex].id;
+        const selectIdArr = selectId.split("-增产_");
+        const path = selectIdArr[0];
+        const index = selectIdArr[1];
+        data.increaseIndex = index;
+
+        // 获取当前节点的新计算结果
+        const newData = getCalculateResult(path.substring(0, path.lastIndexOf('-')), data.name, data.number / (1 + deviceIncreaseList[index]));
+        // 数据更新
+        data.childNodeList = newData.childNodeList;
+        // // 增产变化处理逻辑：原料数量减少
+        // increaseChange(data, deviceIncreaseList[index]);
+        liNode.innerHTML = "";
+        setLiContent(liNode, data);
+        // 重新进行结果统计
+        treeTotal();
+    });
+    liNode.appendChild(increaseSelect);
+
     // 给liNode添加一个忽略按钮，点击后将data中的isCalculator设置为false
     const ignoreButton = document.createElement('button');
     ignoreButton.classList.add('btn', 'btn-outline', 'btn-default');
@@ -197,4 +229,14 @@ function createImageElement(key) {
     img.style.height = '40px';
     img.style.marginRight = '4px';
     return img;
+}
+
+/**
+ * 增产变化处理
+ * 传入data和增产倍率，对data中的childNodeList内的数据进行增产变化处理，并递归处理childNodeList内的数据。
+ */
+function increaseChange(data, increase) {
+    for (let key in data.childNodeList) {
+        data.childNodeList[key].number = data.childNodeList[key].number / (1 + increase);
+    }
 }
