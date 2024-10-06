@@ -13,12 +13,7 @@ let treeTotalList = {
  * 旧的统计结果
  * 用于进行变化对比
  */
-let oldTreeTotalList = {
-    "原材料": {},
-    "设备": {},
-    "电量": 0,
-    "产物": {}
-}
+let oldTreeTotalList = {}
 
 /**
  * 进行统计
@@ -32,11 +27,15 @@ function treeTotal() {
         "电量": 0,
         "产物": {}
     };
+    
     // 统计原材料
     countMaterial(treeRootNode);
     showMaterialResult();
-    // 统计设备
 
+    // 统计设备
+    countDevice(treeRootNode);
+    showDeviceResult();
+    
     // 统计电量
 
     // 统计产物
@@ -49,7 +48,6 @@ function countMaterial(treeNode) {
 
     // 如果isCalculator为false，则不进行统计
     if (!treeNode.isCalculator) {
-        console.log(treeNode.name + "treeNode.isCalculator：" + treeNode.isCalculator);
         return;
     }
 
@@ -113,5 +111,70 @@ function showMaterialResult() {
 /**
  * 统计设备
  */
-function countDevice() {
+function countDevice(treeNode) {
+    // 如果isCalculator为false，则不进行统计
+    if (!treeNode.isCalculator) {
+        return;
+    }
+
+    // childNodeList为空，则不进行统计
+    if (!treeNode.childNodeList || Object.keys(treeNode.childNodeList).length === 0) {
+        return;
+    }
+
+    // 获取equType下的设备（幸福工厂设备类型下只有一个设备，因此获取第一个）
+    const device = getDeviceByIndex(treeNode.equType, 0);
+    // 根据number/oneEquProductNumber，计算设备数量
+    let equNumber = Math.ceil(treeNode.number / (treeNode.oneEquProductNumber * device.rate));
+    if (device.name in treeTotalList["设备"]) {
+        treeTotalList["设备"][device.name] = Math.ceil(treeTotalList["设备"][device.name] + equNumber);
+    } else {
+        treeTotalList["设备"][device.name] = Math.ceil(equNumber);
+    }
+    
+    // 遍历treeNode的childNodeList
+    for (let i = 0; i < treeNode.childNodeList.length; i++) {
+        countDevice(treeNode.childNodeList[i]);
+    }
+}
+
+/**
+ * 显示“统计设备”结果
+ * 
+ */
+function showDeviceResult() {
+    // 找到id为totalList的ul
+    let deviceList = document.getElementById("deviceList");
+    // null判断
+    if (!deviceList) {
+        return;
+    }
+    // 先清空totalList
+    deviceList.innerHTML = "";
+    // 参考上面的原材料显示，也要进行变化对比
+    for (let key in treeTotalList["设备"]) {
+        let li = document.createElement("li");
+        let img = createImageElement(key);
+        li.appendChild(img);
+        let text = key + "：" + treeTotalList["设备"][key];
+
+        if (oldTreeTotalList["设备"] && key in oldTreeTotalList["设备"]) {
+            let diff = treeTotalList["设备"][key] - oldTreeTotalList["设备"][key];
+            console.log("diff：" + key + ": " + diff);
+            if (diff !== 0) {
+                let span = document.createElement("span");
+                span.style.color = diff < 0 ? "green" : "red";
+                // 加粗
+                span.style.fontWeight = "bold";
+                span.textContent = diff > 0 ? " (+" + diff + ")" : " (" + diff + ")";
+                li.appendChild(document.createTextNode(text));
+                li.appendChild(span);
+            } else {
+                li.appendChild(document.createTextNode(text));
+            }
+        } else {
+            li.appendChild(document.createTextNode(text));
+        }
+        deviceList.appendChild(li);
+    }
 }

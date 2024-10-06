@@ -39,6 +39,7 @@ function getFirstDevice(deviceName) {
  * 根据设备类型和位置，获取设备
  */
 function getDeviceByIndex(deviceName, index) {
+    console.log("deviceName：" + deviceName + "，index：" + index);
     return deviceData[deviceName][index]
 }
 
