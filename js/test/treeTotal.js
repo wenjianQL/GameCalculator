@@ -6,7 +6,7 @@ let treeTotalList = {
     "原材料": {},
     "设备": {},
     "电量": 0,
-    "产物": {}
+    "多余产物": {}
 }
 
 /**
@@ -25,7 +25,7 @@ function treeTotal() {
         "原材料": {},
         "设备": {},
         "电量": 0,
-        "产物": {}
+        "多余产物": {}
     };
     
     // 统计原材料
@@ -40,7 +40,9 @@ function treeTotal() {
     countElectricity();
     showElectricityResult();
 
-    // 统计产物
+    // 统计多余产物
+    countExcessProduct(treeRootNode);
+    showExcessProductResult();
 }
 
 /**
@@ -230,4 +232,74 @@ function showElectricityResult() {
     }
     
     electricityList.appendChild(li);
+}
+
+/**
+ * 统计多余产物Excess product
+ */
+function countExcessProduct(treeNode) {
+    // 如果isCalculator为false，则不进行统计
+    if (!treeNode.isCalculator) {
+        return;
+    }
+
+    // 如果otherProductList不为空，则进行统计
+    if (treeNode.otherProductList && Object.keys(treeNode.otherProductList).length > 0) {
+        console.log(treeNode.otherProductList);
+        // 遍历otherProductList
+        for (let productName in treeNode.otherProductList) {
+            // 获取产物数量
+            const productNumber = treeNode.otherProductList[productName];
+            // 将产物名称和数量添加到treeTotalList["多余产物"]
+            if (productName in treeTotalList["多余产物"]) {
+                treeTotalList["多余产物"][productName] = Math.ceil(treeTotalList["多余产物"][productName] + productNumber);
+            } else {
+                treeTotalList["多余产物"][productName] = Math.ceil(productNumber);
+            }
+        }
+    }
+
+    // 遍历treeNode的childNodeList
+    for (let i = 0; i < treeNode.childNodeList.length; i++) {
+        countExcessProduct(treeNode.childNodeList[i]);
+    }
+}
+
+/**
+ * 显示“统计多余产物”结果
+ */
+function showExcessProductResult() {
+    // 找到id为totalList的ul
+    let excessProductList = document.getElementById("excessProductList");
+    // null判断
+    if (!excessProductList) {
+        return;
+    }
+    // 先清空excessProductList
+    excessProductList.innerHTML = "";
+    // 进行多余产物变化对比
+    for (let key in treeTotalList["多余产物"]) {
+        let li = document.createElement("li");
+        let img = createImageElement(key);
+        li.appendChild(img);
+
+        let text = key + "：" + treeTotalList["多余产物"][key];
+        if (oldTreeTotalList["多余产物"] && key in oldTreeTotalList["多余产物"]) {
+            let diff = treeTotalList["多余产物"][key] - oldTreeTotalList["多余产物"][key];
+            console.log("diff：" + key + ": " + diff);
+            if (diff !== 0) {
+                let span = document.createElement("span");
+                span.style.color = diff < 0 ? "green" : "red";
+                span.style.fontWeight = "bold";
+                span.textContent = diff > 0 ? " (+" + diff.toLocaleString() + ")" : " (" + diff.toLocaleString() + ")";
+                li.appendChild(document.createTextNode(text));
+                li.appendChild(span);
+            } else {
+                li.appendChild(document.createTextNode(text));
+            }
+        } else {
+            li.appendChild(document.createTextNode(text));
+        }
+        excessProductList.appendChild(li);
+    }
 }

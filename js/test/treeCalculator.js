@@ -41,7 +41,7 @@ function calculateItem(name, number) {
     treeRootNode = getCalculateResult("", name, number)
     
     // 在控制台输出计算结果
-    console.log(treeRootNode);
+    // console.log(treeRootNode);
 
     // 获取树形结构容器元素
     const treeContainer = document.getElementById('ul-0');
