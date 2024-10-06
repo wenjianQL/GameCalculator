@@ -37,6 +37,8 @@ let treeNodeRecipeIndexMap = {}
  * @param {number} number - 需要生产的物品数量
  */
 function calculateItem(name, number) {
+    // 给title添加前缀：${name}*${number}
+    document.title = `${name}*${number}`;
     // 获取计算结果
     treeRootNode = getCalculateResult("", name, number)
     
