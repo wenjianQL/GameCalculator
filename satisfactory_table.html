@@ -72,10 +72,10 @@
                 <div class="navbar-header">
                     <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">侧边栏</a>
                 </div>
-                <div>asd</div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li style="color: red; margin-right: 30px;">
-                        建议每次打开网页后，使用Ctrl+F5刷新页面，防止缓存导致最新数据未被读取。
+                        建议每次打开网页后，使用Ctrl+F5或点击按钮，刷新页面，防止缓存导致最新数据未被读取。
+                        <button id="refreshButton" class="btn btn-primary" onclick="refreshPage()">刷新页面</button>
                     </li>
                     <li><span class="m-r-sm text-muted welcome-message">幸福工厂-量化计算器</span></li>
                     <li><a href="https://txc.qq.com/products/605145" target="_blank">bug/建议反馈</a></li>
@@ -213,6 +213,10 @@
 <script>
     _czc.push(['_trackEvent', '页面', '进入', '幸福工厂-层次计算']);
     setNameAndNumber();
+    function refreshPage() {
+        // 清除缓存
+        window.location.reload(true);
+    }
 </script>
 
 </body>
