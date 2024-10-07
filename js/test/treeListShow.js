@@ -29,7 +29,7 @@ function setLiContent(liNode, data) {
     const img = createImageElement(data.name);
     liNode.appendChild(img);
 
-    if (data.childNodeList.length !== 0) {
+    if (data.childNodeList.length !== 0 && !data.isExcess) {
         let needDeviceNumber = 0;
         // 根据设备类型，获取设备
         const equ = getDevice(data.equType);
@@ -71,6 +71,9 @@ function setLiContent(liNode, data) {
             treeTotal();
         });
         
+        if (data.isExcess) {
+            liNode.appendChild(document.createTextNode("多余产物："));
+        }
         liNode.appendChild(inputNumber);
         const textNode = document.createTextNode(`*${data.name}`);
         liNode.appendChild(textNode);
@@ -96,7 +99,7 @@ function setLiContent(liNode, data) {
     }
 
     // 如果data中的childNodeList不为空
-    if (data.childNodeList.length !== 0) {
+    if (data.childNodeList.length !== 0 && !data.isExcess) {
         // 添加配方选择select
         const select = document.createElement('select');
         // margin left 16px
@@ -138,63 +141,65 @@ function setLiContent(liNode, data) {
     }
 
     // 添加加速select
-    const accelerateSelect = document.createElement('select');
-    accelerateSelect.style.marginLeft = '16px';
-    // 创建option
-    for (let i = 0; i < deviceAccelerateList.length; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.innerHTML = "加速: " + deviceAccelerateList[i];
-        option.id = data.path + "-加速_" + i;
-        accelerateSelect.appendChild(option);
+    if (!data.isExcess) {
+        const accelerateSelect = document.createElement('select');
+        accelerateSelect.style.marginLeft = '16px';
+        // 创建option
+        for (let i = 0; i < deviceAccelerateList.length; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.innerHTML = "加速: " + deviceAccelerateList[i];
+            option.id = data.path + "-加速_" + i;
+            accelerateSelect.appendChild(option);
+        }
+        accelerateSelect.value = data.accelerateIndex;
+        accelerateSelect.addEventListener('change', () => {
+            const selectId = accelerateSelect.options[accelerateSelect.selectedIndex].id;
+            const selectIdArr = selectId.split("_");
+            const index = selectIdArr[1];
+            data.accelerateIndex = index;
+            // // 配方中一台设备制造的产物数量要根据加速倍数进行调整
+            // data.oneEquProductNumber = data.oneEquProductNumber * (1 + accelerateIndex);
+    
+            liNode.innerHTML = "";
+            setLiContent(liNode, data);
+            // 重新进行结果统计
+            treeTotal();
+        });
+        liNode.appendChild(accelerateSelect);
+
+         // 添加增产select
+        const increaseSelect = document.createElement('select');
+        increaseSelect.style.marginLeft = '16px';
+        // 创建option
+        for (let i = 0; i < deviceIncreaseList.length; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.innerHTML = "增产: " + deviceIncreaseList[i];
+            option.id = data.path + "-增产_" + i;
+            increaseSelect.appendChild(option);
+        }
+        increaseSelect.value = data.increaseIndex;
+        increaseSelect.addEventListener('change', () => {
+            const selectId = increaseSelect.options[increaseSelect.selectedIndex].id;
+            const selectIdArr = selectId.split("-增产_");
+            const path = selectIdArr[0];
+            const index = selectIdArr[1];
+            data.increaseIndex = index;
+
+            // 获取当前节点的新计算结果
+            const newData = getCalculateResult(path.substring(0, path.lastIndexOf('-')), data.name, data.number / (1 + deviceIncreaseList[index]));
+            // 数据更新
+            data.childNodeList = newData.childNodeList;
+            // // 增产变化处理逻辑：原料数量减少
+            // increaseChange(data, deviceIncreaseList[index]);
+            liNode.innerHTML = "";
+            setLiContent(liNode, data);
+            // 重新进行结果统计
+            treeTotal();
+        });
+        liNode.appendChild(increaseSelect);
     }
-    accelerateSelect.value = data.accelerateIndex;
-    accelerateSelect.addEventListener('change', () => {
-        const selectId = accelerateSelect.options[accelerateSelect.selectedIndex].id;
-        const selectIdArr = selectId.split("_");
-        const index = selectIdArr[1];
-        data.accelerateIndex = index;
-        // // 配方中一台设备制造的产物数量要根据加速倍数进行调整
-        // data.oneEquProductNumber = data.oneEquProductNumber * (1 + accelerateIndex);
-
-        liNode.innerHTML = "";
-        setLiContent(liNode, data);
-        // 重新进行结果统计
-        treeTotal();
-    });
-    liNode.appendChild(accelerateSelect);
-
-    // 添加增产select
-    const increaseSelect = document.createElement('select');
-    increaseSelect.style.marginLeft = '16px';
-    // 创建option
-    for (let i = 0; i < deviceIncreaseList.length; i++) {
-        const option = document.createElement('option');
-        option.value = i;
-        option.innerHTML = "增产: " + deviceIncreaseList[i];
-        option.id = data.path + "-增产_" + i;
-        increaseSelect.appendChild(option);
-    }
-    increaseSelect.value = data.increaseIndex;
-    increaseSelect.addEventListener('change', () => {
-        const selectId = increaseSelect.options[increaseSelect.selectedIndex].id;
-        const selectIdArr = selectId.split("-增产_");
-        const path = selectIdArr[0];
-        const index = selectIdArr[1];
-        data.increaseIndex = index;
-
-        // 获取当前节点的新计算结果
-        const newData = getCalculateResult(path.substring(0, path.lastIndexOf('-')), data.name, data.number / (1 + deviceIncreaseList[index]));
-        // 数据更新
-        data.childNodeList = newData.childNodeList;
-        // // 增产变化处理逻辑：原料数量减少
-        // increaseChange(data, deviceIncreaseList[index]);
-        liNode.innerHTML = "";
-        setLiContent(liNode, data);
-        // 重新进行结果统计
-        treeTotal();
-    });
-    liNode.appendChild(increaseSelect);
 
     // 给liNode添加一个忽略按钮，点击后将data中的isCalculator设置为false
     const ignoreButton = document.createElement('button');
@@ -211,58 +216,51 @@ function setLiContent(liNode, data) {
     });
     liNode.appendChild(ignoreButton);
 
-    const markButton = document.createElement('a');
-    markButton.style.marginLeft = '16px';
-    markButton.classList.add('btn', 'btn-white', 'btn-bitbucket');
-    markButton.innerHTML = '新建页面';
-    // 打开一个新页面，并在域名后添加data.name=data.number
-    markButton.addEventListener('click', () => {
-        window.open(`satisfactory_tree.html?name=${data.name}&number=${data.number}`);
-    });
-    liNode.appendChild(markButton);
-
-    // 如果otherProductList不为空或sourceList不为空
-    if (data.otherProductList || data.childNodeList) {
-        // 创建一个名字childUlNode的ul
-        const childUlNode = document.createElement('ul');
-        childUlNode.id = data.path;
-        childUlNode.style.display = data.isExpand ? 'block' : 'none';
-        liNode.appendChild(childUlNode);
-
-        const toggleButton = document.createElement('span');
-        toggleButton.textContent = data.isExpand ? '▼' : '►';
-        toggleButton.style.cursor = 'pointer';
-        toggleButton.style.marginRight = '5px';
-        toggleButton.addEventListener('click', () => {
-            data.isExpand = !data.isExpand;
-            childUlNode.style.display = data.isExpand ? 'block' : 'none';
-            toggleButton.textContent = data.isExpand ? '▼' : '►';
+    if (!data.isExcess) {
+        const markButton = document.createElement('a');
+        markButton.style.marginLeft = '16px';
+        markButton.classList.add('btn', 'btn-white', 'btn-bitbucket');
+        markButton.innerHTML = '新建页面';
+        // 打开一个新页面，并在域名后添加data.name=data.number
+        markButton.addEventListener('click', () => {
+            window.open(`satisfactory_tree.html?name=${data.name}&number=${data.number}`);
         });
-        liNode.insertBefore(toggleButton, liNode.firstChild);
-
-        // 如果sourceList不为空
-        if (data.childNodeList) {
-            // 遍历data中的sourceList，将sourceList中的数据添加到childUlNode中
-            for (let key in data.childNodeList) {
-                renderTree(childUlNode, data.childNodeList[key]);
+        liNode.appendChild(markButton);
+    
+        // 如果otherProductList不为空或sourceList不为空
+        if (data.otherProductList || data.childNodeList) {
+            // 创建一个名字childUlNode的ul
+            const childUlNode = document.createElement('ul');
+            childUlNode.id = data.path;
+            childUlNode.style.display = data.isExpand ? 'block' : 'none';
+            liNode.appendChild(childUlNode);
+    
+            const toggleButton = document.createElement('span');
+            toggleButton.textContent = data.isExpand ? '▼' : '►';
+            toggleButton.style.cursor = 'pointer';
+            toggleButton.style.marginRight = '5px';
+            toggleButton.addEventListener('click', () => {
+                data.isExpand = !data.isExpand;
+                childUlNode.style.display = data.isExpand ? 'block' : 'none';
+                toggleButton.textContent = data.isExpand ? '▼' : '►';
+            });
+            liNode.insertBefore(toggleButton, liNode.firstChild);
+    
+            // 如果sourceList不为空
+            if (data.childNodeList) {
+                // 遍历data中的sourceList，将sourceList中的数据添加到childUlNode中
+                for (let key in data.childNodeList) {
+                    renderTree(childUlNode, data.childNodeList[key]);
+                }
             }
-        }
-
-        // 如果otherProductList不为空
-        if (data.otherProductList) {
-            // 遍历data中的otherProductList，将otherProductList中的数据添加到childUlNode中
+    
+            // 如果otherProductList不为空
             for (let key in data.otherProductList) {
-                const otherNumber = data.otherProductList[key];
-                const li = document.createElement('li');
-                // 创建图片元素
-                const img = createImageElement(key);
-                const textNode = document.createTextNode(`多余产物：${otherNumber}*${key}`);
-                li.appendChild(textNode);
-                li.appendChild(img);
-                childUlNode.appendChild(li);
+                renderTree(childUlNode, data.otherProductList[key]);
             }
         }
     }
+
 }
 
 function createImageElement(key) {

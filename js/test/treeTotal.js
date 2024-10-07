@@ -230,11 +230,11 @@ function countExcessProduct(treeNode) {
     }
 
     // 如果otherProductList不为空，则进行统计
-    if (treeNode.otherProductList && Object.keys(treeNode.otherProductList).length > 0) {
-        // 遍历otherProductList
-        for (let productName in treeNode.otherProductList) {
-            // 获取产物数量
-            const productNumber = treeNode.otherProductList[productName];
+    if (treeNode.otherProductList.length > 0) {
+        for (let index = 0; index < treeNode.otherProductList.length; index++) {
+            const element = treeNode.otherProductList[index];
+            const productName = element.name;
+            const productNumber = element.number;
             // 将产物名称和数量添加到treeTotalList["多余产物"]
             if (productName in treeTotalList["多余产物"]) {
                 treeTotalList["多余产物"][productName] = Math.ceil(treeTotalList["多余产物"][productName] + productNumber);

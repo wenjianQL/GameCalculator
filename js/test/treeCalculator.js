@@ -15,7 +15,7 @@
     // 制造设备类型
     "equType": "",
     // 多余产物及对应数量列表
-    "otherProductList": {},
+    "otherProductList": [],
     // 原料节点列表
     "childNodeList": []
 }
@@ -86,13 +86,21 @@ function getCalculateResult(path, name, number) {
         "number": number, // 需要制造的数量
         "equType": "", // 制造设备类型
         "oneEquProductNumber": 0, // 配方中一台设备制造的产物数量
-        "otherProductList": {}, // 多余产物及数量
+        "otherProductList": [], // 多余产物及数量
         "childNodeList": [], // 原料节点列表，用于存储下一级物品的制造结果
         "isCalculator": true, // 是否是计算
         "isExpand": true, // 是否展开
         "accelerateIndex": 0, // 加速index
-        "increaseIndex": 0 // 增产index
+        "increaseIndex": 0, // 增产index
+        "isExcess": false, // 是否是多余产物
     };
+
+    // if number < 0, return result
+    if (number < 0) {
+        result.isExcess = true;
+        result.number = number * -1;
+        return result;
+    }
 
     // 如果treeNodeRecipeIndexMap中存在currentPath，则直接返回
     if (treeNodeRecipeIndexMap[currentPath]) {
@@ -128,7 +136,10 @@ function getCalculateResult(path, name, number) {
         if (key === name) {
             continue;
         }
-        result.otherProductList[key] = Math.round(recipe.productList[key] * rate * 100) / 100;
+        const otherResult = getCalculateResult(currentPath, key, -1 * Math.round(recipe.productList[key] * rate * 100) / 100);
+        if (otherResult !== null) {
+            result.otherProductList.push(otherResult);
+        }
     }
     for (let key in recipe.sourceList) {
         // 递归计算原料的制造结果，并添加到子节点列表中
