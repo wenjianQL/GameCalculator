@@ -3,22 +3,6 @@
 计算逻辑：
 1、根据传入的物品，获取物品对应的配方；
 2、根据配比关系，计算需要的原料数据；
-
-计算节点的数据格式：
-{
-    // 计算路径
-    "path": currentPath,
-    // 物品名字
-    "name": name,
-    // 物品数量
-    "number": number,
-    // 制造设备类型
-    "equType": "",
-    // 多余产物及对应数量列表
-    "otherProductList": [],
-    // 原料节点列表
-    "childNodeList": []
-}
  */
 
 // 树根节点
@@ -91,7 +75,6 @@ function getCalculateResult(path, name, number) {
     let recipe = getRecipeByIndex(name, result.nodeRecipeIndex);
     // 没有找到配方，说明是原料或不存在的物品
     if (recipe === null) {
-        // treeNodeRecipeIndexMap中删除currentPath
         delete treeNodeRecipeIndexMap[currentPath];
         console.log("没有找到配方，说明是原料或不存在的物品： " + name);
         return result;
@@ -132,6 +115,3 @@ function getCalculateResult(path, name, number) {
     // 返回制造结果
     return result;
 }
-
-
-// calculateItem("加强铁板", 10)

@@ -22,6 +22,7 @@
     <script src="js/satisfactory/table/tableShow.js"></script>
     <script src="js/satisfactory/table/tableTotal.js"></script>
     <script src="js/satisfactory/commonMethod.js"></script>
+    <script src="js/satisfactory/table/tableCalculator.js"></script>
 
     <!--  友盟统计  -->
     <script>
@@ -174,10 +175,24 @@
                             <h5 id="text_calculate_result">计算结果</h5>
                         </div>
                         <div class="ibox-content">
-                            <div class="feed-activity-list">
-                                <ul class="tree" id="ul-0">
-                                </ul>
-                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>层级</th>
+                                    <th>物品</th>
+                                    <th>设备</th>
+                                    <th>原料</th>
+                                    <th>多余产物</th>
+                                    <th>配方</th>
+                                    <th>加速</th>
+                                    <th>增产</th>
+                                    <th>其它</th>
+                                    <!--                                                            <th id="text_table_is_calculate">是否计算</th>-->
+                                </tr>
+                                </thead>
+                                <tbody id="material_table">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
