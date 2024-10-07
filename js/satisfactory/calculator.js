@@ -26,11 +26,7 @@ let treeRootNode = {}
 // 树节点配方index映射
 let treeNodeRecipeIndexMap = {}
 
-/**
- * 计算函数入口
- * @param name 物品名字
- * @param number 物品数量
- */
+
 /**
  * 计算物品生产所需的资源和设备
  * @param {string} name - 物品名称
@@ -41,22 +37,6 @@ function calculateItem(name, number) {
     document.title = `${name}*${number}`;
     // 获取计算结果
     treeRootNode = getCalculateResult("", name, number)
-    
-    // 在控制台输出计算结果
-    // console.log(treeRootNode);
-
-    // 获取树形结构容器元素
-    const treeContainer = document.getElementById('ul-0');
-
-    if (treeContainer) {
-        treeContainer.innerHTML = "";
-    }
-    
-    // 渲染计算结果树
-    renderTree(treeContainer, treeRootNode);
-
-    // 进行统计
-    treeTotal();
 }
 
 

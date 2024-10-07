@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>树形计算-量化计算器-幸福工厂</title>
+    <title>层次计算-量化计算器-幸福工厂</title>
 
     <!--通用文件-->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -15,15 +15,13 @@
     <link href="css/plugins/jsTree/style.min.css" rel="stylesheet">
     <script src="js/plugins/jsTree/jstree.min.js"></script>
 
-
     <!--  引入js/test/device.js  -->
     <script src="js/satisfactory/data.js"></script>
     <script src="js/satisfactory/device.js"></script>
     <script src="js/satisfactory/recipe.js"></script>
-    <script src="js/satisfactory/tree/treeListShow.js"></script>
-    <script src="js/satisfactory/tree/treeTotal.js"></script>
+    <script src="js/satisfactory/table/tableShow.js"></script>
+    <script src="js/satisfactory/table/tableTotal.js"></script>
     <script src="js/satisfactory/commonMethod.js"></script>
-    <script src="js/satisfactory/tree/treeCalculator.js"></script>
 
     <!--  友盟统计  -->
     <script>
@@ -57,11 +55,11 @@
                        onclick="_czc.push(['_trackEvent', '侧拉栏', '点击', '幸福工厂-量化计算器']);"><span
                         class="nav-label">量化计算器</span></a></li>
 
-                <li class="active"><a href="satisfactory_tree.html" target="_blank"
-                                      onclick="_czc.push(['_trackEvent', '侧拉栏', '点击', '幸福工厂-树形计算']);"><span
+                <li><a href="satisfactory_tree.html" target="_blank"
+                       onclick="_czc.push(['_trackEvent', '侧拉栏', '点击', '幸福工厂-树形计算']);"><span
                         class="nav-label">树形计算</span></a></li>
-                <li><a href="satisfactory_table.html" target="_blank"
-                       onclick="_czc.push(['_trackEvent', '侧拉栏', '点击', '幸福工厂-层次计算']);"><span
+                <li class="active"><a href="satisfactory_table.html" target="_blank"
+                                      onclick="_czc.push(['_trackEvent', '侧拉栏', '点击', '幸福工厂-层次计算']);"><span
                         class="nav-label">层次计算</span></a></li>
             </ul>
 
@@ -95,7 +93,6 @@
                         </div>
                         <div class="ibox-content" id="productInputContent">
                             <div class="form-group">
-                                <datalist id="item_list"></datalist>
                                 <div>
                                     <label for="needs_item" id="text_goods">物品: </label>
                                     <input style="width: 10%; margin-left: 4px;" list="item_list" size="5"
@@ -112,7 +109,7 @@
                                     <label>个/min</label>
 
                                     <button class="ladda-button btn btn-info" style="margin-left:10px"
-                                            onclick="clickTreeCalculateBtn()" data-style="slide-right" id="text_calculate">
+                                            onclick="clickTableCalculateBtn()" data-style="slide-right" id="text_calculate">
                                         计算
                                     </button>
                                 </div>
@@ -199,7 +196,7 @@
 <script src="js/plugins/pace/pace.min.js"></script>
 <script src="js/satisfactory/calculator.js"></script>
 <script>
-    _czc.push(['_trackEvent', '页面', '进入', '幸福工厂-树形计算']);
+    _czc.push(['_trackEvent', '页面', '进入', '幸福工厂-层次计算']);
     setNameAndNumber();
 </script>
 
