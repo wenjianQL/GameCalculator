@@ -128,6 +128,13 @@ const deviceData = {
             "energy": 300,
             "rate": 1
         }
+    ],
+    "核电站": [
+        {
+            "name": "核电站",
+            "energy": -2500,
+            "rate": 1
+        }
     ]
 }
 
@@ -1132,7 +1139,7 @@ const recipeData = {
             "equType": "搅拌器",
             "equIndex": 0,
             "productList": {
-                "Non-Fissile Uranium": "50",
+                "非裂变贫铀": "50",
                 "水": "15"
             },
             "sourceList": {
@@ -1192,7 +1199,7 @@ const recipeData = {
             "equType": "搅拌器",
             "equIndex": 0,
             "productList": {
-                "Non-Fissile Uranium": "100",
+                "非裂变贫铀": "100",
                 "水": "40"
             },
             "sourceList": {
@@ -1405,7 +1412,7 @@ const recipeData = {
             "equType": "搅拌器",
             "equIndex": 0,
             "productList": {
-                "铀核芯": "25",
+                "封装铀棒": "25",
                 "硫酸": "10"
             },
             "sourceList": {
@@ -3554,7 +3561,7 @@ const recipeData = {
                 "铀燃料棒": "0.4"
             },
             "sourceList": {
-                "铀核芯": "20",
+                "封装铀棒": "20",
                 "钢筋混凝土梁": "1.2",
                 "电磁控制杆": "2"
             }
@@ -3568,7 +3575,7 @@ const recipeData = {
                 "铀燃料棒": "0.6"
             },
             "sourceList": {
-                "铀核芯": "20",
+                "封装铀棒": "20",
                 "电磁控制杆": "2",
                 "晶体振荡器": "0.6",
                 "转子": "2"
@@ -3873,7 +3880,7 @@ const recipeData = {
             },
             "sourceList": {
                 "诺石": "2.5",
-                "铀核芯": "10",
+                "封装铀棒": "10",
                 "无烟火药": "5",
                 "AI限制器": "3"
             }
@@ -3907,14 +3914,14 @@ const recipeData = {
             }
         }
     ],
-    "铀核芯": [
+    "封装铀棒": [
         {
             "time": 60,
             "name": "配方",
             "equType": "搅拌器",
             "equIndex": 0,
             "productList": {
-                "铀核芯": "25",
+                "封装铀棒": "25",
                 "硫酸": "10"
             },
             "sourceList": {
@@ -3929,7 +3936,7 @@ const recipeData = {
             "equType": "制造器",
             "equIndex": 0,
             "productList": {
-                "铀核芯": "20"
+                "封装铀棒": "20"
             },
             "sourceList": {
                 "铀": "25",
@@ -3939,14 +3946,14 @@ const recipeData = {
             }
         }
     ],
-    "Non-Fissile Uranium": [
+    "非裂变贫铀": [
         {
             "time": 60,
             "name": "配方",
             "equType": "搅拌器",
             "equIndex": 0,
             "productList": {
-                "Non-Fissile Uranium": "50",
+                "非裂变贫铀": "50",
                 "水": "15"
             },
             "sourceList": {
@@ -3962,7 +3969,7 @@ const recipeData = {
             "equType": "搅拌器",
             "equIndex": 0,
             "productList": {
-                "Non-Fissile Uranium": "100",
+                "非裂变贫铀": "100",
                 "水": "40"
             },
             "sourceList": {
@@ -3983,7 +3990,7 @@ const recipeData = {
                 "钚丸": "30"
             },
             "sourceList": {
-                "Non-Fissile Uranium": "100",
+                "非裂变贫铀": "100",
                 "铀废料": "25"
             }
         }
@@ -4011,7 +4018,7 @@ const recipeData = {
                 "钚核芯": "10"
             },
             "sourceList": {
-                "Non-Fissile Uranium": "75",
+                "非裂变贫铀": "75",
                 "铝制外壳": "10"
             }
         }
@@ -4366,7 +4373,34 @@ const recipeData = {
                 "铜锭": "10"
             }
         }
-    ]
+    ],
+    "封装钚棒": [{
+        "time": 60,
+        "equType": "装配站",
+        "equIndex": 0,
+        "productList": {"封装钚棒": "5"},
+        "sourceList": {"钚丸": "10", "混凝土": "20"}
+    }, {
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {"封装钚棒": "10"},
+        "sourceList": {"非裂变贫铀": "75", "铝制外壳": "10"}
+    }],
+    "镄": [{
+        "time": 60,
+        "equType": "粒子加速器",
+        "equIndex": 0,
+        "productList": {"镄": "10"},
+        "sourceList": {"钚废料": "10", "奇点电池": "10", "暗物质残渣": "200"}
+    }],
+    "镄燃料棒": [{
+        "time": 60,
+        "equType": "量子编码器",
+        "equIndex": 0,
+        "productList": {"镄燃料棒": "2.5", "暗物质残渣": "50"},
+        "sourceList": {"镄": "5", "电磁控制杆": "5", "F金三角": "100", "激发态光子物质": "50"}
+    }],
 }
 
 /**
@@ -4383,6 +4417,6 @@ const selectDialogData = {
     "量子科技": ["钻石", "时间水晶", "暗物质晶体", "暗物质残渣", "奇点电池", "激发态光子物质", "神经量子处理器", "外星能量矩阵"],
     "容器": ["空罐", "空瓶", "压力转换立方体"],
     "燃料": ["桶装火箭燃料", "桶装电离燃油", "铀燃料棒", "钚燃料棒"],
-    "核工业品": ["电磁控制杆", "铀核芯", "Non-Fissile Uranium", "贫铀", "钚丸"],
+    "核工业品": ["电磁控制杆", "封装铀棒", "非裂变贫铀", "钚丸", "封装钚棒", "镄", "镄燃料棒"],
     "特殊": ["智能护板", "多功能框架", "自动线路", "模块化引擎", "自适应控制单元", "组装编导系统", "磁场发生器", "热推进火箭", "核子团", "生化塑造器", "弹道跃迁引擎", "AI拓展伺服器"],
 }
