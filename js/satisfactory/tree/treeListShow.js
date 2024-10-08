@@ -25,6 +25,9 @@ function renderTree(ulNode, data) {
  * 给li节点添加：物品名称和数量、设备数量、配方选择select
  */
 function setLiContent(liNode, data) {
+    // 设置liNode的id为data.path
+    liNode.id = data.path;
+
     // 创建图片元素
     const img = createImageElement(data.name);
     liNode.appendChild(img);
@@ -121,24 +124,49 @@ function setLiContent(liNode, data) {
             const path = selectIdArr[0];
             const index = selectIdArr[1];
 
-            setDefaultRecipe(path, index)
-            if (storage != null) {
-                storage.set(path, index);
+            if (recipeScope === "currentPath") {
+                setDefaultRecipe(path, index)
+                if (storage != null) {
+                    storage.set(path, index);
+                }
+
+                // 获取当前节点的新计算结果
+                const newData = getCalculateResult(path.substring(0, path.lastIndexOf('-')), data.name, data.number);
+                // 数据更新
+                data.otherProductList = newData.otherProductList;
+                data.childNodeList = newData.childNodeList;
+                data.nodeRecipeIndex = newData.nodeRecipeIndex;
+                data.equType = newData.equType;
+                data.oneEquProductNumber = newData.oneEquProductNumber;
+
+                liNode.innerHTML = "";
+                setLiContent(liNode, data);
+                // 重新进行结果统计
+                treeTotal();
+            } else {
+                setDefaultRecipe(data.name, index)
+                if (storage != null) {
+                    storage.set(data.name, index);
+                }
+
+                // 在treeRootNode中找到所有以data.name结尾的path的data
+                treeRootNodeByItemName = [];
+                getCalculateResultByItemName(treeRootNode, data.name);
+                // 遍历dataList
+                for (let i = 0; i < treeRootNodeByItemName.length; i++) {
+                    let itemData = treeRootNodeByItemName[i];
+                    let newItemData = getCalculateResult(itemData.path.substring(0, itemData.path.lastIndexOf('-')), itemData.name, itemData.number);
+                    itemData.otherProductList = newItemData.otherProductList;
+                    itemData.childNodeList = newItemData.childNodeList;
+                    itemData.nodeRecipeIndex = newItemData.nodeRecipeIndex;
+                    itemData.equType = newItemData.equType;
+                    itemData.oneEquProductNumber = newItemData.oneEquProductNumber;
+                    // 更新对应的li节点
+                    let itemLiNode = getLiNode(itemData.path);
+                    itemLiNode.innerHTML = "";
+                    setLiContent(itemLiNode, itemData);
+                }
             }
-
-            // 获取当前节点的新计算结果
-            const newData = getCalculateResult(path.substring(0, path.lastIndexOf('-')), data.name, data.number);
-            // 数据更新
-            data.otherProductList = newData.otherProductList;
-            data.childNodeList = newData.childNodeList;
-            data.nodeRecipeIndex = newData.nodeRecipeIndex;
-            data.equType = newData.equType;
-            data.oneEquProductNumber = newData.oneEquProductNumber;
-
-            liNode.innerHTML = "";
-            setLiContent(liNode, data);
-            // 重新进行结果统计
-            treeTotal();
         });
         liNode.appendChild(select);
     }
@@ -283,4 +311,11 @@ function increaseChange(data, increase) {
     for (let key in data.childNodeList) {
         data.childNodeList[key].number = data.childNodeList[key].number / (1 + increase);
     }
+}
+
+/**
+ * 传入物品路径，然后找到id为物品路径的li标签，然后返回
+ */
+function getLiNode(path) {
+    return document.getElementById(path);
 }

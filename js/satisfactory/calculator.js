@@ -66,7 +66,12 @@ function getCalculateResult(path, name, number) {
         return result;
     }
 
-    result.nodeRecipeIndex = getRecipeIndexByPath(currentPath);
+    if (recipeScope === "currentPath") {
+        result.nodeRecipeIndex = getRecipeIndexByPath(currentPath);
+    } else {
+        result.nodeRecipeIndex = getRecipeIndexByPath(name);
+    }
+
     // 根据物品名称获取制造配方
     let recipe = getRecipeByIndex(name, result.nodeRecipeIndex);
     // 没有找到配方，说明是原料或不存在的物品
@@ -111,6 +116,20 @@ function getCalculateResult(path, name, number) {
     return result;
 }
 
+// 定义一个变量，用于存储以物品名字结尾的path对应的数据
+let treeRootNodeByItemName = [];
+/**
+ * 传入物品名字，然后在treeRootNode中找到所有path以该物品名字结尾的数据，然后返回
+ */
+function getCalculateResultByItemName(data, name) {
+    if (data.path.endsWith(name)) {
+        treeRootNodeByItemName.push(data);
+    }
+    for (let i = 0; i < data.childNodeList.length; i++) {
+        getCalculateResultByItemName(data.childNodeList[i], name);
+    }
+}
+
 const storage = new Storage();
 // 将storage加载到的数据，设置到recipeIndexMap中
 console.log(storage.getAll());
@@ -120,3 +139,17 @@ for (let key in storageData) {
     recipeIndexMap[key] = storageData[key];
 }
 console.log(recipeIndexMap);
+
+// 配方修改作用域
+let recipeScope = "item";
+document.addEventListener('DOMContentLoaded', function () {
+    const radioButtons = document.querySelectorAll('input[name="recipeScope"]');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.checked) {
+                // 这里可以添加其他需要执行的逻辑
+                recipeScope = this.value;
+            }
+        });
+    });
+});
