@@ -204,8 +204,8 @@ function renderDepthTableDataMapItem(item) {
 
     const materialTd = document.createElement('td');
     const img = createImageElement(item.name);
-    materialTd.appendChild(img);    
-    materialTd.appendChild(document.createTextNode(item.name + "*" + Number(item.number)));
+    materialTd.appendChild(img);
+    materialTd.appendChild(document.createTextNode(item.name + "*" + Math.round(item.number * 100) / 100));
     if (!item.isCalculator) {
         materialTd.appendChild(document.createTextNode("（已忽略）"));
     }
@@ -241,9 +241,9 @@ function renderDepthTableDataMapItem(item) {
         for (let key in item.childNodeTotal) {
             const img = createImageElement(key);
             sourceTd.appendChild(img);
-            sourceTd.appendChild(document.createTextNode(key + "*" + item.childNodeTotal[key]));
-            // 加个间隔
-            sourceTd.appendChild(document.createTextNode(" "));
+            sourceTd.appendChild(document.createTextNode(key + "*" + (Math.round(item.childNodeTotal[key] * 100) / 100)));
+            // 换行
+            sourceTd.appendChild(document.createElement('br'));
         }
     }
     tr.appendChild(sourceTd);
@@ -255,7 +255,7 @@ function renderDepthTableDataMapItem(item) {
             for (let key in item.otherProductTotal) {
                 const img = createImageElement(key);
                 otherProductTd.appendChild(img);
-                otherProductTd.appendChild(document.createTextNode(key + "*" + item.otherProductTotal[key]));
+                otherProductTd.appendChild(document.createTextNode(key + "*" + Math.round(item.otherProductTotal[key] * 100) / 100));
             }
         }
     }
@@ -265,6 +265,7 @@ function renderDepthTableDataMapItem(item) {
     const recipeTd = document.createElement('td');
     if (item.isCalculator) {
         const select = document.createElement('select');
+        select.style.maxWidth = '200px';
         const recipeList = getRecipeList(item.name);
         for (let i = 0; i < recipeList.length; i++) {
             const option = document.createElement('option');
@@ -287,7 +288,7 @@ function renderDepthTableDataMapItem(item) {
             item.pathList.forEach(path => {
                 setDefaultRecipe(path, index)
             });
-    
+
             // 重新进行页面的计算和渲染
             clickTableCalculateBtn();
         });
@@ -345,16 +346,16 @@ function renderDepthTableDataMapItem(item) {
                 然后将结果赋值回来。
                 然后去重新渲染页面。
             */
-           item.pathList.forEach(itemPath => {
+            item.pathList.forEach(itemPath => {
                 let findTreeData = getTreeDataByPath(itemPath);
                 if (findTreeData != null) {
                     findTreeData.increaseIndex = index;
                     const newData = getCalculateResult(itemPath.substring(0, itemPath.lastIndexOf('-')), name, item.number / (1 + deviceIncreaseList[index]));
                     findTreeData.childNodeList = newData.childNodeList;
                 }
-           });
-           // 重新进行页面的渲染
-           renderTable(treeRootNode)
+            });
+            // 重新进行页面的渲染
+            renderTable(treeRootNode)
         });
         increaseSelectTd.appendChild(increaseSelect);
     }
@@ -385,7 +386,7 @@ function renderDepthTableDataMapItem(item) {
             renderTable(treeRootNode)
         });
     }
-    
+
     otherTd.appendChild(ignoreButton);
     tr.appendChild(otherTd);
 
