@@ -34,7 +34,7 @@ function calculateItem(name, number) {
  * @returns {Object|null} - 返回制造结果对象，包含制造路径、物品信息和所需原料等；如果找不到配方或原料，则返回null
  */
 function getCalculateResult(path, name, number) {
-    
+
     // 构造当前物品的完整路径
     let currentPath = path;
     if (path.length > 0) {
@@ -66,16 +66,11 @@ function getCalculateResult(path, name, number) {
         return result;
     }
 
-    // 如果treeNodeRecipeIndexMap中存在currentPath，则直接返回
-    if (treeNodeRecipeIndexMap[currentPath]) {
-        result.nodeRecipeIndex = treeNodeRecipeIndexMap[currentPath];
-    }
-
+    result.nodeRecipeIndex = getRecipeIndexByPath(currentPath);
     // 根据物品名称获取制造配方
     let recipe = getRecipeByIndex(name, result.nodeRecipeIndex);
     // 没有找到配方，说明是原料或不存在的物品
     if (recipe === null) {
-        delete treeNodeRecipeIndexMap[currentPath];
         console.log("没有找到配方，说明是原料或不存在的物品： " + name);
         return result;
     }
@@ -115,3 +110,13 @@ function getCalculateResult(path, name, number) {
     // 返回制造结果
     return result;
 }
+
+const storage = new Storage();
+// 将storage加载到的数据，设置到recipeIndexMap中
+console.log(storage.getAll());
+const storageData = storage.getAll();
+// 遍历storageData
+for (let key in storageData) {
+    recipeIndexMap[key] = storageData[key];
+}
+console.log(recipeIndexMap);

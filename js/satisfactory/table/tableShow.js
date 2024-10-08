@@ -9,10 +9,6 @@ let materialSortMap = {}
 let depthTableDataMap = {}
 
 /**
- * 物品配方index
- */
-let tableRecipeIndexMap = {}
-/**
  * 加速Index
  */
 let tableAccelerateIndexMap = {}
@@ -86,7 +82,10 @@ function addToMaterialSortMap(data) {
     materialSortMap[data.name].push(data);
 
     // 配方index记录
-    tableRecipeIndexMap[data.name] = data.nodeRecipeIndex;
+    recipeIndexMap[data.name] = data.nodeRecipeIndex;
+    if (storage != null) {
+        storage.set(data.name, data.nodeRecipeIndex);
+    }
     // 加速index记录
     tableAccelerateIndexMap[data.name] = data.accelerateIndex;
     // 增产index记录
@@ -152,7 +151,7 @@ function calculateMaterialDepthAndNumberTotal() {
         depthTableDataMap[result.depth] = depthTableDataMap[result.depth] || [];
         depthTableDataMap[result.depth].push(result);
     }
-    console.log(depthTableDataMap);
+    // console.log(depthTableDataMap);
 }
 
 /**
@@ -213,10 +212,13 @@ function renderDepthTableDataMapItem(item) {
     tr.appendChild(materialTd);
 
     // 获取物品对应的配方
-    let recipe = getRecipeByIndex(item.name, tableRecipeIndexMap[item.name]);
+    let recipe = getRecipeByIndex(item.name, recipeIndexMap[item.name]);
     if (recipe == null) {
         recipe = getRecipeByIndex(item.name, 0);
-        tableRecipeIndexMap[item.name] = 0;
+        recipeIndexMap[item.name] = 0;
+        if (storage != null) {
+            storage.set(item.name, 0);
+        }
     }
 
     // 设备名字*数量
@@ -271,16 +273,19 @@ function renderDepthTableDataMapItem(item) {
             option.id = item.name + "_" + i;
             select.appendChild(option);
         }
-        select.value = tableRecipeIndexMap[item.name];
+        select.value = recipeIndexMap[item.name];
         select.addEventListener('change', () => {
             const selectId = select.options[select.selectedIndex].id;
             const selectIdArr = selectId.split("_");
             const name = selectIdArr[0];
             const index = selectIdArr[1];
             // 修改物品记录的配方index
-            tableRecipeIndexMap[name] = index;
+            recipeIndexMap[name] = index;
+            if (storage != null) {
+                storage.set(name, index);
+            }
             item.pathList.forEach(path => {
-                treeNodeRecipeIndexMap[path] = index;
+                setDefaultRecipe(path, index)
             });
     
             // 重新进行页面的计算和渲染

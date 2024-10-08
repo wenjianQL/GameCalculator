@@ -35,7 +35,7 @@ function setLiContent(liNode, data) {
         const equ = getDevice(data.equType);
         // 根据物品的accelerate，用总数量/（一台设备制造的产物数量*accelerateIndex），得到需要制造的次数
         needDeviceNumber = Math.ceil((data.number / (data.oneEquProductNumber * equ.rate * (1 + deviceAccelerateList[data.accelerateIndex]))) * 100) / 100;
-        
+
         const inputNumber = document.createElement('input');
         inputNumber.type = 'number';
         inputNumber.value = data.number;
@@ -50,7 +50,7 @@ function setLiContent(liNode, data) {
             // 重新进行结果统计
             treeTotal();
         });
-        
+
         liNode.appendChild(inputNumber);
         const textNode = document.createTextNode(
             `*${data.name}（${needDeviceNumber}*${equ.name}）`);
@@ -70,7 +70,7 @@ function setLiContent(liNode, data) {
             // 重新进行结果统计
             treeTotal();
         });
-        
+
         if (data.isExcess) {
             liNode.appendChild(document.createTextNode("多余产物："));
         }
@@ -94,7 +94,7 @@ function setLiContent(liNode, data) {
             treeTotal();
         });
         liNode.appendChild(recoverButton);
-        
+
         return;
     }
 
@@ -121,7 +121,10 @@ function setLiContent(liNode, data) {
             const path = selectIdArr[0];
             const index = selectIdArr[1];
 
-            treeNodeRecipeIndexMap[path] = index;
+            setDefaultRecipe(path, index)
+            if (storage != null) {
+                storage.set(path, index);
+            }
 
             // 获取当前节点的新计算结果
             const newData = getCalculateResult(path.substring(0, path.lastIndexOf('-')), data.name, data.number);
@@ -160,7 +163,7 @@ function setLiContent(liNode, data) {
             data.accelerateIndex = index;
             // // 配方中一台设备制造的产物数量要根据加速倍数进行调整
             // data.oneEquProductNumber = data.oneEquProductNumber * (1 + accelerateIndex);
-    
+
             liNode.innerHTML = "";
             setLiContent(liNode, data);
             // 重新进行结果统计
@@ -168,7 +171,7 @@ function setLiContent(liNode, data) {
         });
         liNode.appendChild(accelerateSelect);
 
-         // 添加增产select
+        // 添加增产select
         const increaseSelect = document.createElement('select');
         increaseSelect.style.marginLeft = '16px';
         // 创建option
@@ -226,7 +229,7 @@ function setLiContent(liNode, data) {
             window.open(`satisfactory_tree.html?name=${data.name}&number=${data.number}`);
         });
         liNode.appendChild(markButton);
-    
+
         // 如果otherProductList不为空或sourceList不为空
         if (data.otherProductList || data.childNodeList) {
             // 创建一个名字childUlNode的ul
@@ -234,7 +237,7 @@ function setLiContent(liNode, data) {
             childUlNode.id = data.path;
             childUlNode.style.display = data.isExpand ? 'block' : 'none';
             liNode.appendChild(childUlNode);
-    
+
             const toggleButton = document.createElement('span');
             toggleButton.textContent = data.isExpand ? '▼' : '►';
             toggleButton.style.cursor = 'pointer';
@@ -245,7 +248,7 @@ function setLiContent(liNode, data) {
                 toggleButton.textContent = data.isExpand ? '▼' : '►';
             });
             liNode.insertBefore(toggleButton, liNode.firstChild);
-    
+
             // 如果sourceList不为空
             if (data.childNodeList) {
                 // 遍历data中的sourceList，将sourceList中的数据添加到childUlNode中
@@ -253,7 +256,7 @@ function setLiContent(liNode, data) {
                     renderTree(childUlNode, data.childNodeList[key]);
                 }
             }
-    
+
             // 如果otherProductList不为空
             for (let key in data.otherProductList) {
                 renderTree(childUlNode, data.otherProductList[key]);

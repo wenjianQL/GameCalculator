@@ -50,8 +50,15 @@ function getRecipeByIndex(name, index) {
 /**
  * 传入名字和位置，修改默认配方
  */
-function setDefaultRecipe(name, index) {
-    recipeIndexMap[name] = index
+function setDefaultRecipe(nameOrPath, index) {
+    recipeIndexMap[nameOrPath] = index
+}
+
+function getRecipeIndexByPath(path) {
+    if (!recipeIndexMap[path]) {
+        return 0
+    }
+    return recipeIndexMap[path]
 }
 
 /**
