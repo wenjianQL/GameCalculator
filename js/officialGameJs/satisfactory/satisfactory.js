@@ -67,9 +67,6 @@ function cal_data() {
         calItem("", item, needs_list[item]);
         needCalStr += item + "*" + needs_list[item] + " ";
     }
-    // 修改title为needCalStr
-    document.title = needCalStr;
-
     _czc.push(['_trackEvent', '按钮', '计算', game_data["game_name"] + '：' + needCalStr]);
 }
 
