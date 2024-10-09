@@ -4,3 +4,4 @@
 loadCalPagerMaterialList();
 loadGridTable(selectDialogMaterialTable, "selectGridTableMaterial");
 loadGridTable(selectDialogBuildTable, "selectGridTableBuild");
+loadGridTable(bigBuildTable, "selectGridBigTableBuild");

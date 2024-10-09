@@ -19,8 +19,16 @@ let selectDialogBuildTable = [
     ['高斯机枪塔', '导弹防御塔', '聚爆加农炮', '高频激光塔', '磁化电浆炮', '近程电浆塔', '战场分析基站', '干扰塔','信号塔', '行星护盾发生器',  '', '', '', '']
 ]
 
+// 巨构
+let bigBuildTable = [
+    ['引力发生装置', '位面约束环', '引力钻头', '隧穿激发装置', '谐振盘', '光子探针', '量子计算机', '星际组装厂组件', '', '', '', '', '', ''],
+    ['力场发生器', '', '', '', '', '导流框架', '恒星炮组件', '', '', '', '', '', '', ''],
+    ['物质解压器运载火箭', '科学枢纽运载火箭', '谐振发射器运载火箭', '星际组装厂运载火箭', '晶体重构器运载火箭', '恒星炮运载火箭', '', '', '', '', '', '', '', ''],
+]
+
 let materialArray = selectDialogMaterialTable.flat();
 let buildArray = selectDialogBuildTable.flat()
+let bigBuildArray = bigBuildTable.flat()
 
 /**
  * 初始化弹窗选择的内容
@@ -35,7 +43,7 @@ function initSelectDialog() {
 
     for (let item in material_data) {
         // item不在selectDialogMaterialTable中
-        if (materialArray.includes(material_data[item]) || buildArray.includes(material_data[item])) {
+        if (materialArray.includes(material_data[item]) || buildArray.includes(material_data[item]) || bigBuildArray.includes(material_data[item])) {
             continue;
         }
 

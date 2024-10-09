@@ -3886,6 +3886,345 @@ let game_data = {
                     "buff": 0
                 }
             ]
+        },
+        "引力发生装置": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 3,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "引力发生装置": 1
+                    },
+                    "sourceList":{
+                        "钛合金": 1,
+                        "奇异物质": 1
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "位面约束环": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 3,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "位面约束环": 2
+                    },
+                    "sourceList":{
+                        "超级磁场环": 2,
+                        "位面过滤器": 1
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        // 1个引力发生装置+1个位面约束环+1个引力透镜=1个引力钻头（3s）
+        "引力钻头": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 3,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "引力钻头": 1
+                    },
+                    "sourceList":{
+                        "引力发生装置": 1,
+                        "位面约束环": 1
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        // 1个粒子容器+1个光子合并器=6个隧穿激发装置（6s）
+        "隧穿激发装置": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 6,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "隧穿激发装置": 1
+                    },
+                    "sourceList":{
+                        "粒子容器": 1,
+                        "光子合并器": 1
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        // 3个隧穿激发装置+2个晶格硅+1个量子芯片=1个谐振盘（4s）
+        "谐振盘": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 4,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "谐振盘": 1
+                    },
+                    "sourceList":{
+                        "隧穿激发装置": 3,
+                        "晶格硅": 2
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        // 2个光子合并器+1个临界光子=1个光子探针（4s）
+        "光子探针": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 4,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "光子探针": 1
+                    },
+                    "sourceList":{
+                        "光子合并器": 2,
+                        "临界光子": 1
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        // 3个量子芯片+2个粒子宽带+1个隧穿激发装置=1个量子计算机（12s）
+        "量子计算机": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 12,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "量子计算机": 1
+                    },
+                    "sourceList":{
+                        "量子芯片": 3,
+                        "粒子宽带": 2,
+                        "隧穿激发装置": 1,
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        // 3个框架材料+3个制造台Mk.III+1个增产剂Mk.III=1个星际组装厂组件（8s）
+        "星际组装厂组件": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 8,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "星际组装厂组件": 1
+                    },
+                    "sourceList":{
+                        "框架材料": 3,
+                        "制造台Mk.III": 3,
+                        "增产剂Mk.III": 1,
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        // 1个引力发生装置+2个谐振盘=1个力场发生器（4s）
+        "力场发生器": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 4,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "力场发生器": 1
+                    },
+                    "sourceList":{
+                        "引力发生装置": 1,
+                        "谐振盘": 2,
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "导流框架": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 3,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "导流框架": 1
+                    },
+                    "sourceList": {
+                        "框架材料": 3,
+                        "位面约束环": 2,
+                        "力场发生器": 3
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "恒星炮组件": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 8,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "恒星炮组件": 1
+                    },
+                    "sourceList": {
+                        "引力透镜": 3,
+                        "导流框架": 2
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "物质解压器运载火箭": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 8,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "物质解压器运载火箭": 1
+                    },
+                    "sourceList": {
+                        "引力钻头": 2,
+                        "谐振盘": 1,
+                        "氘核燃料棒": 2
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "科学枢纽运载火箭": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 8,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "科学枢纽运载火箭": 1
+                    },
+                    "sourceList": {
+                        "位面约束环": 3,
+                        "量子计算机": 1,
+                        "氘核燃料棒": 2
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "谐振发射器运载火箭": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 8,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "谐振发射器运载火箭": 1
+                    },
+                    "sourceList": {
+                        "引力发生装置": 1,
+                        "谐振盘": 4,
+                        "氘核燃料棒": 2
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "星际组装厂运载火箭": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 8,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "星际组装厂运载火箭": 1
+                    },
+                    "sourceList": {
+                        "星际组装厂组件": 2,
+                        "氘核燃料棒": 2
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "晶体重构器运载火箭": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 8,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "晶体重构器运载火箭": 1
+                    },
+                    "sourceList": {
+                        "光子探针": 1,
+                        "氘核燃料棒": 2,
+                        "量子芯片": 2
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "恒星炮运载火箭": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 6,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "恒星炮运载火箭": 1
+                    },
+                    "sourceList": {
+                        "恒星炮组件": 2,
+                        "氘核燃料棒": 2,
+                        "量子芯片": 2
+                    },
+                    "buff": 0
+                }
+            ]
+        },
+        "物资交换物流站": {
+            "useIndex": 0,
+            "data": [
+                {
+                    "time": 8,
+                    "equType": "制造台",
+                    "equIndex": 0,
+                    "productList": {
+                        "物资交换物流站": 1
+                    },
+                    "sourceList": {
+                        "星际物流站": 1,
+                        "射线接收器": 1
+                    },
+                    "buff": 0
+                }
+            ]
         }
     }
 };
