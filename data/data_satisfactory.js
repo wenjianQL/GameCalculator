@@ -3655,6 +3655,19 @@ let game_data = {
                 {
                     "time": 60,
                     "name": "配方",
+                    "equType": "组装器",
+                    "equIndex": 0,
+                    "productList": {
+                        "压缩煤": "25"
+                    },
+                    "sourceList": {
+                        "煤": "25",
+                        "硫": "25"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
                     "equType": "精炼厂",
                     "equIndex": 0,
                     "productList": {
@@ -3664,19 +3677,6 @@ let game_data = {
                     "sourceList": {
                         "火箭燃料": "40",
                         "能量碎片": "2.5"
-                    }
-                },
-                {
-                    "time": 60,
-                    "name": "配方",
-                    "equType": "组装器",
-                    "equIndex": 0,
-                    "productList": {
-                        "压缩煤": "25"
-                    },
-                    "sourceList": {
-                        "煤": "25",
-                        "硫": "25"
                     }
                 },
                 {
