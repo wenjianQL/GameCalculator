@@ -3441,6 +3441,18 @@ let game_data = {
                 {
                     "time": 60,
                     "name": "配方",
+                    "equType": "构造器",
+                    "equIndex": 0,
+                    "productList": {
+                        "空瓶": "60"
+                    },
+                    "sourceList": {
+                        "铝锭": "60"
+                    }
+                },
+                {
+                    "time": 60,
+                    "name": "配方",
                     "equType": "灌装机",
                     "equIndex": 0,
                     "productList": {
@@ -3475,17 +3487,6 @@ let game_data = {
                     },
                     "sourceList": {
                         "瓶装氮气": "60"
-                    }
-                }, {
-                    "time": 60,
-                    "name": "配方",
-                    "equType": "构造器",
-                    "equIndex": 0,
-                    "productList": {
-                        "空瓶": "60"
-                    },
-                    "sourceList": {
-                        "铝锭": "60"
                     }
                 }
             ]
